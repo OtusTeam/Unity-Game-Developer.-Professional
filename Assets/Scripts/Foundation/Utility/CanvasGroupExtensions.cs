@@ -18,15 +18,11 @@ namespace Foundation
 
         public static Tweener DOShow(this CanvasGroup canvasGroup, float time)
         {
-            canvasGroup.interactable = true;
-            canvasGroup.blocksRaycasts = true;
             return canvasGroup.DOAlpha(1.0f, time);
         }
 
         public static Tweener DOHide(this CanvasGroup canvasGroup, float time)
         {
-            canvasGroup.interactable = false;
-            canvasGroup.blocksRaycasts = false;
             return canvasGroup.DOAlpha(0.0f, time);
         }
     }

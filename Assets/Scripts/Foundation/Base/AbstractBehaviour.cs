@@ -40,8 +40,10 @@ namespace Foundation
 
         protected virtual void OnDisable()
         {
-            foreach (var handle in observerHandles)
-                handle.Dispose();
+            if (observerHandles != null) {
+                foreach (var handle in observerHandles)
+                    handle.Dispose();
+            }
         }
     }
 }

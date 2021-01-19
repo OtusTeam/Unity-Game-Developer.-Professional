@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Foundation
 {
-    public sealed class SceneManager : AbstractManager<ISceneManager>, ISceneManager
+    public sealed class SceneManager : AbstractService<ISceneManager>, ISceneManager
     {
         public ObserverList<IOnBeginSceneLoad> OnBeginSceneLoad { get; } = new ObserverList<IOnBeginSceneLoad>();
         public ObserverList<IOnSceneLoadProgress> OnSceneLoadProgress { get; } = new ObserverList<IOnSceneLoadProgress>();

@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Foundation
 {
-    public sealed class TimeScaleManager : AbstractManager<ITimeScaleManager>, ITimeScaleManager
+    public sealed class TimeScaleManager : AbstractService<ITimeScaleManager>, ITimeScaleManager
     {
         List<TimeScaleHandle> handles = new List<TimeScaleHandle>(10);
 

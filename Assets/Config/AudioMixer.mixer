@@ -21,7 +21,7 @@ AudioMixerController:
   - guid: 9028343838b9c38409838108d837ce30
     name: SfxVolume
   - guid: 896e37375847dab429959ff27e2c8a85
-    name: DialoguesVolume
+    name: DialogsVolume
   m_AudioMixerGroupViews:
   - guids:
     - 13f21ffd7a2fc324297e70be27f1d858
@@ -84,7 +84,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SFX
+  m_Name: Sfx
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 0874336f1e646bc4d809a16cc328fb4b
   m_Children: []
@@ -150,7 +150,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dialogues
+  m_Name: Dialogs
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: c489ab4142dbc7640b717a08c4095bf5
   m_Children: []

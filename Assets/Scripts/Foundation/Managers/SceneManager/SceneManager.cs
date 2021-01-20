@@ -8,6 +8,7 @@ namespace Foundation
     public sealed class SceneManager : AbstractService<ISceneManager>, ISceneManager
     {
         public ObserverList<IOnBeginSceneLoad> OnBeginSceneLoad { get; } = new ObserverList<IOnBeginSceneLoad>();
+        public ObserverList<IOnCurrentSceneUnload> OnCurrentSceneUnload { get; } = new ObserverList<IOnCurrentSceneUnload>();
         public ObserverList<IOnSceneLoadProgress> OnSceneLoadProgress { get; } = new ObserverList<IOnSceneLoadProgress>();
         public ObserverList<IOnEndSceneLoad> OnEndSceneLoad { get; } = new ObserverList<IOnEndSceneLoad>();
 
@@ -22,6 +23,9 @@ namespace Foundation
                 var task = observer.Do();
                 yield return new WaitUntil(() => task.IsCompleted);
             }
+
+            foreach (var observer in OnCurrentSceneUnload.Enumerate())
+                observer.Do();
 
             var operation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
             while (!operation.isDone) {

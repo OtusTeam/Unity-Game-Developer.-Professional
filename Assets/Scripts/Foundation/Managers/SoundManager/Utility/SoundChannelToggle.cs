@@ -4,6 +4,7 @@ using Zenject;
 
 namespace Foundation
 {
+    [RequireComponent(typeof(Toggle))]
     public sealed class SoundChannelToggle : MonoBehaviour
     {
         public string ChannelName;

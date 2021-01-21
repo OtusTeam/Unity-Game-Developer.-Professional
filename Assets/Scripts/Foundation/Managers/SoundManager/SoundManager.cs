@@ -13,7 +13,7 @@ namespace Foundation
         public AudioListener Listener;
         public SoundChannel[] Channels;
 
-        [Inject] ISceneManager sceneManager;
+        [Inject] ISceneManager sceneManager = default;
         SoundHandle currentMusic;
         Dictionary<string, ISoundChannel> channelDict;
 

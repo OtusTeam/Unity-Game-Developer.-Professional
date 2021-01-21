@@ -11,7 +11,7 @@ namespace Foundation
         public string Name => channelID;
 
         AudioMixerGroup mixerGroup;
-        [Inject] SoundSource.Factory soundSourceFactory;
+        [Inject] SoundSource.Factory soundSourceFactory = default;
         List<SoundSource> soundSources = new List<SoundSource>();
         bool volumeChanged = false;
 

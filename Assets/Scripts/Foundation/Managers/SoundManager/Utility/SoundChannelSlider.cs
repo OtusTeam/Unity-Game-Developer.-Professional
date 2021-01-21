@@ -4,6 +4,7 @@ using Zenject;
 
 namespace Foundation
 {
+    [RequireComponent(typeof(Slider))]
     public sealed class SoundChannelSlider : MonoBehaviour
     {
         public string ChannelName;

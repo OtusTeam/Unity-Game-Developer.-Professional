@@ -4,6 +4,7 @@ using Zenject;
 
 namespace Foundation
 {
+    [RequireComponent(typeof(Button))]
     public sealed class ButtonSound : MonoBehaviour
     {
         [Inject] ISoundManager soundManager = default;

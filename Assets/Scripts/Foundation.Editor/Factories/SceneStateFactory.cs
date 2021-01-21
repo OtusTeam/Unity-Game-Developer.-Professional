@@ -11,7 +11,6 @@ namespace Foundation.Editor
 {
     public static class SceneStateFactory
     {
-        /*
         [MenuItem("GameObject/OTUS/Scene State", false, 10)]
         static void CreateSceneState(MenuCommand menuCommand)
         {
@@ -25,9 +24,7 @@ namespace Foundation.Editor
 
             Undo.RegisterCreatedObjectUndo(go, "Create scene state");
         }
-        */
 
-        /*
         [MenuItem("GameObject/OTUS/UI State", false, 10)]
         static void CreateUIState(MenuCommand menuCommand)
         {
@@ -75,6 +72,5 @@ namespace Foundation.Editor
 
             Undo.RegisterCreatedObjectUndo(go, "Create UI state");
         }
-        */
     }
 }

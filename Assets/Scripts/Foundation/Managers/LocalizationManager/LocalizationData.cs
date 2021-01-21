@@ -7,8 +7,6 @@ namespace Foundation
 {
     public sealed class LocalizationData : ScriptableObject, ISerializationCallbackReceiver
     {
-        public const string AssetPath = "Assets/Config/LocalizationData.asset";
-
         [Serializable]
         public struct StringInfo
         {
@@ -35,6 +33,8 @@ namespace Foundation
         }
 
       #if UNITY_EDITOR
+        public const string AssetPath = "Assets/Config/LocalizationData.asset";
+
         static LocalizationData editorInstance;
         static string[] editorStringIds;
 

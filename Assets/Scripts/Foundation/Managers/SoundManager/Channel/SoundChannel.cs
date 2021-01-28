@@ -105,9 +105,9 @@ namespace Foundation
             int n = soundSources.Count;
             while (n-- > 0) {
                 var source = soundSources[n];
-                soundSources.RemoveAt(n);
                 if (!includingSurviveSceneLoad && source.SurviveSceneLoad)
                     continue;
+                soundSources.RemoveAt(n);
                 source.Dispose();
             }
         }

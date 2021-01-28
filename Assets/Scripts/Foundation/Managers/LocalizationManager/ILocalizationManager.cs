@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Foundation
 {
     public interface ILocalizationManager

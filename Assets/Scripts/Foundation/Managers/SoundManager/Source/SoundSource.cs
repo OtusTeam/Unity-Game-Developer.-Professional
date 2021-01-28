@@ -12,7 +12,7 @@ namespace Foundation
         {
         }
 
-        IMemoryPool Pool;
+        IMemoryPool pool;
         internal AudioSource AudioSource { get; private set; }
         internal int HandleID { get; private set; }
         [ReadOnly] [SerializeField] internal Transform TargetTransform;
@@ -30,12 +30,12 @@ namespace Foundation
 
         public void Dispose()
         {
-            Pool.Despawn(this);
+            pool.Despawn(this);
         }
 
         public void OnSpawned(AudioClip clip, IMemoryPool pool)
         {
-            Pool = pool;
+            this.pool = pool;
             AudioSource.clip = clip;
 
           #if UNITY_EDITOR
@@ -45,7 +45,7 @@ namespace Foundation
 
         public void OnDespawned()
         {
-            Pool = null;
+            pool = null;
 
           #if UNITY_EDITOR
             gameObject.name = "<Free>";

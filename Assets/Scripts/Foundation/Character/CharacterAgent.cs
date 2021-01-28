@@ -9,7 +9,7 @@ namespace Game
     public sealed class CharacterAgent : AbstractService<ICharacterAgent>, ICharacterAgent, IOnUpdate
     {
         NavMeshAgent agent;
-        [Inject] ISceneState state;
+        [Inject] ISceneState state = default;
 
         public Transform CharacterTransform;
         public bool UpdatePosition;

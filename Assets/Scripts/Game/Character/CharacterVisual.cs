@@ -77,7 +77,8 @@ namespace Game
       #if UNITY_EDITOR
         void Update()
         {
-            UpdateVisual(false);
+            if (!Application.IsPlaying(this))
+                UpdateVisual(false);
         }
       #endif
     }

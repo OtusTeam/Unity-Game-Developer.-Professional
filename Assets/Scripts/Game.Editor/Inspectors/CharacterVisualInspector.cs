@@ -39,8 +39,12 @@ namespace Game.Editor
 
         public override void OnInspectorGUI()
         {
-            if (GUILayout.Button("Randomize"))
+            if (GUILayout.Button("Randomize")) {
+                Undo.RecordObject(target, "Randomize character");
                 ((CharacterVisual)target).Randomize();
+                PrefabUtility.RecordPrefabInstancePropertyModifications(target);
+                EditorUtility.SetDirty(target);
+            }
 
             serializedObject.Update();
 

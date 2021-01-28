@@ -17,8 +17,11 @@ namespace Foundation
         public UnityInputAction(InputAction action)
         {
             this.action = action;
-            action.started += OnStarted;
-            action.canceled += OnCanceled;
+
+            if (action != null) {
+                action.started += OnStarted;
+                action.canceled += OnCanceled;
+            }
         }
 
         public void Dispose()

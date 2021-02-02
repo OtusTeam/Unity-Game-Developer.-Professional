@@ -1,14 +1,12 @@
-using Foundation;
 using UnityEngine;
 using Zenject;
 
-namespace Game
+namespace Foundation
 {
     public sealed class CharacterMovementInput : AbstractBehaviour, IOnUpdate
     {
         public string InputActionName;
 
-        public float RotationSpeed;
         public float ForwardMovementSpeed;
         public float SideMovementSpeed;
 

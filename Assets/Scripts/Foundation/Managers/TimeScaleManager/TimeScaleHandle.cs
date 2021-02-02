@@ -1,12 +1,22 @@
 namespace Foundation
 {
-    public sealed class TimeScaleHandle
+    public sealed class TimeScaleHandle : ITimeScaleHandleInternal
     {
-        public readonly float Scale;
+        public bool IsValid { get; private set; }
+        public float Scale { get; private set; }
 
-        public TimeScaleHandle(float scale)
+        void ITimeScaleHandleInternal.Init(float scale)
         {
+            DebugOnly.Check(!IsValid, "Attempted to use TimeScaleHandle multiple times.");
             Scale = scale;
+            IsValid = true;
+        }
+
+        void ITimeScaleHandleInternal.Reset()
+        {
+            DebugOnly.Check(!IsValid, "Attempted to reset invalid TimeScaleHandle.");
+            Scale = 0.0f;
+            IsValid = false;
         }
     }
 }

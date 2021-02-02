@@ -4,7 +4,10 @@ namespace Foundation
     {
         int NumPlayers { get; }
 
-        int AddPlayer(IPlayer player, bool reuseSlots = true);
+        ObserverList<IOnPlayerAdded> OnPlayerAdded { get; }
+        ObserverList<IOnPlayerRemoved> OnPlayerRemoved { get; }
+
+        void AddPlayer(IPlayer player, out int index, bool reuseSlots = true);
         void RemovePlayer(IPlayer player);
 
         IPlayer GetPlayer(int index);

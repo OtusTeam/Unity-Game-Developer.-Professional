@@ -1,9 +1,8 @@
-using Foundation;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
 
-namespace Game
+namespace Foundation
 {
     [RequireComponent(typeof(NavMeshAgent))]
     public sealed class CharacterAgent : AbstractService<ICharacterAgent>, ICharacterAgent, IOnUpdate

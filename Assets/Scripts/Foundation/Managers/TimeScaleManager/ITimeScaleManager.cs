@@ -2,7 +2,7 @@ namespace Foundation
 {
     public interface ITimeScaleManager
     {
-        TimeScaleHandle BeginTimeScale(float scale);
+        void BeginTimeScale(TimeScaleHandle handle, float scale);
         void EndTimeScale(TimeScaleHandle handle);
     }
 }

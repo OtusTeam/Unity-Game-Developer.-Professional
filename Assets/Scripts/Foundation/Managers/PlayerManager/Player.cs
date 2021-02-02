@@ -4,20 +4,22 @@ namespace Foundation
 {
     public sealed class Player : AbstractService<IPlayer>, IPlayer
     {
-        public int Index { get; private set; } = -1;
+        int index = -1;
+        public int Index => index;
+
         [Inject] IPlayerManager playerManager = default;
 
         protected override void OnEnable()
         {
             base.OnEnable();
-            Index = playerManager.AddPlayer(this);
+            playerManager.AddPlayer(this, out index);
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
             playerManager.RemovePlayer(this);
-            Index = -1;
+            index = -1;
         }
     }
 }

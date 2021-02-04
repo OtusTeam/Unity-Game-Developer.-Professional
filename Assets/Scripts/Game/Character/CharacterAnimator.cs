@@ -9,16 +9,20 @@ namespace Game
     {
         enum BodyAnim
         {
-            IdleNoWeapon = 1000,
+            IdleOrRunning_NoWeapon = 1000,
+            IdleOrRunning_Pistol = 1001,
+            Crouching_NoWeapon = 1002,
+            Crouching_Pistol = 1003,
         }
 
         enum LegsAnim
         {
             IdleOrRunning = 2000,
+            Crouching = 2001,
         }
 
         [Header("Debug")]
-        [HideInInspector] [ReadOnly] BodyAnim bodyAnim = BodyAnim.IdleNoWeapon;
+        [HideInInspector] [ReadOnly] BodyAnim bodyAnim = BodyAnim.IdleOrRunning_NoWeapon;
         [HideInInspector] [ReadOnly] LegsAnim legsAnim = LegsAnim.IdleOrRunning;
 
         Animator animator;
@@ -29,6 +33,8 @@ namespace Game
         int velocityYID;
 
         [Inject] ISceneState state = default;
+        [InjectOptional] ICharacterWeapon characterWeapon = default;
+        [InjectOptional] ICharacterCrouchInput characterCrouch = default;
 
         void Awake()
         {
@@ -66,6 +72,8 @@ namespace Game
             var delta = position - prevPosition;
             prevPosition = position;
 
+            delta = transform.InverseTransformDirection(delta);
+
             var velocity = new Vector2(delta.x, delta.z).normalized;
             animator.SetFloat(velocityXID, velocity.x);
             animator.SetFloat(velocityYID, velocity.y);
@@ -73,7 +81,25 @@ namespace Game
 
         (BodyAnim body, LegsAnim legs) ChooseAnimation()
         {
-            return (BodyAnim.IdleNoWeapon, LegsAnim.IdleOrRunning);
+            Weapon weapon = Weapon.None;
+            if (characterWeapon != null)
+                weapon = characterWeapon.CurrentWeapon;
+
+            if (characterCrouch != null && characterCrouch.Crouching) {
+                switch (weapon) {
+                    case Weapon.Pistol:
+                        return (BodyAnim.Crouching_Pistol, LegsAnim.Crouching);
+                    default:
+                        return (BodyAnim.Crouching_NoWeapon, LegsAnim.Crouching);
+                }
+            }
+
+            switch (weapon) {
+                case Weapon.Pistol:
+                    return (BodyAnim.IdleOrRunning_Pistol, LegsAnim.IdleOrRunning);
+                default:
+                    return (BodyAnim.IdleOrRunning_NoWeapon, LegsAnim.IdleOrRunning);
+            }
         }
     }
 }

@@ -9,6 +9,10 @@ namespace Foundation
         public ObserverList<IOnPlayerAdded> OnPlayerAdded { get; } = new ObserverList<IOnPlayerAdded>();
         public ObserverList<IOnPlayerRemoved> OnPlayerRemoved { get; } = new ObserverList<IOnPlayerRemoved>();
 
+        public ObserverList<IOnPlayerDamaged> OnPlayerDamaged { get; } = new ObserverList<IOnPlayerDamaged>();
+        public ObserverList<IOnPlayerDied> OnPlayerDied { get; } = new ObserverList<IOnPlayerDied>();
+        public ObserverList<IOnPlayerHealed> OnPlayerHealed { get; } = new ObserverList<IOnPlayerHealed>();
+
         List<IPlayer> players = new List<IPlayer>();
 
         public void AddPlayer(IPlayer player, out int index, bool reuseSlots)

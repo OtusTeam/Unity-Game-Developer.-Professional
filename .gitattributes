@@ -32,6 +32,7 @@
 *.svg -text -crlf
 *.lighting -text -crlf
 *.shadergraph -text -crlf
+*.fbx -text -crlf
 .gitmodules -text -crlf
 .vsconfig -text -crlf
 /ProjectSettings/ProjectVersion.txt -text -crlf

@@ -17,6 +17,17 @@ namespace Foundation
             Observers.Observe(observable, this as O);
         }
 
+        protected void Observe<O>(ref ObserverHandle handle, IObserverList<O> observable)
+            where O : class
+        {
+            Observers.Observe(ref handle, observable, this as O);
+        }
+
+        protected void Unobserve(ObserverHandle handle)
+        {
+            Observers.Unobserve(handle);
+        }
+
         protected virtual void OnEnable()
         {
         }

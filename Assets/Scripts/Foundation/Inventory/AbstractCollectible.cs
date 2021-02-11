@@ -17,7 +17,7 @@ namespace Foundation
             foreach (var item in Storage.RawItems)
                 storage.Add(item.item, item.count);
 
-            storage.Clear();
+            Storage.Clear();
 
             Destroy(gameObject);
         }

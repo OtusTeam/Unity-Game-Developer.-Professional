@@ -50,6 +50,13 @@ namespace Foundation
             return count;
         }
 
+        int IInventoryStorage.CountOf(AbstractInventoryItem item)
+        {
+            if (item is T castItem)
+                return CountOf(castItem);
+            return 0;
+        }
+
         public void Add(T item, int amount)
         {
             if (amount <= 0) {
@@ -91,6 +98,13 @@ namespace Foundation
                 it.Do();
 
             return true;
+        }
+
+        bool IInventoryStorage.Remove(AbstractInventoryItem item, int amount)
+        {
+            if (item is T castItem)
+                return Remove(castItem, amount);
+            return false;
         }
 
         public void Clear()

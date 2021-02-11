@@ -58,6 +58,26 @@ MonoBehaviour:
     Strings:
     - '{0} / {1}'
     - '{0} / {1}'
+  - Key: INVENTORY_TITLE
+    Languages: 0000000001000000
+    Strings:
+    - Inventory
+    - "\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C"
+  - Key: CATEGORY_FOOD
+    Languages: 0000000001000000
+    Strings:
+    - Food
+    - "\u0415\u0434\u0430"
+  - Key: CATEGORY_TRASH
+    Languages: 0000000001000000
+    Strings:
+    - Trash
+    - "\u041C\u0443\u0441\u043E\u0440"
+  - Key: CATEGORY_WEAPONS
+    Languages: 0000000001000000
+    Strings:
+    - Weapons
+    - "\u041E\u0440\u0443\u0436\u0438\u0435"
   - Key: INV_APPLE
     Languages: 0000000001000000
     Strings:
@@ -233,18 +253,56 @@ MonoBehaviour:
     - "\u041D\u0430 \u0434\u043D\u0435 \u0433\u0440\u0430\u043D\u0435\u043D\u043E\u0433\u043E
       \u0441\u0442\u0430\u043A\u0430\u043D\u0430 \u043C\u043E\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438
       \u0438\u0441\u0442\u0438\u043D\u0443."
-  - Key: CATEGORY_FOOD
+  - Key: INV_BASEBALLBAT
     Languages: 0000000001000000
     Strings:
-    - Food
-    - "\u0415\u0434\u0430"
-  - Key: CATEGORY_TRASH
+    - Baseball Bat
+    - "\u0411\u0435\u0439\u0441\u0431\u043E\u043B\u044C\u043D\u0430\u044F \u0411\u0438\u0442\u0430"
+  - Key: INV_BASEBALLBAT_DESCRIPTION
     Languages: 0000000001000000
     Strings:
-    - Trash
-    - "\u041C\u0443\u0441\u043E\u0440"
-  - Key: INVENTORY_TITLE
+    - Protect your head!
+    - "\u0411\u0435\u0440\u0435\u0433\u0438\u0442\u0435 \u0433\u043E\u043B\u043E\u0432\u0443!"
+  - Key: INV_PISTOL
     Languages: 0000000001000000
     Strings:
-    - Inventory
-    - "\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C"
+    - Pistol
+    - "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442"
+  - Key: INV_PISTOL_DESCRIPTION
+    Languages: 0000000001000000
+    Strings:
+    - Slow weapon.
+    - "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435."
+  - Key: INV_PISTOLAMMO
+    Languages: 0000000001000000
+    Strings:
+    - Ammo for pistol
+    - "\u041F\u0430\u0442\u0440\u043E\u043D\u044B \u0434\u043B\u044F \u043F\u0438\u0441\u0442\u043E\u043B\u0435\u0442\u0430"
+  - Key: INV_PISTOLAMMO_DESCRIPTION
+    Languages: 0000000001000000
+    Strings:
+    - Big box with ammunition.
+    - "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u043A\u043E\u0440\u043E\u0431\u043A\u0430
+      \u0441 \u0430\u043C\u043C\u0443\u043D\u0438\u0446\u0438\u0435\u0439."
+  - Key: INV_AK47
+    Languages: 0000000001000000
+    Strings:
+    - AK47
+    - AK47
+  - Key: INV_AK47_DESCRIPTION
+    Languages: 0000000001000000
+    Strings:
+    - Assault rifle developed in the Soviet Union.
+    - "\u0410\u0432\u0442\u043E\u043C\u0430\u0442, \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0439
+      \u0432 \u0421\u0421\u0421\u0420."
+  - Key: INV_RIFLEAMMO
+    Languages: 0000000001000000
+    Strings:
+    - Ammo for rifle
+    - "\u041F\u0430\u0442\u0440\u043E\u043D\u044B \u0434\u043B\u044F \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0430"
+  - Key: INV_RIFLEAMMODESCRIPTION
+    Languages: 0000000001000000
+    Strings:
+    - Big box with ammunition.
+    - "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u043A\u043E\u0440\u043E\u0431\u043A\u0430
+      \u0441 \u0430\u043C\u043C\u0443\u043D\u0438\u0446\u0438\u0435\u0439."

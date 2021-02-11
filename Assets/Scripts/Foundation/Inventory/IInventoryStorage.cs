@@ -6,7 +6,9 @@ namespace Foundation
     {
         ObserverList<IOnInventoryChanged> OnChanged { get; }
         IEnumerable<(AbstractInventoryItem item, int count)> RawItems { get; }
+        int CountOf(AbstractInventoryItem item);
         void Add(AbstractInventoryItem item, int amount = 1);
+        bool Remove(AbstractInventoryItem item, int amount = 1);
         void Clear();
     }
 

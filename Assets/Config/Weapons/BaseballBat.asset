@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: BaseballBat
   m_EditorClassIdentifier: 
   InventoryItem: {fileID: 11400000, guid: 5308ec6ca2214fe4a97bb8e1428994e1, type: 2}
-  AmmoItem: {fileID: 0}
+  AttackCooldownTime: 0
+  Damage: 10

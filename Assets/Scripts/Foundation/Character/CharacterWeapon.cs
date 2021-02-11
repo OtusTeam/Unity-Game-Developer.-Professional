@@ -12,6 +12,7 @@ namespace Foundation
         {
             public AbstractWeapon Weapon;
             public GameObject Visual;
+            public AbstractWeaponAttack Attack;
             public string InputActionName;
         }
 
@@ -56,10 +57,7 @@ namespace Foundation
                 return false;
 
             // Нельзя атаковать, если не хватает патронов
-            if (currentWeapon.AmmoItem != null && (inventory == null || inventory.RawStorage.CountOf(currentWeapon.AmmoItem) <= 0))
-                return false;
-
-            return true;
+            return currentWeapon.CanShoot(inventory != null ? inventory.RawStorage : null);
         }
 
         public bool Attack()
@@ -67,10 +65,16 @@ namespace Foundation
             if (!CanAttack())
                 return false;
 
-            if (currentWeapon.AmmoItem != null) {
-                if (!inventory.RawStorage.Remove(currentWeapon.AmmoItem, 1))
-                    return false;
+            AbstractWeaponAttack attack = null;
+            foreach (var it in weapons) {
+                if (it.Weapon == currentWeapon) {
+                    attack = it.Attack;
+                    break;
+                }
             }
+
+            if (!currentWeapon.PrepareShoot(inventory != null ? inventory.RawStorage : null, attack))
+                return false;
 
             attackingWeapon = currentWeapon;
             foreach (var it in OnAttack.Enumerate())
@@ -82,6 +86,16 @@ namespace Foundation
         public void EndAttack(bool applyCooldown)
         {
             DebugOnly.Check(attackingWeapon != null, "Unexpected EndAttack.");
+
+            AbstractWeaponAttack attack = null;
+            foreach (var it in weapons) {
+                if (it.Weapon == currentWeapon) {
+                    attack = it.Attack;
+                    break;
+                }
+            }
+
+            attackingWeapon.EndShoot(attack);
 
             if (applyCooldown) {
                 cooldownAfterAttack = attackingWeapon.AttackCooldownTime;

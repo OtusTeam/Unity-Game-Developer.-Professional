@@ -13,8 +13,8 @@ namespace Foundation
             readonly int playerIndex;
             readonly ExperienceManager manager;
 
-            [SerializeField] [ReadOnly] int level = 1;
-            [SerializeField] [ReadOnly] int experience;
+            int level = 1;
+            int experience;
 
             public int Level => level;
             public int Experience => experience;

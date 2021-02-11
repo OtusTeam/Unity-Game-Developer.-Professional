@@ -18,3 +18,4 @@ MonoBehaviour:
   Description:
     LocalizationID: INV_AK47_DESCRIPTION
   Icon: {fileID: 21300000, guid: e68f313a37605894880b6eb87bfbfb79, type: 3}
+  Weapon: {fileID: 11400000, guid: 697c56934fc38aa4a89455cc053c4572, type: 2}

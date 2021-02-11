@@ -18,3 +18,4 @@ MonoBehaviour:
   Description:
     LocalizationID: INV_BASEBALLBAT_DESCRIPTION
   Icon: {fileID: 21300000, guid: ded887ba5ded81042b16fa68c0938916, type: 3}
+  Weapon: {fileID: 11400000, guid: a00103737c67547468e0888856166349, type: 2}

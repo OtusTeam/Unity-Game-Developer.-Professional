@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -26,6 +27,7 @@ namespace Foundation
         public ObserverList<IOnCharacterAttack> OnAttack { get; } = new ObserverList<IOnCharacterAttack>();
 
         [SerializeField] SelectableWeapon[] weapons;
+        Dictionary<AbstractWeapon, AbstractWeaponAttack> weaponAttack = new Dictionary<AbstractWeapon, AbstractWeaponAttack>();
 
         [InjectOptional] IPlayer player = default;
         [InjectOptional] IInventory inventory = default;
@@ -36,6 +38,12 @@ namespace Foundation
         public override void Start()
         {
             base.Start();
+
+            foreach (var it in weapons) {
+                if (it.Attack != null)
+                    weaponAttack.Add(it.Weapon, it.Attack);
+            }
+
             SetCurrentWeaponForce(initialWeapon);
         }
 
@@ -65,14 +73,7 @@ namespace Foundation
             if (!CanAttack())
                 return false;
 
-            AbstractWeaponAttack attack = null;
-            foreach (var it in weapons) {
-                if (it.Weapon == currentWeapon) {
-                    attack = it.Attack;
-                    break;
-                }
-            }
-
+            weaponAttack.TryGetValue(currentWeapon, out var attack);
             if (!currentWeapon.PrepareShoot(inventory != null ? inventory.RawStorage : null, attack))
                 return false;
 
@@ -87,14 +88,7 @@ namespace Foundation
         {
             DebugOnly.Check(attackingWeapon != null, "Unexpected EndAttack.");
 
-            AbstractWeaponAttack attack = null;
-            foreach (var it in weapons) {
-                if (it.Weapon == currentWeapon) {
-                    attack = it.Attack;
-                    break;
-                }
-            }
-
+            weaponAttack.TryGetValue(currentWeapon, out var attack);
             attackingWeapon.EndShoot(attack);
 
             if (applyCooldown) {

@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Foundation
 {
-    public interface IWeaponAttack
+    public interface IMeleeWeaponAttack : IWeaponAttack
     {
-        void EndAttack();
+        void BeginMeleeAttack(float damage);
     }
 }

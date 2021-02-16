@@ -7,6 +7,7 @@ namespace Game
     public class RangedWeapon : AbstractWeapon
     {
         public AbstractInventoryItem AmmoItem;
+        public RangedWeaponParameters Parameters;
         public float Damage;
 
         public override bool CanShoot(IInventoryStorage inventory)
@@ -25,7 +26,11 @@ namespace Game
             if (AmmoItem != null && (inventory == null || !inventory.Remove(AmmoItem, 1)))
                 return false;
 
-            attack.BeginAttack(Damage);
+            if (attack is IRangedWeaponAttack rangedAttack)
+                rangedAttack.BeginRangedAttack(Parameters, Damage);
+            else
+                DebugOnly.Error("Using ranged weapon with wrong attack.");
+
             return true;
         }
     }

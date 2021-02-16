@@ -4,16 +4,16 @@ using Zenject;
 
 namespace Foundation
 {
-    public sealed class MeleeWeaponCollider : AbstractWeaponAttack, IAttacker, IWeaponAttack
+    public sealed class MeleeWeaponCollider : AbstractWeaponAttack, IAttacker, IMeleeWeaponAttack
     {
-        [InjectOptional] IPlayer player;
+        [InjectOptional] IPlayer player = default;
         public IPlayer Player => player;
 
         HashSet<ICharacterHealth> damaged = new HashSet<ICharacterHealth>();
         bool inAttack;
         float damage;
 
-        public override void BeginAttack(float damage)
+        public void BeginMeleeAttack(float damage)
         {
             DebugOnly.Check(!inAttack, "BeginAttack called twice.");
             inAttack = true;

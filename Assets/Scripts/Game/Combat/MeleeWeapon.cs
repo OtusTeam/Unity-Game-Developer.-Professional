@@ -10,7 +10,11 @@ namespace Game
 
         public override bool PrepareShoot(IInventoryStorage inventory, IWeaponAttack attack)
         {
-            attack.BeginAttack(Damage);
+            if (attack is IMeleeWeaponAttack meleeAttack)
+                meleeAttack.BeginMeleeAttack(Damage);
+            else
+                DebugOnly.Error("Using melee weapon with wrong attack.");
+
             return true;
         }
     }

@@ -12,3 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c001cbdc92b2984cb2a5e7e4a81d06d, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  InventoryItem: {fileID: 0}
+  AttackCooldownTime: 0
+  AmmoItem: {fileID: 0}
+  Parameters:
+    Count: 5
+    MaxDistance: 500
+    MinTargetAngle: 0.8
+    MaxTargetAngle: 1.2
+    MinGroupingAngle: 1
+    MaxGroupingAngle: 2
+  Damage: 10

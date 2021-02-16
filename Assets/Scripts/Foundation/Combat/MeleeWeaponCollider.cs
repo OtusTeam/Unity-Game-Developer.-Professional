@@ -32,9 +32,12 @@ namespace Foundation
             if (!inAttack)
                 return;
 
-            var health = other.GetComponentInParent<ICharacterHealth>();
-            if (health != null && damaged.Add(health))
-                health.Damage(this, damage);
+            var context = other.GetComponentInParent<Context>();
+            if (context != null) {
+                var health = context.Container.TryResolve<ICharacterHealth>();
+                if (health != null && damaged.Add(health))
+                    health.Damage(this, damage);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Foundation
 {
-    public sealed class RangedWeaponAttacker : AbstractWeaponAttack, IAttacker, IRangedWeaponAttack
+    public sealed class RangedWeaponAttack : AbstractWeaponAttack, IAttacker, IRangedWeaponAttack
     {
         [Inject] IShootingManager shootingManager = default;
         [InjectOptional] IPlayer player = default;

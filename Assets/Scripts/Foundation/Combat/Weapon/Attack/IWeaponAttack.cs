@@ -7,5 +7,6 @@ namespace Foundation
     public interface IWeaponAttack
     {
         void EndAttack();
+        void EndCooldown();
     }
 }

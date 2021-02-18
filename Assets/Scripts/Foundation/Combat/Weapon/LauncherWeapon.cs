@@ -1,13 +1,12 @@
 using Foundation;
 using UnityEngine;
 
-namespace Game
+namespace Foundation
 {
-    [CreateAssetMenu(menuName="OTUS/Weapon/Ranged")]
-    public class RangedWeapon : AbstractWeapon
+    [CreateAssetMenu(menuName="OTUS/Weapon/Launcher")]
+    public sealed class LauncherWeapon : AbstractWeapon
     {
         public AbstractInventoryItem AmmoItem;
-        public RangedWeaponParameters Parameters;
         public float Damage;
 
         public override bool CanShoot(IInventoryStorage inventory)
@@ -26,10 +25,10 @@ namespace Game
             if (AmmoItem != null && (inventory == null || !inventory.Remove(AmmoItem, 1)))
                 return false;
 
-            if (attack is IRangedWeaponAttack rangedAttack)
-                rangedAttack.BeginRangedAttack(Parameters, Damage);
+            if (attack is ILauncherWeaponAttack launcherAttack)
+                launcherAttack.BeginLauncherAttack(Damage);
             else
-                DebugOnly.Error("Using ranged weapon with wrong attack.");
+                DebugOnly.Error("Using launcher weapon with wrong attack.");
 
             return true;
         }

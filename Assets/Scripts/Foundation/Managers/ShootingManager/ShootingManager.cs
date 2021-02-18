@@ -30,14 +30,12 @@ namespace Foundation
         [Inject] ShootTrace.Factory shootTraceFactory = default;
         RaycastHit[] result = new RaycastHit[1024];
 
-        Vector3 AdjustShoot(Vector3 from, Vector3 to, Vector3 forward, Vector3 right, float minAngle, float maxAngle)
+        Vector3 AdjustShoot(Vector3 from, Vector3 forward, Vector3 right, float minAngle, float maxAngle)
         {
             float targetAngle = UnityEngine.Random.Range(minAngle, maxAngle);
-            to = Quaternion.AngleAxis(targetAngle, right) * to;
-
-            Vector3 dir = (to - from).normalized;
+            Vector3 dir = Quaternion.AngleAxis(targetAngle, right) * forward;
             dir = Quaternion.AngleAxis(UnityEngine.Random.Range(0.0f, 360.0f), forward) * dir;
-            return from + dir;
+            return dir;
         }
 
         void DoDamage(RaycastHit hitInfo, IAttacker attacker, float damage)
@@ -53,16 +51,14 @@ namespace Foundation
         public void Shoot(Transform source, IAttacker attacker, RangedWeaponParameters parameters, int layerMask, float damage)
         {
             Vector3 from = source.position;
-            Vector3 to = from + source.forward;
-
-            to = AdjustShoot(from, to, source.forward, source.right, parameters.MinTargetAngle, parameters.MaxTargetAngle);
-            Vector3 forward = (to - from).normalized;
+            Vector3 forward = AdjustShoot(from, source.forward, source.right, parameters.MinTargetAngle, parameters.MaxTargetAngle);
             Vector3 right = Vector3.Cross(forward, source.up);
 
             for (int i = 0; i < parameters.Count; i++) {
-                var dst = AdjustShoot(from, to, forward, right, parameters.MinGroupingAngle, parameters.MaxGroupingAngle);
+                var dir = AdjustShoot(from, forward, right, parameters.MinGroupingAngle, parameters.MaxGroupingAngle);
+                Vector3 dst;
 
-                Ray ray = new Ray(from, (dst - from).normalized);
+                Ray ray = new Ray(from, dir);
                 if (!Physics.Raycast(ray, out var hitInfo, parameters.MaxDistance, layerMask))
                     dst = from + ray.direction * parameters.MaxDistance;
                 else {
@@ -101,6 +97,8 @@ namespace Foundation
                                 Vector3 passDst = Vector3.zero;
                                 Ray passRay = new Ray(dst, ray.direction);
                                 int n = Physics.RaycastNonAlloc(passRay, result, distance, layerMask);
+
+                                DistanceComparer.Instance.Dst = dst;
                                 Array.Sort(result, 0, n, DistanceComparer.Instance);
 
                                 bool found = false;

@@ -36,6 +36,7 @@ namespace Game
         public List<AbstractWeapon> BaseballBats;
         public List<AbstractWeapon> Pistols;
         public List<AbstractWeapon> Rifles;
+        public List<AbstractWeapon> RocketLaunchers;
 
         Animator animator;
         Vector3 prevPosition;
@@ -121,6 +122,12 @@ namespace Game
                         return (BodyAnim.Crouching_Rifle, LegsAnim.Crouching);
                 }
 
+                if (RocketLaunchers != null && weapon != null && RocketLaunchers.Contains(weapon)) {
+                    if (attacking)
+                        characterWeapon.EndAttack(applyCooldown: true);
+                    return (BodyAnim.Crouching_NoWeapon, LegsAnim.Crouching);
+                }
+
                 return (BodyAnim.Crouching_NoWeapon, LegsAnim.Crouching);
             }
 
@@ -142,6 +149,12 @@ namespace Game
                     return (BodyAnim.Attack_Rifle, LegsAnim.IdleOrRunning);
                 else
                     return (BodyAnim.IdleOrRunning_Rifle, LegsAnim.IdleOrRunning);
+            }
+
+            if (RocketLaunchers != null && weapon != null && RocketLaunchers.Contains(weapon)) {
+                if (attacking)
+                    characterWeapon.EndAttack(applyCooldown: true);
+                return (BodyAnim.IdleOrRunning_NoWeapon, LegsAnim.IdleOrRunning);
             }
 
             return (BodyAnim.IdleOrRunning_NoWeapon, LegsAnim.IdleOrRunning);

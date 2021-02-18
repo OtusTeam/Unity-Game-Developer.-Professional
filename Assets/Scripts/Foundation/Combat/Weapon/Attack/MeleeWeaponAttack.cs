@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Foundation
 {
-    public sealed class MeleeWeaponCollider : AbstractWeaponAttack, IAttacker, IMeleeWeaponAttack
+    public sealed class MeleeWeaponAttack : AbstractWeaponAttack, IAttacker, IMeleeWeaponAttack
     {
         [InjectOptional] IPlayer player = default;
         public IPlayer Player => player;

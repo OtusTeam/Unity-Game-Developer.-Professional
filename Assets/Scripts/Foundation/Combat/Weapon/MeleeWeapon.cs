@@ -1,7 +1,7 @@
 using Foundation;
 using UnityEngine;
 
-namespace Game
+namespace Foundation
 {
     [CreateAssetMenu(menuName="OTUS/Weapon/Melee")]
     public sealed class MeleeWeapon : AbstractWeapon

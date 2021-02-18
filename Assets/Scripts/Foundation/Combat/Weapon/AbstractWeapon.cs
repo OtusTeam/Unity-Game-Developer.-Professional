@@ -21,5 +21,10 @@ namespace Foundation
         {
             attack.EndAttack();
         }
+
+        public virtual void EndCooldown(IWeaponAttack attack)
+        {
+            attack.EndCooldown();
+        }
     }
 }

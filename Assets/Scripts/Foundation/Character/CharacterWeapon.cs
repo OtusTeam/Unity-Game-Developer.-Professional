@@ -88,8 +88,13 @@ namespace Foundation
         {
             DebugOnly.Check(attackingWeapon != null, "Unexpected EndAttack.");
 
+            if (applyCooldown && cooldownAfterAttack > 0.0f) {
+                // Уже идет кулдаун
+                return;
+            }
+
             weaponAttack.TryGetValue(currentWeapon, out var attack);
-            attackingWeapon.EndShoot(attack);
+            attackingWeapon.EndShoot(attack); // FIXME: вызывается два раза при наличии кулдауна
 
             if (applyCooldown) {
                 cooldownAfterAttack = attackingWeapon.AttackCooldownTime;
@@ -97,7 +102,9 @@ namespace Foundation
                     return;
             }
 
+            attackingWeapon.EndCooldown(attack);
             attackingWeapon = null;
+
             UpdateWeaponVisibility();
         }
 

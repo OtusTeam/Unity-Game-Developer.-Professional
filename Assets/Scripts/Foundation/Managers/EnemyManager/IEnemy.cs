@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Foundation
 {
     public interface IEnemy
@@ -10,8 +12,11 @@ namespace Foundation
 
         ObserverList<IOnEnemyDidAttackPlayer> OnDidAttackPlayer { get; }
 
+        public ICharacterAgent Agent { get; }
         public ICharacterHealth Health { get; }
         public ICharacterWeapon Weapon { get; }
+
+        public Vector3 Position { get; }
 
         bool IsAlert { get; }
         IPlayer SeenPlayer { get; }

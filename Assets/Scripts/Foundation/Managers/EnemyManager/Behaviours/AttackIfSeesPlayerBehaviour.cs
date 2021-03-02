@@ -6,9 +6,12 @@ namespace Foundation
     public sealed class AttackIfSeesPlayerBehaviour : EnemyBehaviour
     {
         public float Cooldown = 1.0f;
+        public float AimingTime = 0.3f;
 
         [Inject] IEnemy enemy = default;
         float cooldownLeft;
+
+        float aimingTimeLeft;
 
         public override bool CheckUpdateAI(float deltaTime)
         {
@@ -17,14 +20,28 @@ namespace Foundation
                 return false;
             }
 
-            return enabled && cooldownLeft <= 0.0f;
+            return enabled && enemy.SeenPlayer != null;
         }
 
         public override void UpdateAI(float deltaTime)
         {
             if (enemy.SeenPlayer != null) {
-                if (enemy.TryAttackPlayer(enemy.SeenPlayer))
-                    cooldownLeft = Cooldown;
+                if (!enemy.CanAttackPlayer(enemy.SeenPlayer))
+                    return;
+
+                var dir = (enemy.SeenPlayer.Position - transform.position).normalized;
+                if (enemy.Agent != null)
+                    enemy.Agent.Look(new Vector2(dir.x, dir.z));
+
+                if (aimingTimeLeft < 0.0f)
+                    aimingTimeLeft = AimingTime;
+                else {
+                    aimingTimeLeft -= deltaTime;
+                    if (aimingTimeLeft <= 0.0f) {
+                        if (enemy.TryAttackPlayer(enemy.SeenPlayer))
+                            cooldownLeft = Cooldown;
+                    }
+                }
             }
         }
     }

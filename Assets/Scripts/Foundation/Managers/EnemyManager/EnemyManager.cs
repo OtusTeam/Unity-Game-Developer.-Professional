@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Foundation
 {
@@ -6,6 +7,9 @@ namespace Foundation
     {
         public ICollection<IEnemy> AllEnemies => enemies;
         List<IEnemy> enemies = new List<IEnemy>();
+
+        public ICollection<CoverPoint> AllCoverPoints => coverPoints;
+        [SerializeField] List<CoverPoint> coverPoints = new List<CoverPoint>();
 
         public void AddEnemy(IEnemy enemy)
         {

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
@@ -9,11 +10,16 @@ namespace Foundation
     {
         public const int MinimumPriority = 0;
 
+        [InjectOptional] ICharacterAgent agent = default;
+        public ICharacterAgent Agent => agent;
+
         [InjectOptional] ICharacterHealth health = default;
         public ICharacterHealth Health => health;
 
         [InjectOptional] ICharacterWeapon weapon = default;
         public ICharacterWeapon Weapon => weapon;
+
+        public Vector3 Position => transform.position;
 
         public ObserverList<IOnEnemySeenPlayer> OnSeenPlayer { get; } = new ObserverList<IOnEnemySeenPlayer>();
         public ObserverList<IOnEnemyLostPlayer> OnLostPlayer { get; } = new ObserverList<IOnEnemyLostPlayer>();
@@ -130,7 +136,6 @@ namespace Foundation
                 return false;
 
             if (Weapon != null && Weapon.CanAttack()) {
-                transform.rotation = Quaternion.LookRotation((target.Position - transform.position).normalized);
                 Weapon.Attack();
                 foreach (var it in OnDidAttackPlayer.Enumerate())
                     it.Do();

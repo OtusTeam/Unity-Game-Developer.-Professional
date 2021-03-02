@@ -94,7 +94,7 @@ namespace Foundation
                     float distanceSqrB = (b.Position - position).sqrMagnitude;
                     if (distanceSqrA < distanceSqrB)
                         return -1;
-                    else if (distanceSqrA < distanceSqrB)
+                    else if (distanceSqrA > distanceSqrB)
                         return 1;
                     else
                         return 0;

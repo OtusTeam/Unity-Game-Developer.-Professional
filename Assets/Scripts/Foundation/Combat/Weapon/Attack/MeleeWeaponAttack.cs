@@ -8,6 +8,8 @@ namespace Foundation
     {
         [InjectOptional] IPlayer player = default;
         public IPlayer Player => player;
+        [InjectOptional] IEnemy enemy = default;
+        public IEnemy Enemy => enemy;
 
         HashSet<ICharacterHealth> damaged = new HashSet<ICharacterHealth>();
         bool inAttack;

@@ -13,6 +13,9 @@ namespace Foundation
         [SerializeField] float maxHealth;
         public float MaxHealth => maxHealth;
 
+        [SerializeField] [ReadOnly] bool isDead;
+        public bool IsDead => isDead;
+
         public ObserverList<IOnCharacterDamaged> OnDamaged { get; } = new ObserverList<IOnCharacterDamaged>();
         public ObserverList<IOnCharacterDied> OnDied { get; } = new ObserverList<IOnCharacterDied>();
         public ObserverList<IOnCharacterHealed> OnHealed { get; } = new ObserverList<IOnCharacterHealed>();
@@ -31,7 +34,8 @@ namespace Foundation
             foreach (var it in OnDamaged.Enumerate())
                 it.Do(this, attacker, damage, health);
 
-            if (died) {
+            if (died && !isDead) {
+                isDead = true;
                 foreach (var it in OnDied.Enumerate())
                     it.Do(this, attacker);
             }

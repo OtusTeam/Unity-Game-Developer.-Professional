@@ -8,6 +8,7 @@ namespace Foundation
     {
         float Health { get; }
         float MaxHealth { get; }
+        bool IsDead { get; }
 
         ObserverList<IOnCharacterDamaged> OnDamaged { get; }
         ObserverList<IOnCharacterDied> OnDied { get; }

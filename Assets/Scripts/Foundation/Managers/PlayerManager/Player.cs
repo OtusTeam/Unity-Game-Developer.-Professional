@@ -1,3 +1,4 @@
+using UnityEngine;
 using Zenject;
 
 namespace Foundation
@@ -6,6 +7,8 @@ namespace Foundation
     {
         int index = -1;
         public int Index => index;
+
+        public Vector3 Position => transform.position;
 
         [InjectOptional] ICharacterHealth health = default;
         public ICharacterHealth Health => health;

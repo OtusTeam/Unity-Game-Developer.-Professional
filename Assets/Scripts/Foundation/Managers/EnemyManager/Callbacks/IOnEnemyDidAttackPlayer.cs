@@ -2,6 +2,6 @@ namespace Foundation
 {
     public interface IOnEnemyDidAttackPlayer
     {
-        void Do();
+        void Do(IEnemy enemy);
     }
 }

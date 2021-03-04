@@ -12,8 +12,9 @@ namespace Foundation
         readonly List<ISceneState> statesCache = new List<ISceneState>();
         bool statesListChanged;
 
-        new void Start()
+        public override void Start()
         {
+            base.Start();
             foreach (var state in InitialStates)
                 Push(state);
         }

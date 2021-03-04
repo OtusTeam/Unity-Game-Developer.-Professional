@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Foundation
 {
-    public sealed class ReturnWhenLostPlayerBehaviour : EnemyBehaviour
+    public sealed class ReturnWhenNotAlertBehaviour : EnemyBehaviour
     {
         [Inject] IEnemy enemy = default;
         [Inject] ICharacterAgent agent = default;
@@ -18,12 +18,12 @@ namespace Foundation
 
         public override bool CheckUpdateAI(float deltaTime)
         {
-            return enabled && enemy.SeenPlayer == null;
+            return enabled && !enemy.IsAlert;
         }
 
         public override void UpdateAI(float deltaTime)
         {
-            if (enemy.SeenPlayer == null)
+            if (!enemy.IsAlert)
                 agent.NavigateTo(new Vector2(startingPoint.x, startingPoint.z));
         }
 

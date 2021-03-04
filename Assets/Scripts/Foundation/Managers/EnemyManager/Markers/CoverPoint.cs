@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Foundation
 {
-    public sealed class CoverPoint : MonoBehaviour
+    public sealed class CoverPoint : NavigationPoint
     {
+        public IEnemy Enemy { get; internal set; }
     }
 }

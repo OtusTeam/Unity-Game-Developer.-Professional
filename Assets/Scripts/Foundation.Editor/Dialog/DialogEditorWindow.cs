@@ -101,7 +101,7 @@ namespace Foundation.Editor
                     var fromRect = selectedNode.Bounds.TransformedBy(dialog.EditorTransform);
                     var sourcePoint = new Vector2(fromRect.center.x, fromRect.yMax);
                     Handles.color = Color.yellow;
-                    Handles.DrawLine(sourcePoint, mousePos, LineThickness);
+                    Handles.DrawLine(sourcePoint, Event.current.mousePosition, LineThickness);
                 }
             }
 
@@ -203,18 +203,21 @@ namespace Foundation.Editor
             switch (state) {
                 case State.Normal:
                     Vector2 mouse = mousePosition(e);
-                    foreach (var node in dialog.Nodes) {
-                        if (node.Bounds.Contains(mouse)) {
-                            draggingNode = node;
-                            var r = new Rect(node.Bounds.max - DragHandleSize, DragHandleSize);
-                            if (!r.Contains(mouse))
-                                state = State.DraggingNode;
-                            else {
-                                state = State.ResizingNode;
-                                draggingSize = node.Bounds.size;
+                    if (dialog.Nodes != null) {
+                        // FIXME: replace with nodeAtPosition
+                        foreach (var node in dialog.Nodes) {
+                            if (node.Bounds.Contains(mouse)) {
+                                draggingNode = node;
+                                var r = new Rect(node.Bounds.max - DragHandleSize, DragHandleSize);
+                                if (!r.Contains(mouse))
+                                    state = State.DraggingNode;
+                                else {
+                                    state = State.ResizingNode;
+                                    draggingSize = node.Bounds.size;
+                                }
+                                GUI.changed = true;
+                                break;
                             }
-                            GUI.changed = true;
-                            break;
                         }
                     }
                     break;
@@ -261,13 +264,10 @@ namespace Foundation.Editor
                 nodeIndex = 0;
                 foreach (var node in dialog.Nodes) {
                     if (node.Next != null) {
-                        Vector2 start = new Vector2(node.Bounds.center.x, node.Bounds.yMax);
+                        Vector2 sourcePoint = new Vector2(node.Bounds.center.x, node.Bounds.yMax);
                         nextIndex = 0;
                         foreach (var next in node.Next) {
-                            var sourceRect = node.Bounds.TransformedBy(dialog.EditorTransform);
-                            var sourcePoint = new Vector2(sourceRect.center.x, sourceRect.yMax);
-
-                            var targetRect = next.Bounds.TransformedBy(dialog.EditorTransform);
+                            var targetRect = next.Bounds;
                             var targetPoint = new Vector2(targetRect.center.x, targetRect.yMin);
 
                             if (HandleUtility.DistancePointLine(mousePos, sourcePoint, targetPoint) < 5.0f) {
@@ -445,7 +445,6 @@ namespace Foundation.Editor
         public void LoadAsset(UnityEngine.Object asset)
         {
             dialog = asset as Dialog;
-            dialog.EditorTransform = new SimpleTransform2D(); // FIXME
             UpdateTitle();
             Repaint();
         }

@@ -65,18 +65,90 @@ namespace Foundation.Editor
                     var r = node.Bounds.TransformedBy(dialog.EditorTransform);
                     GUI.Box(r, "", nodeStyle);
 
-                    Rect textRect = r;
-                    textRect.xMin += 10;
-                    textRect.xMax -= 10;
-                    textRect.yMin += 10;
-                    textRect.yMax = textRect.yMin + EditorGUIUtility.singleLineHeight;
+                    Rect rect = r;
+                    rect.xMin += 10;
+                    rect.xMax -= 10;
+                    rect.yMin += 10;
+                    rect.yMax = rect.yMin + EditorGUIUtility.singleLineHeight;
 
                     var oldID = node.Text.LocalizationID;
                     int oldSelectedIndex = Array.IndexOf(localizationOptions, oldID);
-                    int newSelectedIndex = EditorGUI.Popup(textRect, oldSelectedIndex, localizationOptions);
+                    int newSelectedIndex = EditorGUI.Popup(rect, oldSelectedIndex, localizationOptions);
                     if (newSelectedIndex != oldSelectedIndex) {
                         Undo.RegisterCompleteObjectUndo(dialog, "Edit node text");
                         node.Text.LocalizationID = localizationOptions[newSelectedIndex];
+                    }
+
+                    rect.y += EditorGUIUtility.singleLineHeight + 10;
+
+                    DialogNode.Action oldAction = node.NodeAction;
+                    DialogNode.Action newAction = (DialogNode.Action)EditorGUI.EnumPopup(rect, oldAction);
+                    if (oldAction != newAction) {
+                        Undo.RegisterCompleteObjectUndo(dialog, "Change node action");
+                        node.NodeAction = newAction;
+                    }
+
+                    switch (newAction) {
+                        case DialogNode.Action.Default:
+                            break;
+
+                        case DialogNode.Action.StartQuest: {
+                            rect.y += EditorGUIUtility.singleLineHeight + 10;
+
+                            Quest oldQuest = node.ActionQuest;
+                            Quest newQuest = (Quest)EditorGUI.ObjectField(rect, oldQuest, typeof(Quest), false);
+                            if (oldQuest != newQuest) {
+                                Undo.RegisterCompleteObjectUndo(dialog, "Change action quest");
+                                node.ActionQuest = newQuest;
+                            }
+
+                            break;
+                        }
+                    }
+
+                    rect.y += EditorGUIUtility.singleLineHeight + 10;
+
+                    DialogNode.Condition oldCondition = node.NodeCondition;
+                    DialogNode.Condition newCondition = (DialogNode.Condition)EditorGUI.EnumPopup(rect, oldCondition);
+                    if (oldCondition != newCondition) {
+                        Undo.RegisterCompleteObjectUndo(dialog, "Change node condition");
+                        node.NodeCondition = newCondition;
+                    }
+
+                    switch (newCondition) {
+                        case DialogNode.Condition.None:
+                            break;
+
+                        case DialogNode.Condition.QuestCompleted: {
+                            rect.y += EditorGUIUtility.singleLineHeight + 10;
+
+                            Quest oldQuest = node.ConditionQuest;
+                            Quest newQuest = (Quest)EditorGUI.ObjectField(rect, oldQuest, typeof(Quest), false);
+                            if (oldQuest != newQuest) {
+                                Undo.RegisterCompleteObjectUndo(dialog, "Change condition quest");
+                                node.ConditionQuest = newQuest;
+                            }
+
+                            break;
+                        }
+                    }
+
+                    rect.y += EditorGUIUtility.singleLineHeight + 10;
+
+                    bool oldIsPlayer = node.IsPlayer;
+                    bool newIsPlayer = EditorGUI.ToggleLeft(rect, "Is player", oldIsPlayer);
+                    if (oldIsPlayer != newIsPlayer) {
+                        Undo.RegisterCompleteObjectUndo(dialog, "Toggle is player");
+                        node.IsPlayer = newIsPlayer;
+                    }
+
+                    rect.y += EditorGUIUtility.singleLineHeight + 10;
+
+                    bool oldAllowReuse = node.AllowReuse;
+                    bool newAllowReuse = EditorGUI.ToggleLeft(rect, "Allow reuse", oldAllowReuse);
+                    if (oldAllowReuse != newAllowReuse) {
+                        Undo.RegisterCompleteObjectUndo(dialog, "Toggle allow reuse");
+                        node.AllowReuse = newAllowReuse;
                     }
 
                     r = new Rect(node.Bounds.max - DragHandleSize, DragHandleSize).TransformedBy(dialog.EditorTransform);

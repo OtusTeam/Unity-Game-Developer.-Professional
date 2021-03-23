@@ -9,6 +9,7 @@ namespace Foundation
         [ReadOnly] public int NextUniqueId;
         [HideInInspector] public SimpleTransform2D EditorTransform = new SimpleTransform2D();
         [HideInInspector] public List<DialogNode> Nodes;
+        public List<DialogNode> RootNodes { get; private set; }
 
         public void OnBeforeSerialize()
         {
@@ -29,10 +30,18 @@ namespace Foundation
 
         public void OnAfterDeserialize()
         {
+            if (RootNodes == null)
+                RootNodes = new List<DialogNode>();
+            else
+                RootNodes.Clear();
+
             if (Nodes != null) {
                 var dict = new Dictionary<int, DialogNode>();
-                foreach (var node in Nodes)
+                var nodesWithoutParent = new HashSet<DialogNode>();
+                foreach (var node in Nodes) {
                     dict[node.UniqueId] = node;
+                    nodesWithoutParent.Add(node);
+                }
 
                 foreach (var node in Nodes) {
                     if (node.Next != null)
@@ -41,10 +50,16 @@ namespace Foundation
                         node.Next = new List<DialogNode>();
 
                     if (node.NextIds != null) {
-                        foreach (var nextId in node.NextIds)
-                            node.Next.Add(dict[nextId]);
+                        foreach (var nextId in node.NextIds) {
+                            var childNode = dict[nextId];
+                            node.Next.Add(childNode);
+                            nodesWithoutParent.Remove(childNode);
+                        }
                     }
                 }
+
+                foreach (var node in nodesWithoutParent)
+                    RootNodes.Add(node);
             }
         }
     }

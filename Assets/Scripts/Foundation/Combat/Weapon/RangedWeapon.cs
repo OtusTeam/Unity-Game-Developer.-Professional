@@ -21,7 +21,7 @@ namespace Foundation
             return inventory.CountOf(AmmoItem) > 0;
         }
 
-        public override bool PrepareShoot(IInventoryStorage inventory, IWeaponAttack attack)
+        public override bool PrepareShoot(ICharacterEffectManager attackerEffectManager, IInventoryStorage inventory, IWeaponAttack attack)
         {
             if (AmmoItem != null && (inventory == null || !inventory.Remove(AmmoItem, 1)))
                 return false;

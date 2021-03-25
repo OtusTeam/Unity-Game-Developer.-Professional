@@ -31,6 +31,7 @@ namespace Foundation
 
         [InjectOptional] IPlayer player = default;
         [InjectOptional] IInventory inventory = default;
+        [InjectOptional] ICharacterEffectManager effectManager = default;
         [Inject] IInputManager inputManager = default;
         [Inject] ISceneState sceneState = default;
         [Inject] CharacterAnimationEvents animationEvents = default;
@@ -74,7 +75,7 @@ namespace Foundation
                 return false;
 
             weaponAttack.TryGetValue(currentWeapon, out var attack);
-            if (!currentWeapon.PrepareShoot(inventory != null ? inventory.RawStorage : null, attack))
+            if (!currentWeapon.PrepareShoot(effectManager, inventory != null ? inventory.RawStorage : null, attack))
                 return false;
 
             attackingWeapon = currentWeapon;

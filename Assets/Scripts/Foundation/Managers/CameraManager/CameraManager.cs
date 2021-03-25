@@ -106,6 +106,13 @@ namespace Foundation
             base.OnEnable();
             Observe(playerManager.OnPlayerAdded);
             Observe(playerManager.OnPlayerRemoved);
+
+            int n = playerManager.NumPlayers;
+            for (int i = 0; i < n; i++) {
+                if (i >= perPlayer.Count)
+                    ((IOnPlayerAdded)this).Do(i);
+            }
+
             UpdateCameras(true);
         }
 

@@ -11,6 +11,8 @@ namespace Foundation
         [InjectOptional] IEnemy enemy = default;
         public IEnemy Enemy => enemy;
 
+        public AbstractCharacterEffect Effect => null;
+
         public float Radius = 1.0f;
         public float Damage = 1.0f;
         public LayerMask LayerMask;

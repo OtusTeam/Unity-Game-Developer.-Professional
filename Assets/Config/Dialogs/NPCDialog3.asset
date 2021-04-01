@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextUniqueId: 0
   EditorTransform:
-    Offset: {x: 0, y: 0}
-    Scale: 1
+    Offset: {x: -19.125244, y: 76.57495}
+    Scale: 0.85
   Nodes: []

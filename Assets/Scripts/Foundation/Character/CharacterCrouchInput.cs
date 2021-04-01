@@ -16,6 +16,8 @@ namespace Foundation
         [Inject] IInputManager inputManager = default;
         [Inject] ISceneState sceneState = default;
 
+        [InjectOptional] ICharacterVehicle vehicle = default;
+
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -24,6 +26,9 @@ namespace Foundation
 
         void IOnUpdate.Do(float timeDelta)
         {
+            if (vehicle != null && vehicle.CurrentVehicle != null)
+                return;
+
             var input = inputManager.InputForPlayer(player.Index);
             if (input.Action(InputActionName).Triggered) {
                 crouching = !crouching;

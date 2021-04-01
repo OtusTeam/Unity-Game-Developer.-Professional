@@ -15,6 +15,8 @@ namespace Foundation
         [Inject] ICharacterAgent agent = default;
         [Inject] ISceneState sceneState = default;
 
+        [InjectOptional] ICharacterVehicle vehicle = default;
+
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -23,6 +25,9 @@ namespace Foundation
 
         void IOnUpdate.Do(float timeDelta)
         {
+            if (vehicle != null && vehicle.CurrentVehicle != null)
+                return;
+
             var input = inputManager.InputForPlayer(player.Index);
             var dir = input.Action(InputActionName).Vector2Value;
 

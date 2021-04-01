@@ -32,6 +32,7 @@ namespace Foundation
         [InjectOptional] IPlayer player = default;
         [InjectOptional] IInventory inventory = default;
         [InjectOptional] ICharacterEffectManager effectManager = default;
+        [InjectOptional] ICharacterVehicle vehicle = default;
         [Inject] IInputManager inputManager = default;
         [Inject] ISceneState sceneState = default;
         [Inject] CharacterAnimationEvents animationEvents = default;
@@ -63,6 +64,10 @@ namespace Foundation
 
             // Нельзя атаковать, если нет оружия
             if (currentWeapon == null)
+                return false;
+
+            // Нельзя атаковать в автомобиле
+            if (vehicle != null && vehicle.CurrentVehicle != null)
                 return false;
 
             // Нельзя атаковать, если не хватает патронов
@@ -143,6 +148,9 @@ namespace Foundation
                 if (cooldownAfterAttack <= 0.0f)
                     EndAttack(applyCooldown: false);
             }
+
+            if (vehicle != null && vehicle.CurrentVehicle != null)
+                return;
 
             if (player != null) {
                 var input = inputManager.InputForPlayer(player.Index);

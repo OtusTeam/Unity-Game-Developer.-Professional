@@ -8,11 +8,14 @@ namespace Foundation
         public string InputActionName;
 
         ICharacterDialogs activeDialogs;
+        VehicleEntrance activeVehicleEntrance;
 
         [Inject] IPlayer player = default;
         [Inject] IInputManager inputManager = default;
         [Inject] ISceneState sceneState = default;
         [Inject] IDialogUI dialogUI = default;
+
+        [InjectOptional] ICharacterVehicle vehicle = default;
 
         public void OnTriggerEnter(Collider other)
         {
@@ -23,6 +26,9 @@ namespace Foundation
                     activeDialogs = dialogs;
                 }
             }
+
+            if (other.TryGetComponent<VehicleEntrance>(out var entrance))
+                activeVehicleEntrance = entrance;
         }
 
         public void OnTriggerExit(Collider other)
@@ -33,6 +39,9 @@ namespace Foundation
                 if (dialogs == activeDialogs)
                     activeDialogs = null;
             }
+
+            if (other.TryGetComponent<VehicleEntrance>(out var entrance) && entrance == activeVehicleEntrance)
+                activeVehicleEntrance = null;
         }
 
         protected override void OnEnable()
@@ -43,10 +52,20 @@ namespace Foundation
 
         void IOnUpdate.Do(float timeDelta)
         {
+            if (vehicle != null && vehicle.State != CharacterVehicleState.NotInVehicle)
+                return;
+
+            var input = inputManager.InputForPlayer(player.Index);
+            bool triggered = input.Action(InputActionName).Triggered;
+
             if (activeDialogs != null) {
-                var input = inputManager.InputForPlayer(player.Index);
-                if (input.Action(InputActionName).Triggered)
+                if (triggered)
                     dialogUI.DisplayDialogs(player, activeDialogs.Portrait, activeDialogs.Dialogs);
+            }
+
+            if (activeVehicleEntrance != null) {
+                if (triggered)
+                    vehicle.TryEnterVehicle(activeVehicleEntrance);
             }
         }
     }

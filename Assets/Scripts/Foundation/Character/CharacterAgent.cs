@@ -10,6 +10,7 @@ namespace Foundation
         NavMeshAgent agent;
 
         [InjectOptional] ICharacterHealth health = default;
+        [InjectOptional] ICharacterVehicle vehicle = default;
         [Inject] ISceneState state = default;
 
         public Transform CharacterTransform;
@@ -59,6 +60,16 @@ namespace Foundation
                 Destroy(agent);
                 agent = null;
                 return;
+            }
+
+            if (vehicle != null) {
+                if (vehicle.CurrentVehicle != null && agent.enabled) {
+                    agent.enabled = false;
+                    return;
+                }
+
+                if (vehicle.CurrentVehicle == null && !agent.enabled)
+                    agent.enabled = true;
             }
 
             if (UpdatePosition) {

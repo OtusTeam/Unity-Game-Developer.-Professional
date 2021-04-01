@@ -24,6 +24,10 @@ namespace Game
             Dying_NoWeapon2 = 1011,
             Dying_Rifle = 1012,
             Dying_Crouching_Rifle = 1013,
+            Car_Entering = 1014,
+            Car_Exiting = 1015,
+            Car_Sitting = 1016,
+            Car_Driving = 1017,
         }
 
         enum LegsAnim
@@ -34,6 +38,10 @@ namespace Game
             Dying_NoWeapon2 = 2003,
             Dying_Rifle = 2004,
             Dying_Crouching_Rifle = 2005,
+            Car_Entering = 2006,
+            Car_Exiting = 2007,
+            Car_Sitting = 2008,
+            Car_Driving = 2009,
         }
 
         [Header("Debug")]
@@ -60,6 +68,7 @@ namespace Game
         [InjectOptional] ICharacterWeapon characterWeapon = default;
         [InjectOptional] ICharacterCrouchInput characterCrouch = default;
         [InjectOptional] ICharacterHealth characterHealth = default;
+        [InjectOptional] ICharacterVehicle characterVehicle = default;
 
         void Awake()
         {
@@ -111,6 +120,25 @@ namespace Game
             if (characterWeapon != null) {
                 weapon = characterWeapon.CurrentWeapon;
                 attacking = characterWeapon.AttackingWeapon != null;
+            }
+
+            if (characterVehicle != null) {
+                switch (characterVehicle.State) {
+                    case CharacterVehicleState.NotInVehicle:
+                        break;
+
+                    case CharacterVehicleState.Entering:
+                        return (BodyAnim.Car_Entering, LegsAnim.Car_Entering);
+
+                    case CharacterVehicleState.Exiting:
+                        return (BodyAnim.Car_Exiting, LegsAnim.Car_Exiting);
+
+                    case CharacterVehicleState.Driving:
+                        return (BodyAnim.Car_Driving, LegsAnim.Car_Driving);
+
+                    case CharacterVehicleState.Sitting:
+                        return (BodyAnim.Car_Sitting, LegsAnim.Car_Sitting);
+                }
             }
 
             if (characterHealth != null && characterHealth.IsDead) {

@@ -7,5 +7,6 @@ namespace Foundation
     {
         float Forward { get; set; }
         float Turn { get; set; }
+        float SpeedKmh { get; }
     }
 }

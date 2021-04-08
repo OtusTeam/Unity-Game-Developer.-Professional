@@ -650,6 +650,52 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2522229241985967246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5483306507308962270}
+  - component: {fileID: 6271759882957030233}
+  m_Layer: 0
+  m_Name: PedestrianManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5483306507308962270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2522229241985967246}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -10.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1042557075603212333}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6271759882957030233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2522229241985967246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247610a16faf2d34aa6134161e15305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PedestrianPrefab: {fileID: 4110881946229915874, guid: a01b3501d54d8ca4c96814a6fb7296ad, type: 3}
+  MaxPedestrians: 100
+  VisibilityDistance: 100
 --- !u!1 &2922577499312040331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1158,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7882659818397108654}
+  - {fileID: 5483306507308962270}
+  - {fileID: 2916659455027557730}
   - {fileID: 8099770605727641704}
   - {fileID: 8330891871866344307}
   m_Father: {fileID: 3105943503365542402}
@@ -1151,6 +1199,8 @@ MonoBehaviour:
   - {fileID: 6124096381990935072}
   - {fileID: 1663942258050337609}
   - {fileID: 3283511194019010356}
+  - {fileID: 6271759882957030233}
+  - {fileID: 9063243661363408606}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -1694,7 +1744,7 @@ RectTransform:
   m_Children:
   - {fileID: 37478058297373735}
   m_Father: {fileID: 1042557075603212333}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1818,7 +1868,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1042557075603212333}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3283511194019010356
 MonoBehaviour:
@@ -1996,6 +2046,53 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &8437041586692584338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2916659455027557730}
+  - component: {fileID: 9063243661363408606}
+  m_Layer: 0
+  m_Name: TrafficManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2916659455027557730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437041586692584338}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -10.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1042557075603212333}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9063243661363408606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437041586692584338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5262d306331793447a17ca7276882d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VehiclePrefabs:
+  - {fileID: 1880714592, guid: 9a19a5ab45724d24482fe80dc151bdd7, type: 3}
+  MaxVehicles: 30
+  VisibilityDistance: 50
 --- !u!1 &8905326317783367440
 GameObject:
   m_ObjectHideFlags: 0

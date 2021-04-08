@@ -1,9 +1,10 @@
+using Foundation;
 using UnityEngine;
 
 namespace Game
 {
     [ExecuteAlways]
-    public sealed class CharacterVisual : MonoBehaviour
+    public sealed class CharacterVisual : AbstractService<ICharacterVisual>, ICharacterVisual
     {
         public int SelectedHead;
         public int SelectedHair;

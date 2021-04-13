@@ -10,6 +10,7 @@ namespace Foundation
         public IVehicle CurrentVehicle { get; private set; }
         public VehicleEntrance VehicleEntrance { get; private set; }
         public CharacterVehicleState State { get; private set; } = CharacterVehicleState.NotInVehicle;
+        public IPlayer Player => player;
 
         Transform characterOriginalParent;
         public Transform CharacterTransform;
@@ -17,8 +18,13 @@ namespace Foundation
         [Inject] CharacterAnimationEvents events = default;
         [InjectOptional] ICharacterRigidbody rigidBody = default;
 
+        // FIXME
+        //[InjectOptional] IPlayer player = default;
+        IPlayer player = default;
+
         void Awake()
         {
+            player = GetComponentInParent<Player>(); // FIXME: использовать Zenject
             characterOriginalParent = CharacterTransform.parent;
         }
 

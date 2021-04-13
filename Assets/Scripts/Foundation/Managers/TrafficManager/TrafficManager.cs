@@ -23,7 +23,13 @@ namespace Foundation
         {
             base.Start();
 
-            waypoints = FindObjectsOfType<VehicleWaypoint>();
+            var allWaypoints = FindObjectsOfType<VehicleWaypoint>();
+            List<VehicleWaypoint> nonRacingWaypoints = new List<VehicleWaypoint>(allWaypoints.Length);
+            foreach (var waypoint in allWaypoints) {
+                if (!waypoint.ForRacing)
+                    nonRacingWaypoints.Add(waypoint);
+            }
+            waypoints = nonRacingWaypoints.ToArray();
 
             activeVehicles = new List<VehicleAI>(MaxVehicles);
             availableVehicles = new Stack<VehicleAI>(MaxVehicles);

@@ -9,6 +9,9 @@ namespace Foundation
     {
         [Inject] ISceneState sceneState = default;
 
+        [SerializeField] bool allRed;
+        bool wasAllRed;
+
         public float SwitchTime;
 
         public TrafficLights[] TrafficLights;
@@ -28,13 +31,18 @@ namespace Foundation
         {
             int index = 0;
             foreach (var light in TrafficLights) {
-                light.SetGreen(index == ActiveTrafficLight);
+                light.SetGreen(!allRed && index == ActiveTrafficLight);
                 ++index;
             }
         }
 
         void IOnUpdate.Do(float deltaTime)
         {
+            if (allRed != wasAllRed) {
+                UpdateActiveTrafficLights();
+                wasAllRed = allRed;
+            }
+
             if (timeLeft > 0.0f) {
                 timeLeft -= deltaTime;
                 if (timeLeft > 0.0f)

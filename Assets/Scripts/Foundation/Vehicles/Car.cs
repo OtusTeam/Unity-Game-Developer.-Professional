@@ -16,21 +16,29 @@ namespace Foundation
 
         public Drive Transmission;
         public float Acceleration;
+        public float BrakesPower;
         public float MaxSteeringAngle;
         public Wheel[] FrontWheels;
         public Wheel[] BackWheels;
         public VehicleEntrance[] Entrances;
         public Camera MirrorCamera;
         public GameObject Mirror;
+        public Transform CenterOfMass;
 
-        [Range(-1, 1)] public float forward;
+        [Range(-1, 1)] [SerializeField] float forward;
         public float Forward { get { return forward; } set { forward = value; } }
 
-        [Range(-1, 1)] public float turn;
+        [Range(-1, 1)] [SerializeField] float turn;
         public float Turn { get { return turn; } set { turn = value; } }
 
-        [ReadOnly] float speedKmh;
+        [Range(-1, 1)] [SerializeField] float brakes;
+        public float Brakes { get { return brakes; } set { brakes = value; } }
+
+        [ReadOnly] [SerializeField] float speedKmh;
         public float SpeedKmh => speedKmh;
+
+        public Vector3 Position { get { return transform.position; } set { transform.position = value; } }
+        public Quaternion Rotation { get { return transform.rotation; } set { transform.rotation = value; } }
 
         Rigidbody rigidBody;
         bool hasPassengers;
@@ -40,6 +48,7 @@ namespace Foundation
         void Awake()
         {
             rigidBody = GetComponent<Rigidbody>();
+            rigidBody.centerOfMass = CenterOfMass.localPosition;
         }
 
         protected override void OnEnable()
@@ -60,6 +69,10 @@ namespace Foundation
                 foreach (var wheel in BackWheels)
                     wheel.collider.motorTorque = torque;
             }
+
+            float breakTorque = brakes * BrakesPower;
+            foreach (var wheel in BackWheels)
+                wheel.collider.brakeTorque = breakTorque;
 
             float steering = turn * MaxSteeringAngle;
             foreach (var wheel in FrontWheels)
@@ -83,6 +96,19 @@ namespace Foundation
                 MirrorCamera.gameObject.SetActive(hasPassengers);
                 Mirror.SetActive(hasPassengers);
             }
+        }
+
+        public void FullStop()
+        {
+            forward = 0.0f;
+            turn = 0.0f;
+            brakes = 1.0f;
+            rigidBody.velocity = Vector3.zero;
+        }
+
+        public VehicleEntrance[] GetEntrances()
+        {
+            return Entrances;
         }
     }
 }

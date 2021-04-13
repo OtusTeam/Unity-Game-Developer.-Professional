@@ -16,6 +16,9 @@ namespace Foundation
         [InjectOptional] ICharacterAgent agent = default;
         public ICharacterAgent Agent => agent;
 
+        [InjectOptional] ICharacterVehicle vehicle = default;
+        public ICharacterVehicle Vehicle => vehicle;
+
         [InjectOptional] IInventory inventory = default;
         public IInventory Inventory => inventory;
 

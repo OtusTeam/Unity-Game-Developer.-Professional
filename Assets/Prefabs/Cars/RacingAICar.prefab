@@ -20,10 +20,11 @@ MonoBehaviour:
   LayerMask:
     serializedVersion: 2
     m_Bits: 119
-  DistanceThreshold: 4
-  ObstacleAvoidance: 0
+  DistanceThreshold: 32
+  ObstacleAvoidance: 1
   prevWaypoint: {fileID: 0}
   nextWaypoint: {fileID: 0}
+  Race: {fileID: 0}
 --- !u!1001 &1851697211039688961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31,6 +32,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 393939782320128551, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 1229477918879141764, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 1735517932526081330, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 2225373629001844952, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 2844343982294870776, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 3308347732303791795, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 3533046578558070244, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 3550212644357066320, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
     - target: {fileID: 3769415732126497380, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -77,16 +110,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3769415732126497381, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
       propertyPath: m_Name
-      value: AICar
+      value: RacingAICar
       objectReference: {fileID: 0}
     - target: {fileID: 3769415732126497382, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
       propertyPath: brakes
-      value: 0.229
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3769415732126497382, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
       propertyPath: BrakesPower
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 3769415732126497382, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: Acceleration
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219155544224780753, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 6790961433737907728, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
+    - target: {fileID: 7208769479047816937, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a7aaacc7984bb6488ad16078dd165bd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7347350bd7b9d4592930b6529f38a1, type: 3}
 --- !u!1 &3313852653933499236 stripped

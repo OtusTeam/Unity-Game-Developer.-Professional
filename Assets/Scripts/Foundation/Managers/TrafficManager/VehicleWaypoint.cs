@@ -6,6 +6,7 @@ namespace Foundation
     {
         public VehicleWaypoint Next;
         public TrafficLights TrafficLights;
+        public bool ForRacing;
 
         public int VehicleCount { get; set; }
 

@@ -96,6 +96,10 @@ PrefabInstance:
       value: Bottle_transparent
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 90bba2613ac1fc744bd6bcbc6bf6db32, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 90bba2613ac1fc744bd6bcbc6bf6db32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -116,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
       propertyPath: m_Name
       value: Small_table
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -244,6 +252,10 @@ PrefabInstance:
       value: Shkaf_3xDveri
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8e9011c2e6284e14dbb3221b6f849f17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8e9011c2e6284e14dbb3221b6f849f17, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -322,6 +334,10 @@ PrefabInstance:
       value: Bed_type2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b7ba6eca7966114799703631f5aaccf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b7ba6eca7966114799703631f5aaccf, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -342,6 +358,10 @@ PrefabInstance:
     - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
       propertyPath: m_Name
       value: Small_table (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -528,6 +548,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9160aa8d943db874a9da57d5891f8dea, type: 3}
       propertyPath: m_Name
       value: Skaf_Book_type2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9160aa8d943db874a9da57d5891f8dea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9160aa8d943db874a9da57d5891f8dea, type: 3}
       propertyPath: m_StaticEditorFlags

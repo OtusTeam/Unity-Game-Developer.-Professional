@@ -63,6 +63,10 @@ PrefabInstance:
       value: v (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -139,6 +143,10 @@ PrefabInstance:
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_Name
       value: v
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -271,6 +279,10 @@ PrefabInstance:
       value: Taburet_type2_round_01
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7b1add485920ffa499dd15275bb8a70b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7b1add485920ffa499dd15275bb8a70b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -351,6 +363,10 @@ PrefabInstance:
     - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
       propertyPath: m_Name
       value: Kitchen_lower_shelf (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -435,6 +451,10 @@ PrefabInstance:
       value: Kitchen_lower_shelf (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -455,6 +475,10 @@ PrefabInstance:
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_Name
       value: v (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -595,6 +619,10 @@ PrefabInstance:
       value: Kitchen_lower_shelf (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -669,6 +697,10 @@ PrefabInstance:
       value: Table_type1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 83aa60a7f9a0f1040b7d1e3cf52bf14c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 83aa60a7f9a0f1040b7d1e3cf52bf14c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -709,6 +741,10 @@ PrefabInstance:
     - target: {fileID: 8410084304034578941, guid: 1272dc873ca1c7b44b47e12710251edf, type: 3}
       propertyPath: m_Name
       value: Kitchen_rakovina
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410084304034578941, guid: 1272dc873ca1c7b44b47e12710251edf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8410084304034578941, guid: 1272dc873ca1c7b44b47e12710251edf, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -775,6 +811,10 @@ PrefabInstance:
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_Name
       value: v (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -971,6 +1011,10 @@ PrefabInstance:
       value: Skaf_Book_type2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9160aa8d943db874a9da57d5891f8dea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9160aa8d943db874a9da57d5891f8dea, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -1101,6 +1145,10 @@ PrefabInstance:
       value: Kitchen_lower_shelf (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780681034301262347, guid: c7d95d278bcea1c4fafb7e19219153cc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -1141,6 +1189,10 @@ PrefabInstance:
     - target: {fileID: 1413383865945179958, guid: 671d85321de8e18488289b21d6be23bd, type: 3}
       propertyPath: m_Name
       value: Stenka_type3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413383865945179958, guid: 671d85321de8e18488289b21d6be23bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1413383865945179958, guid: 671d85321de8e18488289b21d6be23bd, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1373,6 +1425,10 @@ PrefabInstance:
       value: Skaf_Book_type1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8dba786117c4ab2429b8c92abe659941, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8dba786117c4ab2429b8c92abe659941, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -1495,6 +1551,10 @@ PrefabInstance:
       value: Taburet_type2_round_01 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7b1add485920ffa499dd15275bb8a70b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7b1add485920ffa499dd15275bb8a70b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -1569,6 +1629,10 @@ PrefabInstance:
       value: Freezer
       objectReference: {fileID: 0}
     - target: {fileID: 5726084910163707915, guid: 2f474a2b58404094b83ccdfa5e860d26, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5726084910163707915, guid: 2f474a2b58404094b83ccdfa5e860d26, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -1593,6 +1657,10 @@ PrefabInstance:
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_Name
       value: v (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1717,6 +1785,10 @@ PrefabInstance:
       value: TV_type1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 45b5a73053fb5a0449cd886ae5b20e35, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 45b5a73053fb5a0449cd886ae5b20e35, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -1737,6 +1809,10 @@ PrefabInstance:
     - target: {fileID: 1387926552348622370, guid: e01347216ae2e2f428f913c870eea0b9, type: 3}
       propertyPath: m_Name
       value: Gas_plita
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387926552348622370, guid: e01347216ae2e2f428f913c870eea0b9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1387926552348622370, guid: e01347216ae2e2f428f913c870eea0b9, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1857,6 +1933,10 @@ PrefabInstance:
       value: Divan_type2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 81af3b21b6aa697499ea35d98451d4bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81af3b21b6aa697499ea35d98451d4bf, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -1877,6 +1957,10 @@ PrefabInstance:
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_Name
       value: Kitchen_Upper_shelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1607562391799071690, guid: 061d55a56bbef4b4eb45c58885458364, type: 3}
       propertyPath: m_StaticEditorFlags

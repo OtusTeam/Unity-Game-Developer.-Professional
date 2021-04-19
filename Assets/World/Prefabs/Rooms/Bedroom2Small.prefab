@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473524057402254458}
   m_Layer: 0
-  m_Name: Bedroom2small
+  m_Name: Bedroom2Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,6 +103,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 83aa60a7f9a0f1040b7d1e3cf52bf14c, type: 3}
       propertyPath: m_Name
       value: Table_type1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 83aa60a7f9a0f1040b7d1e3cf52bf14c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 83aa60a7f9a0f1040b7d1e3cf52bf14c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -205,6 +209,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8dba786117c4ab2429b8c92abe659941, type: 3}
       propertyPath: m_Name
       value: Skaf_Book_type1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8dba786117c4ab2429b8c92abe659941, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8dba786117c4ab2429b8c92abe659941, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -329,6 +337,10 @@ PrefabInstance:
       value: Chair_kitchen_type1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 58e6bd7b1fb985a478b6e3f6fe3e1389, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58e6bd7b1fb985a478b6e3f6fe3e1389, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -405,6 +417,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8e9011c2e6284e14dbb3221b6f849f17, type: 3}
       propertyPath: m_Name
       value: Shkaf_3xDveri
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8e9011c2e6284e14dbb3221b6f849f17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8e9011c2e6284e14dbb3221b6f849f17, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -485,6 +501,10 @@ PrefabInstance:
       value: Bed_type1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a63775d8e3747f642a9c291061dff84c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a63775d8e3747f642a9c291061dff84c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -563,6 +583,10 @@ PrefabInstance:
       value: Plant_type1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bd4287e1effc8964f9c0c883439a535a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bd4287e1effc8964f9c0c883439a535a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -635,6 +659,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 58e6bd7b1fb985a478b6e3f6fe3e1389, type: 3}
       propertyPath: m_Name
       value: Chair_kitchen_type1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58e6bd7b1fb985a478b6e3f6fe3e1389, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 58e6bd7b1fb985a478b6e3f6fe3e1389, type: 3}
       propertyPath: m_StaticEditorFlags

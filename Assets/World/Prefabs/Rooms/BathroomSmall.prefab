@@ -197,6 +197,10 @@ PrefabInstance:
       value: Rakovina
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a81633642c71c94b9de908a99e5f46a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a81633642c71c94b9de908a99e5f46a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -275,6 +279,10 @@ PrefabInstance:
       value: Bathroom_soap
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4086cf312b23a14686d3c0fc991f0ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b4086cf312b23a14686d3c0fc991f0ef, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -347,6 +355,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1e7c966856f829a43b262dd51e74d216, type: 3}
       propertyPath: m_Name
       value: Toilet_paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e7c966856f829a43b262dd51e74d216, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1e7c966856f829a43b262dd51e74d216, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -423,6 +435,10 @@ PrefabInstance:
       value: Vannaya
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d2aa1fa8ec700cc45bb2232bf4fb0b0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d2aa1fa8ec700cc45bb2232bf4fb0b0f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -495,6 +511,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 73182eaae9cc72248b11a81c3dbd75a4, type: 3}
       propertyPath: m_Name
       value: Vantuz
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 73182eaae9cc72248b11a81c3dbd75a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 73182eaae9cc72248b11a81c3dbd75a4, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -571,6 +591,10 @@ PrefabInstance:
       value: Unitaz
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: adc0456cb170cb44a846c842c5d37673, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adc0456cb170cb44a846c842c5d37673, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -643,6 +667,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 491d647f8ffe54340b2062c08908fc7d, type: 3}
       propertyPath: m_Name
       value: Bathroom_shower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 491d647f8ffe54340b2062c08908fc7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 491d647f8ffe54340b2062c08908fc7d, type: 3}
       propertyPath: m_StaticEditorFlags

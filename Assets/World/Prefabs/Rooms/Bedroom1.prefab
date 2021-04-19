@@ -97,6 +97,10 @@ PrefabInstance:
       value: Plant_type2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4b1454278824bf04f80dc671ec94da5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b1454278824bf04f80dc671ec94da5f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -117,6 +121,10 @@ PrefabInstance:
     - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
       propertyPath: m_Name
       value: Table_Round
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769158830058605206, guid: c3225dffc05a6b44ba2924959798c0f4, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -233,6 +241,10 @@ PrefabInstance:
       value: Lamp_outdoor
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 042d3116dd8648348a03cd826f295edd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 042d3116dd8648348a03cd826f295edd, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -305,6 +317,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b81341ebeb824c244a5a7d764a8d93ac, type: 3}
       propertyPath: m_Name
       value: Wall_Book_shelf_type1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b81341ebeb824c244a5a7d764a8d93ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b81341ebeb824c244a5a7d764a8d93ac, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -401,6 +417,10 @@ PrefabInstance:
       value: Bed_type2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b7ba6eca7966114799703631f5aaccf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b7ba6eca7966114799703631f5aaccf, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -479,6 +499,10 @@ PrefabInstance:
       value: Shkaf_3xDveri
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8e9011c2e6284e14dbb3221b6f849f17, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8e9011c2e6284e14dbb3221b6f849f17, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 95
       objectReference: {fileID: 0}
@@ -555,6 +579,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f6cc018e15198b4c8290cef7bb4ebbd, type: 3}
       propertyPath: m_Name
       value: Chair_kitchen_type2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f6cc018e15198b4c8290cef7bb4ebbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f6cc018e15198b4c8290cef7bb4ebbd, type: 3}
       propertyPath: m_StaticEditorFlags

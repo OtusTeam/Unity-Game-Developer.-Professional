@@ -23,6 +23,8 @@ namespace Foundation
         public PostProcessVolume dayVolume;
         public PostProcessVolume nightVolume;
 
+        public Material[] emissionMaterials;
+
         Quaternion initialRotation;
         NightLight[] nightLights;
         bool lightsEnabled;
@@ -39,6 +41,8 @@ namespace Foundation
             nightLights = FindObjectsOfType<NightLight>();
             foreach (var light in nightLights)
                 light.Light.enabled = false;
+            foreach (var material in emissionMaterials)
+                material.DisableKeyword("_EMISSION");
             lightsEnabled = false;
         }
 
@@ -69,6 +73,13 @@ namespace Foundation
                 lightsEnabled = needLights;
                 foreach (var light in nightLights)
                     light.Light.enabled = needLights;
+                if (lightsEnabled) {
+                    foreach (var material in emissionMaterials)
+                        material.EnableKeyword("_EMISSION");
+                } else {
+                    foreach (var material in emissionMaterials)
+                        material.DisableKeyword("_EMISSION");
+                }
             }
         }
     }

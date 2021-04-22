@@ -19,6 +19,9 @@ namespace Foundation
         [InjectOptional] ICharacterVehicle vehicle = default;
         public ICharacterVehicle Vehicle => vehicle;
 
+        [InjectOptional] ICharacterRain rain = default;
+        public ICharacterRain Rain => rain;
+
         [InjectOptional] IInventory inventory = default;
         public IInventory Inventory => inventory;
 

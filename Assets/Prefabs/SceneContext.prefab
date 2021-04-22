@@ -550,8 +550,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2488999539186241930}
-  m_LocalRotation: {x: -0, y: 0.92100793, z: -0, w: -0.38954386}
-  m_LocalPosition: {x: -63.616165, y: 1.566, z: -0.1800141}
+  m_LocalRotation: {x: 0, y: 0.92100793, z: -0, w: -0.38954386}
+  m_LocalPosition: {x: -61.09424, y: 1.566, z: 2.964804}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3105943503365542402}
@@ -1002,6 +1002,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PoolSize: 8
   Prefab: {fileID: 777063981234354889, guid: 30354aca0455cca46802af06023f56ec, type: 3}
+--- !u!1 &4109886658725472723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8749930977780827012}
+  - component: {fileID: 624703725614147597}
+  m_Layer: 0
+  m_Name: WeatherManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8749930977780827012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109886658725472723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1042557075603212333}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &624703725614147597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109886658725472723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7e978b80752e04fbf13a5a1384d834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raining: 0
 --- !u!1 &4457578230610641972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1206,7 @@ Transform:
   - {fileID: 2916659455027557730}
   - {fileID: 8099770605727641704}
   - {fileID: 5950759927388855706}
+  - {fileID: 8749930977780827012}
   - {fileID: 8330891871866344307}
   m_Father: {fileID: 3105943503365542402}
   m_RootOrder: 10
@@ -1203,6 +1248,7 @@ MonoBehaviour:
   - {fileID: 6271759882957030233}
   - {fileID: 9063243661363408606}
   - {fileID: 3588951066503632569}
+  - {fileID: 624703725614147597}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -1293,6 +1339,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeSpeed: 0.5
+  LightNightY: 0
+  NightLightsThreshold: 0.1
+  DayNightCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ambientDay: {r: 0, g: 0, b: 0, a: 0}
+  ambientNight: {r: 0, g: 0, b: 0, a: 0}
+  secondLight: {fileID: 0}
+  secondLightIntensityDay: 0
+  secondLightIntensityNight: 0
+  dayVolume: {fileID: 0}
+  nightVolume: {fileID: 0}
+  emissionMaterials: []
   dayTime: 0
 --- !u!1 &5753278161692428257
 GameObject:
@@ -1791,7 +1853,7 @@ RectTransform:
   m_Children:
   - {fileID: 37478058297373735}
   m_Father: {fileID: 1042557075603212333}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

@@ -10,8 +10,6 @@ namespace Foundation
         public float waveLength = 2.0f;
         public float waveAmplitude = 0.1f;
         public float waveSpeed = 1.0f;
-        public float waterDrag = 0.99f;
-        public float waterAngularDrag = 0.5f;
         public float waterLevel = 0.0f;
         public float dragInAir = 0.0f;
         public float dragInWater = 5.0f;

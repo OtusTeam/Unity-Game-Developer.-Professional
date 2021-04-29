@@ -2,6 +2,7 @@ using Zenject;
 
 namespace Foundation
 {
+    [FactoryInstaller(typeof(DialogButton.Factory))]
     public sealed class DialogButtonFactory : MonoInstaller
     {
         public int PoolSize = 8;

@@ -8,6 +8,13 @@ namespace Zenject
     // can get lost during compile errors for classes that are abstract
     public class MonoInstaller : MonoInstallerBase
     {
+        public enum AutoInit
+        {
+            NoAutoInit,
+            Scene,
+        }
+
+        public AutoInit AutoInitMode = AutoInit.NoAutoInit;
     }
 
     //

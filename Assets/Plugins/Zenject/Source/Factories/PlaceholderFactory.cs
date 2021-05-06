@@ -19,6 +19,11 @@ namespace Zenject
             return CreateInternal(new List<TypeValuePair>());
         }
 
+        object IRawFactory.CreateRaw()
+        {
+            return Create();
+        }
+
         protected sealed override IEnumerable<Type> ParamTypes
         {
             get { yield break; }

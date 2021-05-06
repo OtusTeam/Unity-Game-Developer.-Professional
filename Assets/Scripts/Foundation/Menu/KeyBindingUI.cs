@@ -196,7 +196,7 @@ namespace Foundation
 
             var action = obj as InputAction;
             var actionMap = action?.actionMap ?? obj as InputActionMap;
-            var actionAsset = actionMap?.asset ?? obj as InputActionAsset;
+            var actionAsset = (actionMap != null ? actionMap.asset as InputActionAsset : null);
 
             for (var i = 0; i < allKeyBindingUIs.Count; i++) {
                 var ui = allKeyBindingUIs[i];

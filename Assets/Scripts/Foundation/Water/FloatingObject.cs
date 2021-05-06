@@ -15,7 +15,7 @@ namespace Foundation
         public float dragInWater = 5.0f;
         public Transform[] buoyancyPoints;
 
-        [Inject] ISceneState sceneState;
+        [Inject] ISceneState sceneState = default;
 
         Rigidbody rigidBody;
         float waveOffset;

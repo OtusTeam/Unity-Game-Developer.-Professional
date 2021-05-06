@@ -30,7 +30,7 @@ namespace Foundation
         bool lightsEnabled;
 
         [ReadOnly] [SerializeField] float dayTime;
-        [Inject] ISceneState sceneState;
+        [Inject] ISceneState sceneState = default;
 
         public override void Start()
         {

@@ -16,6 +16,11 @@ namespace Zenject
             _injectContext = injectContext;
         }
 
+        object IRawFactory.CreateRaw()
+        {
+            return Create();
+        }
+
         public TContract Create()
         {
             var instance = _provider.GetInstance(_injectContext);

@@ -11,8 +11,8 @@ namespace Foundation
         [SerializeField] bool raining;
         public bool Raining { get { return raining; } set { raining = value; } }
 
-        [Inject] IPlayerManager playerManager;
-        [Inject] ISceneState sceneState;
+        [Inject] IPlayerManager playerManager = default;
+        [Inject] ISceneState sceneState = default;
 
         Puddle[] puddles;
         bool isRaining;

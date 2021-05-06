@@ -6,8 +6,8 @@ using Zenject;
 
 public class Manager2 : AbstractService<IManager2>, IManager2
 {
-    [Inject] IManager1 manager1;
-    [Inject] Manager2Ref manager2Ref;
+    [Inject] IManager1 manager1 = default;
+    [Inject] Manager2Ref manager2Ref = default;
     bool printed;
 
     public void PrintManager2()

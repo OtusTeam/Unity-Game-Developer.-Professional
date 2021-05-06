@@ -27,6 +27,11 @@ namespace Zenject
             // Optional
         }
 
+        object IRawFactory.CreateRaw()
+        {
+            return Spawn();
+        }
+
         TValue IFactory<TValue>.Create()
         {
             return Spawn();

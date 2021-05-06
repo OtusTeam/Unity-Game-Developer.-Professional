@@ -14,6 +14,11 @@ namespace Zenject
             _pool = pool;
         }
 
+        object IRawFactory.CreateRaw()
+        {
+            return Create();
+        }
+
         public T Create()
         {
             return _pool.Spawn();

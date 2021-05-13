@@ -36,6 +36,14 @@ namespace Foundation
             }
         }
 
+        public void NavigateTo(Transform target)
+        {
+            if (agent != null) {
+                agent.destination = new Vector3(target.position.x, transform.position.y, target.position.z);
+                agent.isStopped = false;
+            }
+        }
+
         public void Look(Vector2 dir)
         {
             CharacterTransform.rotation = Quaternion.LookRotation(new Vector3(dir.x, 0.0f, dir.y));

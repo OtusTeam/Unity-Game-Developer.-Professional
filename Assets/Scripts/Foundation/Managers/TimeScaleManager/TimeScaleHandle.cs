@@ -14,7 +14,7 @@ namespace Foundation
 
         void ITimeScaleHandleInternal.Reset()
         {
-            DebugOnly.Check(!IsValid, "Attempted to reset invalid TimeScaleHandle.");
+            DebugOnly.Check(IsValid, "Attempted to reset invalid TimeScaleHandle.");
             Scale = 0.0f;
             IsValid = false;
         }

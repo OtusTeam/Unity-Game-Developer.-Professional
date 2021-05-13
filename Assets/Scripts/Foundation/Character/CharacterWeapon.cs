@@ -90,6 +90,12 @@ namespace Foundation
             return true;
         }
 
+        // Копия Attack, возвращающая void. Для UnityEvent
+        public void DoAttack()
+        {
+            Attack();
+        }
+
         public void EndAttack(bool applyCooldown)
         {
             DebugOnly.Check(attackingWeapon != null, "Unexpected EndAttack.");
@@ -112,6 +118,11 @@ namespace Foundation
             attackingWeapon = null;
 
             UpdateWeaponVisibility();
+        }
+
+        public void SetCurrentWeaponIndex(int index)
+        {
+            SetCurrentWeapon(weapons[index].Weapon);
         }
 
         public void SetCurrentWeapon(AbstractWeapon weapon)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using Zenject;
 
@@ -31,6 +32,9 @@ namespace Foundation
 
         public ObserverList<IOnStateSortingOrderChanged> OnSortingOrderChanged { get; } = new ObserverList<IOnStateSortingOrderChanged>();
 
+        [SerializeField] UnityEvent activate;
+        [SerializeField] UnityEvent deactivate;
+
         void ISceneStateInternal.InternalBecomeTopmost()
         {
             if (!isTopmost) {
@@ -53,6 +57,7 @@ namespace Foundation
         {
             if (!isVisible) {
                 isVisible = true;
+                activate?.Invoke();
                 foreach (var it in OnActivate.Enumerate())
                     it.Do();
             }
@@ -62,6 +67,7 @@ namespace Foundation
         {
             if (isVisible) {
                 isVisible = false;
+                deactivate?.Invoke();
                 foreach (var it in OnDeactivate.Enumerate())
                     it.Do();
             }

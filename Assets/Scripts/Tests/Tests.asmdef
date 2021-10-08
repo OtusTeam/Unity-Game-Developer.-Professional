@@ -4,9 +4,10 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Zenject",
         "Assembly-Foundation",
-        "Zenject-Editor"
+        "Zenject",
+        "Zenject-Editor",
+        "Zenject-TestFramework"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

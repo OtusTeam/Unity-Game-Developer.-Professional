@@ -1,15 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Zenject;
 
 namespace Foundation
 {
     public sealed class TimeScaleManager : AbstractManager<ITimeScaleManager>, ITimeScaleManager
     {
-        List<TimeScaleHandle> handles = new List<TimeScaleHandle>();
+        List<TimeScaleHandle> handles = new List<TimeScaleHandle>(10);
 
         void Awake()
         {
-            UpdateTimeScale();
+            Time.timeScale = 1.0f;
         }
 
         void UpdateTimeScale()

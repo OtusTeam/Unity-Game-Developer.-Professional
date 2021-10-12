@@ -7,7 +7,7 @@ using Zenject;
 public class SceneLoadButton : MonoBehaviour
 {
     public string sceneName;
-    [Inject] ISceneManager sceneManager;
+    [Inject] ISceneManager sceneManager = default;
 
     void Awake()
     {

@@ -1,0 +1,20 @@
+{
+    "name": "Assembly-Foundation.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Assembly-Foundation",
+        "Zenject",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

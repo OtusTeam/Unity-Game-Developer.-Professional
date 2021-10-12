@@ -2,7 +2,7 @@ using Zenject;
 
 namespace Foundation
 {
-    public abstract class AbstractManager<T> : MonoInstaller
+    public abstract class AbstractService<T> : MonoInstaller
         where T : class
     {
         public override void InstallBindings()

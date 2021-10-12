@@ -6,7 +6,7 @@ using Zenject;
 public class TimeScaleDebug : MonoBehaviour
 {
     public float scale = 0.5f;
-    [Inject] ITimeScaleManager timeScaleManager;
+    [Inject] ITimeScaleManager timeScaleManager = default;
     TimeScaleHandle timeScaleHandle;
 
     void Awake()

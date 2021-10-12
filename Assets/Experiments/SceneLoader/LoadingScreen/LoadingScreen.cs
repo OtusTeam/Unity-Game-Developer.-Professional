@@ -8,7 +8,7 @@ namespace Foundation
 {
     public sealed class LoadingScreen : AbstractBehaviour, IOnBeginSceneLoad, IOnEndSceneLoad
     {
-        [Inject] ISceneManager manager;
+        [Inject] ISceneManager manager = default;
         public Image image;
 
         protected override void OnEnable()

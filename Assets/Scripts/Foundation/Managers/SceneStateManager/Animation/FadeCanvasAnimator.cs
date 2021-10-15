@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 using Zenject;
 
 namespace Foundation
@@ -11,12 +12,12 @@ namespace Foundation
 
         public void AnimateAppear(Canvas canvas, CanvasGroup canvasGroup)
         {
-            canvasGroup.DOShow(AppearDuration);
+            canvasGroup.DOFade(1.0f, AppearDuration);
         }
 
         public void AnimateDisappear(Canvas canvas, CanvasGroup canvasGroup)
         {
-            canvasGroup.DOHide(DisappearDuration);
+            canvasGroup.DOFade(0.0f, DisappearDuration);
         }
     }
 }

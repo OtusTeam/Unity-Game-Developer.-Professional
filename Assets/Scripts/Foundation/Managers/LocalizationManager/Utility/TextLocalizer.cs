@@ -19,9 +19,11 @@ namespace Foundation
             text = GetComponent<TextMeshProUGUI>();
         }
 
+        //Подписка на смену языка и установка текущего
         protected override void OnEnable()
         {
-            if (Application.IsPlaying(this)) {
+            if (Application.IsPlaying(this))
+            {
                 Observe(locaManager.OnLanguageChanged);
                 text.text = locaManager.GetString(StringID);
             }
@@ -32,7 +34,8 @@ namespace Foundation
             text.text = locaManager.GetString(StringID);
         }
 
-      #if UNITY_EDITOR
+        //Позволяет переключать язык без запуска (ExecuteAlways)
+        #if UNITY_EDITOR
         void Update()
         {
             if (Application.IsPlaying(this))
@@ -43,6 +46,6 @@ namespace Foundation
             if (text != null)
                 text.text = LocalizationData.EditorGetLocalization(StringID);
         }
-      #endif
+        #endif
     }
 }

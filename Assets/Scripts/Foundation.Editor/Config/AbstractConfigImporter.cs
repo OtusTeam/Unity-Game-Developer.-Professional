@@ -23,6 +23,7 @@ namespace Foundation.Editor
         readonly string sheetId;
         readonly string page;
 
+        //Идентификатор и страницу
         protected AbstractConfigImporter(string sheetId, string page)
         {
             this.sheetId = sheetId;
@@ -38,6 +39,7 @@ namespace Foundation.Editor
 
         protected abstract Task ProcessData(IList<IList<object>> values);
 
+        //Загрузка
         IEnumerator ImporterCoroutine()
         {
             // Аутентификация
@@ -45,11 +47,14 @@ namespace Foundation.Editor
             var credentialsJson = AssetDatabase.LoadAssetAtPath<TextAsset>(
                 "Assets/Scripts/Foundation.Editor/Config/credentials.json");
 
+            //Запрос токена
             var authTask = GoogleWebAuthorizationBroker.AuthorizeAsync(
                 GoogleClientSecrets.Load(new MemoryStream(credentialsJson.bytes)).Secrets,
+                //Запрашиваемые права
                 new string[]{ SheetsService.Scope.SpreadsheetsReadonly },
                 "user",
                 CancellationToken.None,
+                //Где хранить токен
                 new FileDataStore("UnityGoogleApis", false));
 
             for (int i = 0; i < 120; i++) {
@@ -58,6 +63,7 @@ namespace Foundation.Editor
                 yield return null;
             }
 
+            //Показ прогресс бара
             while (!authTask.IsCompleted) {
                 if (EditorUtility.DisplayCancelableProgressBar(page, "Waiting for authentication...", 0.0f)) {
                     EditorUtility.ClearProgressBar();
@@ -67,6 +73,7 @@ namespace Foundation.Editor
                 yield return null;
             }
 
+            //Ключ авторизации
             UserCredential credential = authTask.Result;
 
             // Загрузка данных
@@ -89,6 +96,8 @@ namespace Foundation.Editor
             }
 
             var response = requestTask.Result;
+
+            //Список строк, числа будут пересчитаны
             var values = response.Values;
 
             // Обработка данных
@@ -99,6 +108,7 @@ namespace Foundation.Editor
                 yield break;
             }
 
+            //Обрабатываем данные
             var processTask = ProcessData(values);
 
             while (!processTask.IsCompleted)

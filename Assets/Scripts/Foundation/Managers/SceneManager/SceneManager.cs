@@ -24,6 +24,7 @@ namespace Foundation
                 yield return new WaitUntil(() => task.IsCompleted);
             }
 
+            //Когда сцена окончательно выгружена
             foreach (var observer in OnCurrentSceneUnload.Enumerate())
                 observer.Do();
 

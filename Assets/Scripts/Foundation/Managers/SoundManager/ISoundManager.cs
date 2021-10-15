@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Foundation
 {
+    /// <summary>
+    /// Предоставляет доступ к каналам
+    /// </summary>
     public interface ISoundManager
     {
         ISoundChannel Sfx { get; }

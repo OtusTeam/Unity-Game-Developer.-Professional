@@ -5,9 +5,11 @@ using DG.Tweening;
 
 namespace Foundation
 {
+    //Здесь использован пул Zenject, для этого нужен интерфейс IPoolable
     [RequireComponent(typeof(AudioSource))]
     public sealed class SoundSource : MonoBehaviour, IPoolable<AudioClip, IMemoryPool>, IDisposable
     {
+        //Так же нужна фабрика, для работы её нужно зарегистрировать в SoundSourceFactory
         public sealed class Factory : PlaceholderFactory<AudioClip, SoundSource>
         {
         }
@@ -20,6 +22,7 @@ namespace Foundation
 
         void Awake()
         {
+            //Работает в паре с AudioSource, по сути SoundSource -- контроллер AudioSource
             AudioSource = GetComponent<AudioSource>();
             AudioSource.playOnAwake = false;
 
@@ -33,6 +36,7 @@ namespace Foundation
             Pool.Despawn(this);
         }
 
+        //Инициализация, аналог OnEnable
         public void OnSpawned(AudioClip clip, IMemoryPool pool)
         {
             Pool = pool;
@@ -43,6 +47,7 @@ namespace Foundation
           #endif
         }
 
+        //Деинициализация, аналог OnDisaable
         public void OnDespawned()
         {
             Pool = null;
@@ -51,6 +56,7 @@ namespace Foundation
             gameObject.name = "<Free>";
           #endif
 
+            //Сброс твинов, звука, остановки, цели, инвалидация хендла
             AudioSource.DOKill(false);
             if (AudioSource.isPlaying)
                 AudioSource.Stop();

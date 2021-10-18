@@ -10,7 +10,7 @@ namespace Experiments
         public TextMeshProUGUI text;
         float counter;
 
-        [Inject] ISceneState state;
+        [Inject] ISceneState state = default;
 
         protected override void OnEnable()
         {

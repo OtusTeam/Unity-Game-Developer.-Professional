@@ -53,4 +53,12 @@ namespace Foundation
             inputSourceOverrides[playerIndex] = overrideSource;
         }
     }
+
+    public static class InputManagerExtention
+    {
+        public static void ResetOverride(this IInputManager manager, int playerIndex)
+        {
+            manager.OverrideInputForPlayer(playerIndex, null);
+        }
+    }
 }

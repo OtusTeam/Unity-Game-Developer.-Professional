@@ -199,6 +199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1bec4719b8a3e4696eeba4c3946ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BodyAnimKey: BodyAnim
+  LegsAnimKey: LegsAnim
+  VelocityXKey: VelocityX
+  VelocityYKey: VelocityY
+  AnimationSpeed: 5
 --- !u!1001 &6201829071300259597
 PrefabInstance:
   m_ObjectHideFlags: 0

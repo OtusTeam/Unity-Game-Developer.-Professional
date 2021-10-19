@@ -29,9 +29,9 @@ namespace Foundation
 
         public bool InputOverridenForPlayer(int playerIndex)
         {
-            return (playerIndex >= 0
+            return playerIndex >= 0
                  && playerIndex < inputSourceOverrides.Count
-                 && inputSourceOverrides[playerIndex] != null);
+                 && inputSourceOverrides[playerIndex] != null;
         }
 
         public void OverrideInputForPlayer(int playerIndex, IInputSource overrideSource)

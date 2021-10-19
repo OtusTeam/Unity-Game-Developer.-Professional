@@ -29,8 +29,11 @@ namespace Game
             var dir = input.Action(InputActionName).Vector2Value;
 
             if (Mathf.Approximately(dir.sqrMagnitude, 0.0f))
+            {
                 agent.Stop();
-            else {
+            }
+            else
+            {
                 Vector3 right3d = transform.right;
                 Vector2 right2d = new Vector2(right3d.x, right3d.z);
                 right2d.Normalize();

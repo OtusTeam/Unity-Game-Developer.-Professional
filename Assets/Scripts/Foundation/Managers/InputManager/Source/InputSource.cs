@@ -31,6 +31,7 @@ namespace Foundation
             if (actions.TryGetValue(name, out var wrapper))
                 return wrapper;
 
+            //Вот здесь во внутренностях Unity происходит неоптимальный линейный поиск, поэтому используем кэширование
             var action = playerInput.actions.FindAction(name);
             DebugOnly.Check(action != null, $"Unable to find input action \"{name}\".");
 

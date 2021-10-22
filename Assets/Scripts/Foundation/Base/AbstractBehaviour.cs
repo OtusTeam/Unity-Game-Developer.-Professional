@@ -1,38 +1,32 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Foundation
 {
     public abstract class AbstractBehaviour : MonoBehaviour
     {
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // Observables
+        ObserverHandleManager observers;
+        protected ObserverHandleManager Observers { get {
+                if (observers == null)
+                    observers = new ObserverHandleManager();
+                return observers;
+            } }
 
-        List<ObserverHandle> observerHandles;
-
-        protected ObserverHandle AllocObserverHandle()
+        protected void Observe<O>(IObserverList<O> observable)
+            where O : class
         {
-            var handle = new ObserverHandle();
-            AddObserverHandle(handle);
-            return handle;
+            Observers.Observe(observable, this as O);
         }
 
-        protected void AddObserverHandle(ObserverHandle handle)
+        protected void Observe<O>(ref ObserverHandle handle, IObserverList<O> observable)
+            where O : class
         {
-            if (observerHandles == null)
-                observerHandles = new List<ObserverHandle>();
-            observerHandles.Add(handle);
+            Observers.Observe(ref handle, observable, this as O);
         }
 
-        protected void Observe<T>(IObserverList<T> observable)
+        protected void Unobserve(ObserverHandle handle)
         {
-            ObserverHandle handle = null;
-            observable.Add(ref handle, this);
-            AddObserverHandle(handle);
+            Observers.Unobserve(handle);
         }
-
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // Unity callbacks
 
         protected virtual void OnEnable()
         {
@@ -40,10 +34,8 @@ namespace Foundation
 
         protected virtual void OnDisable()
         {
-            if (observerHandles != null) {
-                foreach (var handle in observerHandles)
-                    handle.Dispose();
-            }
+            if (observers != null)
+                observers.Clear();
         }
     }
 }

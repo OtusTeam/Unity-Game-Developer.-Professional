@@ -37,14 +37,13 @@ namespace Foundation
             DebugOnly.Check(handle.List == null, "Handle is already in use.");
 
             handle.Index = list.Count;
-            handle.List = this;
             list.Add(new Item{ handle = handle, observer = observer });
         }
 
         public void Remove(ObserverHandle handle)
         {
             DebugOnly.Check(handle != null, "Handle is null.");
-            DebugOnly.Check(handle.List == this, "Handle is not registered with this list.");
+            DebugOnly.Check(handle.List != this, "Handle is not registered with this list.");
 
             int lastIndex = list.Count - 1;
             if (handle.Index != lastIndex) {

@@ -16,7 +16,9 @@ public class TimeScaleDebug : MonoBehaviour
 
     void OnEnable()
     {
-        timeScaleHandle = timeScaleManager.BeginTimeScale(scale);
+        if (timeScaleHandle == null)
+            timeScaleHandle = new TimeScaleHandle();
+        timeScaleManager.BeginTimeScale(timeScaleHandle, scale);
     }
 
     void OnDisable()

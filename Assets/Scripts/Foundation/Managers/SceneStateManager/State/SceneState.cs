@@ -7,12 +7,9 @@ namespace Foundation
     public sealed class SceneState : AbstractService<ISceneState>, ISceneState, ISceneStateInternal
     {
         [Header("Debug")]
-        
         [ReadOnly] [SerializeField] bool isTopmost;
         [ReadOnly] [SerializeField] bool isVisible;
         [ReadOnly] [SerializeField] int sortingOrder;
-
-        
         public bool IsTopmost => isTopmost;
         public bool IsVisible => isVisible;
         public int SortingOrder => sortingOrder;

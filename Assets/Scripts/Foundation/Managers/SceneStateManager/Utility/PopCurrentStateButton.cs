@@ -4,6 +4,7 @@ using Zenject;
 
 namespace Foundation
 {
+    [RequireComponent(typeof(Button))]
     public sealed class PopCurrentStateButton : MonoBehaviour
     {
         [Inject] ISceneStateManager manager = default;

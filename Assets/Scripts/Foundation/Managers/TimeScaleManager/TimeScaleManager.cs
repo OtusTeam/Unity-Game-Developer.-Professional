@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Zenject;
 
 namespace Foundation
 {
@@ -21,17 +20,17 @@ namespace Foundation
             Time.timeScale = scale;
         }
 
-        public TimeScaleHandle BeginTimeScale(float scale)
+        public void BeginTimeScale(TimeScaleHandle handle, float scale)
         {
-            var handle = new TimeScaleHandle(scale);
+            (handle as ITimeScaleHandleInternal).Init(scale);
             handles.Add(handle);
             UpdateTimeScale();
-            return handle;
         }
 
         public void EndTimeScale(TimeScaleHandle handle)
         {
             handles.Remove(handle);
+            (handle as ITimeScaleHandleInternal).Reset();
             UpdateTimeScale();
         }
     }

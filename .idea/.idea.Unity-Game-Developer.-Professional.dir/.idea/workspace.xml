@@ -24,11 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea1a886-b2d2-4701-a280-a5995b817063" name="Default Changelist" comment="Поправил замечания от ребят в ObserverList.cs">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/CanvasGroupExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/CanvasGroupExtensions.cs" afterDir="false" />
-    </list>
+    <list default="true" id="8ea1a886-b2d2-4701-a280-a5995b817063" name="Default Changelist" comment="Готово" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="lesson_4/igor_gulkin" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -90,6 +86,7 @@
       <workItem from="1634071758478" duration="853000" />
       <workItem from="1634171151415" duration="552000" />
       <workItem from="1634371551962" duration="2738000" />
+      <workItem from="1634935443836" duration="81000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 3">
       <created>1633723388496</created>
@@ -112,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634073534838</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Готово">
+      <created>1634935467806</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634935467806</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +141,8 @@
     <MESSAGE value="Lesson 3" />
     <MESSAGE value="Добавили Scene State Manager" />
     <MESSAGE value="Поправил замечания от ребят в ObserverList.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поправил замечания от ребят в ObserverList.cs" />
+    <MESSAGE value="Готово" />
+    <option name="LAST_COMMIT_MESSAGE" value="Готово" />
   </component>
   <component name="WindowStateProjectService">
     <state width="500" height="445" key="SwitcherDM" timestamp="1634376133185">
@@ -152,6 +157,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1633770005984" />
+    <state x="458" y="167" key="git4idea.branch.GitSmartOperationDialog" timestamp="1634935459269">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="167" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1634935459269" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1634371633204">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

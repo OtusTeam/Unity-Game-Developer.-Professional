@@ -21,7 +21,7 @@ public sealed class TimeScaleManagerTest : ZenjectUnitTestFixture
     public void TestOneHandle()
     {
         var manager = Container.Resolve<ITimeScaleManager>();
-        TimeScaleHandle handle;
+        var handle = new TimeScaleHandle();
 
         Assert.AreEqual(1.0f, Time.timeScale, FloatEpsilon);
 
@@ -29,7 +29,7 @@ public sealed class TimeScaleManagerTest : ZenjectUnitTestFixture
         // Test with 0.5
 
         // add 0.5
-        handle = manager.BeginTimeScale(0.5f);
+        manager.BeginTimeScale(handle, 0.5f);
         Assert.AreEqual(0.5f, Time.timeScale, FloatEpsilon);
 
         // remove 0.5
@@ -40,7 +40,7 @@ public sealed class TimeScaleManagerTest : ZenjectUnitTestFixture
         // Test with 0.0
 
         // add 0.0
-        handle = manager.BeginTimeScale(0.0f);
+        manager.BeginTimeScale(handle, 0.0f);
         Assert.AreEqual(0.0f, Time.timeScale, FloatEpsilon);
 
         // remove 0.0
@@ -52,7 +52,8 @@ public sealed class TimeScaleManagerTest : ZenjectUnitTestFixture
     public void TestTwoHandles()
     {
         var manager = Container.Resolve<ITimeScaleManager>();
-        TimeScaleHandle handle1, handle2;
+        var handle1 = new TimeScaleHandle();
+        var handle2 = new TimeScaleHandle();
 
         Assert.AreEqual(1.0f, Time.timeScale);
 
@@ -60,11 +61,11 @@ public sealed class TimeScaleManagerTest : ZenjectUnitTestFixture
         // Test removal in LIFO order
 
         // add 0.5
-        handle1 = manager.BeginTimeScale(0.5f);
+        manager.BeginTimeScale(handle1, 0.5f);
         Assert.AreEqual(0.5f, Time.timeScale);
 
         // add 0.25
-        handle2 = manager.BeginTimeScale(0.25f);
+        manager.BeginTimeScale(handle2, 0.25f);
         Assert.AreEqual(0.125f, Time.timeScale);
 
         // remove 0.25
@@ -79,11 +80,11 @@ public sealed class TimeScaleManagerTest : ZenjectUnitTestFixture
         // Test removal in FIFO order
 
         // add 0.5
-        handle1 = manager.BeginTimeScale(0.5f);
+        manager.BeginTimeScale(handle1, 0.5f);
         Assert.AreEqual(0.5f, Time.timeScale);
 
         // add 0.25
-        handle2 = manager.BeginTimeScale(0.25f);
+        manager.BeginTimeScale(handle2, 0.25f);
         Assert.AreEqual(0.125f, Time.timeScale);
 
         // remove 0.5
@@ -99,20 +100,22 @@ public sealed class TimeScaleManagerTest : ZenjectUnitTestFixture
     public void TestThreeHandles()
     {
         var manager = Container.Resolve<ITimeScaleManager>();
-        TimeScaleHandle handle1, handle2, handle3;
+        var handle1 = new TimeScaleHandle();
+        var handle2 = new TimeScaleHandle();
+        var handle3 = new TimeScaleHandle();
 
         Assert.AreEqual(1.0f, Time.timeScale);
 
         // add 0.5
-        handle1 = manager.BeginTimeScale(0.5f);
+        manager.BeginTimeScale(handle1, 0.5f);
         Assert.AreEqual(0.5f, Time.timeScale);
 
         // add 0.0
-        handle2 = manager.BeginTimeScale(0.0f);
+        manager.BeginTimeScale(handle2, 0.0f);
         Assert.AreEqual(0.0f, Time.timeScale);
 
         // add 0.25
-        handle3 = manager.BeginTimeScale(0.25f);
+        manager.BeginTimeScale(handle3, 0.25f);
         Assert.AreEqual(0.0f, Time.timeScale);
 
         // remove 0.0

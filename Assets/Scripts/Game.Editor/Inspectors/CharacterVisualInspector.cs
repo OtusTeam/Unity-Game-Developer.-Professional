@@ -39,8 +39,7 @@ namespace Game.Editor
 
         public override void OnInspectorGUI()
         {
-            if (GUILayout.Button("Randomize"))
-            {
+            if (GUILayout.Button("Randomize")) {
                 Undo.RecordObject(target, "Randomize character");
                 ((CharacterVisual)target).Randomize();
                 PrefabUtility.RecordPrefabInstancePropertyModifications(target);
@@ -69,14 +68,11 @@ namespace Game.Editor
         void Slider(SerializedProperty valueProperty, SerializedProperty arrayProperty, bool optional)
         {
             int arraySize = arrayProperty.arraySize;
-            if (arraySize == 0)
-            {
+            if (arraySize == 0) {
                 GUI.enabled = false;
                 EditorGUILayout.IntSlider(valueProperty.displayName, 0, 0, 0);
                 GUI.enabled = true;
-            }
-            else
-            {
+            } else {
                 int min = (optional ? -1 : 0);
                 int max = arraySize - 1;
 

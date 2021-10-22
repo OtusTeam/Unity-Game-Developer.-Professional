@@ -5,7 +5,6 @@ using Zenject;
 
 namespace Foundation
 {
-    //Создаётся в ProjectContext
     public sealed class SoundManager : AbstractService<ISoundManager>, ISoundManager, IOnCurrentSceneUnload
     {
         public float MusicFadeTime = 1.0f;
@@ -23,7 +22,6 @@ namespace Foundation
 
         void Awake()
         {
-            //Словарь с каналами
             channelDict = new Dictionary<string, ISoundChannel>();
             foreach (var channel in Channels) {
                 DebugOnly.Check(!channelDict.ContainsKey(channel.Name), $"Duplicate channel name: '{channel.Name}'.");
@@ -31,7 +29,6 @@ namespace Foundation
                 channel.InternalInit(Mixer);
             }
 
-            //Для быстрого доступа
             Sfx = GetChannel("Sfx");
             Music = GetChannel("Music");
         }
@@ -44,7 +41,6 @@ namespace Foundation
             return null;
         }
 
-        //Можно управлять музыкрй так, или напряму через канал
         public void PlayMusic(AudioClip clip, float volume)
         {
             if (currentMusic.IsPlaying) {
@@ -56,7 +52,6 @@ namespace Foundation
                 currentMusic.DOFadeToStop(MusicFadeTime);
             }
 
-            //Плавное смешивание двух дорожек
             currentMusic = Music.Play(clip, true, true, 0.0f);
             currentMusic.DOKill(false);
             currentMusic.DOFade(1.0f, MusicFadeTime);
@@ -76,14 +71,12 @@ namespace Foundation
             Observe(sceneManager.OnCurrentSceneUnload);
         }
 
-        //Выключает все звуки, кроме тех, которые должны пережить сцену
         void IOnCurrentSceneUnload.Do()
         {
             foreach (var channel in Channels)
                 channel.StopAllSounds(false);
         }
 
-        //Обновление каналов и возврат ресурсов в пул
         void Update()
         {
             foreach (var channel in Channels)

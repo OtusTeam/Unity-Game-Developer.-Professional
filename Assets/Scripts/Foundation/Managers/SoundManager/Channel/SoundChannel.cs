@@ -5,7 +5,6 @@ using Zenject;
 
 namespace Foundation
 {
-    //Управляет одним каналом микшера
     public sealed class SoundChannel : MonoBehaviour, ISoundChannel
     {
         [SerializeField] string channelID;
@@ -21,43 +20,29 @@ namespace Foundation
 
         [Header("Debug")]
 
-        //Автоматическое сохранение
         [ReadOnly] [SerializeField] bool channelEnabled = true;
-        public bool Enabled 
-        { 
-            get 
-            {
+        public bool Enabled { get {
                 return channelEnabled;
-            } 
-            set 
-            {
+            } set {
                 if (channelEnabled != value) {
                     channelEnabled = value;
                     volumeChanged = true;
                     PlayerPrefs.SetInt($"{Name}Enabled", value ? 1 : 0);
                     PlayerPrefs.Save();
                 }
-            } 
-        }
+            } }
 
-        //Автоматическое сохранение
         [ReadOnly] [SerializeField] float volume = 1.0f;
-        public float Volume 
-        {
-            get 
-            {
+        public float Volume { get {
                 return volume;
-            } 
-            set 
-            {
+            } set {
                 if (!Mathf.Approximately(volume, value)) {
                     volume = value;
                     volumeChanged = true;
                     PlayerPrefs.SetFloat($"{Name}Volume", value);
                     PlayerPrefs.Save();
                 }
-            }
-        }
+            } }
 
         public SoundHandle Play(AudioClip clip, bool loop, bool surviveSceneLoad, float volume)
         {
@@ -76,7 +61,6 @@ namespace Foundation
             return PlayAt(transform, clip, loop, surviveSceneLoad, volume);
         }
 
-        //Основной метод работы
         public SoundHandle PlayAt(Transform transform, AudioClip clip, bool loop, bool surviveSceneLoad, float volume)
         {
             var source = soundSourceFactory.Create(clip);
@@ -89,9 +73,7 @@ namespace Foundation
             source.TargetTransform = transform;
             soundSources.Add(source);
 
-            //Проигрываем звук даже если канал выключен, чтобы звук заработал при включении канала
-            if (clip != null && (channelEnabled || loop))
-            {
+            if (clip != null && (channelEnabled || loop)) {
                 source.AudioSource.clip = clip;
                 source.AudioSource.Play();
             }
@@ -99,7 +81,6 @@ namespace Foundation
             return new SoundHandle(this, source);
         }
 
-        //Остановка одного звука
         public void Stop(SoundHandle handle)
         {
             if (!handle.IsValid) {
@@ -108,10 +89,8 @@ namespace Foundation
             }
 
             int n = soundSources.Count;
-            while (n-- > 0) 
-            {
-                if (soundSources[n] == handle.Source) 
-                {
+            while (n-- > 0) {
+                if (soundSources[n] == handle.Source) {
                     soundSources.RemoveAt(n);
                     handle.Source.Dispose();
                     return;
@@ -121,12 +100,10 @@ namespace Foundation
             DebugOnly.Error("Attempted to stop sound that is not playing in this channel.");
         }
 
-        //Остановка всех звуков, кроме может быть тех, что должны пережить сцену
         public void StopAllSounds(bool includingSurviveSceneLoad)
         {
             int n = soundSources.Count;
-            while (n-- > 0)
-            {
+            while (n-- > 0) {
                 var source = soundSources[n];
                 if (!includingSurviveSceneLoad && source.SurviveSceneLoad)
                     continue;
@@ -135,7 +112,6 @@ namespace Foundation
             }
         }
 
-        //Подключение к микшеру по имени канала
         internal void InternalInit(AudioMixer mixer)
         {
             channelEnabled = PlayerPrefs.GetInt($"{Name}Enabled", 1) != 0;
@@ -149,40 +125,32 @@ namespace Foundation
 
         internal void InternalUpdate(AudioMixer mixer, AudioListener listener)
         {
-            //Смена громкости
-            if (volumeChanged)
-            {
+            if (volumeChanged) {
                 volumeChanged = false;
-                float targetVolume = channelEnabled ? Mathf.Lerp(MixerSilent, MixerNormal, volume) : MixerSilent;
+                float targetVolume = (channelEnabled ? Mathf.Lerp(MixerSilent, MixerNormal, volume) : MixerSilent);
                 mixer.SetFloat($"{Name}Volume", targetVolume);
             }
 
-            //Отправление звуков в пул
             int n = soundSources.Count;
-            while (n-- > 0) 
-            {
+            while (n-- > 0) {
                 var source = soundSources[n];
                 if (source == null) {
                     soundSources.RemoveAt(n);
                     continue;
                 }
 
-                if (!source.AudioSource.isPlaying) 
-                {
+                if (!source.AudioSource.isPlaying) {
                     soundSources.RemoveAt(n);
                     source.Dispose();
                     continue;
                 }
 
-                if (!channelEnabled && !source.AudioSource.loop) 
-                {
+                if (!channelEnabled && !source.AudioSource.loop) {
                     soundSources.RemoveAt(n);
                     source.Dispose();
                     continue;
                 }
 
-                //Управление координатами
-                //Это лучше, чем иерархия, поскольку не подвержено Destroy
                 var sourceTransform = source.TargetTransform;
                 if (sourceTransform == null)
                     sourceTransform = listener.transform;

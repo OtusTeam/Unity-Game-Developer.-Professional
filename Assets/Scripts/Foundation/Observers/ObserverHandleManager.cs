@@ -19,11 +19,25 @@ namespace Foundation
             handles.Add(handle);
         }
 
-        public void Observe<T>(IObserverList<T> observable, T observer)
+        public ObserverHandle Observe<T>(IObserverList<T> observable, T observer)
         {
             ObserverHandle handle = null;
+            Observe(ref handle, observable, observer);
+            return handle;
+        }
+
+        public void Observe<T>(ref ObserverHandle handle, IObserverList<T> observable, T observer)
+        {
             observable.Add(ref handle, observer);
             Add(handle);
+        }
+
+        public void Unobserve(ObserverHandle handle)
+        {
+            if (handle != null) {
+                handle.Dispose();
+                handles.Remove(handle);
+            }
         }
 
         public void Clear()

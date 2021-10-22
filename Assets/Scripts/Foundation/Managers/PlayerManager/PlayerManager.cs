@@ -6,25 +6,34 @@ namespace Foundation
     {
         public int NumPlayers { get; private set; }
 
+        public ObserverList<IOnPlayerAdded> OnPlayerAdded { get; } = new ObserverList<IOnPlayerAdded>();
+        public ObserverList<IOnPlayerRemoved> OnPlayerRemoved { get; } = new ObserverList<IOnPlayerRemoved>();
+
+        public ObserverList<IOnPlayerDamaged> OnPlayerDamaged { get; } = new ObserverList<IOnPlayerDamaged>();
+        public ObserverList<IOnPlayerDied> OnPlayerDied { get; } = new ObserverList<IOnPlayerDied>();
+        public ObserverList<IOnPlayerHealed> OnPlayerHealed { get; } = new ObserverList<IOnPlayerHealed>();
+
         List<IPlayer> players = new List<IPlayer>();
 
-        public int AddPlayer(IPlayer player, bool reuseSlots)
+        public void AddPlayer(IPlayer player, out int index, bool reuseSlots)
         {
             if (reuseSlots) {
                 for (int i = 0; i < players.Count; i++) {
                     if (players[i] == null) {
                         players[i] = player;
                         ++NumPlayers;
-                        return i;
+                        index = i;
+                        return;
                     }
                 }
             }
 
-            int index = players.Count;
+            index = players.Count;
             players.Add(player);
             ++NumPlayers;
 
-            return index;
+            foreach (var observer in OnPlayerAdded.Enumerate())
+                observer.Do(index);
         }
 
         public void RemovePlayer(IPlayer player)
@@ -34,6 +43,9 @@ namespace Foundation
                 DebugOnly.Check(NumPlayers > 0, "Player counter has been damaged.");
                 --NumPlayers;
                 players[index] = null;
+
+                foreach (var observer in OnPlayerAdded.Enumerate())
+                    observer.Do(index);
             }
         }
 

@@ -1,8 +1,10 @@
 using System;
+using UnityEngine;
+using UnityEngine.UI;
+using Zenject;
 
 namespace Foundation
 {
-    //Это идентификатор строки
     [Serializable]
     public struct LocalizedString
     {

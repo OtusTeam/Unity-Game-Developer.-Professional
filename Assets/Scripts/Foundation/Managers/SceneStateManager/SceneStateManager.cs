@@ -9,9 +9,7 @@ namespace Foundation
 
         public ISceneState CurrentState { get; private set; }
         readonly List<ISceneState> states = new List<ISceneState>();
-        
-        //Оптимизация
-        readonly List<ISceneState> statesCache = new List<ISceneState>(); 
+        readonly List<ISceneState> statesCache = new List<ISceneState>();
         bool statesListChanged;
 
         new void Start()
@@ -26,7 +24,7 @@ namespace Foundation
 
             states.Add(state);
             statesListChanged = true;
-            (state as ISceneStateInternal)?.InternalActivate(); // Паттерн мост..
+            (state as ISceneStateInternal)?.InternalActivate();
         }
 
         public void Pop(ISceneState state)
@@ -47,12 +45,8 @@ namespace Foundation
         IEnumerable<ISceneState> CachedGameStates()
         {
             int n;
-            
-            //Если список не менялся, то ничего не делаем
             if (!statesListChanged)
                 n = statesCache.Count;
-            
-            //Иначе меняем 
             else {
                 statesListChanged = false;
                 statesCache.Clear();
@@ -60,17 +54,11 @@ namespace Foundation
                 n = statesCache.Count;
 
                 if (n == 0) {
-                    
-                    //Если список стал пустым, то убираем текущее состояние
                     if (CurrentState != null) {
                         (CurrentState as ISceneStateInternal)?.InternalResignTopmost();
                         CurrentState = null;
                     }
-                    
-                    
                 } else {
-
-                    //Обновляем текущее состояние, если оно перестало быть в вершине стека
                     if (CurrentState != statesCache[n - 1]) {
                         var oldState = CurrentState;
                         CurrentState = statesCache[n - 1];
@@ -80,13 +68,11 @@ namespace Foundation
                     }
                 }
 
-                //Переставляем порядок соритировки:
                 int index = 0;
                 foreach (var it in statesCache)
                     (it as ISceneStateInternal)?.InternalSetSortingOrder(index++);
             }
 
-            //Итерируемся по списку с конца!!!
             while (n-- > 0) {
                 var state = statesCache[n];
                 yield return state;
@@ -98,18 +84,11 @@ namespace Foundation
             float timeDelta = Time.deltaTime;
             bool update = true;
 
-            //Идем от верхнего элемента (последнего) к нижнему (первому)
             foreach (var state in CachedGameStates()) {
-                
-                //Если можно апдейтить состояние
                 if (update) {
-                    
                     foreach (var ticker in state.OnUpdate.Enumerate())
                         ticker.Do(timeDelta);
-                } 
-                
-                //Апдейтим в паузе
-                else {
+                } else {
                     foreach (var ticker in state.OnUpdateDuringPause.Enumerate())
                         ticker.Do(timeDelta);
                 }

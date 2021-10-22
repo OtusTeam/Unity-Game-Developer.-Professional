@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Foundation
 {
-    //Хранилище данных о языке, переводе
     public sealed class LocalizationData : ScriptableObject, ISerializationCallbackReceiver
     {
         [Serializable]
@@ -15,12 +14,10 @@ namespace Foundation
             public Language[] Languages;
             public string[] Strings;
         }
-         
-        //Словарь / список заполняется в OnBeforeSerialize / OnAfterDeserialize
+
         [SerializeField] [HideInInspector] List<StringInfo> Strings;
         public Dictionary<string, Dictionary<Language, string>> TranslatedStrings;
 
-        //Возврат локализованной строки
         public string GetLocalization(LocalizedString str, Language language)
         {
             if (TranslatedStrings == null)
@@ -29,7 +26,6 @@ namespace Foundation
             if (!TranslatedStrings.TryGetValue(str.LocalizationID, out var dict))
                 return str.LocalizationID;
 
-            //Случай, если нет перевода, так проще найти ошибку
             if (!dict.TryGetValue(language, out var localized))
                 return str.LocalizationID;
 
@@ -38,8 +34,6 @@ namespace Foundation
 
       #if UNITY_EDITOR
         public const string AssetPath = "Assets/Config/LocalizationData.asset";
-
-        //Грузим и кэшируем справочник в редакторе
 
         static LocalizationData editorInstance;
         static string[] editorStringIds;
@@ -87,7 +81,6 @@ namespace Foundation
         }
       #endif
 
-        //Из словаря кидаем в список
         public void OnBeforeSerialize()
         {
             Strings = new List<StringInfo>();
@@ -110,7 +103,6 @@ namespace Foundation
             }
         }
 
-        //Из списка кидаем в словарь
         public void OnAfterDeserialize()
         {
             TranslatedStrings = new Dictionary<string, Dictionary<Language, string>>();

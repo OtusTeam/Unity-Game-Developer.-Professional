@@ -9,22 +9,20 @@ namespace Game
     {
         enum BodyAnim
         {
-            IdleNoWeapon = 1000,
+            IdleOrRunning_NoWeapon = 1000,
+            IdleOrRunning_Pistol = 1001,
+            Crouching_NoWeapon = 1002,
+            Crouching_Pistol = 1003,
         }
 
         enum LegsAnim
         {
             IdleOrRunning = 2000,
+            Crouching = 2001,
         }
 
-        public string BodyAnimKey = "BodyAnim";
-        public string LegsAnimKey = "LegsAnim";
-        public string VelocityXKey = "VelocityX";
-        public string VelocityYKey = "VelocityY";
-        public float AnimationSpeed = 5;
-
         [Header("Debug")]
-        [HideInInspector] [ReadOnly] BodyAnim bodyAnim = BodyAnim.IdleNoWeapon;
+        [HideInInspector] [ReadOnly] BodyAnim bodyAnim = BodyAnim.IdleOrRunning_NoWeapon;
         [HideInInspector] [ReadOnly] LegsAnim legsAnim = LegsAnim.IdleOrRunning;
 
         Animator animator;
@@ -33,21 +31,21 @@ namespace Game
         int legsAnimID;
         int velocityXID;
         int velocityYID;
-        Vector2 prevVelocity;
 
         [Inject] ISceneState state = default;
+        [InjectOptional] ICharacterWeapon characterWeapon = default;
+        [InjectOptional] ICharacterCrouchInput characterCrouch = default;
 
         void Awake()
         {
             animator = GetComponent<Animator>();
-            bodyAnimID = Animator.StringToHash(BodyAnimKey);
-            legsAnimID = Animator.StringToHash(LegsAnimKey);
-            velocityXID = Animator.StringToHash(VelocityXKey);
-            velocityYID = Animator.StringToHash(VelocityYKey);
+            bodyAnimID = Animator.StringToHash("BodyAnim");
+            legsAnimID = Animator.StringToHash("LegsAnim");
+            velocityXID = Animator.StringToHash("VelocityX");
+            velocityYID = Animator.StringToHash("VelocityY");
             animator.SetInteger(bodyAnimID, (int)bodyAnim);
             animator.SetInteger(legsAnimID, (int)legsAnim);
             prevPosition = transform.position;
-            prevVelocity = Vector2.zero;
         }
 
         protected override void OnEnable()
@@ -74,17 +72,34 @@ namespace Game
             var delta = position - prevPosition;
             prevPosition = position;
 
-            var targetVelocity = new Vector2(delta.x, delta.z).normalized;
-            var velocity = Vector2.MoveTowards(prevVelocity, targetVelocity, AnimationSpeed * deltaTime);
-            prevVelocity = velocity;
+            delta = transform.InverseTransformDirection(delta);
 
+            var velocity = new Vector2(delta.x, delta.z).normalized;
             animator.SetFloat(velocityXID, velocity.x);
             animator.SetFloat(velocityYID, velocity.y);
         }
 
         (BodyAnim body, LegsAnim legs) ChooseAnimation()
         {
-            return (BodyAnim.IdleNoWeapon, LegsAnim.IdleOrRunning);
+            Weapon weapon = Weapon.None;
+            if (characterWeapon != null)
+                weapon = characterWeapon.CurrentWeapon;
+
+            if (characterCrouch != null && characterCrouch.Crouching) {
+                switch (weapon) {
+                    case Weapon.Pistol:
+                        return (BodyAnim.Crouching_Pistol, LegsAnim.Crouching);
+                    default:
+                        return (BodyAnim.Crouching_NoWeapon, LegsAnim.Crouching);
+                }
+            }
+
+            switch (weapon) {
+                case Weapon.Pistol:
+                    return (BodyAnim.IdleOrRunning_Pistol, LegsAnim.IdleOrRunning);
+                default:
+                    return (BodyAnim.IdleOrRunning_NoWeapon, LegsAnim.IdleOrRunning);
+            }
         }
     }
 }

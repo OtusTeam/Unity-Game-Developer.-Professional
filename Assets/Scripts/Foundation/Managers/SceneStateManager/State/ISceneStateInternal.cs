@@ -1,7 +1,6 @@
 namespace Foundation
 {
-    // не публичный, для Scene State Manager
-    interface ISceneStateInternal 
+    interface ISceneStateInternal
     {
         void InternalBecomeTopmost();
         void InternalResignTopmost();

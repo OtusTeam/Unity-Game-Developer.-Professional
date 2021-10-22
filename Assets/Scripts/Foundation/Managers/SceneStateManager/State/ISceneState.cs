@@ -2,11 +2,11 @@ namespace Foundation
 {
     public interface ISceneState
     {
-        bool IsTopmost { get; } // Находится в вершине стека
-        bool IsVisible { get; } // Активный
+        bool IsTopmost { get; }
+        bool IsVisible { get; }
         int SortingOrder { get; }
 
-        bool UpdateParentState { get; } //Можно ли родительскому классу апдейтить другие состояния
+        bool UpdateParentState { get; }
 
         ObserverList<IOnUpdate> OnUpdate { get; }
         ObserverList<IOnUpdateDuringPause> OnUpdateDuringPause { get; }

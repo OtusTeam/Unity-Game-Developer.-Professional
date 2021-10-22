@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using System.Collections.Generic;
 using Zenject;
 
 namespace Foundation
@@ -11,19 +13,13 @@ namespace Foundation
         public override void InstallBindings()
         {
             Container.BindFactory<AudioClip, SoundSource, SoundSource.Factory>()
-                .FromMonoPoolableMemoryPool<AudioClip, SoundSource>(Initialize);
-        }
-
-        private void Initialize(MemoryPoolInitialSizeMaxSizeBinder<SoundSource > opts)
-        {
-            //Начальный размер пула
-            //opts.WithInitialSize(PoolSize);
-
-            //Способ создания объекта и его места в иерархии
-            if (Prefab == null)
-                opts.FromNewComponentOnNewGameObject().UnderTransform(transform);
-            else
-                opts.FromComponentInNewPrefab(Prefab).UnderTransform(transform);
+                .FromMonoPoolableMemoryPool<AudioClip, SoundSource>(opts => {
+                    opts.WithInitialSize(PoolSize);
+                    if (Prefab == null)
+                        opts.FromNewComponentOnNewGameObject().UnderTransform(transform);
+                    else
+                        opts.FromComponentInNewPrefab(Prefab).UnderTransform(transform);
+                });
         }
     }
 }

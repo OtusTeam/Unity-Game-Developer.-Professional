@@ -24,8 +24,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea1a886-b2d2-4701-a280-a5995b817063" name="Default Changelist" comment="Добавили Scene State Manager">
+    <list default="true" id="8ea1a886-b2d2-4701-a280-a5995b817063" name="Default Changelist" comment="Поправил замечания от ребят в ObserverList.cs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/CanvasGroupExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/CanvasGroupExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,14 +44,22 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/DebugOnly.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Observers/IObserverList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Observers/IObserverList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Base/AbstractBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Observers/ObserverHandle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/igor_gulkin/Desktop/Unity-Game-Developer.-Professional/Assets/Scripts/Foundation/Base/AbstractBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/CanvasGroupExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/CanvasGroupExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Observers/ObserverList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Base/AbstractService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Managers/SceneManager/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Managers/SceneManager/SceneManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Attributes/ReadOnlyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Foundation/Observers/ObserverList.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/CanvasGroupExtensions.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1zEpbaRCOhgrOrAI5ZaMG3EQwBm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -77,7 +87,9 @@
       <workItem from="1633769672149" duration="51000" />
       <workItem from="1633770003936" duration="59000" />
       <workItem from="1633900189843" duration="194000" />
-      <workItem from="1634071758478" duration="587000" />
+      <workItem from="1634071758478" duration="853000" />
+      <workItem from="1634171151415" duration="552000" />
+      <workItem from="1634371551962" duration="2738000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 3">
       <created>1633723388496</created>
@@ -93,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634072497996</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Поправил замечания от ребят в ObserverList.cs">
+      <created>1634073534838</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634073534838</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,20 +136,25 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Lesson 3" />
     <MESSAGE value="Добавили Scene State Manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавили Scene State Manager" />
+    <MESSAGE value="Поправил замечания от ребят в ObserverList.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил замечания от ребят в ObserverList.cs" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1634072762679">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1634376133185">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1634072762679" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1634376133185" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1634073536112">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1634073536112" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1633770005984">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1633770005984" />
-    <state x="385" y="196" key="search.everywhere.popup" timestamp="1634073365969">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1634371633204">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1634073365969" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1634371633204" />
   </component>
 </project>

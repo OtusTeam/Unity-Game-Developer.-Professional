@@ -24,6 +24,6 @@ namespace Foundation
         public static Tweener DOHide(this CanvasGroup canvasGroup, float time)
         {
             return canvasGroup.DOAlpha(0.0f, time);
-        }
+        }	
     }
 }

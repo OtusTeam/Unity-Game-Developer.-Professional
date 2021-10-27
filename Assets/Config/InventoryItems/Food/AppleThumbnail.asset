@@ -19,6 +19,6 @@ MonoBehaviour:
   iconPreviewOffset: {x: 0, y: 0, z: -1}
   iconPreviewAngles: {x: 0, y: 0, z: 0}
   iconPreviewPosition: {x: 0, y: 0, z: 0}
-  iconPreviewRotation: {x: -109.76, y: 397.2, z: 78.1}
+  iconPreviewRotation: {x: -108.55, y: 370.7, z: 78.1}
   iconPreviewScale: {x: 25, y: 25, z: 25}
   iconBackgroundColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

@@ -24,9 +24,8 @@ namespace Foundation
             var input = inputManager.InputForPlayer(player.Index);
             var dir = input.Action(InputActionName).Vector2Value;
 
-            var dirX = dir.x;
-            if (!Mathf.Approximately(dirX, 0.0f))
-                CharacterTransform.localRotation *= Quaternion.AngleAxis(dirX * RotationSpeed * timeDelta, Vector3.up);
+            if (!Mathf.Approximately(dir.x, 0.0f))
+                CharacterTransform.localRotation *= Quaternion.AngleAxis(dir.x * RotationSpeed * timeDelta, Vector3.up);
         }
     }
 }

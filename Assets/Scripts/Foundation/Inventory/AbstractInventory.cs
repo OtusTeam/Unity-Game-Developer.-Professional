@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Foundation
 {
-    public abstract class AbstractInventory : AbstractBehaviour
+    public abstract class AbstractInventory : AbstractService<IInventory>, IInventory
     {
         public abstract IInventoryStorage RawStorage { get; }
     }

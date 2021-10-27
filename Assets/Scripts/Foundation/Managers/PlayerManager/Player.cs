@@ -1,4 +1,3 @@
-using UnityEngine;
 using Zenject;
 
 namespace Foundation
@@ -24,7 +23,6 @@ namespace Foundation
             }
 
             playerManager.AddPlayer(this, out index);
-            Debug.Log("ADD PLAYER");
         }
 
         protected override void OnDisable()

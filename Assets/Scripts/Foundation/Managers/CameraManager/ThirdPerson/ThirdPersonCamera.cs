@@ -14,7 +14,6 @@ namespace Foundation
         void Awake()
         {
             cameraManager.AddThirdPersonCamera(this);
-            Debug.Log("ADD 3CAM");
         }
 
         void OnDestroy()

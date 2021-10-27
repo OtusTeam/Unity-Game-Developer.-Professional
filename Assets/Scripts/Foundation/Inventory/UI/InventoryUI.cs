@@ -51,7 +51,7 @@ namespace Foundation
 
             InventoryRow row = null;
             foreach (var it in Inventory.RawStorage.RawItems) {
-                if (row == null || row.Count > ItemsPerRow) {
+                if (row == null || row.Count >= ItemsPerRow) {
                     row = rowFactory.Create();
                     row.transform.SetParent(Content, false);
                     rows.Add(row);

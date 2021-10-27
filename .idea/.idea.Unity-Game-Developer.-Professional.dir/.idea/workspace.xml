@@ -24,7 +24,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea1a886-b2d2-4701-a280-a5995b817063" name="Default Changelist" comment="Готово" />
+    <list default="true" id="8ea1a886-b2d2-4701-a280-a5995b817063" name="Default Changelist" comment="Готово">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional.dir/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,14 +42,21 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/DebugOnly.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Desktop/Unity-Game-Developer.-Professional/Assets/Scripts/Foundation/Base/AbstractBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Observers/IObserverList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Desktop/Unity-Game-Developer.-Professional/Assets/Scripts/Foundation/Base/AbstractBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Desktop/Unity-Game-Developer.-Professional/Assets/Scripts/Foundation/Managers/LocalizationManager/IOnLanguageChanged.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Base/AbstractBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Observers/ObserverHandle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Utility/CanvasGroupExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Desktop/Unity-Game-Developer.-Professional/Assets/Scripts/Foundation/Managers/LocalizationManager/IOnLanguageChanged.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Desktop/Unity-Game-Developer.-Professional/Assets/Scripts/Foundation/Base/AbstractBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Observers/ObserverList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Base/AbstractService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Managers/SceneManager/SceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Attributes/ReadOnlyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Managers/LocalizationManager/IOnLanguageChanged.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Desktop/Unity-Game-Developer.-Professional/Assets/Scripts/Foundation/Base/AbstractBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Desktop/Unity-Game-Developer.-Professional/Assets/Scripts/Foundation/Base/AbstractBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Foundation/Managers/SceneManager/SceneManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -87,6 +96,7 @@
       <workItem from="1634171151415" duration="552000" />
       <workItem from="1634371551962" duration="2738000" />
       <workItem from="1634935443836" duration="81000" />
+      <workItem from="1634935608267" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 3">
       <created>1633723388496</created>
@@ -116,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634935467806</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Провел урок по Продвинутому управлению персонажа. Cinemachine">
+      <created>1634935791822</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634935791822</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,17 +159,30 @@
     <MESSAGE value="Добавили Scene State Manager" />
     <MESSAGE value="Поправил замечания от ребят в ObserverList.cs" />
     <MESSAGE value="Готово" />
-    <option name="LAST_COMMIT_MESSAGE" value="Готово" />
+    <MESSAGE value="Провел урок по Продвинутому управлению персонажа. Cinemachine" />
+    <option name="LAST_COMMIT_MESSAGE" value="Провел урок по Продвинутому управлению персонажа. Cinemachine" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="144" y="76" key="MergeDialog" timestamp="1634936637433">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="76" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1634936637433" />
+    <state x="351" y="215" key="MultipleFileMergeDialog" timestamp="1634936642289">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="351" y="215" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1634936642289" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1634376133185">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1634376133185" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1634073536112">
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1634936681028">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1634073536112" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1634936681028" />
+    <state x="426" y="188" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1634935753127">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="426" y="188" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1440.900@0.0.1440.900" timestamp="1634935753127" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1633770005984">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

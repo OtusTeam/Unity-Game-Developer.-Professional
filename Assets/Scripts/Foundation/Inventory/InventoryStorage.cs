@@ -64,6 +64,11 @@ namespace Foundation
                 it.Do();
         }
 
+        void IInventoryStorage.Add(AbstractInventoryItem item, int amount)
+        {
+            Add((T)item, amount);
+        }
+
         public bool Remove(T item, int amount)
         {
             if (amount <= 0) {
@@ -86,6 +91,14 @@ namespace Foundation
                 it.Do();
 
             return true;
+        }
+
+        public void Clear()
+        {
+            items.Clear();
+
+            foreach (var it in OnChanged.Enumerate())
+                it.Do();
         }
     }
 }

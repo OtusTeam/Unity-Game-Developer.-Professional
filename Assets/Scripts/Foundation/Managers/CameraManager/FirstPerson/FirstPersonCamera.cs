@@ -14,7 +14,6 @@ namespace Foundation
         void Awake()
         {
             cameraManager.AddFirstPersonCamera(this);
-            Debug.Log("ADD 1CAM");
         }
 
         void OnDestroy()

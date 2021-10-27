@@ -11,7 +11,7 @@ namespace Foundation
         public override void InstallBindings()
         {
             Container.BindFactory<string, NotificationMessage, NotificationMessage.Factory>()
-                .FromMonoPoolableMemoryPool<string, NotificationMessage>(opts => opts
+                .FromMonoPoolableMemoryPool(opts => opts
                     .WithInitialSize(PoolSize)
                     .FromComponentInNewPrefab(Prefab)
                     .UnderTransform(transform));

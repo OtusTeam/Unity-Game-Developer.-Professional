@@ -5,24 +5,17 @@ namespace Foundation
 {
     public sealed class CharacterVerticalLookInput : AbstractBehaviour, IOnUpdate
     {
-        public string InputActionName = "Look";
-
+        public string InputActionName;
         public Transform EyesTransform;
-
         public float RotationSpeed;
         public float MinVerticalAngle = -50.0f;
         public float MaxVerticalAngle = 50.0f;
-        
-        private float angle;
 
-        [Inject]
-        IPlayer player = default;
+        [Inject] IPlayer player = default;
+        [Inject] IInputManager inputManager = default;
+        [Inject] ISceneState sceneState = default;
 
-        [Inject]
-        IInputManager inputManager = default;
-
-        [Inject]
-        ISceneState sceneState = default;
+        float angle;
 
         protected override void OnEnable()
         {
@@ -35,13 +28,11 @@ namespace Foundation
             var input = inputManager.InputForPlayer(player.Index);
             var dir = input.Action(InputActionName).Vector2Value;
 
-            var directionY = dir.y;
-            if (!Mathf.Approximately(directionY, 0.0f))
-            {
-                angle += directionY * RotationSpeed * timeDelta;
+            if (!Mathf.Approximately(dir.y, 0.0f)) {
+                angle += dir.y * RotationSpeed * timeDelta;
                 angle = Mathf.Clamp(angle, MinVerticalAngle, MaxVerticalAngle);
 
-                Vector3 angles = EyesTransform.localEulerAngles;
+                var angles = EyesTransform.localEulerAngles;
                 angles.x = angle;
                 EyesTransform.localEulerAngles = angles;
             }

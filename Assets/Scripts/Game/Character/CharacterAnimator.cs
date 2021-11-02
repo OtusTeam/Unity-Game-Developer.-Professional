@@ -1,4 +1,5 @@
 using Foundation;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -11,8 +12,11 @@ namespace Game
         {
             IdleOrRunning_NoWeapon = 1000,
             IdleOrRunning_Pistol = 1001,
+            IdleOrRunning_Baseball = 1004,
             Crouching_NoWeapon = 1002,
             Crouching_Pistol = 1003,
+            Crouching_Baseball = 1005,
+            Attack_Baseball = 1006,
         }
 
         enum LegsAnim
@@ -22,8 +26,12 @@ namespace Game
         }
 
         [Header("Debug")]
-        [HideInInspector] [ReadOnly] BodyAnim bodyAnim = BodyAnim.IdleOrRunning_NoWeapon;
-        [HideInInspector] [ReadOnly] LegsAnim legsAnim = LegsAnim.IdleOrRunning;
+        [ReadOnly] BodyAnim bodyAnim = BodyAnim.IdleOrRunning_NoWeapon;
+        [ReadOnly] LegsAnim legsAnim = LegsAnim.IdleOrRunning;
+
+        [Header("Weapons")]
+        public List<AbstractWeapon> BaseballBats;
+        public List<AbstractWeapon> Pistols;
 
         Animator animator;
         Vector3 prevPosition;
@@ -81,25 +89,44 @@ namespace Game
 
         (BodyAnim body, LegsAnim legs) ChooseAnimation()
         {
-            Weapon weapon = Weapon.None;
-            if (characterWeapon != null)
+            AbstractWeapon weapon = null;
+            bool attacking = false;
+            if (characterWeapon != null) {
                 weapon = characterWeapon.CurrentWeapon;
+                attacking = characterWeapon.AttackingWeapon != null;
+            }
 
             if (characterCrouch != null && characterCrouch.Crouching) {
-                switch (weapon) {
-                    case Weapon.Pistol:
-                        return (BodyAnim.Crouching_Pistol, LegsAnim.Crouching);
-                    default:
-                        return (BodyAnim.Crouching_NoWeapon, LegsAnim.Crouching);
+                if (BaseballBats != null && weapon != null && BaseballBats.Contains(weapon)) {
+                    if (attacking)
+                        return (BodyAnim.Attack_Baseball, LegsAnim.Crouching);
+                    else
+                        return (BodyAnim.Crouching_Baseball, LegsAnim.Crouching);
                 }
+
+                if (Pistols != null && weapon != null && Pistols.Contains(weapon)) {
+                    if (attacking)
+                        characterWeapon.EndAttack(applyCooldown: true);
+                    return (BodyAnim.Crouching_Pistol, LegsAnim.Crouching);
+                }
+
+                return (BodyAnim.Crouching_NoWeapon, LegsAnim.Crouching);
             }
 
-            switch (weapon) {
-                case Weapon.Pistol:
-                    return (BodyAnim.IdleOrRunning_Pistol, LegsAnim.IdleOrRunning);
-                default:
-                    return (BodyAnim.IdleOrRunning_NoWeapon, LegsAnim.IdleOrRunning);
+            if (BaseballBats != null && weapon != null && BaseballBats.Contains(weapon)) {
+                if (attacking)
+                    return (BodyAnim.Attack_Baseball, LegsAnim.IdleOrRunning);
+                else
+                    return (BodyAnim.IdleOrRunning_Baseball, LegsAnim.IdleOrRunning);
             }
+
+            if (Pistols != null && weapon != null && Pistols.Contains(weapon)) {
+                if (attacking)
+                    characterWeapon.EndAttack(applyCooldown: true);
+                return (BodyAnim.IdleOrRunning_Pistol, LegsAnim.IdleOrRunning);
+            }
+
+            return (BodyAnim.IdleOrRunning_NoWeapon, LegsAnim.IdleOrRunning);
         }
     }
 }

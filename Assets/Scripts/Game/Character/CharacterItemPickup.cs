@@ -5,7 +5,7 @@ namespace Foundation
 {
     public sealed class CharacterItemPickup : AbstractBehaviour
     {
-        [Inject] IInventory inventory;
+        [Inject] IInventory inventory = default;
 
         public void OnCollisionEnter(Collision collision)
         {

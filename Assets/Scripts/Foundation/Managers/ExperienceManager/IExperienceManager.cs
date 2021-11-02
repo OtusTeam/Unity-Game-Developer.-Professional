@@ -7,6 +7,8 @@ namespace Foundation
         ObserverList<IOnLevelReached> OnLevelReached { get; }
         ObserverList<IOnLevelChanged> OnLevelChanged { get; }
 
+        void ResetAllPlayers();
+
         void AddExperience(int player, int experience);
 
         int GetPlayerLevel(int player);

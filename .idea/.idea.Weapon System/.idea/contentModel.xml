@@ -29,10 +29,10 @@
                 <e p="Abstractions" t="Include">
                   <e p="ComposableWeapon.cs" t="Include" />
                   <e p="IWeapon.cs" t="Include" />
-                  <e p="IWeaponManager.cs" t="Include" />
-                  <e p="WeaponComponent.cs" t="Include" />
+                  <e p="Weapon.cs" t="Include" />
                 </e>
                 <e p="System" t="Include">
+                  <e p="IWeaponManager.cs" t="Include" />
                   <e p="WeaponChangeInputController.cs" t="Include" />
                   <e p="WeaponManager.cs" t="Include" />
                 </e>
@@ -52,7 +52,7 @@
                 </e>
                 <e p="WeaponMelee" t="Include">
                   <e p="MeleeAnimationStateBehaviour.cs" t="Include" />
-                  <e p="MeleeAnimatorWeaponComponent.cs" t="Include" />
+                  <e p="MeleeAnimatorWeapon.cs" t="Include" />
                   <e p="MeleeDamageController.cs" t="Include" />
                   <e p="MeleeZoneWeaponController.cs" t="Include" />
                 </e>

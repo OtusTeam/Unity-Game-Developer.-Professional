@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Otus
 {
     //Паттерн компоновщик
-    public class ComposableWeapon : WeaponComponent
+    public class ComposableWeapon : Weapon
     {
         public override event Action<IWeapon> OnAttack;
 
@@ -67,10 +67,10 @@ namespace Otus
         public sealed class Parameters
         {
             [SerializeField]
-            public WeaponComponent trigger;
+            public Weapon trigger;
 
             [SerializeField]
-            public WeaponComponent[] slaveComponents;
+            public Weapon[] slaveComponents;
         }
     }
 }

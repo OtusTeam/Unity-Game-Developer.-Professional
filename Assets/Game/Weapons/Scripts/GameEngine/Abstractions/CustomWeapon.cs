@@ -7,11 +7,27 @@ namespace Otus
     {
         public override event Action<Weapon> OnAttack;
 
+        [Space]
         [SerializeField]
         private Parameters parameters;
 
+        protected override void ProcessAttack()
+        {
+            this.parameters.trigger.Attack();
+        }
+
         public override bool CanAttack()
         {
+            if (!base.CanAttack())
+            {
+                return false;
+            }
+            
+            if (!this.parameters.trigger.CanAttack())
+            {
+                return false;
+            }
+            
             var weaponComponents = this.parameters.slaveComponents;
             for (int i = 0, count = weaponComponents.Length; i < count; i++)
             {
@@ -25,19 +41,29 @@ namespace Otus
             return true;
         }
 
-        public override void Attack()
-        {
-            this.parameters.trigger.Attack();
-        }
-
         public override void SetActive(bool isActive)
         {
+            base.SetActive(isActive);
+            this.parameters.trigger.SetActive(isActive);
+            
             var weaponComponents = this.parameters.slaveComponents;
             for (int i = 0, count = weaponComponents.Length; i < count; i++)
             {
                 var component = weaponComponents[i];
                 component.SetActive(isActive);
             }
+        }
+
+        private void OnTriggerAttack(Weapon _)
+        {
+            var weaponComponents = this.parameters.slaveComponents;
+            for (int i = 0, count = weaponComponents.Length; i < count; i++)
+            {
+                var component = weaponComponents[i];
+                component.Attack();
+            }
+
+            this.OnAttack?.Invoke(this);
         }
 
         private void OnEnable()
@@ -50,17 +76,6 @@ namespace Otus
             this.parameters.trigger.OnAttack -= this.OnTriggerAttack;
         }
 
-        private void OnTriggerAttack(Weapon _)
-        {
-            var components = this.parameters.slaveComponents;
-            for (int i = 0, count = components.Length; i < count; i++)
-            {
-                var component = components[i];
-                component.Attack();
-            }
-
-            this.OnAttack?.Invoke(this);
-        }
 
         [Serializable]
         public sealed class Parameters

@@ -9,32 +9,15 @@ namespace Weapons.SFX
         public override event Action<Weapon> OnAttack;
 
         [SerializeField]
-        private bool isActive;
-
-        [SerializeField]
         private AudioSource audioSource;
 
         [SerializeField]
         private ParticleSystem vfx;
 
-        public override void Attack()
+        protected override void ProcessAttack()
         {
-            if (this.isActive)
-            {
-                this.audioSource.Play();
-                this.vfx.Play();
-            }
-        }
-
-        public override bool CanAttack()
-        {
-            return this.isActive;
-        }
-
-        public override void SetActive(bool isActive)
-        {
-            this.isActive = isActive;
-            this.audioSource.enabled = isActive;
+            this.audioSource.Play();
+            this.vfx.Play();
         }
     }
 }

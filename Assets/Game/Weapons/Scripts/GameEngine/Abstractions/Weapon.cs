@@ -7,10 +7,49 @@ namespace Otus
     {
         public abstract event Action<Weapon> OnAttack;
 
-        public abstract void Attack();
+        [SerializeField]
+        private bool isEnable = true;
 
-        public abstract bool CanAttack();
+        [SerializeField]
+        private bool isActive;
 
-        public abstract void SetActive(bool isActive);
+        public void Attack()
+        {
+            if (!this.isEnable)
+            {
+                return;
+            }
+
+            if (this.CanAttack())
+            {
+                this.ProcessAttack();
+            }
+        }
+
+        public virtual bool CanAttack()
+        {
+            return this.isActive;
+        }
+
+        public virtual void SetActive(bool isActive)
+        {
+            this.isActive = isActive;
+        }
+
+        protected abstract void ProcessAttack();
+
+#if UNITY_EDITOR
+        protected virtual void OnValidate()
+        {
+            try
+            {
+                this.SetActive(this.isActive);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+        }
+#endif
     }
 }

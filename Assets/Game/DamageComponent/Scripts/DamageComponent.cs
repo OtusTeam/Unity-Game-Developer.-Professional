@@ -2,14 +2,8 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class DamageComponent : MonoBehaviour
+    public abstract class DamageComponent : MonoBehaviour
     {
-        public void TakeDamage(int damage)
-        {
-            this.hitPoints -= damage;
-        }
-
-        [SerializeField]
-        private int hitPoints;
+        public abstract void TakeDamage(int damage);
     }
 }

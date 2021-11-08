@@ -14,9 +14,6 @@ namespace Weapons
         [SerializeField]
         private Transform firePoint;
 
-        [SerializeField]
-        private bool isActive;
-
         [Header("Inject")]
         [SerializeField]
         private BulletManager bulletManager;
@@ -24,13 +21,8 @@ namespace Weapons
         [SerializeField]
         private DamageConditionChecker conditionProvider;
 
-        public override void Attack()
+        protected override void ProcessAttack()
         {
-            if (!this.isActive)
-            {
-                return;
-            }
-
             this.bulletManager.LaunchBullet(
                 this.firePoint.position,
                 this.firePoint.rotation,
@@ -39,16 +31,6 @@ namespace Weapons
             );
 
             this.OnAttack?.Invoke(this);
-        }
-
-        public override bool CanAttack()
-        {
-            return this.isActive;
-        }
-
-        public override void SetActive(bool isActive)
-        {
-            this.isActive = isActive;
         }
 
         void IBulletListener.OnBulletCollided(Collider target)

@@ -25,11 +25,18 @@
               <e p="DamageComponent.cs" t="Include" />
               <e p="DamageConditionChecker.cs" t="Include" />
               <e p="DamageConditionChecker_EnemyTag.cs" t="Include" />
+              <e p="DamageHitPointsComponent.cs" t="Include" />
             </e>
           </e>
           <e p="Inventory" t="Include">
             <e p="Scripts" t="Include">
               <e p="Inventory.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Player" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="PlayerWeaponAttackController.cs" t="Include" />
+              <e p="PlayerWeaponChangeController.cs" t="Include" />
             </e>
           </e>
           <e p="Weapons" t="Include">
@@ -45,11 +52,15 @@
                 </e>
                 <e p="System" t="Include">
                   <e p="IWeaponManager.cs" t="Include" />
-                  <e p="WeaponChangeInputController.cs" t="Include" />
                   <e p="WeaponManager.cs" t="Include" />
                 </e>
                 <e p="WeaponBullet" t="Include">
                   <e p="BulletWeaponController.cs" t="Include" />
+                </e>
+                <e p="WeaponCountdown" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="CountdownWeaponController.cs" t="Include" />
+                  </e>
                 </e>
                 <e p="WeaponDurability" t="Include">
                   <e p="Scripts" t="Include">
@@ -70,6 +81,9 @@
                 </e>
                 <e p="WeaponRay" t="Include">
                   <e p="RayWeaponController.cs" t="Include" />
+                </e>
+                <e p="WeaponVisual" t="Include">
+                  <e p="WeaponVisual.cs" t="Include" />
                 </e>
               </e>
             </e>

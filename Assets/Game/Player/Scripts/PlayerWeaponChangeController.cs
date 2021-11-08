@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class WeaponChangeInputController : MonoBehaviour
+    public sealed class PlayerWeaponChangeController : MonoBehaviour
     {
         [SerializeField]
         private WeaponConfig[] weaponConfigs;

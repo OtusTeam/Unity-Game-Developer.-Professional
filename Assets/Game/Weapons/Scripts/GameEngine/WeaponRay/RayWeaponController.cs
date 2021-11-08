@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class RayWeaponController : Weapon
+    public sealed class RayWeaponController : WeaponComponent
     {
         public override event Action<IWeapon> OnAttack;
 

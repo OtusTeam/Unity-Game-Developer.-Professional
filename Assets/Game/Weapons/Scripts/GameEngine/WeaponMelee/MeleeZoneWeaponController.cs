@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Otus
 {
     //Дробовик
-    public sealed class MeleeZoneWeaponController : Weapon
+    public sealed class MeleeZoneWeaponController : WeaponComponent
     {
         public override event Action<IWeapon> OnAttack;
         

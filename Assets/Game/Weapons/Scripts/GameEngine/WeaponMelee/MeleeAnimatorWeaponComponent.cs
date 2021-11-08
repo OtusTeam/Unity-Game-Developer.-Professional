@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class MeleeAnimatorWeaponComponent : Weapon
+    public sealed class MeleeAnimatorWeaponComponent : WeaponComponent
     {
         public override event Action<IWeapon> OnAttack;
 

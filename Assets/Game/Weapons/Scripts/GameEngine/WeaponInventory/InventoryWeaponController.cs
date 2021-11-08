@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Weapons.InventoryWeapon
 {
-    public sealed class InventoryWeaponController : Weapon
+    public sealed class InventoryWeaponController : WeaponComponent
     {
         public override event Action<IWeapon> OnAttack;
 

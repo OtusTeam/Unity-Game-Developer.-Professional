@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Otus
 {
     //Паттерн компоновщик
-    public class ComposableWeapon : Weapon
+    public class ComposableWeapon : WeaponComponent
     {
         public override event Action<IWeapon> OnAttack;
 
@@ -13,7 +13,7 @@ namespace Otus
 
         public override bool CanAttack()
         {
-            var weaponComponents = this.parameters.components;
+            var weaponComponents = this.parameters.slaveComponents;
             for (int i = 0, count = weaponComponents.Length; i < count; i++)
             {
                 var component = weaponComponents[i];
@@ -33,7 +33,7 @@ namespace Otus
 
         public override void SetActive(bool isActive)
         {
-            var weaponComponents = this.parameters.components;
+            var weaponComponents = this.parameters.slaveComponents;
             for (int i = 0, count = weaponComponents.Length; i < count; i++)
             {
                 var component = weaponComponents[i];
@@ -53,7 +53,7 @@ namespace Otus
 
         private void OnTriggerAttack(IWeapon _)
         {
-            var components = this.parameters.components;
+            var components = this.parameters.slaveComponents;
             for (int i = 0, count = components.Length; i < count; i++)
             {
                 var component = components[i];
@@ -67,10 +67,10 @@ namespace Otus
         public sealed class Parameters
         {
             [SerializeField]
-            public Weapon trigger;
+            public WeaponComponent trigger;
 
             [SerializeField]
-            public Weapon[] components;
+            public WeaponComponent[] slaveComponents;
         }
     }
 }

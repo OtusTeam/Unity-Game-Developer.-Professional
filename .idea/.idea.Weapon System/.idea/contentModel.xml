@@ -30,7 +30,7 @@
                   <e p="ComposableWeapon.cs" t="Include" />
                   <e p="IWeapon.cs" t="Include" />
                   <e p="IWeaponManager.cs" t="Include" />
-                  <e p="Weapon.cs" t="Include" />
+                  <e p="WeaponComponent.cs" t="Include" />
                 </e>
                 <e p="System" t="Include">
                   <e p="WeaponChangeInputController.cs" t="Include" />

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Weapons.SFX
 {
-    public sealed class FXWeapon : Weapon
+    public sealed class FXWeapon : WeaponComponent
     {
         public override event Action<IWeapon> OnAttack;
 

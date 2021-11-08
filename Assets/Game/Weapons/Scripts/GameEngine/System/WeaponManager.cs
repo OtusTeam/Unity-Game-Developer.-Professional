@@ -15,12 +15,12 @@ namespace Otus
         }
 
         [SerializeField]
-        private Weapon currentWeapon;
+        private WeaponComponent currentWeapon;
 
         [SerializeField]
         private WeaponInfo[] weaponInfos;
 
-        private Dictionary<string, Weapon> weaponMap;
+        private Dictionary<string, WeaponComponent> weaponMap;
 
         public void SetupCurrentWeapon(string weaponId)
         {
@@ -81,7 +81,7 @@ namespace Otus
         {
             var count = this.weaponInfos.Length;
 
-            var weaponMap = new Dictionary<string, Weapon>(count);
+            var weaponMap = new Dictionary<string, WeaponComponent>(count);
             for (var i = 0; i < count; i++)
             {
                 var weaponInfo = this.weaponInfos[i];
@@ -110,7 +110,7 @@ namespace Otus
                 get { return this.config.id; }
             }
 
-            public Weapon Weapon
+            public WeaponComponent Weapon
             {
                 get { return this.weapon; }
             }
@@ -119,7 +119,7 @@ namespace Otus
             private WeaponConfig config;
 
             [SerializeField]
-            private Weapon weapon;
+            private WeaponComponent weapon;
         }
     }
 }

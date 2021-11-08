@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Otus
 {
+    [RequireComponent(typeof(Animator))]
     public sealed class AnimationEventReceiver : MonoBehaviour
     {
         public event Action<string> OnAnimationEvent;

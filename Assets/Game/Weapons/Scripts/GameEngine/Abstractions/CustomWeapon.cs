@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace Otus
 {
-    //Паттерн компоновщик
-    public class ComposableWeapon : Weapon
+    public sealed class CustomWeapon : Weapon
     {
-        public override event Action<IWeapon> OnAttack;
+        public override event Action<Weapon> OnAttack;
 
         [SerializeField]
         private Parameters parameters;
@@ -51,7 +50,7 @@ namespace Otus
             this.parameters.trigger.OnAttack -= this.OnTriggerAttack;
         }
 
-        private void OnTriggerAttack(IWeapon _)
+        private void OnTriggerAttack(Weapon _)
         {
             var components = this.parameters.slaveComponents;
             for (int i = 0, count = components.Length; i < count; i++)
@@ -59,7 +58,7 @@ namespace Otus
                 var component = components[i];
                 component.Attack();
             }
-            
+
             this.OnAttack?.Invoke(this);
         }
 

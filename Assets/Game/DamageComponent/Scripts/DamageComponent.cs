@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class Eneny : MonoBehaviour
+    public sealed class DamageComponent : MonoBehaviour
     {
         public void TakeDamage(int damage)
         {

@@ -8,16 +8,28 @@
           <e p="Bullets" t="Include">
             <e p="Scripts" t="Include">
               <e p="Bullet.cs" t="Include" />
+              <e p="BulletConfig.cs" t="Include" />
               <e p="BulletManager.cs" t="Include" />
+              <e p="IBulletListener.cs" t="Include" />
+              <e p="IBulletManager.cs" t="Include" />
             </e>
           </e>
           <e p="Common" t="Include">
             <e p="Scripts" t="Include">
               <e p="AnimationEventReceiver.cs" t="Include" />
-              <e p="Eneny.cs" t="Include" />
-              <e p="IConditionProvider.cs" t="Include" />
-              <e p="Inventory.cs" t="Include" />
               <e p="ObservableCollider.cs" t="Include" />
+            </e>
+          </e>
+          <e p="DamageComponent" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="DamageComponent.cs" t="Include" />
+              <e p="DamageConditionChecker.cs" t="Include" />
+              <e p="DamageConditionChecker_EnemyTag.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Inventory" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Inventory.cs" t="Include" />
             </e>
           </e>
           <e p="Weapons" t="Include">
@@ -27,7 +39,7 @@
               </e>
               <e p="GameEngine" t="Include">
                 <e p="Abstractions" t="Include">
-                  <e p="ComposableWeapon.cs" t="Include" />
+                  <e p="CustomWeapon.cs" t="Include" />
                   <e p="IWeapon.cs" t="Include" />
                   <e p="Weapon.cs" t="Include" />
                 </e>

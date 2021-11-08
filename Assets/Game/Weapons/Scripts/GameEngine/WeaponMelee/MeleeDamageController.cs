@@ -22,7 +22,7 @@ namespace Otus
 
         private void OnTriggerEntered(Collider collider)
         {
-            if (collider.TryGetComponent(out Eneny eneny))
+            if (collider.TryGetComponent(out DamageComponent eneny))
             {
                 eneny.TakeDamage(this.damage);
             }

@@ -4,22 +4,25 @@ using UnityEngine;
 
 namespace Weapons
 {
-    public sealed class BulletWeaponController : Weapon
+    public sealed class BulletWeaponController : Weapon, IBulletListener
     {
-        public override event Action<IWeapon> OnAttack;
+        public override event Action<Weapon> OnAttack;
 
         [SerializeField]
-        private int damage;
+        private BulletConfig config;
 
         [SerializeField]
         private Transform firePoint;
 
         [SerializeField]
         private bool isActive;
-        
+
         [Header("Inject")]
         [SerializeField]
         private BulletManager bulletManager;
+
+        [SerializeField]
+        private DamageConditionChecker conditionProvider;
 
         public override void Attack()
         {
@@ -27,11 +30,14 @@ namespace Weapons
             {
                 return;
             }
-            
-            var position = this.firePoint.position;
-            var rotation = this.firePoint.rotation;
-            var direction = this.firePoint.forward;
-            this.bulletManager.LaunchBullet(position, rotation, direction);
+
+            this.bulletManager.LaunchBullet(
+                this.firePoint.position,
+                this.firePoint.rotation,
+                this.firePoint.forward,
+                this
+            );
+
             this.OnAttack?.Invoke(this);
         }
 
@@ -44,22 +50,13 @@ namespace Weapons
         {
             this.isActive = isActive;
         }
-        
-        private void OnEnable()
-        {
-            this.bulletManager.OnBulletReached += this.OnBulletReached;
-        }
 
-        private void OnDisable()
+        void IBulletListener.OnBulletCollided(Collider target)
         {
-            this.bulletManager.OnBulletReached -= this.OnBulletReached;
-        }
-
-        private void OnBulletReached(Collider target)
-        {
-            if (target.TryGetComponent(out Eneny eneny))
+            if (target.TryGetComponent(out DamageComponent damageComponent) && 
+                this.conditionProvider.CanTakeDamage(damageComponent))
             {
-                eneny.TakeDamage(this.damage);
+                damageComponent.TakeDamage(this.config.damage);
             }
         }
     }

@@ -6,7 +6,7 @@ namespace Weapons.InventoryWeapon
 {
     public sealed class InventoryWeaponController : Weapon
     {
-        public override event Action<IWeapon> OnAttack;
+        public override event Action<Weapon> OnAttack;
 
         [SerializeField]
         private bool isActive;

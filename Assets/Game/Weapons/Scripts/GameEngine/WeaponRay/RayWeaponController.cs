@@ -5,7 +5,7 @@ namespace Otus
 {
     public sealed class RayWeaponController : Weapon
     {
-        public override event Action<IWeapon> OnAttack;
+        public override event Action<Weapon> OnAttack;
 
         [SerializeField]
         private int damage;
@@ -35,7 +35,7 @@ namespace Otus
                 return;
             }
 
-            if (hit.transform.TryGetComponent(out Eneny eneny))
+            if (hit.transform.TryGetComponent(out DamageComponent eneny))
             {
                 eneny.TakeDamage(this.damage);
             }

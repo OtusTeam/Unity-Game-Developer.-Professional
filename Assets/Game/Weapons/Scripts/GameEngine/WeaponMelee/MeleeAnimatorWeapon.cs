@@ -6,7 +6,7 @@ namespace Otus
 {
     public sealed class MeleeAnimatorWeapon : Weapon
     {
-        public override event Action<IWeapon> OnAttack;
+        public override event Action<Weapon> OnAttack;
 
         [SerializeField]
         private int damage;
@@ -34,7 +34,7 @@ namespace Otus
         [SerializeField]
         private string endAnimationEvent = "EndAttack";
 
-        private HashSet<Eneny> damagedEnemies;
+        private HashSet<DamageComponent> damagedEnemies;
 
         public override void Attack()
         {
@@ -58,7 +58,7 @@ namespace Otus
         private void Awake()
         {
             this.observableCollider.SetActive(false);
-            this.damagedEnemies = new HashSet<Eneny>();
+            this.damagedEnemies = new HashSet<DamageComponent>();
         }
 
         private void OnEnable()
@@ -87,7 +87,7 @@ namespace Otus
 
         private void OnTriggerEntered(Collider collider)
         {
-            if (collider.TryGetComponent(out Eneny eneny) && this.damagedEnemies.Add(eneny))
+            if (collider.TryGetComponent(out DamageComponent eneny) && this.damagedEnemies.Add(eneny))
             {
                 eneny.TakeDamage(this.damage);
             }

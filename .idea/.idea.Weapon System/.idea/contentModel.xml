@@ -62,11 +62,6 @@
                     <e p="CountdownWeaponController.cs" t="Include" />
                   </e>
                 </e>
-                <e p="WeaponDurability" t="Include">
-                  <e p="Scripts" t="Include">
-                    <e p="DurabilityWeaponController.cs" t="Include" />
-                  </e>
-                </e>
                 <e p="WeaponFX" t="Include">
                   <e p="FXWeapon.cs" t="Include" />
                 </e>

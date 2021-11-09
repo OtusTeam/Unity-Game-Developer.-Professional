@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class CustomWeapon : Weapon
+    public class CustomWeapon : Weapon
     {
         public override event Action<Weapon> OnAttack;
 
@@ -13,7 +13,7 @@ namespace Otus
 
         protected override void ProcessAttack()
         {
-            this.parameters.trigger.Attack();
+            this.parameters.triggerComponent.Attack();
         }
 
         public override bool CanAttack()
@@ -23,7 +23,7 @@ namespace Otus
                 return false;
             }
             
-            if (!this.parameters.trigger.CanAttack())
+            if (!this.parameters.triggerComponent.CanAttack())
             {
                 return false;
             }
@@ -44,7 +44,7 @@ namespace Otus
         public override void SetActive(bool isActive)
         {
             base.SetActive(isActive);
-            this.parameters.trigger.SetActive(isActive);
+            this.parameters.triggerComponent.SetActive(isActive);
             
             var weaponComponents = this.parameters.slaveComponents;
             for (int i = 0, count = weaponComponents.Length; i < count; i++)
@@ -68,12 +68,12 @@ namespace Otus
 
         private void OnEnable()
         {
-            this.parameters.trigger.OnAttack += this.OnTriggerAttack;
+            this.parameters.triggerComponent.OnAttack += this.OnTriggerAttack;
         }
 
         private void OnDisable()
         {
-            this.parameters.trigger.OnAttack -= this.OnTriggerAttack;
+            this.parameters.triggerComponent.OnAttack -= this.OnTriggerAttack;
         }
 
 
@@ -81,7 +81,7 @@ namespace Otus
         public sealed class Parameters
         {
             [SerializeField]
-            public Weapon trigger;
+            public Weapon triggerComponent;
 
             [SerializeField]
             public Weapon[] slaveComponents;

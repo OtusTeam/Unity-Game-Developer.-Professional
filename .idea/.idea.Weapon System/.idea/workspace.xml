@@ -10,19 +10,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a621c1d-3b42-4a25-8505-632317cd4dd7" name="Default Changelist" comment="Сделал выстрел">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Sounds/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Sounds/Scripts/SoundManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Sounds/Scripts/SoundManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponVFX.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponVFX/VFXWeaponController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponVFX/VFXWeaponController.cs.meta" afterDir="false" />
+    <list default="true" id="6a621c1d-3b42-4a25-8505-632317cd4dd7" name="Default Changelist" comment="Сделал выстрел с пушки">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponRay/RayWeaponConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Weapon System/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Weapon System/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Weapon System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Weapon System/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponFX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponSFX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponFX/FXWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponSFX/SFXWeaponController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponFX/FXWeapon.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponSFX/SFXWeaponController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Player/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Player/Animations/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponBullet/BulletWeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponBullet/BulletWeaponController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponCountdown/Scripts/CountdownWeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponCountdown/Scripts/CountdownWeaponController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +39,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7C881E71-2F79-461D-96F9-95658A2D07FF/78/1e9d17ed/YieldInstruction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7C881E71-2F79-461D-96F9-95658A2D07FF/86/4f5967ec/WaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/igor_gulkin/Desktop/Weapon System/Assets/Game/Bullets/BulletConfig.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponRay/RayWeaponConfig.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Weapons/MeleeWeapon/MeleeWeaponAnimationComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Weapons/RayWeapon/RayWeaponComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Weapons/BulletWeapon/BulletDamageController.cs" />
         <option value="$PROJECT_DIR$/Assets/Weapons/BulletWeapon/BulletWeaponController.cs" />
@@ -65,8 +61,6 @@
         <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/IBulletObserver.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/IBulletListener.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/IBulletManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/Scripts/AnimationEventReceiver.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/Scripts/ConditionProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletConfig.cs" />
@@ -80,13 +74,10 @@
         <option value="$PROJECT_DIR$/Assets/Game/DamageComponent/Scripts/EnemyDamageComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/DamageComponent/Scripts/DamageComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/DamageComponent/Scripts/DamageHitPointsComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponBullet/BulletWeaponController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponCountdown/Scripts/CountdownWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponFX/FXWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponInventory/InventoryWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponMelee/MeleeAnimatorWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponMelee/MeleeZoneWeaponController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponRay/RayWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponVisual/WeaponVisual.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Abstractions/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Abstractions/CustomWeapon.cs" />
@@ -98,6 +89,12 @@
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponSFX/SFXWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Sounds/Scripts/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponVFX/VFXWeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponBullet/BulletWeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponCountdown/Scripts/CountdownWeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponRay/RayWeaponConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponRay/RayWeaponController.cs" />
       </list>
     </option>
   </component>
@@ -149,7 +146,7 @@
       <workItem from="1636234986799" duration="10662000" />
       <workItem from="1636246230930" duration="251000" />
       <workItem from="1636390619483" duration="9404000" />
-      <workItem from="1636457839334" duration="4130000" />
+      <workItem from="1636457839334" duration="7398000" />
     </task>
     <task id="LOCAL-00001" summary="Пишу Weapon System">
       <created>1636246260713</created>
@@ -214,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636474785965</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Сделал выстрел с пушки">
+      <created>1636476188710</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1636476188710</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +245,8 @@
     <MESSAGE value="Написал оружие" />
     <MESSAGE value="Допиливаю систему оружия" />
     <MESSAGE value="Сделал выстрел" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал выстрел" />
+    <MESSAGE value="Сделал выстрел с пушки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал выстрел с пушки" />
   </component>
   <component name="WindowStateProjectService">
     <state x="515" y="127" key="RiderGenerateDialog" timestamp="1636475234825">

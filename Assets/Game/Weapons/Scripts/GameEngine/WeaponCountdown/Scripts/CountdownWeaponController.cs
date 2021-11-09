@@ -25,6 +25,7 @@ namespace Otus
         public override void SetActive(bool isActive)
         {
             this.enabled = isActive;
+            this.currentTime = 0;
         }
 
         private void FixedUpdate()

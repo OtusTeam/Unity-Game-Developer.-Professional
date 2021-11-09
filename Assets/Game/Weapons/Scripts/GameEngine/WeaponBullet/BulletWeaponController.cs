@@ -24,10 +24,10 @@ namespace Weapons
         protected override void ProcessAttack()
         {
             this.bulletManager.LaunchBullet(
-                this.firePoint.position,
-                this.firePoint.rotation,
-                this.firePoint.forward,
-                this
+                position: this.firePoint.position,
+                rotation: this.firePoint.rotation,
+                direction: this.firePoint.forward,
+                listener: this
             );
 
             this.OnAttack?.Invoke(this);

@@ -53,8 +53,8 @@ namespace Otus
         {
             if (this.bulletListenerMap.TryGetValue(bullet, out var listener))
             {
-                this.bulletListenerMap.Remove(bullet);
                 listener.OnBulletCollided(target);
+                this.DestroyBullet(bullet);
             }
         }
 

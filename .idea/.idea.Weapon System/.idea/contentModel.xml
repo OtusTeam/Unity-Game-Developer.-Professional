@@ -54,6 +54,9 @@
                   <e p="IWeaponManager.cs" t="Include" />
                   <e p="WeaponManager.cs" t="Include" />
                 </e>
+                <e p="WeaponAnimator" t="Include">
+                  <e p="WeaponAnimatorController.cs" t="Include" />
+                </e>
                 <e p="WeaponBullet" t="Include">
                   <e p="BulletWeaponController.cs" t="Include" />
                 </e>
@@ -78,7 +81,7 @@
                   <e p="RayWeaponController.cs" t="Include" />
                 </e>
                 <e p="WeaponVisual" t="Include">
-                  <e p="WeaponVisual.cs" t="Include" />
+                  <e p="WeaponVisualController.cs" t="Include" />
                 </e>
               </e>
             </e>

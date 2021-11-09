@@ -1,11 +1,15 @@
 using System;
+using UnityEngine;
 
 namespace Otus
 {
-    public sealed class WeaponVisual : Weapon
+    public sealed class WeaponVisualController : Weapon
     {
         public override event Action<Weapon> OnAttack;
 
+        [SerializeField]
+        private GameObject weaponVisual;
+        
         protected override void ProcessAttack()
         {
         }
@@ -13,7 +17,7 @@ namespace Otus
         public override void SetActive(bool isActive)
         {
             base.SetActive(isActive);
-            this.gameObject.SetActive(isActive);
+            this.weaponVisual.SetActive(isActive);
         }
     }
 }

@@ -10,12 +10,7 @@ namespace Otus
         [Space]
         [SerializeField]
         private Parameters parameters;
-
-        protected override void ProcessAttack()
-        {
-            this.parameters.triggerComponent.Attack();
-        }
-
+        
         public override bool CanAttack()
         {
             if (!base.CanAttack())
@@ -52,6 +47,11 @@ namespace Otus
                 var component = weaponComponents[i];
                 component.SetActive(isActive);
             }
+        }
+        
+        protected override void ProcessAttack()
+        {
+            this.parameters.triggerComponent.Attack();
         }
 
         private void OnTriggerAttack(Weapon _)

@@ -170,8 +170,6 @@ MonoBehaviour:
   isActive: 1
   config: {fileID: 11400000, guid: 0c1ff201caddb42d283912c2ba68ece4, type: 2}
   firePoint: {fileID: 4216349892898551925}
-  bulletManager: {fileID: 0}
-  conditionProvider: {fileID: 0}
 --- !u!1 &4216349891932541550
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +513,6 @@ MonoBehaviour:
   isEnable: 1
   isActive: 1
   animationName: Shot
-  attackAnimator: {fileID: 0}
 --- !u!1001 &3509809285018994950
 PrefabInstance:
   m_ObjectHideFlags: 0

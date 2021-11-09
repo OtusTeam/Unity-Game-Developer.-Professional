@@ -15,9 +15,9 @@ namespace Otus
             DontDestroyOnLoad(this.gameObject);
         }
 
-        public static void PlaySound(AudioClip clip)
+        public void PlaySound(AudioClip clip)
         {
-            instance.audioSource.PlayOneShot(clip);
+            this.audioSource.PlayOneShot(clip);
         }
     }
 }

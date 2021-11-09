@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Weapons
 {
-    public sealed class BulletWeaponController : Weapon, IBulletListener
+    public sealed class BulletWeaponController : Weapon, IBulletListener, IPropertyInjector
     {
         public override event Action<Weapon> OnAttack;
 
@@ -13,12 +13,9 @@ namespace Weapons
 
         [SerializeField]
         private Transform firePoint;
+        
+        private IBulletManager bulletManager;
 
-        [Header("Inject")]
-        [SerializeField]
-        private BulletManager bulletManager;
-
-        [SerializeField]
         private DamageConditionChecker conditionProvider;
 
         protected override void ProcessAttack()
@@ -40,6 +37,12 @@ namespace Weapons
             {
                 damageComponent.TakeDamage(this.config.damage);
             }
+        }
+
+        void IPropertyInjector.Set(IPropertyProvider provider)
+        {
+            this.bulletManager = provider.Get<IBulletManager>(PropertyId.BULLET_SYSTEM);
+            this.conditionProvider = provider.Get<DamageConditionChecker>(PropertyId.DAMAGE_CHECKER);
         }
     }
 }

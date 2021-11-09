@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Otus
 {
@@ -13,6 +14,9 @@ namespace Otus
         {
             get { return this.currentWeapon; }
         }
+
+        [SerializeField]
+        private PropertyProvider propertyProvider; 
 
         [SerializeField]
         private Weapon currentWeapon;
@@ -88,6 +92,13 @@ namespace Otus
                 var weapon = weaponInfo.Weapon;
                 weapon.SetActive(false);
                 weaponMap.Add(weaponInfo.Id, weapon);
+
+
+                var injectors = weapon.GetComponentsInChildren<IPropertyInjector>(true);
+                foreach (var binder in injectors)
+                {
+                    binder.Set(this.propertyProvider);
+                }
             }
 
             this.weaponMap = weaponMap;

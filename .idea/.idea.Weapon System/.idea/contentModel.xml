@@ -35,8 +35,17 @@
           </e>
           <e p="Player" t="Include">
             <e p="Scripts" t="Include">
+              <e p="PlayerProperties.cs" t="Include" />
               <e p="PlayerWeaponAttackController.cs" t="Include" />
               <e p="PlayerWeaponChangeController.cs" t="Include" />
+            </e>
+          </e>
+          <e p="SharedProperties" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="IPropertyInjector.cs" t="Include" />
+              <e p="IPropertyProvider.cs" t="Include" />
+              <e p="PropertyId.cs" t="Include" />
+              <e p="PropertyProvider.cs" t="Include" />
             </e>
           </e>
           <e p="Sounds" t="Include">
@@ -80,6 +89,7 @@
                   <e p="MeleeZoneWeaponController.cs" t="Include" />
                 </e>
                 <e p="WeaponRay" t="Include">
+                  <e p="RayWeaponConfig.cs" t="Include" />
                   <e p="RayWeaponController.cs" t="Include" />
                 </e>
                 <e p="WeaponSFX" t="Include">

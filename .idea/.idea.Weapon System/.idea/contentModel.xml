@@ -39,6 +39,11 @@
               <e p="PlayerWeaponChangeController.cs" t="Include" />
             </e>
           </e>
+          <e p="Sounds" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="SoundManager.cs" t="Include" />
+            </e>
+          </e>
           <e p="Weapons" t="Include">
             <e p="Scripts" t="Include">
               <e p="Configs" t="Include">
@@ -65,9 +70,6 @@
                     <e p="CountdownWeaponController.cs" t="Include" />
                   </e>
                 </e>
-                <e p="WeaponFX" t="Include">
-                  <e p="FXWeapon.cs" t="Include" />
-                </e>
                 <e p="WeaponInventory" t="Include">
                   <e p="InventoryWeaponController.cs" t="Include" />
                 </e>
@@ -79,6 +81,12 @@
                 </e>
                 <e p="WeaponRay" t="Include">
                   <e p="RayWeaponController.cs" t="Include" />
+                </e>
+                <e p="WeaponSFX" t="Include">
+                  <e p="SFXWeaponController.cs" t="Include" />
+                </e>
+                <e p="WeaponVFX" t="Include">
+                  <e p="VFXWeaponController.cs" t="Include" />
                 </e>
                 <e p="WeaponVisual" t="Include">
                   <e p="WeaponVisualController.cs" t="Include" />

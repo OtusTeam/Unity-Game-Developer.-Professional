@@ -13,6 +13,9 @@ namespace Foundation
         [InjectOptional] ICharacterHealth health = default;
         public ICharacterHealth Health => health;
 
+        [InjectOptional] ICharacterAgent agent = default;
+        public ICharacterAgent Agent => agent;
+
         [Inject] IPlayerManager playerManager = default;
 
         protected override void OnEnable()

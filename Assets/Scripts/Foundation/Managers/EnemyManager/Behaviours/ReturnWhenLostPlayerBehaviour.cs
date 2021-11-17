@@ -5,20 +5,26 @@ using Zenject;
 
 namespace Foundation
 {
-    public sealed class FollowPlayerBehaviour : EnemyBehaviour
+    public sealed class ReturnWhenLostPlayerBehaviour : EnemyBehaviour
     {
         [Inject] IEnemy enemy = default;
         [Inject] ICharacterAgent agent = default;
+        Vector3 startingPoint;
+
+        void Start()
+        {
+            startingPoint = enemy.Position;
+        }
 
         public override bool CheckUpdateAI(float deltaTime)
         {
-            return enabled && enemy.SeenPlayer != null;
+            return enabled && enemy.SeenPlayer == null;
         }
 
         public override void UpdateAI(float deltaTime)
         {
-            if (enemy.SeenPlayer != null)
-                agent.NavigateTo(new Vector2(enemy.SeenPlayer.Position.x, enemy.SeenPlayer.Position.z));
+            if (enemy.SeenPlayer == null)
+                agent.NavigateTo(new Vector2(startingPoint.x, startingPoint.z));
         }
 
         public override void DeactivateAI()

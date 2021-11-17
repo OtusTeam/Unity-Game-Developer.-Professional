@@ -7,7 +7,7 @@ namespace Foundation
         ObserverList<IOnCharacterAttack> OnAttack { get; }
         void SetCurrentWeapon(AbstractWeapon weapon);
         bool CanAttack();
-        void Attack();
+        bool Attack();
         void EndAttack(bool applyCooldown);
     }
 }

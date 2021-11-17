@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -26,6 +27,7 @@ namespace Foundation
         public ObserverList<IOnCharacterAttack> OnAttack { get; } = new ObserverList<IOnCharacterAttack>();
 
         [SerializeField] SelectableWeapon[] weapons;
+        Dictionary<AbstractWeapon, AbstractWeaponAttack> weaponAttack = new Dictionary<AbstractWeapon, AbstractWeaponAttack>();
 
         [InjectOptional] IPlayer player = default;
         [InjectOptional] IInventory inventory = default;
@@ -36,6 +38,12 @@ namespace Foundation
         public override void Start()
         {
             base.Start();
+
+            foreach (var it in weapons) {
+                if (it.Attack != null)
+                    weaponAttack.Add(it.Weapon, it.Attack);
+            }
+
             SetCurrentWeaponForce(initialWeapon);
         }
 
@@ -60,40 +68,33 @@ namespace Foundation
             return currentWeapon.CanShoot(inventory != null ? inventory.RawStorage : null);
         }
 
-        public void Attack()
+        public bool Attack()
         {
             if (!CanAttack())
-                return;
+                return false;
 
-            AbstractWeaponAttack attack = null;
-            foreach (var it in weapons) {
-                if (it.Weapon == currentWeapon) {
-                    attack = it.Attack;
-                    break;
-                }
-            }
-
+            weaponAttack.TryGetValue(currentWeapon, out var attack);
             if (!currentWeapon.PrepareShoot(inventory != null ? inventory.RawStorage : null, attack))
-                return;
+                return false;
 
             attackingWeapon = currentWeapon;
             foreach (var it in OnAttack.Enumerate())
                 it.Do(attackingWeapon);
+
+            return true;
         }
 
         public void EndAttack(bool applyCooldown)
         {
             DebugOnly.Check(attackingWeapon != null, "Unexpected EndAttack.");
 
-            AbstractWeaponAttack attack = null;
-            foreach (var it in weapons) {
-                if (it.Weapon == currentWeapon) {
-                    attack = it.Attack;
-                    break;
-                }
+            if (applyCooldown && cooldownAfterAttack > 0.0f) {
+                // Уже идет кулдаун
+                return;
             }
 
-            attackingWeapon.EndShoot(attack);
+            weaponAttack.TryGetValue(currentWeapon, out var attack);
+            attackingWeapon.EndShoot(attack); // FIXME: вызывается два раза при наличии кулдауна
 
             if (applyCooldown) {
                 cooldownAfterAttack = attackingWeapon.AttackCooldownTime;
@@ -101,7 +102,9 @@ namespace Foundation
                     return;
             }
 
+            attackingWeapon.EndCooldown(attack);
             attackingWeapon = null;
+
             UpdateWeaponVisibility();
         }
 

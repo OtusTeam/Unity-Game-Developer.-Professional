@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7089929fcff34d48b2da8c7cedf9ae8, type: 3}
   m_Name: RPG
   m_EditorClassIdentifier: 
-  InventoryItem: {fileID: 0}
-  AmmoItem: {fileID: 0}
+  InventoryItem: {fileID: 11400000, guid: 632c8f8ace2356249be061292fb9a772, type: 2}
+  AttackCooldownTime: 2
+  AmmoItem: {fileID: 11400000, guid: ea01e728a88dc1646ab040548c34e9ac, type: 2}
+  Damage: 10

@@ -22,12 +22,7 @@ namespace Foundation
         {
             var input = inputManager.InputForPlayer(player.Index);
             if (input.Action(InputActionName).Triggered)
-            {
-                if (weapon.CanAttack())
-                {
-                    weapon.Attack();
-                }
-            }
+                weapon.Attack();
         }
     }
 }

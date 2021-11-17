@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: AK47
   m_EditorClassIdentifier: 
   InventoryItem: {fileID: 11400000, guid: fcc9305d3aee1ce45a9d2ac00434199d, type: 2}
+  AttackCooldownTime: 0
   AmmoItem: {fileID: 11400000, guid: 7a9b69ef3234ef74597c8441db47d77a, type: 2}
+  Parameters:
+    Count: 1
+    MaxDistance: 500
+    MinTargetAngle: 0.2
+    MaxTargetAngle: 0.4
+    MinGroupingAngle: 0
+    MaxGroupingAngle: 0
+  Damage: 10

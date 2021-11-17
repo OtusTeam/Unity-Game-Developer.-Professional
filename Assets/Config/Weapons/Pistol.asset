@@ -13,4 +13,13 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   InventoryItem: {fileID: 11400000, guid: 73316b24672269146992f467d032fb48, type: 2}
+  AttackCooldownTime: 0
   AmmoItem: {fileID: 11400000, guid: 08d8b032cfe96e24bb9781592735a702, type: 2}
+  Parameters:
+    Count: 1
+    MaxDistance: 500
+    MinTargetAngle: 0
+    MaxTargetAngle: 0
+    MinGroupingAngle: 0
+    MaxGroupingAngle: 0
+  Damage: 5

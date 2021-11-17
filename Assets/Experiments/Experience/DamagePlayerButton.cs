@@ -12,6 +12,7 @@ namespace Experiments
 
         [Inject] IPlayerManager playerManager = default;
         IPlayer IAttacker.Player => null;
+        IEnemy IAttacker.Enemy => null;
 
         void Awake()
         {

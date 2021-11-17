@@ -20,12 +20,20 @@ namespace Game
             Crouching_Rifle = 1008,
             Attack_Baseball = 1006,
             Attack_Rifle = 1009,
+            Dying_NoWeapon1 = 1010,
+            Dying_NoWeapon2 = 1011,
+            Dying_Rifle = 1012,
+            Dying_Crouching_Rifle = 1013,
         }
 
         enum LegsAnim
         {
             IdleOrRunning = 2000,
             Crouching = 2001,
+            Dying_NoWeapon1 = 2002,
+            Dying_NoWeapon2 = 2003,
+            Dying_Rifle = 2004,
+            Dying_Crouching_Rifle = 2005,
         }
 
         [Header("Debug")]
@@ -44,10 +52,14 @@ namespace Game
         int legsAnimID;
         int velocityXID;
         int velocityYID;
+        bool dead;
+        BodyAnim deadBodyAnim;
+        LegsAnim deadLegsAnim;
 
         [Inject] ISceneState state = default;
         [InjectOptional] ICharacterWeapon characterWeapon = default;
         [InjectOptional] ICharacterCrouchInput characterCrouch = default;
+        [InjectOptional] ICharacterHealth characterHealth = default;
 
         void Awake()
         {
@@ -99,6 +111,34 @@ namespace Game
             if (characterWeapon != null) {
                 weapon = characterWeapon.CurrentWeapon;
                 attacking = characterWeapon.AttackingWeapon != null;
+            }
+
+            if (characterHealth != null && characterHealth.IsDead) {
+                if (!dead) {
+                    dead = true;
+                    if (characterCrouch != null && characterCrouch.Crouching) {
+                        deadBodyAnim = BodyAnim.Dying_Crouching_Rifle;
+                        deadLegsAnim = LegsAnim.Dying_Crouching_Rifle;
+                    } else {
+                        if (Rifles != null && weapon != null && Rifles.Contains(weapon)) {
+                            deadBodyAnim = BodyAnim.Dying_Rifle;
+                            deadLegsAnim = LegsAnim.Dying_Rifle;
+                        } else {
+                            switch (Random.Range(0, 2)) {
+                                case 0:
+                                    deadBodyAnim = BodyAnim.Dying_NoWeapon1;
+                                    deadLegsAnim = LegsAnim.Dying_NoWeapon1;
+                                    break;
+                                case 1:
+                                    deadBodyAnim = BodyAnim.Dying_NoWeapon2;
+                                    deadLegsAnim = LegsAnim.Dying_NoWeapon2;
+                                    break;
+                            }
+                        }
+                    }
+                }
+
+                return (deadBodyAnim, deadLegsAnim);
             }
 
             if (characterCrouch != null && characterCrouch.Crouching) {

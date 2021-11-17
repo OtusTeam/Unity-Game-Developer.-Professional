@@ -7,5 +7,6 @@ namespace Foundation
     public interface IAttacker
     {
         IPlayer Player { get; }
+        IEnemy Enemy { get; }
     }
 }

@@ -8,6 +8,9 @@ namespace Foundation
         [InjectOptional] IPlayer player = default;
         public IPlayer Player => player;
 
+        [InjectOptional] IEnemy enemy = default;
+        public IEnemy Enemy => enemy;
+
         public float Radius = 1.0f;
         public float Damage = 1.0f;
         public LayerMask LayerMask;

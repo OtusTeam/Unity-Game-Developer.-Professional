@@ -13,6 +13,7 @@ namespace Experiments
         [Inject] IPlayerManager playerManager = default;
         [Inject] ICharacterHealth health = default;
         IPlayer IAttacker.Player => playerManager.GetPlayer(PlayerIndex);
+        IEnemy IAttacker.Enemy => null;
 
         void Awake()
         {

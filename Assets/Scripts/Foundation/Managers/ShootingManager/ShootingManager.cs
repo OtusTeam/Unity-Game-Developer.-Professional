@@ -15,7 +15,7 @@ namespace Foundation
 
             public int Compare(RaycastHit a, RaycastHit b)
             {
-                float distA = (Dst - a.point).sqrMagnitude;
+                float distA = (Dst - a.point).sqrMagnitude; // FIXME: use hit.distance?
                 float distB = (Dst - b.point).sqrMagnitude;
 
                 if (distA < distB)

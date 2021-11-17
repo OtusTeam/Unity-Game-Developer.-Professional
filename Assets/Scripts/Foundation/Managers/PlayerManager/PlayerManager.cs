@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Foundation
 {
@@ -55,6 +56,49 @@ namespace Foundation
                 return null;
 
             return players[index];
+        }
+
+        public IPlayer FindClosestPlayer(Vector3 position)
+        {
+            IPlayer closestPlayer = null;
+            float closestDistance = 0.0f;
+
+            foreach (var player in players) {
+                if (player == null)
+                    continue;
+
+                float distance = (closestPlayer.Position - position).sqrMagnitude;
+                if (closestPlayer == null || distance < closestDistance) {
+                    closestPlayer = player;
+                    closestDistance = distance;
+                }
+            }
+
+            return closestPlayer;
+        }
+
+        public void GetPlayersSortedByDistanceNonAlloc(Vector3 position, ref List<IPlayer> outputList)
+        {
+            if (outputList == null)
+                outputList = new List<IPlayer>(players.Count);
+            else
+                outputList.Clear();
+
+            foreach (var player in players) {
+                if (player != null)
+                    outputList.Add(player);
+            }
+
+            outputList.Sort((a, b) => {
+                    float distanceSqrA = (a.Position - position).sqrMagnitude;
+                    float distanceSqrB = (b.Position - position).sqrMagnitude;
+                    if (distanceSqrA < distanceSqrB)
+                        return -1;
+                    else if (distanceSqrA < distanceSqrB)
+                        return 1;
+                    else
+                        return 0;
+                });
         }
     }
 }

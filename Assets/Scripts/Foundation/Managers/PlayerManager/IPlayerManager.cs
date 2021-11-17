@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using UnityEngine;
+
 namespace Foundation
 {
     public interface IPlayerManager
@@ -15,5 +18,8 @@ namespace Foundation
         void RemovePlayer(IPlayer player);
 
         IPlayer GetPlayer(int index);
+
+        IPlayer FindClosestPlayer(Vector3 position);
+        void GetPlayersSortedByDistanceNonAlloc(Vector3 position, ref List<IPlayer> outputList);
     }
 }

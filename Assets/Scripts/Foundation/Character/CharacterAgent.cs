@@ -8,6 +8,8 @@ namespace Foundation
     public sealed class CharacterAgent : AbstractService<ICharacterAgent>, ICharacterAgent, IOnUpdate
     {
         NavMeshAgent agent;
+
+        [InjectOptional] ICharacterHealth health = default;
         [Inject] ISceneState state = default;
 
         public Transform CharacterTransform;
@@ -21,12 +23,20 @@ namespace Foundation
 
         public void Move(Vector2 dir)
         {
-            agent.Move(new Vector3(dir.x, 0.0f, dir.y));
+            if (agent != null)
+                agent.Move(new Vector3(dir.x, 0.0f, dir.y));
+        }
+
+        public void NavigateTo(Vector2 target)
+        {
+            if (agent != null)
+                agent.destination = new Vector3(target.x, transform.position.y, target.y);
         }
 
         public void Stop()
         {
-            agent.isStopped = true;
+            if (agent != null)
+                agent.isStopped = true;
         }
 
         protected override void OnEnable()
@@ -37,6 +47,12 @@ namespace Foundation
 
         void IOnUpdate.Do(float timeDelta)
         {
+            if (health != null && health.IsDead && agent != null) {
+                Destroy(agent);
+                agent = null;
+                return;
+            }
+
             if (UpdatePosition) {
                 CharacterTransform.position = transform.position;
                 transform.localPosition = Vector3.zero;

@@ -7,8 +7,11 @@ namespace Foundation
     public sealed class LauncherWeaponAttack : AbstractWeaponAttack, IAttacker, ILauncherWeaponAttack
     {
         [Inject(Id = nameof(LauncherWeapon))] MovingForwardProjectile.Factory factory = default;
+
         [InjectOptional] IPlayer player = default;
         public IPlayer Player => player;
+        [InjectOptional] IEnemy enemy = default;
+        public IEnemy Enemy => enemy;
 
         AbstractProjectile projectile;
 

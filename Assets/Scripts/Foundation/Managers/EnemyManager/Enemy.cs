@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Foundation
 {
-    public sealed class Enemy : AbstractService<IEnemy>, IEnemy, IOnUpdate
+    public sealed class Enemy : AbstractService<IEnemy, ICharacterCrouchInput>, IEnemy, IOnUpdate
     {
         public const int MinimumPriority = 0;
 
@@ -20,6 +20,8 @@ namespace Foundation
         public ICharacterWeapon Weapon => weapon;
 
         public Vector3 Position => transform.position;
+
+        public bool Crouching => (activeBehaviour != null ? activeBehaviour.Crouching : false);
 
         public ObserverList<IOnEnemySeenPlayer> OnSeenPlayer { get; } = new ObserverList<IOnEnemySeenPlayer>();
         public ObserverList<IOnEnemyLostPlayer> OnLostPlayer { get; } = new ObserverList<IOnEnemyLostPlayer>();
@@ -64,8 +66,13 @@ namespace Foundation
 
         void IOnUpdate.Do(float deltaTime)
         {
-            if (health != null && health.IsDead)
+            if (health != null && health.IsDead) {
+                if (activeBehaviour != null) {
+                    activeBehaviour.DeactivateAI();
+                    activeBehaviour = null;
+                }
                 return;
+            }
 
             IPlayer seesPlayer = null;
             if (playerDetector != null)
@@ -127,7 +134,13 @@ namespace Foundation
 
         public bool CanAttackPlayer(IPlayer target)
         {
-            return (target != null && Weapon != null && Weapon.CanAttack());
+            if (target == null || Weapon == null)
+                return false;
+
+            if (!enemyManager.EnemyCanAttack(this))
+                return false;
+
+            return Weapon.CanAttack();
         }
 
         public bool TryAttackPlayer(IPlayer target)
@@ -138,7 +151,7 @@ namespace Foundation
             if (Weapon != null && Weapon.CanAttack()) {
                 Weapon.Attack();
                 foreach (var it in OnDidAttackPlayer.Enumerate())
-                    it.Do();
+                    it.Do(this);
                 return true;
             }
 

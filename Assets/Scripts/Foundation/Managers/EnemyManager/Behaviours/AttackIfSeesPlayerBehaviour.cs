@@ -20,7 +20,7 @@ namespace Foundation
                 return false;
             }
 
-            return enabled && enemy.SeenPlayer != null;
+            return enabled && enemy.SeenPlayer != null && enemy.CanAttackPlayer(enemy.SeenPlayer);
         }
 
         public override void UpdateAI(float deltaTime)

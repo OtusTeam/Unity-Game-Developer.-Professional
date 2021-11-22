@@ -21,5 +21,7 @@ namespace Foundation
 
         IPlayer FindClosestPlayer(Vector3 position);
         void GetPlayersSortedByDistanceNonAlloc(Vector3 position, ref List<IPlayer> outputList);
+
+        IEnumerable<IPlayer> EnumeratePlayers();
     }
 }

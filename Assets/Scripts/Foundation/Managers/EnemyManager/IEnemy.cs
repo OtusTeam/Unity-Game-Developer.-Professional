@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Foundation
 {
-    public interface IEnemy
+    public interface IEnemy : ICharacterCrouchInput
     {
         ObserverList<IOnEnemySeenPlayer> OnSeenPlayer { get; }
         ObserverList<IOnEnemyLostPlayer> OnLostPlayer { get; }

@@ -100,5 +100,13 @@ namespace Foundation
                         return 0;
                 });
         }
+
+        public IEnumerable<IPlayer> EnumeratePlayers()
+        {
+            foreach (var player in players) {
+                if (player != null)
+                    yield return player;
+            }
+        }
     }
 }

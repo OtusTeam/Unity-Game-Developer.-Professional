@@ -6,6 +6,6 @@ namespace Foundation
 {
     public interface IMeleeWeaponAttack : IWeaponAttack
     {
-        void BeginMeleeAttack(float damage);
+        void BeginMeleeAttack(float damage, ICharacterEffectManager attackerEffectManager, AbstractCharacterEffect[] effects);
     }
 }

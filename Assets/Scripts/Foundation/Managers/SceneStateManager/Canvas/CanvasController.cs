@@ -19,12 +19,6 @@ namespace Foundation
             CanvasGroup.interactable = false;
             CanvasGroup.blocksRaycasts = false;
             CanvasGroup.alpha = 0.0f;
-
-            if (EditorCamera != null) {
-                if (Canvas.renderMode == RenderMode.ScreenSpaceCamera && Canvas.worldCamera == EditorCamera)
-                    Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-                Destroy(EditorCamera);
-            }
         }
 
         protected override void OnEnable()
@@ -68,6 +62,20 @@ namespace Foundation
         void IOnStateSortingOrderChanged.Do(int order)
         {
             Canvas.sortingOrder = order;
+        }
+
+        [UnityEditor.Callbacks.PostProcessScene(0)]
+        static void RemoveCamera()
+        {
+            var objects = FindObjectsOfType<CanvasController>();
+            foreach (var obj in objects) {
+                if (obj.EditorCamera != null) {
+                    if (obj.Canvas.renderMode == RenderMode.ScreenSpaceCamera && obj.Canvas.worldCamera == obj.EditorCamera)
+                        obj.Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+                    DestroyImmediate(obj.EditorCamera);
+                    obj.EditorCamera = null;
+                }
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Foundation
             return true;
         }
 
-        public virtual bool PrepareShoot(IInventoryStorage inventory, IWeaponAttack attack)
+        public virtual bool PrepareShoot(ICharacterEffectManager attackerEffectManager, IInventoryStorage inventory, IWeaponAttack attack)
         {
             return true;
         }

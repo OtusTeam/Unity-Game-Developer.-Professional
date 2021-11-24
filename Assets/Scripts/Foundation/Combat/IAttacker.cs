@@ -8,5 +8,6 @@ namespace Foundation
     {
         IPlayer Player { get; }
         IEnemy Enemy { get; }
+        AbstractCharacterEffect Effect { get; }
     }
 }

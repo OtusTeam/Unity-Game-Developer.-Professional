@@ -16,7 +16,13 @@ namespace Foundation
         [InjectOptional] ICharacterAgent agent = default;
         public ICharacterAgent Agent => agent;
 
+        [InjectOptional] IInventory inventory = default;
+        public IInventory Inventory => inventory;
+
         [Inject] IPlayerManager playerManager = default;
+
+        [SerializeField] Sprite portrait;
+        public Sprite Portrait => portrait;
 
         protected override void OnEnable()
         {

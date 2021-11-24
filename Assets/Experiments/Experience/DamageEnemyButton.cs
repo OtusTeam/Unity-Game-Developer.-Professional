@@ -14,6 +14,7 @@ namespace Experiments
         [Inject] ICharacterHealth health = default;
         IPlayer IAttacker.Player => playerManager.GetPlayer(PlayerIndex);
         IEnemy IAttacker.Enemy => null;
+        AbstractCharacterEffect IAttacker.Effect => null;
 
         void Awake()
         {

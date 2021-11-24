@@ -7,11 +7,12 @@ namespace Foundation
     public sealed class MeleeWeapon : AbstractWeapon
     {
         public float Damage;
+        public AbstractCharacterEffect[] Effects;
 
-        public override bool PrepareShoot(IInventoryStorage inventory, IWeaponAttack attack)
+        public override bool PrepareShoot(ICharacterEffectManager attackerEffectManager, IInventoryStorage inventory, IWeaponAttack attack)
         {
             if (attack is IMeleeWeaponAttack meleeAttack)
-                meleeAttack.BeginMeleeAttack(Damage);
+                meleeAttack.BeginMeleeAttack(Damage, attackerEffectManager, Effects);
             else
                 DebugOnly.Error("Using melee weapon with wrong attack.");
 

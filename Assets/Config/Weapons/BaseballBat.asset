@@ -15,3 +15,5 @@ MonoBehaviour:
   InventoryItem: {fileID: 11400000, guid: 5308ec6ca2214fe4a97bb8e1428994e1, type: 2}
   AttackCooldownTime: 0
   Damage: 10
+  Effects:
+  - {fileID: 11400000, guid: 07d8ab2c68ea7c341b222af08aab85de, type: 2}

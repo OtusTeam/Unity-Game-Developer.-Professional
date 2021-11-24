@@ -12,6 +12,7 @@ namespace Foundation
         public IPlayer Player => player;
         [InjectOptional] IEnemy enemy = default;
         public IEnemy Enemy => enemy;
+        public AbstractCharacterEffect Effect => null;
 
         AbstractProjectile projectile;
 

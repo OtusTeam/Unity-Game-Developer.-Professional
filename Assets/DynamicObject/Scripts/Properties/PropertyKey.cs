@@ -3,7 +3,7 @@ using System;
 namespace DynamicObjects
 {
     [Serializable]
-    public enum PropertyKeys
+    public enum PropertyKey
     {
         CHARACTER_ANIMATOR = 1,
         BULLET = 2

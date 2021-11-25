@@ -2,11 +2,11 @@ using System.Collections.Generic;
 
 namespace DynamicObjects
 {
-    public sealed class PropertyDictionary
+    public sealed class PropertyBus
     {
         private readonly Dictionary<object, IPropertyProvider> propertyMap;
 
-        public PropertyDictionary()
+        public PropertyBus()
         {
             this.propertyMap = new Dictionary<object, IPropertyProvider>();
         }

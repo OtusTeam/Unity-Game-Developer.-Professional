@@ -4,28 +4,28 @@ namespace DynamicObjects
 {
     public sealed class EventBus
     {
-        private readonly Dictionary<object, List<IMethodDelegate>> listenersMap;
+        private readonly Dictionary<object, List<IDelegate>> listenersMap;
 
-        private readonly List<IMethodDelegate> processingListeners;
+        private readonly List<IDelegate> processingListeners;
 
         public EventBus()
         {
-            this.listenersMap = new Dictionary<object, List<IMethodDelegate>>();
-            this.processingListeners = new List<IMethodDelegate>();
+            this.listenersMap = new Dictionary<object, List<IDelegate>>();
+            this.processingListeners = new List<IDelegate>();
         }
 
-        public void AddEventListener(object key, IMethodDelegate listener)
+        public void AddEventListener(object key, IDelegate listener)
         {
             if (!this.listenersMap.TryGetValue(key, out var listeners))
             {
-                listeners = new List<IMethodDelegate>();
+                listeners = new List<IDelegate>();
                 this.listenersMap.Add(key, listeners);
             }
             
             listeners.Add(listener);
         }
 
-        public void RemoveEventListener(object key, IMethodDelegate callback)
+        public void RemoveEventListener(object key, IDelegate callback)
         {
             if (!this.listenersMap.TryGetValue(key, out var listeners))
             {
@@ -40,7 +40,7 @@ namespace DynamicObjects
             }
         }
 
-        public void InvokeEvent(object key, IMethodArgs args)
+        public void InvokeEvent(object key, Args args)
         {
             if (!this.listenersMap.TryGetValue(key, out var listeners))
             {

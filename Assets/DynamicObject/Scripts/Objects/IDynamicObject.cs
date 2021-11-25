@@ -12,21 +12,21 @@ namespace DynamicObjects
         void RemoveProperty(object key);
 
         //Methods:
-        T CallMethod<T>(object key, IMethodArgs args = null);
+        T CallMethod<T>(object key, Args args = null);
 
-        void CallMethod(object key, IMethodArgs args = null);
+        void CallMethod(object key, Args args = null);
         
         bool ContainsMethod(object key);
 
-        void AddMethod(object key, IMethodDelegate method);
+        void AddMethod(object key, IDelegate method);
 
         void RemoveMethod(object key);
         
         //Events:
-        void AddEventListener(object key, IMethodDelegate callback);
+        void AddEventListener(object key, IDelegate callback);
 
-        void RemoveEventListener(object key, IMethodDelegate callback);
+        void RemoveEventListener(object key, IDelegate callback);
 
-        void InvokeEvent(object key, IMethodArgs args);
+        void InvokeEvent(object key, Args args);
     }
 }

@@ -2,7 +2,7 @@ namespace DynamicObjects
 {
     public sealed class DynamicObject : IDynamicObject
     {
-        private readonly PropertyDictionary properties;
+        private readonly PropertyBus properties;
 
         private readonly MethodBus methodBus;
 
@@ -10,7 +10,7 @@ namespace DynamicObjects
 
         public DynamicObject()
         {
-            this.properties = new PropertyDictionary();
+            this.properties = new PropertyBus();
             this.methodBus = new MethodBus();
             this.eventBus = new EventBus();
         }
@@ -35,12 +35,12 @@ namespace DynamicObjects
             this.properties.RemoveProperty(key);
         }
 
-        public T CallMethod<T>(object key, IMethodArgs args = null)
+        public T CallMethod<T>(object key, Args args = null)
         {
             return this.methodBus.CallMethod<T>(key, args);
         }
 
-        public void CallMethod(object key, IMethodArgs args = null)
+        public void CallMethod(object key, Args args = null)
         {
             this.methodBus.CallMethod(key, args);
         }
@@ -50,7 +50,7 @@ namespace DynamicObjects
             return this.methodBus.ContainsMethod(key);
         }
 
-        public void AddMethod(object key, IMethodDelegate method)
+        public void AddMethod(object key, IDelegate method)
         {
             this.methodBus.AddMethod(key, method);
         }
@@ -60,17 +60,17 @@ namespace DynamicObjects
             this.methodBus.RemoveMethod(key);
         }
 
-        public void AddEventListener(object key, IMethodDelegate callback)
+        public void AddEventListener(object key, IDelegate callback)
         {
             this.eventBus.AddEventListener(key, callback);
         }
 
-        public void RemoveEventListener(object key, IMethodDelegate callback)
+        public void RemoveEventListener(object key, IDelegate callback)
         {
             this.eventBus.RemoveEventListener(key, callback);
         }
 
-        public void InvokeEvent(object key, IMethodArgs args)
+        public void InvokeEvent(object key, Args args)
         {
             this.eventBus.InvokeEvent(key, args);
         }

@@ -3,7 +3,7 @@ using System;
 namespace DynamicObjects
 {
     [Serializable]
-    public enum ActionKeys
+    public enum ActionKey
     {
         TAKE_DAMAGE = -1,
         DIE = -2,

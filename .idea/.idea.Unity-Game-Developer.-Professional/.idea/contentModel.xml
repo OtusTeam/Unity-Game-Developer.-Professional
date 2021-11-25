@@ -8,25 +8,25 @@
       <e p="Assets" t="Include">
         <e p="DynamicObject" t="Include">
           <e p="Scripts" t="Include">
-            <e p="Method" t="Include">
+            <e p="Actions" t="Include">
+              <e p="ActionKey.cs" t="Include" />
+              <e p="Args.cs" t="Include" />
               <e p="EventBus.cs" t="Include" />
-              <e p="IMethodArgs.cs" t="Include" />
-              <e p="IMethodDelegate.cs" t="Include" />
+              <e p="IDelegate.cs" t="Include" />
               <e p="MethodBus.cs" t="Include" />
             </e>
-            <e p="Object" t="Include">
+            <e p="Objects" t="Include">
               <e p="DynamicObject.cs" t="Include" />
               <e p="IDynamicObject.cs" t="Include" />
+              <e p="IDynamicObjectController.cs" t="Include" />
               <e p="UnityDynamicObject.cs" t="Include" />
             </e>
-            <e p="Property" t="Include">
+            <e p="Properties" t="Include">
               <e p="IPropertyProvider.cs" t="Include" />
-              <e p="PropertyDictionary.cs" t="Include" />
-            </e>
-            <e p="Utils" t="Include">
-              <e p="ActionKeys.cs" t="Include" />
-              <e p="IDynamicObjectController.cs" t="Include" />
-              <e p="PropertyKeys.cs" t="Include" />
+              <e p="PropertyBus.cs" t="Include" />
+              <e p="PropertyKey.cs" t="Include" />
+              <e p="PropertyProvider.cs" t="Include" />
+              <e p="UnityDynamicPropertyController.cs" t="Include" />
             </e>
           </e>
         </e>

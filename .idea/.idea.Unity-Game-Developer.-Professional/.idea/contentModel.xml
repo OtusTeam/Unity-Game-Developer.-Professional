@@ -17,7 +17,6 @@
             <e p="Object" t="Include">
               <e p="DynamicObject.cs" t="Include" />
               <e p="IDynamicObject.cs" t="Include" />
-              <e p="IDynamicObjectComponent.cs" t="Include" />
               <e p="UnityDynamicObject.cs" t="Include" />
             </e>
             <e p="Property" t="Include">
@@ -26,6 +25,7 @@
             </e>
             <e p="Utils" t="Include">
               <e p="ActionKeys.cs" t="Include" />
+              <e p="IDynamicObjectController.cs" t="Include" />
               <e p="PropertyKeys.cs" t="Include" />
             </e>
           </e>

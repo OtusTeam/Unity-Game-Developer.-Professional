@@ -5,9 +5,14 @@ namespace DynamicObjects
     public sealed class UnityDynamicObject : MonoBehaviour, IDynamicObject
     {
         [SerializeField]
-        private GameObject[] dynamicComponents;
+        private GameObject[] dynamicControllers;
 
-        private DynamicObject dynamicObject;
+        private readonly DynamicObject dynamicObject;
+
+        public UnityDynamicObject()
+        {
+            this.dynamicObject = new DynamicObject();
+        }
 
         public T GetProperty<T>(object key)
         {
@@ -68,26 +73,20 @@ namespace DynamicObjects
         {
             this.dynamicObject.InvokeEvent(key, args);
         }
-        
-        public void SetupComponent(IDynamicObjectComponent component)
-        {
-            component.Setup(this.dynamicObject);
-        }
 
         private void Start()
         {
-            this.SetupComponents();
+            this.InitializeControllers();
         }
 
-        private void SetupComponents()
+        private void InitializeControllers()
         {
-            this.dynamicObject = new DynamicObject();
-            for (int i = 0, count = this.dynamicComponents.Length; i < count; i++)
+            for (int i = 0, count = this.dynamicControllers.Length; i < count; i++)
             {
-                var componentGO = this.dynamicComponents[i];
-                if (componentGO != null && componentGO.TryGetComponent(out IDynamicObjectComponent component))
+                var controllerGO = this.dynamicControllers[i];
+                if (controllerGO != null && controllerGO.TryGetComponent(out IDynamicObjectController controller))
                 {
-                    this.SetupComponent(component);
+                    controller.Initialize(this.dynamicObject);
                 }
             }
         }

@@ -12,6 +12,7 @@ namespace DynamicObjects
         {
             this.properties = new PropertyDictionary();
             this.methodBus = new MethodBus();
+            this.eventBus = new EventBus();
         }
 
         public T GetProperty<T>(object key)

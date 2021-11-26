@@ -60,7 +60,27 @@
           </e>
           <e p="Inventory" t="Include">
             <e p="Scripts" t="Include">
-              <e p="Inventory.cs" t="Include" />
+              <e p="IInventoryManager.cs" t="Include" />
+              <e p="Inventory" t="Include">
+                <e p="Config" t="Include">
+                  <e p="ItemComponentCOnfig.cs" t="Include" />
+                  <e p="ItemConfig.cs" t="Include" />
+                </e>
+                <e p="Item" t="Include">
+                  <e p="IItemComponent.cs" t="Include" />
+                  <e p="Implementations" t="Include">
+                    <e p="ConsumableItemComponent.cs" t="Include" />
+                    <e p="EquipableItemComponent.cs" t="Include" />
+                    <e p="StackableItemComponent.cs" t="Include" />
+                  </e>
+                  <e p="Item.cs" t="Include" />
+                  <e p="ItemType.cs" t="Include" />
+                </e>
+                <e p="Utils" t="Include">
+                  <e p="EquipSlot.cs" t="Include" />
+                </e>
+              </e>
+              <e p="InventoryManager.cs" t="Include" />
             </e>
           </e>
           <e p="Player" t="Include">

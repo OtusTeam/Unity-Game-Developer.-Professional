@@ -2,7 +2,7 @@ using DynamicObjects;
 using UnityEngine;
 using Zenject;
 
-namespace Otus.Components
+namespace Otus
 {
     public sealed class WeaponsVisibilityController : MonoBehaviour
     {

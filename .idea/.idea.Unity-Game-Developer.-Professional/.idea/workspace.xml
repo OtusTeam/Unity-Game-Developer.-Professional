@@ -52,15 +52,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Связал систему инвентаря и оружия">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/InventoryItemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/InventoryItemManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponChangeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponChangeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun/Gun1WeaponConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun/Gun1WeaponConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun2/Gun2WeaponConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun2/Gun2WeaponConfig.asset" afterDir="false" />
-    </list>
+    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Готово" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +61,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson_4/igor_gulkin" />
+        <entry key="$PROJECT_DIR$" value="igor_gulkin/weapon_system" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -197,7 +189,7 @@
       <workItem from="1635544485019" duration="728000" />
       <workItem from="1637482679075" duration="2039000" />
       <workItem from="1637850380237" duration="6433000" />
-      <workItem from="1637901232746" duration="38256000" />
+      <workItem from="1637901232746" duration="38454000" />
     </task>
     <task id="LOCAL-00001" summary="Провел урок по прокачке персонажа">
       <created>1635297557292</created>
@@ -318,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637940522221</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Готово">
+      <created>1637957995128</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1637957995128</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +348,8 @@
     <MESSAGE value="Подключил инвентарь" />
     <MESSAGE value="Написал инвентарь" />
     <MESSAGE value="Связал систему инвентаря и оружия" />
-    <option name="LAST_COMMIT_MESSAGE" value="Связал систему инвентаря и оружия" />
+    <MESSAGE value="Готово" />
+    <option name="LAST_COMMIT_MESSAGE" value="Готово" />
   </component>
   <component name="WindowStateProjectService">
     <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1637863150393">
@@ -368,10 +368,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1637940279785" />
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1637940523335">
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1637958048375">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1637940523335" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1637958048375" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637850417036">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

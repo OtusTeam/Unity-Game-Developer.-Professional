@@ -10,36 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f48c92f1e8aeb5f41988229daac63489, type: 3}
-  m_Name: BaseItem
+  m_Name: Gun (InventoryConfig)
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 706e72a257a228e45b0403a2613b206d, type: 2}
-    - {fileID: 11400000, guid: 3c000b12be9f720488772b176fbb8199, type: 2}
-    - {fileID: 11400000, guid: c2c9b23ccc3411742898dcd74d13c7a5, type: 2}
+    - {fileID: 11400000, guid: 85c7d0292e65846ebbaf7afed0e1627b, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: itemComponentDatas
+    - Name: components
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[IItemComponentData`1[[IItemComponent,
-        Assembly-CSharp]], Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.List`1[[Otus.InventoryModule.IItemComponent,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 1
     - Name: 
+      Entry: 7
+      Data: 1|Otus.WeaponInventoryComponent, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: config
       Entry: 10
       Data: 0
     - Name: 
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 2
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 

@@ -35,6 +35,36 @@ namespace Otus.InventoryModule
             }
         }
 
+        public bool ContainsComponent(Type componentType)
+        {
+            for (int i = 0, count = this.components.Count; i < count; i++)
+            {
+                var component = this.components[i];
+                if (component.GetType() == componentType)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
+        public bool TryGetComponent<T>(out T targetComponent)
+        {
+            for (int i = 0, count = this.components.Count; i < count; i++)
+            {
+                var component = this.components[i];
+                if (component is T result)
+                {
+                    targetComponent = result;
+                    return true;
+                }
+            }
+
+            targetComponent = default;
+            return false;
+        }
+
         public T GetComponent<T>()
         {
             for (int i = 0, count = this.components.Count; i < count; i++)

@@ -1,4 +1,5 @@
 using DynamicObjects;
+using Otus.InventoryModule;
 using UnityEngine;
 using Zenject;
 
@@ -18,11 +19,15 @@ namespace Otus
         private WeaponCurrentManager weaponCurrentManager;
 
         [SerializeField]
-        private WeaponsPoolManager weaponsPoolManager;
+        private WeaponsPool weaponsPool;
 
-        [Header("Damage")]
+        [Header("Deal Damage")]
         [SerializeField]
         private DealDamageHandler dealDamageHandler;
+        
+        [Header("Inventory")]
+        [SerializeField]
+        private InventoryItemManager inventoryItemManager;
         
         public override void InstallBindings()
         {
@@ -30,10 +35,12 @@ namespace Otus
 
             this.Container.Bind<IMoveController>().FromInstance(this.moveController);
 
-            this.Container.Bind<WeaponCurrentManager>().FromInstance(this.weaponCurrentManager);
-            this.Container.Bind<WeaponsPoolManager>().FromInstance(this.weaponsPoolManager);
+            this.Container.Bind<IWeaponCurrentManager>().FromInstance(this.weaponCurrentManager);
+            this.Container.Bind<IWeaponsPool>().FromInstance(this.weaponsPool);
             
             this.Container.Bind<DealDamageHandler>().FromInstance(this.dealDamageHandler);
+
+            this.Container.Bind<IInventoryItemManager>().FromInstance(this.inventoryItemManager);
         }
     }
 }

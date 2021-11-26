@@ -7,10 +7,10 @@ namespace Otus
     public sealed class WeaponsVisibilityController : MonoBehaviour
     {
         [Inject]
-        private WeaponCurrentManager weaponCurrentManager;
+        private IWeaponCurrentManager weaponCurrentManager;
 
         [Inject]
-        private WeaponsPoolManager weaponPoolManager;
+        private IWeaponsPool weaponsPool;
 
         [SerializeField]
         private Transform handTransform;
@@ -24,14 +24,14 @@ namespace Otus
         {
             this.weaponCurrentManager.OnWeaponSetuped += this.OnCurrentWeaponSetuped;
             this.weaponCurrentManager.OnWeaponChanged += this.OnCurrentWeaponChanged;
-            this.weaponPoolManager.OnWeaponAdded += this.OnWeaponAdded;
+            this.weaponsPool.OnWeaponAdded += this.OnWeaponAdded;
         }
 
         private void OnDisable()
         {
             this.weaponCurrentManager.OnWeaponSetuped -= this.OnCurrentWeaponSetuped;
             this.weaponCurrentManager.OnWeaponChanged -= this.OnCurrentWeaponChanged;
-            this.weaponPoolManager.OnWeaponAdded -= this.OnWeaponAdded;
+            this.weaponsPool.OnWeaponAdded -= this.OnWeaponAdded;
         }
 
         #endregion

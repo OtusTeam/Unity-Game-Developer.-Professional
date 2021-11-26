@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -7,17 +6,14 @@ namespace Otus
 {
     public sealed class PlayerWeaponChangeController : MonoBehaviour
     {
-        [SerializeField]
-        private Parameters parameters;
-        
         [Inject]
         private IGameManager gameManager;
         
         [Inject]
-        private WeaponCurrentManager weaponManager;
+        private IWeaponCurrentManager weaponManager;
 
         [Inject]
-        private WeaponsPoolManager weaponsPoolManager;
+        private IWeaponsPool weaponsPool;
 
         private readonly List<Weapon> processingWeapons;
 
@@ -38,7 +34,6 @@ namespace Otus
         
         private void OnStartGame()
         {
-            this.SetInitialWeapon();
             this.isEnabled = true;
         }
 
@@ -66,7 +61,7 @@ namespace Otus
 
         private void ProcessInputActions()
         {
-            var allWeapons = this.weaponsPoolManager.GetAllWeapons();
+            var allWeapons = this.weaponsPool.GetAllWeapons();
 
             this.processingWeapons.Clear();
             this.processingWeapons.AddRange(allWeapons);
@@ -84,20 +79,6 @@ namespace Otus
         private void ChangeWeapon(Weapon weapon)
         {
             this.weaponManager.ChangeWeapon(weapon.DynamicObject);
-        }
-
-        private void SetInitialWeapon()
-        {
-            var weaponId = this.parameters.initialWeapon.id;
-            var weapon = this.weaponsPoolManager.GetWeapon(weaponId);
-            this.weaponManager.SetupWeapon(weapon.DynamicObject);
-        }
-
-        [Serializable]
-        public sealed class Parameters
-        {
-            [SerializeField]
-            public WeaponConfig initialWeapon;
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DynamicObjects;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -25,7 +26,7 @@ namespace Otus
         void RemoveWeapon(string id);
     }
 
-    public sealed class WeaponsPoolManager : MonoBehaviour, IWeaponsPool
+    public sealed class WeaponsPool : SerializedMonoBehaviour, IWeaponsPool
     {
         public event Action<Weapon> OnWeaponAdded;
 
@@ -36,16 +37,20 @@ namespace Otus
             get { return this.weaponMap.Count; }
         }
 
-        private Dictionary<string, Weapon> weaponMap;
+        [ReadOnly]
+        [ShowInInspector]
+        private readonly Dictionary<string, Weapon> weaponMap;
 
         [Inject]
         private DiContainer di;
 
-        [Inject]
-        private IGameManager gameManager;
-
         [SerializeField]
         private Parameters parameters;
+
+        public WeaponsPool()
+        {
+            this.weaponMap = new Dictionary<string, Weapon>();
+        }
 
         public IEnumerable<Weapon> GetAllWeapons()
         {
@@ -69,7 +74,7 @@ namespace Otus
         {
             var weaponContainer = this.parameters.container;
             var weaponGO = this.di.InstantiatePrefabForComponent<MonoDynamicObject>(config.prefab, weaponContainer);
-
+            
             var weapon = new Weapon(config, weaponGO);
             this.weaponMap.Add(config.id, weapon);
             this.OnWeaponAdded?.Invoke(weapon);
@@ -87,74 +92,11 @@ namespace Otus
             Destroy(weapon.DynamicObject);
         }
 
-        #region Lifecycle
-
-        private void Awake()
-        {
-            this.weaponMap = new Dictionary<string, Weapon>();
-        }
-
-        private void OnEnable()
-        {
-            this.gameManager.OnInitializeGame += this.OnGameInitialized;
-        }
-
-        private void OnGameInitialized()
-        {
-            this.InitializeWeapons();
-        }
-
-        private void OnDisable()
-        {
-            this.gameManager.OnInitializeGame -= this.OnGameInitialized;
-        }
-
-        #endregion
-
-        private void InitializeWeapons()
-        {
-            var weaponConfigs = this.parameters.initialWeapons;
-            for (var i = 0; i < weaponConfigs.Length; i++)
-            {
-                var config = weaponConfigs[i];
-                this.AddWeapon(config);
-            }
-        }
-
         [Serializable]
         public sealed class Parameters
         {
             [SerializeField]
             public Transform container;
-
-            [SerializeField]
-            public WeaponConfig[] initialWeapons;
-        }
-    }
-
-    [Serializable]
-    public sealed class Weapon
-    {
-        public WeaponConfig Config
-        {
-            get { return this.config; }
-        }
-
-        public MonoDynamicObject DynamicObject
-        {
-            get { return this.dynamicObject; }
-        }
-
-        [SerializeField]
-        private WeaponConfig config;
-
-        [SerializeField]
-        private MonoDynamicObject dynamicObject;
-
-        public Weapon(WeaponConfig config, MonoDynamicObject dynamicObject)
-        {
-            this.config = config;
-            this.dynamicObject = dynamicObject;
         }
     }
 }

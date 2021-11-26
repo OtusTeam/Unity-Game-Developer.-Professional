@@ -9,6 +9,7 @@ namespace DynamicObjects
         DIE = -2,
         SHOW = -3,
         HIDE = -4,
-        ATTACK = -5
+        ATTACK = -5,
+        COLLECT = -6
     }
 }

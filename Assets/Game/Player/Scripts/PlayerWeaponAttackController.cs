@@ -10,7 +10,7 @@ namespace Otus
         private IGameManager gameManager;
         
         [Inject]
-        private WeaponCurrentManager weaponManager;
+        private IWeaponCurrentManager weaponManager;
         
         private bool isEnabled;
         

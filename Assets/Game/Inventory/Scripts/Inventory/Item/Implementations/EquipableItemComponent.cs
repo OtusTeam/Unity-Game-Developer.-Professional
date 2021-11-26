@@ -7,15 +7,20 @@ namespace Otus.InventoryModule
     public sealed class EquipableItemComponent : IItemComponent
     {
         public event Action<bool> OnItemEquiped;
-        
+
         public ItemType Type
         {
             get { return this.type; }
         }
 
+        public bool IsEquipped
+        {
+            get { return this.isEquiped; }
+        }
+
         [SerializeField]
         private ItemType type;
-        
+
         [SerializeField]
         private EquipSlot equipSlot;
 

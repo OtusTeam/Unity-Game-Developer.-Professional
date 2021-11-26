@@ -1,19 +1,35 @@
 using System;
 using DynamicObjects;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Otus
 {
-    public sealed class WeaponCurrentManager : MonoBehaviour
+    public interface IWeaponCurrentManager
     {
-        public delegate void WeaponSetupedDelegate(MonoDynamicObject weapon);
+        delegate void WeaponSetupedDelegate(MonoDynamicObject weapon);
 
-        public delegate void WeaponChangedDelegate(MonoDynamicObject previousWeapon, MonoDynamicObject nextWeapon);
+        delegate void WeaponChangedDelegate(MonoDynamicObject previousWeapon, MonoDynamicObject nextWeapon);
         
-        public event WeaponSetupedDelegate OnWeaponSetuped;
+        event WeaponSetupedDelegate OnWeaponSetuped;
         
-        public event WeaponChangedDelegate OnWeaponChanged;
+        event WeaponChangedDelegate OnWeaponChanged;
         
+        void SetupWeapon(MonoDynamicObject weapon);
+        
+        void ChangeWeapon(MonoDynamicObject weapon);
+        
+        bool TryGetWeapon(out MonoDynamicObject weapon);
+    }
+
+    public sealed class WeaponCurrentManager : MonoBehaviour, IWeaponCurrentManager
+    {
+        public event IWeaponCurrentManager.WeaponSetupedDelegate OnWeaponSetuped;
+        
+        public event IWeaponCurrentManager.WeaponChangedDelegate OnWeaponChanged;
+        
+        [ReadOnly]
+        [ShowInInspector]
         private MonoDynamicObject currentWeapon;
 
         [SerializeField]

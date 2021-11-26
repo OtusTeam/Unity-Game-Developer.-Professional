@@ -8,11 +8,6 @@ namespace Otus.InventoryModule
     {
         public event Action<int> OnStackChanged; 
         
-        public int MaxStack
-        {
-            get { return this.maxStack; }
-        }
-
         public int CurrentStack
         {
             get { return this.currentStack; }
@@ -29,9 +24,6 @@ namespace Otus.InventoryModule
         [SerializeField]
         private int currentStack;
 
-        [SerializeField]
-        private int maxStack;
-
         public void SetCurrentStack(int amount)
         {
             this.currentStack = amount;
@@ -43,7 +35,6 @@ namespace Otus.InventoryModule
             return new StackableItemComponent
             {
                 currentStack = this.currentStack,
-                maxStack = this.maxStack
             };
         }
     }

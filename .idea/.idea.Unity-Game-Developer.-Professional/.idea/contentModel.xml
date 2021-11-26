@@ -105,7 +105,7 @@
                 </e>
                 <e p="Weapon" t="Include">
                   <e p="Components" t="Include">
-                    <e p="WeaponAttackAnimatorComponent.cs" t="Include" />
+                    <e p="WeaponAttackAnimationComponent.cs" t="Include" />
                     <e p="WeaponAttackBulletComponent.cs" t="Include" />
                     <e p="WeaponAttackComponent.cs" t="Include" />
                     <e p="WeaponAttackCountdown.cs" t="Include" />

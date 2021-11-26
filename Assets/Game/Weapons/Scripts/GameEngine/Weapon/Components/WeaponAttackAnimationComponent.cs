@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Otus
 {
-    public sealed class WeaponAttackAnimatorComponent : WeaponAttackComponent
+    public sealed class WeaponAttackAnimationComponent : WeaponAttackComponent
     {
         public override event Action OnAttack;
 

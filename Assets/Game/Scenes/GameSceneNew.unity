@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 600968336}
   - component: {fileID: 600968335}
   m_Layer: 0
-  m_Name: GameContext
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10502bfadeb24d6bb064f3f6937739de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoRun: 1
 --- !u!114 &600968336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,6 +1248,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5795432559278685595, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: m_Name
+      value: Visual
+      objectReference: {fileID: 0}
     - target: {fileID: 5795432560036534245, guid: 27323a3815277486a938a6808560ea62, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1293,6 +1298,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5795432560036534246, guid: 27323a3815277486a938a6808560ea62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795432561170971340, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

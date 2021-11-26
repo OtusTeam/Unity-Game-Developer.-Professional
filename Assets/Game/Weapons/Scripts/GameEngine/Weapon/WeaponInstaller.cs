@@ -11,7 +11,6 @@ namespace Otus
         
         public override void InstallBindings()
         {
-            base.InstallBindings();
             this.Container.Bind<IDynamicObject>().FromInstance(this.weapon);
         }
     }

@@ -24,12 +24,14 @@ namespace Otus
 
         private object Show(Args args)
         {
+            Debug.Log("SHOW");
             this.onShowEvent?.Invoke();
             return null;
         }
 
         private object Hide(Args args)
         {
+            Debug.Log("HIDE");
             this.onHideEvent?.Invoke();
             return null;
         }

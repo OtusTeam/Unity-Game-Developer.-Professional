@@ -1256,6 +1256,34 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 5795432559484493125, guid: 27323a3815277486a938a6808560ea62, type: 3}
+    - target: {fileID: 5795432560036534242, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: properties.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795432560036534242, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: properties.Array.data[2].key
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795432560036534242, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: properties.Array.data[3].key
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795432560036534242, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: properties.Array.data[4].key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795432560036534242, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: properties.Array.data[5].key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795432560036534242, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: properties.Array.data[6].key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795432560036534242, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: properties.Array.data[7].key
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5795432560036534245, guid: 27323a3815277486a938a6808560ea62, type: 3}
       propertyPath: m_Name
       value: Player

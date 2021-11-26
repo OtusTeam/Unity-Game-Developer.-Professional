@@ -68,11 +68,8 @@ namespace Otus
             for (int i = 0, count = this.processingWeapons.Count; i < count; i++)
             {
                 var weapon = this.processingWeapons[i];
-                Debug.Log($"PROCESS WEAPON {weapon.DynamicObject.name}");
-                
                 if (Input.GetKeyDown(weapon.Config.selectActionKey))
                 {
-                    Debug.Log($"CHANGE WEAPON ON {weapon.Config.selectActionKey}");
                     this.ChangeWeapon(weapon);
                 }
             }

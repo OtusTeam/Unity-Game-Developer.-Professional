@@ -110,11 +110,6 @@
                 <e p="WeaponConfig.cs" t="Include" />
               </e>
               <e p="GameEngine" t="Include">
-                <e p="Archive" t="Include">
-                  <e p="WeaponInventory" t="Include">
-                    <e p="InventoryWeaponController.cs" t="Include" />
-                  </e>
-                </e>
                 <e p="Collect" t="Include">
                   <e p="WeaponCollectController.cs" t="Include" />
                   <e p="WeaponCollectibleComponent.cs" t="Include" />

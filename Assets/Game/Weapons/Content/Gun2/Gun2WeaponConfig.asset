@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gun2WeaponConfig
   m_EditorClassIdentifier: 
   id: Gun2
-  selectActionKey: 258
+  selectActionKey: 50
   prefab: {fileID: 3703512681973967834, guid: 6ec23fef9b11e4a39ad31aa7411ccb19, type: 3}

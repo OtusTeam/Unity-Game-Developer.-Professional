@@ -13,7 +13,7 @@ namespace Otus.InventoryModule
         
         [ReadOnly]
         [ShowInInspector]
-        private HashSet<Item> items;
+        private readonly HashSet<Item> items;
 
         public InventoryItemManager()
         {

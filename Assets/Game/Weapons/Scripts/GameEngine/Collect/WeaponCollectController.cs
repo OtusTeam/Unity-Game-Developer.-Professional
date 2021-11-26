@@ -1,3 +1,4 @@
+using System.Linq;
 using DynamicObjects;
 using Otus.InventoryModule;
 using UnityEngine;
@@ -41,12 +42,16 @@ namespace Otus
             }
 
             var collectingItem = dynamicObject.GetProperty<Item>(PropertyKey.INVENTORY_ITEM);
-            if (!collectingItem.TryGetComponent(out WeaponInventoryComponent _))
+            if (!collectingItem.TryGetComponent(out WeaponInventoryComponent inventoryComponent))
             {
                 return;
             }
 
-            if (this.inventoryManager.ContainsItem(collectingItem))
+            var collectingWeaponId = inventoryComponent.Config.id;
+            var allItems = this.inventoryManager.GetAllItems();
+            
+            if (allItems.Any(it => it.TryGetComponent(out WeaponInventoryComponent component) &&
+                                   component.Config.id == collectingWeaponId))
             {
                 return;
             }

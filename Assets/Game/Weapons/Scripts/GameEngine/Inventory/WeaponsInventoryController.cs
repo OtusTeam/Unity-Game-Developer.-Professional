@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Otus
 {
-    public sealed class PlayerWeaponInventoryController : MonoBehaviour
+    public sealed class WeaponsInventoryController : MonoBehaviour
     {
         [Inject]
         private IInventoryItemManager inventoryItemManager;
@@ -42,9 +42,6 @@ namespace Otus
         }
 
         #endregion
-
-        
-        
         
         private void OnItemAdded(Item item)
         {

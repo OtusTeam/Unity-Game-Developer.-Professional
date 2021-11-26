@@ -17,6 +17,12 @@ namespace Otus.InventoryModule
 
         [SerializeField]
         private List<IItemComponent> components;
+        
+        public Item()
+        {
+            this.components = new List<IItemComponent>();
+            this.typeMask = ItemType.None;
+        }
 
         public Item(params IItemComponent[] components)
         {

@@ -11,6 +11,8 @@ namespace Otus.InventoryModule
         Item[] GetItems(ItemType typeMask);
 
         Item[] GetItems(Type componentType);
+
+        Item[] GetAllItems();
         
         bool ContainsItem(Item item);
         

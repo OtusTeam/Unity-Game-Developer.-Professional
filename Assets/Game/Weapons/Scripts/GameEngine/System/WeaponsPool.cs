@@ -15,7 +15,7 @@ namespace Otus
 
         int Count { get; }
 
-        IEnumerable<Weapon> GetAllWeapons();
+        List<Weapon> GetAllWeapons();
 
         Weapon GetWeapon(string id);
 
@@ -41,6 +41,8 @@ namespace Otus
         [ShowInInspector]
         private readonly Dictionary<string, Weapon> weaponMap;
 
+        private readonly List<Weapon> weaponList;
+
         [Inject]
         private DiContainer di;
 
@@ -50,14 +52,12 @@ namespace Otus
         public WeaponsPool()
         {
             this.weaponMap = new Dictionary<string, Weapon>();
+            this.weaponList = new List<Weapon>();
         }
 
-        public IEnumerable<Weapon> GetAllWeapons()
+        public List<Weapon> GetAllWeapons()
         {
-            foreach (var weapon in this.weaponMap)
-            {
-                yield return weapon.Value;
-            }
+            return this.weaponList;
         }
 
         public Weapon GetWeapon(string id)
@@ -76,7 +76,9 @@ namespace Otus
             var weaponGO = this.di.InstantiatePrefabForComponent<MonoDynamicObject>(config.prefab, weaponContainer);
             
             var weapon = new Weapon(config, weaponGO);
+            this.weaponList.Add(weapon);
             this.weaponMap.Add(config.id, weapon);
+            
             this.OnWeaponAdded?.Invoke(weapon);
         }
 
@@ -87,7 +89,9 @@ namespace Otus
                 return;
             }
 
+            this.weaponList.Remove(weapon);
             this.weaponMap.Remove(weaponId);
+            
             this.OnWeaponRemoved?.Invoke(weapon);
             Destroy(weapon.DynamicObject);
         }

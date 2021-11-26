@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f48c92f1e8aeb5f41988229daac63489, type: 3}
-  m_Name: Gun (InventoryConfig)
+  m_Name: Gun2InventoryConfig
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 85c7d0292e65846ebbaf7afed0e1627b, type: 2}
+    - {fileID: 11400000, guid: ce4a8664a257242869f73f5da3f0b446, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -32,9 +32,6 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 1|Otus.WeaponInventoryComponent, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
     - Name: config
       Entry: 10
       Data: 0

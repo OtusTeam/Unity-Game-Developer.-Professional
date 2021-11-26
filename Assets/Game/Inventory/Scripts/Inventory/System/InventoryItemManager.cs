@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 
 namespace Otus.InventoryModule
@@ -34,6 +35,11 @@ namespace Otus.InventoryModule
                 this.items.Remove(item);
                 this.OnItemRemoved?.Invoke(item);
             }
+        }
+
+        public Item[] GetAllItems()
+        {
+            return this.items.ToArray();
         }
 
         public bool ContainsItem(Item item)

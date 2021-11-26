@@ -91,7 +91,6 @@
               <e p="PlayerMoveController.cs" t="Include" />
               <e p="PlayerWeaponAttackController.cs" t="Include" />
               <e p="PlayerWeaponChangeController.cs" t="Include" />
-              <e p="PlayerWeaponInventoryController.cs" t="Include" />
               <e p="PlayerWeaponsInitializer.cs" t="Include" />
             </e>
           </e>
@@ -116,9 +115,13 @@
                     <e p="InventoryWeaponController.cs" t="Include" />
                   </e>
                 </e>
-                <e p="Inventory" t="Include">
+                <e p="Collect" t="Include">
                   <e p="WeaponCollectController.cs" t="Include" />
+                  <e p="WeaponCollectibleComponent.cs" t="Include" />
+                </e>
+                <e p="Inventory" t="Include">
                   <e p="WeaponInventoryComponent.cs" t="Include" />
+                  <e p="WeaponsInventoryController.cs" t="Include" />
                 </e>
                 <e p="System" t="Include">
                   <e p="WeaponCurrentManager.cs" t="Include" />

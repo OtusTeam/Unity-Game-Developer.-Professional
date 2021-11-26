@@ -38,7 +38,7 @@ namespace Weapons
         {
             this.weapon
                 .GetProperty<IDynamicObject>(PropertyKey.PARENT)
-                .GetProperty<IDamageHandler>(PropertyKey.DAMAGE_HANDLER)
+                .GetProperty<IDamageHandler>(PropertyKey.DEAL_DAMAGE_HANDLER)
                 .HandleDamage(target, this.config.damage);
         }
     }

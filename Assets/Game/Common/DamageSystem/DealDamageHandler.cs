@@ -8,7 +8,7 @@ namespace Otus
         void HandleDamage(Collider collider, int damage);
     }
     
-    public sealed class DamageHandler : MonoBehaviour, IDamageHandler
+    public sealed class DealDamageHandler : MonoBehaviour, IDamageHandler
     {
         [SerializeField]
         private bool hasCondition;

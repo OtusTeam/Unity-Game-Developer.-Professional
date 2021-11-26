@@ -4,30 +4,6 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="DynamicObject" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="Actions" t="Include">
-              <e p="ActionKey.cs" t="Include" />
-              <e p="Args.cs" t="Include" />
-              <e p="EventBus.cs" t="Include" />
-              <e p="IMethodDelegate.cs" t="Include" />
-              <e p="MethodBus.cs" t="Include" />
-              <e p="MethodDelegate.cs" t="Include" />
-            </e>
-            <e p="Objects" t="Include">
-              <e p="DynamicObject.cs" t="Include" />
-              <e p="IDynamicObject.cs" t="Include" />
-              <e p="MonoDynamicObject.cs" t="Include" />
-            </e>
-            <e p="Properties" t="Include">
-              <e p="IPropertyProvider.cs" t="Include" />
-              <e p="MonoDynamicProperties.cs" t="Include" />
-              <e p="PropertyBus.cs" t="Include" />
-              <e p="PropertyKey.cs" t="Include" />
-              <e p="PropertyProvider.cs" t="Include" />
-            </e>
-          </e>
-        </e>
         <e p="Game" t="Include">
           <e p="Bullets" t="Include">
             <e p="Scripts" t="Include">
@@ -39,18 +15,47 @@
             </e>
           </e>
           <e p="Common" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="AnimationEventReceiver.cs" t="Include" />
-              <e p="ObservableCollider.cs" t="Include" />
-            </e>
-          </e>
-          <e p="DamageComponent" t="Include">
-            <e p="Scripts" t="Include">
+            <e p="DamageSystem" t="Include">
               <e p="DamageComponent.cs" t="Include" />
               <e p="DamageConditionChecker.cs" t="Include" />
               <e p="DamageConditionChecker_EnemyTag.cs" t="Include" />
-              <e p="DamageHandler.cs" t="Include" />
               <e p="DamageHitPointsComponent.cs" t="Include" />
+              <e p="DealDamageHandler.cs" t="Include" />
+              <e p="IDamageComponent.cs" t="Include" />
+            </e>
+            <e p="DynamicObject" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Actions" t="Include">
+                  <e p="ActionKey.cs" t="Include" />
+                  <e p="Args.cs" t="Include" />
+                  <e p="EventBus.cs" t="Include" />
+                  <e p="IMethodDelegate.cs" t="Include" />
+                  <e p="MethodBus.cs" t="Include" />
+                  <e p="MethodDelegate.cs" t="Include" />
+                </e>
+                <e p="Objects" t="Include">
+                  <e p="DynamicObject.cs" t="Include" />
+                  <e p="IDynamicObject.cs" t="Include" />
+                  <e p="MonoDynamicObject.cs" t="Include" />
+                </e>
+                <e p="Properties" t="Include">
+                  <e p="IPropertyProvider.cs" t="Include" />
+                  <e p="MonoDynamicProperties.cs" t="Include" />
+                  <e p="PropertyBus.cs" t="Include" />
+                  <e p="PropertyKey.cs" t="Include" />
+                  <e p="PropertyProvider.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="MoveSystem" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="IMoveController.cs" t="Include" />
+                <e p="MoveTransformController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="AnimationEventReceiver.cs" t="Include" />
+              <e p="ObservableCollider.cs" t="Include" />
             </e>
           </e>
           <e p="Inventory" t="Include">
@@ -61,6 +66,7 @@
           <e p="Player" t="Include">
             <e p="Scripts" t="Include">
               <e p="PlayerInstaller.cs" t="Include" />
+              <e p="PlayerMoveController.cs" t="Include" />
               <e p="PlayerWeaponAttackController.cs" t="Include" />
               <e p="PlayerWeaponChangeController.cs" t="Include" />
             </e>
@@ -82,21 +88,8 @@
               </e>
               <e p="GameEngine" t="Include">
                 <e p="Archive" t="Include">
-                  <e p="WeaponHand" t="Include">
-                    <e p="WeaponHand.cs" t="Include" />
-                  </e>
                   <e p="WeaponInventory" t="Include">
                     <e p="InventoryWeaponController.cs" t="Include" />
-                  </e>
-                  <e p="WeaponMelee" t="Include">
-                    <e p="MeleeAnimationStateBehaviour.cs" t="Include" />
-                    <e p="MeleeAnimatorWeapon.cs" t="Include" />
-                    <e p="MeleeDamageController.cs" t="Include" />
-                    <e p="MeleeZoneWeaponController.cs" t="Include" />
-                  </e>
-                  <e p="WeaponRay" t="Include">
-                    <e p="RayWeaponConfig.cs" t="Include" />
-                    <e p="RayWeaponController.cs" t="Include" />
                   </e>
                 </e>
                 <e p="System" t="Include">

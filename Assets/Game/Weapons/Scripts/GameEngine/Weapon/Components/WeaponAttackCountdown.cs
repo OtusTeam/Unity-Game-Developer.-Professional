@@ -11,7 +11,8 @@ namespace Otus
         [SerializeField]
         private float countdown;
 
-        [ShowInInspector]
+        [ReadOnly]
+        [SerializeField]
         private float currentTime;
 
         private float fixedDeltaTime;

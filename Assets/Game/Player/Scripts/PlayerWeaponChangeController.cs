@@ -14,10 +14,10 @@ namespace Otus
         private IGameManager gameManager;
         
         [Inject]
-        private WeaponsCurrentController weaponsController;
+        private WeaponCurrentManager weaponManager;
 
         [Inject]
-        private WeaponsPool weaponsPool;
+        private WeaponsPoolManager weaponsPoolManager;
 
         private readonly List<Weapon> processingWeapons;
 
@@ -32,18 +32,13 @@ namespace Otus
 
         private void OnEnable()
         {
-            this.gameManager.OnInitializeGame += this.OnInitializeGame;
             this.gameManager.OnStartGame += this.OnStartGame;
             this.gameManager.OnFinishGame += this.OnFinishGame;
         }
-
-        private void OnInitializeGame()
-        {
-            this.SetupInitialWeapon();
-        }
-
+        
         private void OnStartGame()
         {
+            this.SetInitialWeapon();
             this.isEnabled = true;
         }
 
@@ -62,7 +57,6 @@ namespace Otus
 
         private void OnDisable()
         {
-            this.gameManager.OnInitializeGame -= this.OnInitializeGame;
             this.gameManager.OnStartGame -= this.OnStartGame;
             this.gameManager.OnFinishGame -= this.OnFinishGame;
         }
@@ -72,7 +66,7 @@ namespace Otus
 
         private void ProcessInputActions()
         {
-            var allWeapons = this.weaponsPool.GetAllWeapons();
+            var allWeapons = this.weaponsPoolManager.GetAllWeapons();
 
             this.processingWeapons.Clear();
             this.processingWeapons.AddRange(allWeapons);
@@ -89,14 +83,14 @@ namespace Otus
 
         private void ChangeWeapon(Weapon weapon)
         {
-            this.weaponsController.ChangeWeapon(weapon.GameObject);
+            this.weaponManager.ChangeWeapon(weapon.DynamicObject);
         }
 
-        private void SetupInitialWeapon()
+        private void SetInitialWeapon()
         {
             var weaponId = this.parameters.initialWeapon.id;
-            var weapon = this.weaponsPool.GetWeapon(weaponId);
-            this.weaponsController.SetupWeapon(weapon.GameObject);
+            var weapon = this.weaponsPoolManager.GetWeapon(weaponId);
+            this.weaponManager.SetupWeapon(weapon.DynamicObject);
         }
 
         [Serializable]

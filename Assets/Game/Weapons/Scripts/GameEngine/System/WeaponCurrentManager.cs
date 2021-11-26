@@ -1,29 +1,33 @@
 using System;
 using DynamicObjects;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Otus
 {
-    public sealed class WeaponsCurrentController : MonoBehaviour
+    public sealed class WeaponCurrentManager : MonoBehaviour
     {
-        public event Action<IDynamicObject> OnWeaponChanged;
+        public delegate void WeaponSetupedDelegate(MonoDynamicObject weapon);
+
+        public delegate void WeaponChangedDelegate(MonoDynamicObject previousWeapon, MonoDynamicObject nextWeapon);
         
-        private IDynamicObject currentWeapon;
+        public event WeaponSetupedDelegate OnWeaponSetuped;
+        
+        public event WeaponChangedDelegate OnWeaponChanged;
+        
+        private MonoDynamicObject currentWeapon;
 
         [SerializeField]
         private Parameters parameters;
 
         private PropertyProvider parentProvider;
         
-        public void SetupWeapon(IDynamicObject weapon)
+        public void SetupWeapon(MonoDynamicObject weapon)
         {
-            weapon.AddProperty(PropertyKey.PARENT, this.parentProvider);
-            weapon.InvokeMethod(ActionKey.SHOW);
-            this.currentWeapon = weapon;
+            this.SetWeapon(weapon);
+            this.OnWeaponSetuped?.Invoke(weapon);
         }
 
-        public void ChangeWeapon(IDynamicObject weapon)
+        public void ChangeWeapon(MonoDynamicObject weapon)
         {
             var previousWeapon = this.currentWeapon;
             if (weapon == previousWeapon)
@@ -33,15 +37,14 @@ namespace Otus
 
             if (previousWeapon != null)
             {
-                previousWeapon.InvokeMethod(ActionKey.HIDE);
                 previousWeapon.RemoveProperty(PropertyKey.PARENT);
             }
 
-            this.SetupWeapon(weapon);
-            this.OnWeaponChanged?.Invoke(weapon);
+            this.SetWeapon(weapon);
+            this.OnWeaponChanged?.Invoke(previousWeapon, weapon);
         }
 
-        public bool TryGetWeapon(out IDynamicObject weapon)
+        public bool TryGetWeapon(out MonoDynamicObject weapon)
         {
             if (this.currentWeapon != null)
             {
@@ -52,15 +55,16 @@ namespace Otus
             weapon = default;
             return false;
         }
+        
+        private void SetWeapon(MonoDynamicObject weapon)
+        {
+            weapon.AddProperty(PropertyKey.PARENT, this.parentProvider);
+            this.currentWeapon = weapon;
+        }
 
         private void Awake()
         {
             this.parentProvider = new PropertyProvider(this.parameters.parent);
-
-            if (this.parameters.hasInitialWeapon)
-            {
-                this.SetupWeapon(this.parameters.initialWeapon);
-            }
         }
 
         [Serializable]
@@ -68,13 +72,6 @@ namespace Otus
         {
             [SerializeField]
             public MonoDynamicObject parent;
-
-            [SerializeField]
-            public bool hasInitialWeapon;
-            
-            [ShowIf("hasInitialWeapon")]
-            [SerializeField]
-            public MonoDynamicObject initialWeapon;
         }
     }
 }

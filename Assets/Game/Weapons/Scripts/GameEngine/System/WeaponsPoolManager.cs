@@ -8,6 +8,10 @@ namespace Otus
 {
     public interface IWeaponsPool
     {
+        event Action<Weapon> OnWeaponAdded;
+
+        event Action<Weapon> OnWeaponRemoved;
+
         int Count { get; }
 
         IEnumerable<Weapon> GetAllWeapons();
@@ -21,18 +25,25 @@ namespace Otus
         void RemoveWeapon(string id);
     }
 
-    public sealed class WeaponsPool : MonoBehaviour, IWeaponsPool
+    public sealed class WeaponsPoolManager : MonoBehaviour, IWeaponsPool
     {
+        public event Action<Weapon> OnWeaponAdded;
+
+        public event Action<Weapon> OnWeaponRemoved;
+
         public int Count
         {
             get { return this.weaponMap.Count; }
         }
 
         private Dictionary<string, Weapon> weaponMap;
-        
+
         [Inject]
         private DiContainer di;
-        
+
+        [Inject]
+        private IGameManager gameManager;
+
         [SerializeField]
         private Parameters parameters;
 
@@ -58,10 +69,10 @@ namespace Otus
         {
             var weaponContainer = this.parameters.container;
             var weaponGO = this.di.InstantiatePrefabForComponent<MonoDynamicObject>(config.prefab, weaponContainer);
-            weaponGO.InvokeMethod(ActionKey.HIDE);
-            
+
             var weapon = new Weapon(config, weaponGO);
             this.weaponMap.Add(config.id, weapon);
+            this.OnWeaponAdded?.Invoke(weapon);
         }
 
         public void RemoveWeapon(string weaponId)
@@ -72,16 +83,35 @@ namespace Otus
             }
 
             this.weaponMap.Remove(weaponId);
-            Destroy(weapon.GameObject);
-        }
-        
-        private void Start()
-        {
-            this.weaponMap = new Dictionary<string, Weapon>();
-            this.Initialize();
+            this.OnWeaponRemoved?.Invoke(weapon);
+            Destroy(weapon.DynamicObject);
         }
 
-        private void Initialize()
+        #region Lifecycle
+
+        private void Awake()
+        {
+            this.weaponMap = new Dictionary<string, Weapon>();
+        }
+
+        private void OnEnable()
+        {
+            this.gameManager.OnInitializeGame += this.OnGameInitialized;
+        }
+
+        private void OnGameInitialized()
+        {
+            this.InitializeWeapons();
+        }
+
+        private void OnDisable()
+        {
+            this.gameManager.OnInitializeGame -= this.OnGameInitialized;
+        }
+
+        #endregion
+
+        private void InitializeWeapons()
         {
             var weaponConfigs = this.parameters.initialWeapons;
             for (var i = 0; i < weaponConfigs.Length; i++)
@@ -96,7 +126,7 @@ namespace Otus
         {
             [SerializeField]
             public Transform container;
-            
+
             [SerializeField]
             public WeaponConfig[] initialWeapons;
         }
@@ -110,21 +140,21 @@ namespace Otus
             get { return this.config; }
         }
 
-        public MonoDynamicObject GameObject
+        public MonoDynamicObject DynamicObject
         {
-            get { return this.gameObject; }
+            get { return this.dynamicObject; }
         }
 
         [SerializeField]
         private WeaponConfig config;
 
         [SerializeField]
-        private MonoDynamicObject gameObject;
+        private MonoDynamicObject dynamicObject;
 
-        public Weapon(WeaponConfig config, MonoDynamicObject gameObject)
+        public Weapon(WeaponConfig config, MonoDynamicObject dynamicObject)
         {
             this.config = config;
-            this.gameObject = gameObject;
+            this.dynamicObject = dynamicObject;
         }
     }
 }

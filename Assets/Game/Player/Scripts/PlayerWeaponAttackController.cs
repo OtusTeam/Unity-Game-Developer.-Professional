@@ -7,10 +7,10 @@ namespace Otus
     public sealed class PlayerWeaponAttackController : MonoBehaviour
     {
         [Inject]
-        private WeaponsCurrentController weaponsCurrentController;
-
-        [Inject]
         private IGameManager gameManager;
+        
+        [Inject]
+        private WeaponCurrentManager weaponManager;
         
         private bool isEnabled;
         
@@ -54,7 +54,7 @@ namespace Otus
         
         private void Attack()
         {
-            if (this.weaponsCurrentController.TryGetWeapon(out IDynamicObject weapon))
+            if (this.weaponManager.TryGetWeapon(out MonoDynamicObject weapon))
             {
                 weapon.InvokeMethod(ActionKey.ATTACK);
             }

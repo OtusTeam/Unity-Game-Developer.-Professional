@@ -9,6 +9,7 @@ namespace Game.Scripts
         {
             this.Container.Bind<SoundManager>().FromComponentInHierarchy().AsCached();
             this.Container.Bind<IBulletManager>().FromComponentInHierarchy().AsCached();
+            this.Container.Bind<IGameManager>().FromComponentInHierarchy().AsCached();
         }
     }
 }

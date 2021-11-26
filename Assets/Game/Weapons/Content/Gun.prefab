@@ -181,6 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4216349891932541549}
   - component: {fileID: 4216349891932541548}
+  - component: {fileID: 3703512681973967834}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -226,6 +227,19 @@ MonoBehaviour:
     - {fileID: 3272590253545115461}
     - {fileID: 8204933593257312787}
     - {fileID: 576353277243574217}
+--- !u!114 &3703512681973967834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4216349891932541550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc611a228da448b9436591787760b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dynamicControllers: []
 --- !u!1 &4216349892898551926
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +528,6 @@ MonoBehaviour:
   isEnable: 1
   isActive: 1
   animationName: Shot
-  attackAnimator: {fileID: 0}
 --- !u!1001 &3509809285018994950
 PrefabInstance:
   m_ObjectHideFlags: 0

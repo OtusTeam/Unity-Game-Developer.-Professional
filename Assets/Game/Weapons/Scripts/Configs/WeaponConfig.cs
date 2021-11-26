@@ -1,3 +1,4 @@
+using DynamicObjects;
 using UnityEngine;
 
 namespace Otus
@@ -13,5 +14,8 @@ namespace Otus
 
         [SerializeField]
         public KeyCode selectActionKey;
+
+        [SerializeField]
+        public MonoDynamicObject prefab;
     }
 }

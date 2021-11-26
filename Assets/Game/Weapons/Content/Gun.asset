@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Gun
   selectActionKey: 257
+  prefab: {fileID: 3703512681973967834, guid: d4d285310bf1b47f2a1c68358d00d37d, type: 3}

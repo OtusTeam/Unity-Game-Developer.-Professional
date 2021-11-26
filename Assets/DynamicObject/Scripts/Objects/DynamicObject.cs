@@ -35,12 +35,12 @@ namespace DynamicObjects
             this.properties.RemoveProperty(key);
         }
 
-        public T CallMethod<T>(object key, Args args = null)
+        public T InvokeMethod<T>(object key, Args args = null)
         {
             return this.methodBus.CallMethod<T>(key, args);
         }
 
-        public void CallMethod(object key, Args args = null)
+        public void InvokeMethod(object key, Args args = null)
         {
             this.methodBus.CallMethod(key, args);
         }
@@ -50,7 +50,7 @@ namespace DynamicObjects
             return this.methodBus.ContainsMethod(key);
         }
 
-        public void AddMethod(object key, IDelegate method)
+        public void AddMethod(object key, IMethodDelegate method)
         {
             this.methodBus.AddMethod(key, method);
         }
@@ -60,12 +60,12 @@ namespace DynamicObjects
             this.methodBus.RemoveMethod(key);
         }
 
-        public void AddEventListener(object key, IDelegate callback)
+        public void AddEventListener(object key, IMethodDelegate callback)
         {
             this.eventBus.AddEventListener(key, callback);
         }
 
-        public void RemoveEventListener(object key, IDelegate callback)
+        public void RemoveEventListener(object key, IMethodDelegate callback)
         {
             this.eventBus.RemoveEventListener(key, callback);
         }

@@ -7,5 +7,8 @@ namespace DynamicObjects
     {
         TAKE_DAMAGE = -1,
         DIE = -2,
+        SHOW = -3,
+        HIDE = -4,
+        ATTACK = -5
     }
 }

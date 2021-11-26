@@ -4,11 +4,11 @@ namespace DynamicObjects
 {
     public sealed class MethodBus
     {
-        private readonly Dictionary<object, IDelegate> delegateMap;
+        private readonly Dictionary<object, IMethodDelegate> delegateMap;
 
         public MethodBus()
         {
-            this.delegateMap = new Dictionary<object, IDelegate>();
+            this.delegateMap = new Dictionary<object, IMethodDelegate>();
         }
 
         public T CallMethod<T>(object key, Args args = null)
@@ -28,7 +28,7 @@ namespace DynamicObjects
             return this.delegateMap.ContainsKey(key);
         }
 
-        public void AddMethod(object key, IDelegate method)
+        public void AddMethod(object key, IMethodDelegate method)
         {
             this.delegateMap.Add(key, method);
         }

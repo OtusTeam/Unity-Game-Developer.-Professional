@@ -10,21 +10,22 @@
               <e p="ActionKey.cs" t="Include" />
               <e p="Args.cs" t="Include" />
               <e p="EventBus.cs" t="Include" />
-              <e p="IDelegate.cs" t="Include" />
+              <e p="IMethodDelegate.cs" t="Include" />
               <e p="MethodBus.cs" t="Include" />
+              <e p="MethodDelegate.cs" t="Include" />
             </e>
+            <e p="Controllers" t="Include" />
             <e p="Objects" t="Include">
               <e p="DynamicObject.cs" t="Include" />
               <e p="IDynamicObject.cs" t="Include" />
-              <e p="IDynamicObjectController.cs" t="Include" />
-              <e p="UnityDynamicObject.cs" t="Include" />
+              <e p="MonoDynamicObject.cs" t="Include" />
             </e>
             <e p="Properties" t="Include">
               <e p="IPropertyProvider.cs" t="Include" />
+              <e p="MonoDynamicProperties.cs" t="Include" />
               <e p="PropertyBus.cs" t="Include" />
               <e p="PropertyKey.cs" t="Include" />
               <e p="PropertyProvider.cs" t="Include" />
-              <e p="UnityDynamicPropertyController.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -39,6 +40,7 @@
             </e>
           </e>
           <e p="Common" t="Include">
+            <e p="Components" t="Include" />
             <e p="Scripts" t="Include">
               <e p="AnimationEventReceiver.cs" t="Include" />
               <e p="ObservableCollider.cs" t="Include" />
@@ -49,7 +51,7 @@
               <e p="DamageComponent.cs" t="Include" />
               <e p="DamageConditionChecker.cs" t="Include" />
               <e p="DamageConditionChecker_EnemyTag.cs" t="Include" />
-              <e p="DamageController.cs" t="Include" />
+              <e p="DamageHandler.cs" t="Include" />
               <e p="DamageHitPointsComponent.cs" t="Include" />
             </e>
           </e>
@@ -60,12 +62,15 @@
           </e>
           <e p="Player" t="Include">
             <e p="Scripts" t="Include">
+              <e p="PlayerInstaller.cs" t="Include" />
               <e p="PlayerWeaponAttackController.cs" t="Include" />
               <e p="PlayerWeaponChangeController.cs" t="Include" />
             </e>
           </e>
           <e p="Scripts" t="Include">
             <e p="GameInstaller.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+            <e p="IGameManager.cs" t="Include" />
           </e>
           <e p="Sounds" t="Include">
             <e p="Scripts" t="Include">
@@ -78,47 +83,41 @@
                 <e p="WeaponConfig.cs" t="Include" />
               </e>
               <e p="GameEngine" t="Include">
-                <e p="Abstractions" t="Include">
-                  <e p="CustomWeapon.cs" t="Include" />
-                  <e p="IWeapon.cs" t="Include" />
-                  <e p="Weapon.cs" t="Include" />
-                </e>
-                <e p="System" t="Include">
-                  <e p="IWeaponManager.cs" t="Include" />
-                  <e p="WeaponManager.cs" t="Include" />
-                </e>
-                <e p="WeaponAnimator" t="Include">
-                  <e p="WeaponAnimatorController.cs" t="Include" />
-                </e>
-                <e p="WeaponBullet" t="Include">
-                  <e p="BulletWeaponController.cs" t="Include" />
-                </e>
-                <e p="WeaponCountdown" t="Include">
-                  <e p="Scripts" t="Include">
-                    <e p="CountdownWeaponController.cs" t="Include" />
+                <e p="Abstractions" t="Include" />
+                <e p="Archive" t="Include">
+                  <e p="WeaponHand" t="Include">
+                    <e p="WeaponHand.cs" t="Include" />
+                  </e>
+                  <e p="WeaponInventory" t="Include">
+                    <e p="InventoryWeaponController.cs" t="Include" />
+                  </e>
+                  <e p="WeaponMelee" t="Include">
+                    <e p="MeleeAnimationStateBehaviour.cs" t="Include" />
+                    <e p="MeleeAnimatorWeapon.cs" t="Include" />
+                    <e p="MeleeDamageController.cs" t="Include" />
+                    <e p="MeleeZoneWeaponController.cs" t="Include" />
+                  </e>
+                  <e p="WeaponRay" t="Include">
+                    <e p="RayWeaponConfig.cs" t="Include" />
+                    <e p="RayWeaponController.cs" t="Include" />
                   </e>
                 </e>
-                <e p="WeaponInventory" t="Include">
-                  <e p="InventoryWeaponController.cs" t="Include" />
+                <e p="System" t="Include">
+                  <e p="WeaponsCurrentController.cs" t="Include" />
+                  <e p="WeaponsPool.cs" t="Include" />
                 </e>
-                <e p="WeaponMelee" t="Include">
-                  <e p="MeleeAnimationStateBehaviour.cs" t="Include" />
-                  <e p="MeleeAnimatorWeapon.cs" t="Include" />
-                  <e p="MeleeDamageController.cs" t="Include" />
-                  <e p="MeleeZoneWeaponController.cs" t="Include" />
-                </e>
-                <e p="WeaponRay" t="Include">
-                  <e p="RayWeaponConfig.cs" t="Include" />
-                  <e p="RayWeaponController.cs" t="Include" />
-                </e>
-                <e p="WeaponSFX" t="Include">
-                  <e p="SFXWeaponController.cs" t="Include" />
-                </e>
-                <e p="WeaponVFX" t="Include">
-                  <e p="VFXWeaponController.cs" t="Include" />
-                </e>
-                <e p="WeaponVisual" t="Include">
-                  <e p="WeaponVisualController.cs" t="Include" />
+                <e p="Weapon" t="Include">
+                  <e p="Components" t="Include">
+                    <e p="WeaponAttackAnimatorComponent.cs" t="Include" />
+                    <e p="WeaponAttackBulletComponent.cs" t="Include" />
+                    <e p="WeaponAttackComponent.cs" t="Include" />
+                    <e p="WeaponAttackCountdown.cs" t="Include" />
+                    <e p="WeaponAttackSFXComponent.cs" t="Include" />
+                    <e p="WeaponAttackVFXComponent.cs" t="Include" />
+                  </e>
+                  <e p="WeaponAttackController.cs" t="Include" />
+                  <e p="WeaponInstaller.cs" t="Include" />
+                  <e p="WeaponVisibleController.cs" t="Include" />
                 </e>
               </e>
             </e>

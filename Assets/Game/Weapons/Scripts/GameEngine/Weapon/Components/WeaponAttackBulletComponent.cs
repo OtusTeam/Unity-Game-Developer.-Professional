@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Weapons
 {
-    public sealed class BulletWeaponController : WeaponAttackComponent, IBulletListener
+    public sealed class WeaponAttackBulletComponent : WeaponAttackComponent, IBulletListener
     {
         public override event Action OnAttack;
 

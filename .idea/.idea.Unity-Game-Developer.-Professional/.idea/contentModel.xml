@@ -14,7 +14,6 @@
               <e p="MethodBus.cs" t="Include" />
               <e p="MethodDelegate.cs" t="Include" />
             </e>
-            <e p="Controllers" t="Include" />
             <e p="Objects" t="Include">
               <e p="DynamicObject.cs" t="Include" />
               <e p="IDynamicObject.cs" t="Include" />
@@ -40,7 +39,6 @@
             </e>
           </e>
           <e p="Common" t="Include">
-            <e p="Components" t="Include" />
             <e p="Scripts" t="Include">
               <e p="AnimationEventReceiver.cs" t="Include" />
               <e p="ObservableCollider.cs" t="Include" />
@@ -83,7 +81,6 @@
                 <e p="WeaponConfig.cs" t="Include" />
               </e>
               <e p="GameEngine" t="Include">
-                <e p="Abstractions" t="Include" />
                 <e p="Archive" t="Include">
                   <e p="WeaponHand" t="Include">
                     <e p="WeaponHand.cs" t="Include" />

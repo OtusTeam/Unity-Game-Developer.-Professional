@@ -16,7 +16,6 @@ namespace Otus
         
         public override void InstallBindings()
         {
-            base.InstallBindings();
             this.Container.Bind<WeaponsCurrentController>().FromInstance(this.weaponsCurrentController);
             this.Container.Bind<WeaponsPool>().FromInstance(this.weaponsPool);
             this.Container.Bind<DamageHandler>().FromInstance(this.damageHandler);

@@ -11,7 +11,7 @@ namespace Otus
         private Parameters parameters;
         
         [Inject]
-        private GameManager gameManager;
+        private IGameManager gameManager;
         
         [Inject]
         private WeaponsCurrentController weaponsController;

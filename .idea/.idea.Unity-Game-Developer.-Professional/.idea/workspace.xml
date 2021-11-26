@@ -52,37 +52,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/EventBus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/EventBus.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IMethodArgs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IMethodArgs.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IMethodDelegate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IMethodDelegate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/MethodBus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/MethodBus.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/DynamicObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/DynamicObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObjectComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObjectComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/UnityDynamicObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/UnityDynamicObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/IPropertyProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/IPropertyProvider.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/PropertyDictionary.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/PropertyDictionary.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/ActionKeys.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/ActionKeys.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/PropertyKeys.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/PropertyKeys.cs.meta" afterDir="false" />
+    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Написал динамические объекты">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/DamageComponent/Scripts/DamageController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/DamageComponent/Scripts/DamageController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/LessonScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/LessonScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Sounds/Scripts/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Sounds/Scripts/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponBullet/BulletWeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponBullet/BulletWeaponController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponSFX/SFXWeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponSFX/SFXWeaponController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/zenject.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SceneContext.prefab 2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +85,15 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/System/IWeaponManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Common/Scripts/ObservableCollider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/System/WeaponManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DynamicObject/Scripts/Actions/IDelegate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponChangeController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponSFX/SFXWeaponController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponAttackController.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -106,22 +103,47 @@
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/DynamicObject.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/IDynamicObject.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/dd.cs" />
-        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IMethodArgs.cs" />
-        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IMethodDelegate.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/MethodsContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/IPropertyProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/PropertyBus.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/PropertyDictionary.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/MethodBus.cs" />
-        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObject.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/EventBus.cs" />
-        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/DynamicObject.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/EventKeys.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/MethodKeys.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/ActionKeys.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/PropertyKeys.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObjectComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObjectInjector.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/IDynamicObjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/IDynamicObjectController.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/UnityDynamicObject.cs" />
         <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/UnityDynamicObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/DynamicObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/UnityObjectController.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Utils/UnityDynamicPropertyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IMethodArgs.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/MethodArgs.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/ActionArgs.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IActionDelegate.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Method/IMethodDelegate.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Actions/IActionDelegate.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Object/IDynamicObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Property/PropertyBus.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Actions/Args.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Actions/MethodDelegate.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Actions/BaseDelegate.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Properties/PropertyKey.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Actions/ActionKey.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Properties/PropertyProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/DynamicObject/Scripts/Properties/UnityDynamicPropertyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Sounds/Scripts/SoundManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponSFX/SFXWeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerDamageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/DamageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/WeaponBullet/BulletWeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/DamageComponent/Scripts/DamageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs" />
       </list>
     </option>
   </component>
@@ -174,7 +196,8 @@
       <workItem from="1635460618893" duration="663000" />
       <workItem from="1635544485019" duration="728000" />
       <workItem from="1637482679075" duration="2039000" />
-      <workItem from="1637850380237" duration="3755000" />
+      <workItem from="1637850380237" duration="6433000" />
+      <workItem from="1637901232746" duration="1614000" />
     </task>
     <task id="LOCAL-00001" summary="Провел урок по прокачке персонажа">
       <created>1635297557292</created>
@@ -183,7 +206,35 @@
       <option name="project" value="LOCAL" />
       <updated>1635297557293</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Написал динамические объекты">
+      <created>1637863169877</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637863169877</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Написал динамические объекты">
+      <created>1637863739514</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637863739514</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Написал динамические объекты">
+      <created>1637863781816</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637863781816</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Написал динамические объекты">
+      <created>1637865066704</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637865066704</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,25 +257,30 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Провел урок по прокачке персонажа" />
-    <option name="LAST_COMMIT_MESSAGE" value="Провел урок по прокачке персонажа" />
+    <MESSAGE value="Написал динамические объекты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Написал динамические объекты" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="478" y="154" key="RiderGenerateDialog" timestamp="1637862454385">
+    <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1637863150393">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="478" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1637862454385" />
+    <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1637863150393" />
+    <state x="478" y="154" key="RiderGenerateDialog" timestamp="1637863392560">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="478" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1637863392560" />
     <state x="417" y="163" key="RollbackChangesDialog" timestamp="1637482698961">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="417" y="163" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1637482698961" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1637862981418">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1637903424331">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1637862981418" />
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1635297560090">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1637903424331" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1637865067989">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1635297560090" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1637865067989" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637850417036">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -233,9 +289,13 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="167" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1637482694639" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1635460621697">
+    <state x="385" y="210" key="run.anything.popup" timestamp="1637864382730">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1635460621697" />
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1637864382730" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1637902658058">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1637902658058" />
   </component>
 </project>

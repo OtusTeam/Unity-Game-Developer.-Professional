@@ -1,6 +1,7 @@
 using System;
 using Otus;
 using UnityEngine;
+using Zenject;
 
 namespace Weapons.SFX
 {
@@ -10,10 +11,13 @@ namespace Weapons.SFX
 
         [SerializeField]
         private AudioClip clip;
+
+        [Inject]
+        private SoundManager soundManager;
         
         protected override void ProcessAttack()
         {
-            SoundManager.PlaySound(this.clip);
+            this.soundManager.PlaySound(this.clip);
             this.OnAttack?.Invoke(this);
         }
     }

@@ -1,6 +1,7 @@
 using System;
 using Otus;
 using UnityEngine;
+using Zenject;
 
 namespace Weapons
 {
@@ -14,13 +15,12 @@ namespace Weapons
         [SerializeField]
         private Transform firePoint;
 
-        [Header("Inject")]
-        [SerializeField]
-        private BulletManager bulletManager;
+        [Inject] // Он один, поэтому делаем через Zenject...
+        private IBulletManager bulletManager;
 
-        [SerializeField]
-        private DamageConditionChecker conditionProvider;
-
+        [SerializeField] // Локальный контроллер.
+        private DamageController damageController;
+        
         protected override void ProcessAttack()
         {
             this.bulletManager.LaunchBullet(
@@ -35,11 +35,7 @@ namespace Weapons
 
         void IBulletListener.OnBulletCollided(Collider target)
         {
-            if (target.TryGetComponent(out DamageComponent damageComponent) && 
-                this.conditionProvider.CanTakeDamage(damageComponent))
-            {
-                damageComponent.TakeDamage(this.config.damage);
-            }
+            this.damageController.HandleDamage(target, this.config.damage);
         }
     }
 }

@@ -4,20 +4,12 @@ namespace Otus
 {
     public sealed class SoundManager : MonoBehaviour
     {
-        private static SoundManager instance;
-
         [SerializeField]
         private AudioSource audioSource;
         
-        private void Awake()
+        public void PlaySound(AudioClip clip)
         {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-
-        public static void PlaySound(AudioClip clip)
-        {
-            instance.audioSource.PlayOneShot(clip);
+            this.audioSource.PlayOneShot(clip);
         }
     }
 }

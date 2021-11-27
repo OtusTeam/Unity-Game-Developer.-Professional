@@ -1,4 +1,4 @@
-﻿namespace Otus.InventoryModule
+﻿namespace Otus.GameInventory
 {
     [System.Flags]
     public enum EquipSlot

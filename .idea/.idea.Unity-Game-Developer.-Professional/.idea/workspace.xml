@@ -52,15 +52,60 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Урок Эффекты (в разработке) &#10;Пока не смотреть&#10;&#10;Переделал Move">
+    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Подкрутил динамический объект">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Utils/MonoDynamicObjectCondition.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Utils/MonoDynamicObjectCondition.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectManagerWrapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectManagerWrapper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsField.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsField.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectmanager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/MonoEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/MonoEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SingleEffectManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SingleEffectManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/MethodBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/MethodBus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DamageComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DamageComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DamageConditionChecker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DamageConditionChecker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DamageConditionChecker_EnemyTag.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DamageConditionChecker_EnemyTag.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DamageHitPointsComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DamageHitPointsComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DealDamageHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DealDamageHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/IDamageComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/IDamageComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/ActionKey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/ActionKey.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/DynamicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/DynamicObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/IDynamicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/IDynamicObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Properties/PropertyBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Properties/PropertyBus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerMoveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerMoveController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponAttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponAttackController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Config/ItemComponentConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Config/ItemComponentConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Config/ItemConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Config/ItemConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/IItemComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/IItemComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Implementations/ConsumableItemComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Implementations/ConsumableItemComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Implementations/EquipableItemComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Implementations/EquipableItemComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Implementations/StackableItemComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Implementations/StackableItemComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/ItemType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/ItemType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/IInventoryItemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/IInventoryItemManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/InventoryItemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/InventoryItemManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Utils/EquipSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Utils/EquipSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponsInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponsInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun/Gun1Weapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun/Gun1Weapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Collect/WeaponCollectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Collect/WeaponCollectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Collect/WeaponCollectibleComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Collect/WeaponCollectibleComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponInventoryComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponInventoryComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponsInventoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponsInventoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackBulletComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackBulletComponent.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,26 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/ItemCollectController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponInventroyComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponInventoryController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/System/WeaponsPoolManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/System/WeaponsVisibilityController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Implementations/StackableItemComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponCollectToInventoryController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponCollectInventoryController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponItemInventoryController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponInventoryCollector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponInventoryCollectController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Implementations/EquipableItemComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponInventoryItemController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/PlayerWeaponInventoryController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponsLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponInventoryController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponInventoryComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponCollectController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponsInitializer.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/WeaponInventoryController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Inventory/WeaponsInventoryController.cs" />
@@ -121,7 +146,6 @@
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/System/WeaponCurrentManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Main/DiContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/System/WeaponsPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/ActionKey.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/IMethodDelegate.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/MethodDelegate.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/EventBus.cs" />
@@ -135,11 +159,32 @@
         <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Properties/PropertyBus.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/IDynamicObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/DynamicObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/MethodBus.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerMoveController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponAttackController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Utils/EquipSlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/Configs/WeaponConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsField.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/MonoEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/IDamageHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Utils/DynamicObjectCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Utils/MonoDynamicObjectCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DealDamageHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/ActionKey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackBulletComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectManagerWrapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectmanager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/UniqueEffectManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SoloEffectManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/DynamicObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SingleEffectManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectManager.cs" />
       </list>
     </option>
   </component>
@@ -195,7 +240,7 @@
       <workItem from="1637482679075" duration="2039000" />
       <workItem from="1637850380237" duration="6433000" />
       <workItem from="1637901232746" duration="40535000" />
-      <workItem from="1637993833003" duration="2376000" />
+      <workItem from="1637993833003" duration="6257000" />
     </task>
     <task id="LOCAL-00001" summary="Провел урок по прокачке персонажа">
       <created>1635297557292</created>
@@ -337,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637996567502</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Подкрутил динамический объект">
+      <created>1637998173021</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1637998173021</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,29 +422,30 @@
     <MESSAGE value="Связал систему инвентаря и оружия" />
     <MESSAGE value="Готово" />
     <MESSAGE value="Урок Эффекты (в разработке) &#10;Пока не смотреть&#10;&#10;Переделал Move" />
-    <option name="LAST_COMMIT_MESSAGE" value="Урок Эффекты (в разработке) &#10;Пока не смотреть&#10;&#10;Переделал Move" />
+    <MESSAGE value="Подкрутил динамический объект" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подкрутил динамический объект" />
   </component>
   <component name="WindowStateProjectService">
     <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1637863150393">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1637863150393" />
-    <state x="478" y="154" key="RiderGenerateDialog" timestamp="1637997798909">
+    <state x="478" y="154" key="RiderGenerateDialog" timestamp="1638002170544">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="478" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1637997798909" />
+    <state x="478" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638002170544" />
     <state x="417" y="163" key="RollbackChangesDialog" timestamp="1637482698961">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="417" y="163" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1637482698961" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1637998150858">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638002310504">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1637998150858" />
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1637996568800">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638002310504" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1637998175171">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1637996568800" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1637998175171" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637850417036">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -405,9 +458,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" width="670" height="675" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1637997911124" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1637961524610">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638001691142">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1637961524610" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638001691142" />
   </component>
 </project>

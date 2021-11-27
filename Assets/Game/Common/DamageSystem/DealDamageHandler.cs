@@ -1,38 +1,28 @@
+using DynamicObjects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Otus
 {
-    public interface IDamageHandler
-    {
-        void HandleDamage(Collider collider, int damage);
-    }
-    
-    public sealed class DealDamageHandler : MonoBehaviour, IDamageHandler
+    public sealed class DealDamageHandler : MonoBehaviour
     {
         [SerializeField]
         private bool hasCondition;
         
         [ShowIf("hasCondition")]
         [SerializeField]
-        private DamageConditionChecker conditionProvider;
+        private MonoDynamicObjectCondition condition;
         
         public void HandleDamage(Collider target, int damage)
         {
-            if (!target.TryGetComponent(out DamageComponent damageComponent))
+            if (!target.TryGetComponent(out MonoDynamicObject dynamicObject))
             {
                 return;
             }
 
-            if (!this.hasCondition)
+            if (!this.hasCondition || this.condition.IsTrue(dynamicObject))
             {
-                damageComponent.TakeDamage(damage);
-                return;
-            }
-            
-            if (this.conditionProvider.CanTakeDamage(damageComponent))
-            {
-                damageComponent.TakeDamage(damage);
+                dynamicObject.TryInvokeMethod(ActionKey.TAKE_DAMAGE, damage);
             }
         }
     }

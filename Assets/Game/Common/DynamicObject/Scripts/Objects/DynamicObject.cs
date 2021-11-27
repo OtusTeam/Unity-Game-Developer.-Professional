@@ -1,3 +1,5 @@
+using System;
+
 namespace DynamicObjects
 {
     public sealed class DynamicObject : IDynamicObject

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 
-namespace Otus.InventoryModule
+namespace Otus.GameInventory
 {
     public sealed class InventoryItemManager : SerializedMonoBehaviour, IInventoryItemManager
     {

@@ -16,12 +16,7 @@
           </e>
           <e p="Common" t="Include">
             <e p="DamageSystem" t="Include">
-              <e p="DamageComponent.cs" t="Include" />
-              <e p="DamageConditionChecker.cs" t="Include" />
-              <e p="DamageConditionChecker_EnemyTag.cs" t="Include" />
-              <e p="DamageHitPointsComponent.cs" t="Include" />
               <e p="DealDamageHandler.cs" t="Include" />
-              <e p="IDamageComponent.cs" t="Include" />
             </e>
             <e p="DynamicObject" t="Include">
               <e p="Scripts" t="Include">
@@ -46,6 +41,7 @@
                 </e>
                 <e p="Utils" t="Include">
                   <e p="DictionaryArgs.cs" t="Include" />
+                  <e p="MonoDynamicObjectCondition.cs" t="Include" />
                 </e>
               </e>
             </e>
@@ -58,6 +54,17 @@
             <e p="Scripts" t="Include">
               <e p="AnimationEventReceiver.cs" t="Include" />
               <e p="ObservableCollider.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Effects" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="EffectHandler.cs" t="Include" />
+              <e p="EffectManagerWrapper.cs" t="Include" />
+              <e p="EffectsField.cs" t="Include" />
+              <e p="IEffect.cs" t="Include" />
+              <e p="IEffectmanager.cs" t="Include" />
+              <e p="MonoEffect.cs" t="Include" />
+              <e p="SingleEffectManager.cs" t="Include" />
             </e>
           </e>
           <e p="Inventory" t="Include">

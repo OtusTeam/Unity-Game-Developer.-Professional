@@ -1,6 +1,6 @@
 using System;
 
-namespace Otus.InventoryModule
+namespace Otus.GameInventory
 {
     public interface IInventoryItemManager
     {

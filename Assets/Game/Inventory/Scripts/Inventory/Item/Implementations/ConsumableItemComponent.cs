@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Otus.InventoryModule
+namespace Otus.GameInventory
 {
     [Serializable]
     public class ConsumableItemComponent : IItemComponent

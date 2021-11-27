@@ -1,4 +1,4 @@
-using Otus.InventoryModule;
+using Otus.GameInventory;
 using UnityEngine;
 using Zenject;
 

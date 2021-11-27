@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Otus.InventoryModule
+namespace Otus.GameInventory
 {
     [Serializable]
     public sealed class Item

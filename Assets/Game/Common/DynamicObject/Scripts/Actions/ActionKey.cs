@@ -11,6 +11,7 @@ namespace DynamicObjects
         HIDE = -4,
         ATTACK = -5,
         COLLECT = -6,
-        MOVE = -7
+        MOVE = -7,
+        APPLY_EFFECT = -8
     }
 }

@@ -1,6 +1,8 @@
 using System;
 using DynamicObjects;
 using Otus;
+using Otus.GameEffects;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
@@ -10,6 +12,10 @@ namespace Weapons
     {
         public override event Action OnAttack;
 
+        [Inject]
+        private IDynamicObject weapon;
+
+        [Header("Bullet")]
         [SerializeField]
         private BulletConfig config;
 
@@ -17,10 +23,19 @@ namespace Weapons
         private Transform firePoint;
 
         [Inject]
-        private IDynamicObject weapon;
-
-        [Inject]
         private IBulletManager bulletManager;
+
+        [Header("Damage")]
+        [SerializeField]
+        private bool hasDamage;
+
+        [Header("Effects")]
+        [SerializeField]
+        private bool hasEffect;
+
+        [ShowIf("hasEffect")]
+        [SerializeField]
+        private EffectHandler effectHandler;
 
         protected override void ProcessAttack()
         {
@@ -36,10 +51,18 @@ namespace Weapons
 
         void IBulletListener.OnBulletCollided(Collider target)
         {
-            this.weapon
-                .GetProperty<IDynamicObject>(PropertyKey.PARENT)
-                .GetProperty<IDamageHandler>(PropertyKey.DEAL_DAMAGE_HANDLER)
-                .HandleDamage(target, this.config.damage);
+            if (this.hasDamage)
+            {
+                this.weapon
+                    .GetProperty<IDynamicObject>(PropertyKey.PARENT)
+                    .GetProperty<DealDamageHandler>(PropertyKey.DEAL_DAMAGE_HANDLER)
+                    .HandleDamage(target, this.config.damage);
+            }
+            
+            if (this.hasEffect)
+            {
+                this.effectHandler.HandleEffect(target);
+            }
         }
     }
 }

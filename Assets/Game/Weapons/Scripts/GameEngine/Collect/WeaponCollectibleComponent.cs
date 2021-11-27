@@ -1,5 +1,5 @@
 using DynamicObjects;
-using Otus.InventoryModule;
+using Otus.GameInventory;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

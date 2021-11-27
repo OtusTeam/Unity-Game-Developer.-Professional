@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Otus.InventoryModule
+namespace Otus.GameInventory
 {
     [CreateAssetMenu(menuName = "Inventory/Item Component")]
     public sealed class ItemComponentConfig : SerializedScriptableObject, IItemComponent

@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace DynamicObjects
@@ -13,7 +15,14 @@ namespace DynamicObjects
 
         public T GetProperty<T>(object key)
         {
-            return this.dynamicObject.GetProperty<T>(key);
+            try
+            {
+                return this.dynamicObject.GetProperty<T>(key);
+            }
+            catch (KeyNotFoundException)
+            {
+                throw new Exception($"Property of {this.name} with {key} is not found!");
+            }
         }
 
         public bool ContainsProperty(object key)
@@ -28,7 +37,14 @@ namespace DynamicObjects
 
         public void AddProperty(object key, IPropertyProvider provider)
         {
-            this.dynamicObject.AddProperty(key, provider);
+            try
+            {
+                this.dynamicObject.AddProperty(key, provider);
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Property of {this.name} with {key} is already added!");
+            }
         }
 
         public void RemoveProperty(object key)
@@ -38,7 +54,14 @@ namespace DynamicObjects
 
         public T InvokeMethod<T>(object key, object data = null)
         {
-            return this.dynamicObject.InvokeMethod<T>(key, data);
+            try
+            {
+                return this.dynamicObject.InvokeMethod<T>(key, data);
+            }
+            catch (KeyNotFoundException)
+            {
+                throw new Exception($"Method of {this.name} with {key} is not founded!");
+            }
         }
 
         public bool TryInvokeMethod<T>(object key, object data, out T result)
@@ -48,7 +71,14 @@ namespace DynamicObjects
 
         public void InvokeMethod(object key, object data = null)
         {
-            this.dynamicObject.InvokeMethod(key, data);
+            try
+            {
+                this.dynamicObject.InvokeMethod(key, data);
+            }
+            catch (KeyNotFoundException)
+            {
+                throw new Exception($"Method of {this.name} with {key} is not founded!");
+            }
         }
 
         public bool TryInvokeMethod(object key, object data = null)
@@ -63,7 +93,14 @@ namespace DynamicObjects
 
         public void AddMethod(object key, IMethodDelegate method)
         {
-            this.dynamicObject.AddMethod(key, method);
+            try
+            {
+                this.dynamicObject.AddMethod(key, method);
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Method of {this.name} with {key} is already added!");
+            }
         }
 
         public void RemoveMethod(object key)

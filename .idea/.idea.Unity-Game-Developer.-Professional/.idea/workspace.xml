@@ -52,13 +52,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Пишу систему эффектов">
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/ActionKey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/ActionKey.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectManagerWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsEntityController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectManagerWrapper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsEntityController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsField.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsField.cs.meta" beforeDir="false" />
+    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Написал систему эффектов">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsEntityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectEntityAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsEntityController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectEntityAdapter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/IEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/IEffect.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectmanager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectmanager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/MonoEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/MonoEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/MonoEffect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/MonoEffect.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SingleEffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/SingleEffectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SingleEffectManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/SingleEffectManager.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Collect/WeaponCollectibleComponent].cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Item/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/IInventoryItemManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Collect/WeaponCollectController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponChangeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/System/InventoryItemManager.cs" />
@@ -132,12 +142,15 @@
         <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SingleEffectManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/MonoEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectActivationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/ActionKey.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsEntityController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectEntityAdapter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/MonoEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/MonoEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffect.cs" />
       </list>
     </option>
   </component>
@@ -193,7 +206,7 @@
       <workItem from="1637482679075" duration="2039000" />
       <workItem from="1637850380237" duration="6433000" />
       <workItem from="1637901232746" duration="40535000" />
-      <workItem from="1637993833003" duration="6866000" />
+      <workItem from="1637993833003" duration="7811000" />
     </task>
     <task id="LOCAL-00001" summary="Провел урок по прокачке персонажа">
       <created>1635297557292</created>
@@ -349,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638002665742</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Написал систему эффектов">
+      <created>1638003076846</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1638003076846</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,29 +404,30 @@
     <MESSAGE value="Урок Эффекты (в разработке) &#10;Пока не смотреть&#10;&#10;Переделал Move" />
     <MESSAGE value="Подкрутил динамический объект" />
     <MESSAGE value="Пишу систему эффектов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Пишу систему эффектов" />
+    <MESSAGE value="Написал систему эффектов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Написал систему эффектов" />
   </component>
   <component name="WindowStateProjectService">
     <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1637863150393">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1637863150393" />
-    <state x="478" y="154" key="RiderGenerateDialog" timestamp="1638002610559">
+    <state x="478" y="154" key="RiderGenerateDialog" timestamp="1638004351885">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="478" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638002610559" />
+    <state x="478" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638004351885" />
     <state x="417" y="163" key="RollbackChangesDialog" timestamp="1637482698961">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="417" y="163" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1637482698961" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638003004163">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638004350049">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638003004163" />
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1638002667337">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638004350049" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1638003078745">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638002667337" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638003078745" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637850417036">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

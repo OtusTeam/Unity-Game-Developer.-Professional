@@ -57,13 +57,22 @@
             </e>
           </e>
           <e p="Effects" t="Include">
+            <e p="Content" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="BurnEffect.cs" t="Include" />
+              </e>
+            </e>
             <e p="Scripts" t="Include">
-              <e p="EffectHandler.cs" t="Include" />
-              <e p="EffectsEntityController.cs" t="Include" />
-              <e p="IEffect.cs" t="Include" />
-              <e p="IEffectmanager.cs" t="Include" />
-              <e p="MonoEffect.cs" t="Include" />
-              <e p="SingleEffectManager.cs" t="Include" />
+              <e p="Effect" t="Include">
+                <e p="IEffect.cs" t="Include" />
+                <e p="MonoEffect.cs" t="Include" />
+              </e>
+              <e p="System" t="Include">
+                <e p="EffectEntityAdapter.cs" t="Include" />
+                <e p="EffectHandler.cs" t="Include" />
+                <e p="IEffectmanager.cs" t="Include" />
+                <e p="SingleEffectManager.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Inventory" t="Include">

@@ -1,17 +1,15 @@
-using System;
-using System.Collections.Generic;
 using DynamicObjects;
 using UnityEngine;
 using Zenject;
 
 namespace Otus.GameEffects
 {
-    public sealed class EffectsEntityController : MonoBehaviour
+    public class EffectEntityAdapter : MonoBehaviour
     {
         [Inject]
         private IDynamicObject entity;
 
-        private SingleEffectManager effectManager;
+        private IEffectManager effectManager;
         
         private object ApplyEffect(object data)
         {
@@ -27,11 +25,16 @@ namespace Otus.GameEffects
             return null;
         }
 
+        protected virtual IEffectManager ProvideEffectManager(IDynamicObject target)
+        {
+            return new SingleEffectManager(target);
+        }
+
         #region Lifecycle
 
         private void Awake()
         {
-            this.effectManager = new SingleEffectManager(this.entity);
+            this.effectManager = this.ProvideEffectManager(this.entity);
 
             this.entity.AddMethod(ActionKey.START_EFFECT, new MethodDelegate(this.ApplyEffect));
             this.entity.AddMethod(ActionKey.STOP_EFFECT, new MethodDelegate(this.CancelEffect));

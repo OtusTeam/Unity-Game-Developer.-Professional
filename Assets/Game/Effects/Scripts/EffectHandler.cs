@@ -34,7 +34,7 @@ namespace Otus.GameEffects
             for (int i = 0, count = this.effects.Length; i < count; i++)
             {
                 var effect = this.effects[i];
-                dynamicObject.TryInvokeMethod(ActionKey.APPLY_EFFECT, effect);
+                dynamicObject.TryInvokeMethod(ActionKey.START_EFFECT, effect);
             }
         }
     }

@@ -59,8 +59,7 @@
           <e p="Effects" t="Include">
             <e p="Scripts" t="Include">
               <e p="EffectHandler.cs" t="Include" />
-              <e p="EffectManagerWrapper.cs" t="Include" />
-              <e p="EffectsField.cs" t="Include" />
+              <e p="EffectsEntityController.cs" t="Include" />
               <e p="IEffect.cs" t="Include" />
               <e p="IEffectmanager.cs" t="Include" />
               <e p="MonoEffect.cs" t="Include" />

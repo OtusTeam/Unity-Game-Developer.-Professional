@@ -12,6 +12,7 @@ namespace DynamicObjects
         ATTACK = -5,
         COLLECT = -6,
         MOVE = -7,
-        APPLY_EFFECT = -8
+        START_EFFECT = -8,
+        STOP_EFFECT = - 9
     }
 }

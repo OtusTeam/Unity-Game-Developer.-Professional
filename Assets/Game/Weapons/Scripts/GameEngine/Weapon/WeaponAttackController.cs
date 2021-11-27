@@ -13,7 +13,7 @@ namespace Otus
         [Inject]
         private IDynamicObject weapon;
 
-        object IMethodDelegate.Invoke(Args args)
+        object IMethodDelegate.Invoke(object data)
         {
             if (this.CanAttack())
             {

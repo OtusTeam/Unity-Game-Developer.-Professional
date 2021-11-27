@@ -40,7 +40,7 @@ namespace DynamicObjects
             }
         }
 
-        public void InvokeEvent(object key, Args args)
+        public void InvokeEvent(object key, object data = null)
         {
             if (!this.listenersMap.TryGetValue(key, out var listeners))
             {
@@ -53,7 +53,7 @@ namespace DynamicObjects
             for (int i = 0, count = this.processingListeners.Count; i < count; i++)
             {
                 var listener = this.processingListeners[i];
-                listener.Invoke(args);
+                listener.Invoke(data);
             }
         }
     }

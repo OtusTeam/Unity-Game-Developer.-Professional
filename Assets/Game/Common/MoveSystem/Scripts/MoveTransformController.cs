@@ -1,9 +1,14 @@
+using DynamicObjects;
 using UnityEngine;
+using Zenject;
 
 namespace Otus
 {
-    public sealed class MoveTransformController : MonoBehaviour, IMoveController
+    public sealed class MoveTransformController : MonoBehaviour, IMethodDelegate
     {
+        [Inject]
+        private IDynamicObject entity;
+        
         [SerializeField]
         private float speed;
 
@@ -15,11 +20,17 @@ namespace Otus
         private void Awake()
         {
             this.fixedDeltaTime = Time.fixedDeltaTime;
+            this.entity.AddMethod(ActionKey.MOVE, this);
         }
 
-        public void Move(Vector3 direction)
+        object IMethodDelegate.Invoke(object data)
         {
-            this.moveTransform.position += this.speed * this.fixedDeltaTime * direction;
+            if (data is MoveTransformData moveData)
+            {
+                this.moveTransform.position += this.speed * this.fixedDeltaTime * moveData.direction;
+            }
+
+            return null;
         }
     }
 }

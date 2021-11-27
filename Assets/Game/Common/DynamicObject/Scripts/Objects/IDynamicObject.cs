@@ -12,9 +12,9 @@ namespace DynamicObjects
         void RemoveProperty(object key);
 
         //Methods:
-        T InvokeMethod<T>(object key, Args args = null);
+        T InvokeMethod<T>(object key, object data = null);
 
-        void InvokeMethod(object key, Args args = null);
+        void InvokeMethod(object key, object data = null);
         
         bool ContainsMethod(object key);
 
@@ -27,6 +27,6 @@ namespace DynamicObjects
 
         void RemoveEventListener(object key, IMethodDelegate callback);
 
-        void InvokeEvent(object key, Args args);
+        void InvokeEvent(object key, object data = null);
     }
 }

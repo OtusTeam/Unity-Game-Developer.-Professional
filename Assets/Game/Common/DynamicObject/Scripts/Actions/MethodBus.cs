@@ -11,16 +11,16 @@ namespace DynamicObjects
             this.delegateMap = new Dictionary<object, IMethodDelegate>();
         }
 
-        public T CallMethod<T>(object key, Args args = null)
+        public T CallMethod<T>(object key, object data = null)
         {
             var methodDelegate = this.delegateMap[key];
-            return (T) methodDelegate.Invoke(args);
+            return (T) methodDelegate.Invoke(data);
         }
 
-        public void CallMethod(object key, Args args = null)
+        public void CallMethod(object key, object data = null)
         {
             var methodDelegate = this.delegateMap[key];
-            methodDelegate.Invoke(args);
+            methodDelegate.Invoke(data);
         }
 
         public bool ContainsMethod(object key)

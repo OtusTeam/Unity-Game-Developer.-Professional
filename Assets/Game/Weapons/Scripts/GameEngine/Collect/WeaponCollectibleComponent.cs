@@ -20,7 +20,7 @@ namespace Otus
             this.weapon.AddMethod(ActionKey.COLLECT, this);
         }
 
-        object IMethodDelegate.Invoke(Args args)
+        object IMethodDelegate.Invoke(object data)
         {
             Destroy(this.gameObject);
             return null;

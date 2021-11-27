@@ -2,11 +2,11 @@ using System.Collections.Generic;
 
 namespace DynamicObjects
 {
-    public sealed class Args
+    public sealed class DictionaryArgs
     {
         private readonly Dictionary<object, object> parameterMap;
 
-        public Args(params KeyValuePair<object, object>[] parameters)
+        public DictionaryArgs(params KeyValuePair<object, object>[] parameters)
         {
             this.parameterMap = new Dictionary<object, object>();
         }

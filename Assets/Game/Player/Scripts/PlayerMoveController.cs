@@ -1,3 +1,4 @@
+using DynamicObjects;
 using UnityEngine;
 using Zenject;
 
@@ -9,12 +10,12 @@ namespace Otus
         private IGameManager gameManager;
 
         [Inject]
-        private IMoveController moveController;
-        
+        private IDynamicObject player;
+
         private bool isEnable;
 
-        private Vector3 moveDirection;
-        
+        private MoveTransformData moveData;
+
         #region Lifecycle
 
         private void OnEnable()
@@ -24,6 +25,7 @@ namespace Otus
 
         private void OnStartGame()
         {
+            this.moveData = new MoveTransformData();
             this.isEnable = true;
         }
 
@@ -39,7 +41,7 @@ namespace Otus
         {
             if (this.isEnable)
             {
-                this.moveController.Move(this.moveDirection);
+                this.player.InvokeMethod(ActionKey.MOVE, this.moveData);
             }
         }
 
@@ -57,22 +59,22 @@ namespace Otus
 
         private void ProcessPlayerInput()
         {
-            this.moveDirection = Vector3.zero;
+            this.moveData.direction = Vector3.zero;
             if (Input.GetKey(KeyCode.W))
             {
-                this.moveDirection = Vector3.forward;
+                this.moveData.direction = Vector3.forward;
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                this.moveDirection = Vector3.back;
+                this.moveData.direction = Vector3.back;
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                this.moveDirection = Vector3.left;
+                this.moveData.direction = Vector3.left;
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                this.moveDirection = Vector3.right;
+                this.moveData.direction = Vector3.right;
             }
         }
     }

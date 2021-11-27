@@ -22,13 +22,13 @@ namespace Otus
             this.weapon.AddMethod(ActionKey.HIDE, new MethodDelegate(this.Hide));
         }
 
-        private object Show(Args args)
+        private object Show(object data)
         {
             this.onShowEvent?.Invoke();
             return null;
         }
 
-        private object Hide(Args args)
+        private object Hide(object data)
         {
             this.onHideEvent?.Invoke();
             return null;

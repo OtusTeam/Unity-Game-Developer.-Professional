@@ -10,10 +10,6 @@ namespace Otus
         [SerializeField]
         private MonoDynamicObject player;
 
-        [Header("Move")]
-        [SerializeField]
-        private MoveTransformController moveController;
-        
         [Header("Weapon")]
         [SerializeField]
         private WeaponCurrentManager weaponCurrentManager;
@@ -32,8 +28,6 @@ namespace Otus
         public override void InstallBindings()
         {
             this.Container.Bind<IDynamicObject>().FromInstance(this.player);
-
-            this.Container.Bind<IMoveController>().FromInstance(this.moveController);
 
             this.Container.Bind<IWeaponCurrentManager>().FromInstance(this.weaponCurrentManager);
             this.Container.Bind<IWeaponsPool>().FromInstance(this.weaponsPool);

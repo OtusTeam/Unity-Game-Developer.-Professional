@@ -27,7 +27,6 @@
               <e p="Scripts" t="Include">
                 <e p="Actions" t="Include">
                   <e p="ActionKey.cs" t="Include" />
-                  <e p="Args.cs" t="Include" />
                   <e p="EventBus.cs" t="Include" />
                   <e p="IMethodDelegate.cs" t="Include" />
                   <e p="MethodBus.cs" t="Include" />
@@ -45,12 +44,15 @@
                   <e p="PropertyKey.cs" t="Include" />
                   <e p="PropertyProvider.cs" t="Include" />
                 </e>
+                <e p="Utils" t="Include">
+                  <e p="DictionaryArgs.cs" t="Include" />
+                </e>
               </e>
             </e>
             <e p="MoveSystem" t="Include">
               <e p="Scripts" t="Include">
-                <e p="IMoveController.cs" t="Include" />
                 <e p="MoveTransformController.cs" t="Include" />
+                <e p="MoveTransformData.cs" t="Include" />
               </e>
             </e>
             <e p="Scripts" t="Include">

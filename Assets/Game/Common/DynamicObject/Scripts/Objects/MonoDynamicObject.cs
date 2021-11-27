@@ -31,14 +31,14 @@ namespace DynamicObjects
             this.dynamicObject.RemoveProperty(key);
         }
 
-        public T InvokeMethod<T>(object key, Args args = null)
+        public T InvokeMethod<T>(object key, object data = null)
         {
-            return this.dynamicObject.InvokeMethod<T>(key, args);
+            return this.dynamicObject.InvokeMethod<T>(key, data);
         }
 
-        public void InvokeMethod(object key, Args args = null)
+        public void InvokeMethod(object key, object data = null)
         {
-            this.dynamicObject.InvokeMethod(key, args);
+            this.dynamicObject.InvokeMethod(key, data);
         }
 
         public bool ContainsMethod(object key)
@@ -66,9 +66,9 @@ namespace DynamicObjects
             this.dynamicObject.RemoveEventListener(key, callback);
         }
 
-        public void InvokeEvent(object key, Args args)
+        public void InvokeEvent(object key, object data = null)
         {
-            this.dynamicObject.InvokeEvent(key, args);
+            this.dynamicObject.InvokeEvent(key, data);
         }
     }
 }

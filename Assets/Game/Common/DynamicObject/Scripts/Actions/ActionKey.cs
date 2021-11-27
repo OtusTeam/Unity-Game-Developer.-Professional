@@ -10,6 +10,7 @@ namespace DynamicObjects
         SHOW = -3,
         HIDE = -4,
         ATTACK = -5,
-        COLLECT = -6
+        COLLECT = -6,
+        MOVE = -7
     }
 }

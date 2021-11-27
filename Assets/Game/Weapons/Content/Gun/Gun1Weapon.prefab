@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnable: 1
   countdown: 1
+  currentTime: 0
 --- !u!1 &75181347011104941
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +223,7 @@ GameObject:
   - component: {fileID: 1347927060792975038}
   - component: {fileID: 3703512681973967834}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: Gun1Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

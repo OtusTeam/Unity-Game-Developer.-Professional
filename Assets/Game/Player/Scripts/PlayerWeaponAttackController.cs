@@ -56,7 +56,7 @@ namespace Otus
         {
             if (this.weaponManager.TryGetWeapon(out MonoDynamicObject weapon))
             {
-                weapon.InvokeMethod(ActionKey.ATTACK);
+                weapon.TryInvokeMethod(ActionKey.ATTACK);
             }
         }
     }

@@ -31,5 +31,17 @@ namespace DynamicObjects
         {
             this.propertyMap.Remove(key);
         }
+
+        public bool TryGetProperty<T>(object key, out T property)
+        {
+            if (this.propertyMap.TryGetValue(key, out var provider))
+            {
+                property = (T) provider.ProvideProperty();
+                return true;
+            }
+
+            property = default;
+            return false;
+        }
     }
 }

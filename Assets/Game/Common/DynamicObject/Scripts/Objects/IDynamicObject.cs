@@ -7,6 +7,8 @@ namespace DynamicObjects
 
         bool ContainsProperty(object key);
 
+        bool TryGetProperty<T>(object key, out T property);
+        
         void AddProperty(object key, IPropertyProvider provider);
 
         void RemoveProperty(object key);
@@ -14,8 +16,12 @@ namespace DynamicObjects
         //Methods:
         T InvokeMethod<T>(object key, object data = null);
 
+        bool TryInvokeMethod<T>(object key, object data, out T result);
+
         void InvokeMethod(object key, object data = null);
-        
+
+        bool TryInvokeMethod(object key, object data = null); 
+
         bool ContainsMethod(object key);
 
         void AddMethod(object key, IMethodDelegate method);

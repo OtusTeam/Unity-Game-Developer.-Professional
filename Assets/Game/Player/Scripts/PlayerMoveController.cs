@@ -41,7 +41,7 @@ namespace Otus
         {
             if (this.isEnable)
             {
-                this.player.InvokeMethod(ActionKey.MOVE, this.moveData);
+                this.player.TryInvokeMethod(ActionKey.MOVE, this.moveData);
             }
         }
 

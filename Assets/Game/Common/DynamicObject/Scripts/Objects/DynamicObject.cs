@@ -25,6 +25,11 @@ namespace DynamicObjects
             return this.properties.ContainsProperty(key);
         }
 
+        public bool TryGetProperty<T>(object key, out T property)
+        {
+            return this.properties.TryGetProperty(key, out property);
+        }
+
         public void AddProperty(object key, IPropertyProvider provider)
         {
             this.properties.AddProperty(key, provider);
@@ -37,12 +42,22 @@ namespace DynamicObjects
 
         public T InvokeMethod<T>(object key, object data = null)
         {
-            return this.methodBus.CallMethod<T>(key, data);
+            return this.methodBus.InvokeMethod<T>(key, data);
+        }
+
+        public bool TryInvokeMethod<T>(object key, object data, out T result)
+        {
+            return this.methodBus.TryInvokeMethod(key, data, out result);
         }
 
         public void InvokeMethod(object key, object data = null)
         {
-            this.methodBus.CallMethod(key, data);
+            this.methodBus.InvokeMethod(key, data);
+        }
+
+        public bool TryInvokeMethod(object key, object data = null)
+        {
+            return this.methodBus.TryInvokeMethod(key, data);
         }
 
         public bool ContainsMethod(object key)

@@ -4,7 +4,7 @@ using DynamicObjects;
 
 namespace Otus.GameEffects
 {
-    public sealed class SingleEffectManager : IEffectManager
+    public sealed class SingleEffectEntityManager : IEffectEntityManager
     {
         public event Action<IEffect> OnEffectAdded;
         
@@ -14,7 +14,7 @@ namespace Otus.GameEffects
 
         private readonly HashSet<IEffect> activeEffects;
 
-        public SingleEffectManager(IDynamicObject target)
+        public SingleEffectEntityManager(IDynamicObject target)
         {
             this.target = target;
             this.activeEffects = new HashSet<IEffect>();

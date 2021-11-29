@@ -8,7 +8,6 @@ namespace Game.Scripts
         public override void InstallBindings()
         {
             this.Container.Bind<SoundManager>().FromComponentInHierarchy().AsCached();
-            this.Container.Bind<IBulletManager>().FromComponentInHierarchy().AsCached();
             this.Container.Bind<IGameManager>().FromComponentInHierarchy().AsCached();
         }
     }

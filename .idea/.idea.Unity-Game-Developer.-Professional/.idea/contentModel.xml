@@ -7,11 +7,17 @@
         <e p="Game" t="Include">
           <e p="Bullets" t="Include">
             <e p="Scripts" t="Include">
-              <e p="Bullet.cs" t="Include" />
-              <e p="BulletConfig.cs" t="Include" />
-              <e p="BulletManager.cs" t="Include" />
-              <e p="IBulletListener.cs" t="Include" />
-              <e p="IBulletManager.cs" t="Include" />
+              <e p="Bullet" t="Include">
+                <e p="Bullet.cs" t="Include" />
+                <e p="BulletConfig.cs" t="Include" />
+                <e p="IBulletListener.cs" t="Include" />
+              </e>
+              <e p="System" t="Include">
+                <e p="BulletManager.cs" t="Include" />
+                <e p="BulletPool.cs" t="Include" />
+                <e p="BulletSystemInstaller.cs" t="Include" />
+                <e p="IBulletManager.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Common" t="Include">
@@ -53,25 +59,27 @@
             </e>
             <e p="Scripts" t="Include">
               <e p="AnimationEventReceiver.cs" t="Include" />
+              <e p="IUpdateListener.cs" t="Include" />
               <e p="ObservableCollider.cs" t="Include" />
             </e>
           </e>
           <e p="Effects" t="Include">
             <e p="Content" t="Include">
               <e p="Scripts" t="Include">
-                <e p="BurnEffect.cs" t="Include" />
+                <e p="BurnEffectController.cs" t="Include" />
               </e>
             </e>
             <e p="Scripts" t="Include">
               <e p="Effect" t="Include">
+                <e p="Effect.cs" t="Include" />
+                <e p="EffectController.cs" t="Include" />
                 <e p="IEffect.cs" t="Include" />
-                <e p="MonoEffect.cs" t="Include" />
               </e>
               <e p="System" t="Include">
                 <e p="EffectEntityAdapter.cs" t="Include" />
                 <e p="EffectHandler.cs" t="Include" />
-                <e p="IEffectmanager.cs" t="Include" />
-                <e p="SingleEffectManager.cs" t="Include" />
+                <e p="IEffectEntityManager.cs" t="Include" />
+                <e p="SingleEffectEntityManager.cs" t="Include" />
               </e>
             </e>
           </e>

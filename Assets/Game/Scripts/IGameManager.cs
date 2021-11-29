@@ -15,5 +15,13 @@ namespace Otus
         void StartGame();
         
         void FinishGame();
+
+        void AddUpdateListener(IUpdateListener listener);
+
+        void RemoveUpdateListener(IUpdateListener listener);
+        
+        void AddFixedUpdateListener(IUpdateListener listener);
+        
+        void RemoveFixedUpdateListener(IUpdateListener listener);
     }
 }

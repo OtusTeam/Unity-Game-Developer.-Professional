@@ -9,7 +9,7 @@ namespace Otus.GameEffects
         [Inject]
         private IDynamicObject entity;
 
-        private IEffectManager effectManager;
+        private IEffectEntityManager effectManager;
         
         private object ApplyEffect(object data)
         {
@@ -25,9 +25,9 @@ namespace Otus.GameEffects
             return null;
         }
 
-        protected virtual IEffectManager ProvideEffectManager(IDynamicObject target)
+        protected virtual IEffectEntityManager ProvideEffectManager(IDynamicObject target)
         {
-            return new SingleEffectManager(target);
+            return new SingleEffectEntityManager(target);
         }
 
         #region Lifecycle

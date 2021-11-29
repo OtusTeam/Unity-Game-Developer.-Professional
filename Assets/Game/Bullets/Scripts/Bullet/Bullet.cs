@@ -21,6 +21,16 @@ namespace Otus
         {
             this.speed = speed;
         }
+
+        public void SetPosition(Vector3 position)
+        {
+            this.transform.position = position;
+        }
+        
+        public void SetRotation(Quaternion rotation)
+        {
+            this.transform.rotation = rotation;
+        }
         
         public void SetDirection(Vector3 direction)
         {

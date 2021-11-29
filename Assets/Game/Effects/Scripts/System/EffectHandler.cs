@@ -14,7 +14,7 @@ namespace Otus.GameEffects
         private MonoDynamicObjectCondition condition;
 
         [SerializeField]
-        private MonoEffect[] effects;
+        private Effect[] effects;
 
         public void HandleEffect(Collider target)
         {

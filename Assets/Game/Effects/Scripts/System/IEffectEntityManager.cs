@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Otus.GameEffects
 {
-    public interface IEffectManager
+    public interface IEffectEntityManager
     {
         event Action<IEffect> OnEffectAdded;
 

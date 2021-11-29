@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Otus.GameEffects
 {
-    public abstract class MonoEffect : MonoBehaviour, IEffect
+    public abstract class Effect : MonoBehaviour, IEffect
     {
         public abstract event Action<IEffect, IDynamicObject> OnActivated;
 

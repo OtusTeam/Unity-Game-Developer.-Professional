@@ -66,20 +66,35 @@
           <e p="Effects" t="Include">
             <e p="Content" t="Include">
               <e p="Scripts" t="Include">
-                <e p="BurnEffectController.cs" t="Include" />
+                <e p="Components" t="Include">
+                  <e p="EffectCountdownDamageComponent.cs" t="Include" />
+                  <e p="EffectSFXComponent.cs" t="Include" />
+                  <e p="EffectVFXComponent.cs" t="Include" />
+                </e>
+                <e p="Configs" t="Include">
+                  <e p="EffectCountdownDamageConfig.cs" t="Include" />
+                </e>
               </e>
             </e>
             <e p="Scripts" t="Include">
               <e p="Effect" t="Include">
+                <e p="Component" t="Include">
+                  <e p="EffectComponent.cs" t="Include" />
+                  <e p="EffectComponentGroup.cs" t="Include" />
+                  <e p="EffectComponentManager.cs" t="Include" />
+                  <e p="EffectComponentPool.cs" t="Include" />
+                </e>
                 <e p="Effect.cs" t="Include" />
-                <e p="EffectController.cs" t="Include" />
+                <e p="EffectInstaller.cs" t="Include" />
                 <e p="IEffect.cs" t="Include" />
               </e>
+              <e p="Entity" t="Include">
+                <e p="EntityEffectAdapter.cs" t="Include" />
+                <e p="EntityEffectSingleManager.cs" t="Include" />
+                <e p="IEntityEffectManager.cs" t="Include" />
+              </e>
               <e p="System" t="Include">
-                <e p="EffectEntityAdapter.cs" t="Include" />
                 <e p="EffectHandler.cs" t="Include" />
-                <e p="IEffectEntityManager.cs" t="Include" />
-                <e p="SingleEffectEntityManager.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -130,6 +145,17 @@
             </e>
           </e>
           <e p="Weapons" t="Include">
+            <e p="Content" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Components" t="Include">
+                  <e p="WeaponAttackAnimationComponent.cs" t="Include" />
+                  <e p="WeaponAttackBulletComponent.cs" t="Include" />
+                  <e p="WeaponAttackCountdown.cs" t="Include" />
+                  <e p="WeaponAttackSFXComponent.cs" t="Include" />
+                  <e p="WeaponAttackVFXComponent.cs" t="Include" />
+                </e>
+              </e>
+            </e>
             <e p="Scripts" t="Include">
               <e p="Configs" t="Include">
                 <e p="WeaponConfig.cs" t="Include" />
@@ -149,15 +175,8 @@
                   <e p="WeaponsVisibilityController.cs" t="Include" />
                 </e>
                 <e p="Weapon" t="Include">
-                  <e p="Components" t="Include">
-                    <e p="WeaponAttackAnimationComponent.cs" t="Include" />
-                    <e p="WeaponAttackBulletComponent.cs" t="Include" />
-                    <e p="WeaponAttackComponent.cs" t="Include" />
-                    <e p="WeaponAttackCountdown.cs" t="Include" />
-                    <e p="WeaponAttackSFXComponent.cs" t="Include" />
-                    <e p="WeaponAttackVFXComponent.cs" t="Include" />
-                  </e>
                   <e p="Weapon.cs" t="Include" />
+                  <e p="WeaponAttackComponent.cs" t="Include" />
                   <e p="WeaponAttackController.cs" t="Include" />
                   <e p="WeaponInstaller.cs" t="Include" />
                   <e p="WeaponVisibleController.cs" t="Include" />

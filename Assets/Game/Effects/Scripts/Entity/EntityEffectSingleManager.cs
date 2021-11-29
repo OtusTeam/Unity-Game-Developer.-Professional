@@ -4,19 +4,19 @@ using DynamicObjects;
 
 namespace Otus.GameEffects
 {
-    public sealed class SingleEffectEntityManager : IEffectEntityManager
+    public sealed class EntityEffectSingleManager : IEntityEffectManager
     {
         public event Action<IEffect> OnEffectAdded;
         
         public event Action<IEffect> OnEffectRemoved;
         
-        private readonly IDynamicObject target;
+        private readonly IDynamicObject entity;
 
         private readonly HashSet<IEffect> activeEffects;
 
-        public SingleEffectEntityManager(IDynamicObject target)
+        public EntityEffectSingleManager(IDynamicObject entity)
         {
-            this.target = target;
+            this.entity = entity;
             this.activeEffects = new HashSet<IEffect>();
         }
         
@@ -28,7 +28,7 @@ namespace Otus.GameEffects
                 this.OnEffectAdded?.Invoke(effect);
             }
             
-            effect.Activate(this.target);
+            effect.Activate(this.entity);
         }
 
         public IEnumerable<IEffect> GetEffects()
@@ -42,13 +42,13 @@ namespace Otus.GameEffects
             {
                 effect.OnDeactivated -= this.OnEffectDeactivated;
                 this.OnEffectRemoved?.Invoke(effect);
-                effect.Deactivate(this.target);
+                effect.Deactivate(this.entity);
             }
         }
 
         private void OnEffectDeactivated(IEffect effect, IDynamicObject target)
         {
-            if (this.target != target)
+            if (this.entity != target)
             {
                 return;
             }

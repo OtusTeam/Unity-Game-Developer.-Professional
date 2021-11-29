@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DynamicObjects
 {
-    public sealed class MonoDynamicObject : MonoBehaviour, IDynamicObject
+    public class MonoDynamicObject : MonoBehaviour, IDynamicObject
     {
         private readonly DynamicObject dynamicObject;
 

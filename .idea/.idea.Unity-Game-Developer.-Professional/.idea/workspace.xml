@@ -52,35 +52,58 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Написал систему эффектов">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletPool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletPool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletSystemInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletSystemInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/Scripts/IUpdateListener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/Scripts/IUpdateListener.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectEntityManager.cs.meta" afterDir="false" />
+    <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Написал пул для пули">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectCountdownDamageComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectCountdownDamageComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectSFXComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectSFXComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectVFXComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectVFXComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Configs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Configs/EffectCountdownDamageConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Configs/EffectCountdownDamageConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponentGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponentGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponentManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponentPool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponentPool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectInstaller.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Entity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffectController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/MonoEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Effect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/MonoEffect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Effect.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectEntityAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectEntityAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectEntityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectmanager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/SingleEffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/SingleEffectEntityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/SingleEffectManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/SingleEffectEntityManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/IGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/IGameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Properties/PropertyKey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Properties/PropertyKey.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffectController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffectController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponentManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectEntityAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Entity/EntityEffectAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectEntityAdapter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Entity/EntityEffectAdapter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectEntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Entity/IEntityEffectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectEntityManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Entity/IEntityEffectManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/SingleEffectEntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Entity/EntityEffectSingleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/SingleEffectEntityManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Entity/EntityEffectSingleManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackAnimationComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackAnimationComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackAnimationComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackAnimationComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackBulletComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackBulletComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackBulletComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackBulletComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/WeaponAttackComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/WeaponAttackComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackCountdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackCountdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackCountdown.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackCountdown.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackSFXComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackSFXComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackSFXComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackSFXComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackVFXComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackVFXComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackVFXComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackVFXComponent.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,39 +122,17 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Common/Scripts/ObservableCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36514B14-425C-4337-B446-653C547AA9C3/48/9d27754a/ICloneable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/System/WeaponCurrentManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/36514B14-425C-4337-B446-653C547AA9C3/50B/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/IMethodDelegate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C36F3AA3-DFC1-481C-B3B9-F00D4E07D142/98/f47839be/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36514B14-425C-4337-B446-653C547AA9C3/89/a114c2a7/Func`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponChangeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackSFXComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackSFXComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponAttackController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/IDynamicObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Actions/MethodBus.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerMoveController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Player/Scripts/PlayerWeaponAttackController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Inventory/Scripts/Inventory/Utils/EquipSlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/Configs/WeaponConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectsField.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/IDamageHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Utils/DynamicObjectCondition.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Utils/MonoDynamicObjectCondition.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DamageSystem/DealDamageHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Weapon/Components/WeaponAttackBulletComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectManagerWrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectmanager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/UniqueEffectManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SoloEffectManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/DynamicObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffectManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/SingleEffectManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/IEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/EffectActivationController.cs" />
@@ -142,15 +143,12 @@
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/MonoEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/MonoEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Effect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEffectEntityManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectEntityAdapter.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/BurnEffectController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Pool.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/GameObjectPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletSystemInstaller.cs" />
@@ -160,6 +158,32 @@
         <option value="$PROJECT_DIR$/Assets/Game/Scripts/IGameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Bullets/Scripts/BulletManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectSystemInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Objects/MonoDynamicObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Effect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Utils/MonoDynamicObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Utils/EffectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/IEntityEffectManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EntitySingleEffectManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EntityEffectAdapter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EntityEffectSingleManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectComponentPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/EffectComponentManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponentManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/Component/EffectComponentGroup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectCompoenntCountdownTakeDamage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/DynamicObject/Scripts/Properties/PropertyKey.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectVFXComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectSFXComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Configs/EffectCountdownDamageConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectCountdownDamageComponent.cs" />
       </list>
     </option>
   </component>
@@ -217,7 +241,7 @@
       <workItem from="1637901232746" duration="40535000" />
       <workItem from="1637993833003" duration="7883000" />
       <workItem from="1638102707309" duration="2109000" />
-      <workItem from="1638200893377" duration="2216000" />
+      <workItem from="1638200893377" duration="5024000" />
     </task>
     <task id="LOCAL-00001" summary="Провел урок по прокачке персонажа">
       <created>1635297557292</created>
@@ -387,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638004405220</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Написал пул для пули">
+      <created>1638204167957</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1638204167957</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,29 +454,30 @@
     <MESSAGE value="Подкрутил динамический объект" />
     <MESSAGE value="Пишу систему эффектов" />
     <MESSAGE value="Написал систему эффектов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Написал систему эффектов" />
+    <MESSAGE value="Написал пул для пули" />
+    <option name="LAST_COMMIT_MESSAGE" value="Написал пул для пули" />
   </component>
   <component name="WindowStateProjectService">
     <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1637863150393">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="379" y="256" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1637863150393" />
-    <state x="478" y="154" key="RiderGenerateDialog" timestamp="1638203286851">
+    <state x="478" y="154" key="RiderGenerateDialog" timestamp="1638206426083">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="478" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638203286851" />
+    <state x="478" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638206426083" />
     <state x="417" y="163" key="RollbackChangesDialog" timestamp="1637482698961">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="417" y="163" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1637482698961" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638204017015">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638206921722">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638204017015" />
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1638004406544">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638206921722" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1638204170251">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638004406544" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638204170251" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637850417036">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -462,9 +494,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" width="670" height="675" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1637997911124" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638204067708">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638204601438">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638204067708" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638204601438" />
   </component>
 </project>

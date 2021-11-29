@@ -15,7 +15,7 @@ namespace Otus
         
         public void HandleDamage(Collider target, int damage)
         {
-            if (!target.TryGetComponent(out MonoDynamicObject dynamicObject))
+            if (!target.TryGetComponent(out IMonoDynamicObject dynamicObject))
             {
                 return;
             }

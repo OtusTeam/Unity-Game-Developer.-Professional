@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Otus
 {
-    public sealed class PlayerMoveController : MonoBehaviour
+    public sealed class PlayerMoveInput : MonoBehaviour
     {
         [Inject]
         private IGameManager gameManager;

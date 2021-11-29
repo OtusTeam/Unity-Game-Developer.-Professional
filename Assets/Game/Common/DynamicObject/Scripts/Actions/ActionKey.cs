@@ -13,6 +13,8 @@ namespace DynamicObjects
         COLLECT = -6,
         MOVE = -7,
         START_EFFECT = -8,
-        STOP_EFFECT = - 9
+        STOP_EFFECT = -9,
+        LOCK_MOVE = -10,
+        UNLOCK_MOVE = -11
     }
 }

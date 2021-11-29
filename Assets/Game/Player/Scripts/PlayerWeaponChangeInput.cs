@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Otus
 {
-    public sealed class PlayerWeaponChangeController : MonoBehaviour
+    public sealed class PlayerWeaponChangeInput : MonoBehaviour
     {
         [Inject]
         private IGameManager gameManager;
@@ -21,7 +21,7 @@ namespace Otus
 
         #region Lifecycle
 
-        public PlayerWeaponChangeController()
+        public PlayerWeaponChangeInput()
         {
             this.processingWeapons = new List<Weapon>();
         }

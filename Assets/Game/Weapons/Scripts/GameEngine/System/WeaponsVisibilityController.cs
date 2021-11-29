@@ -24,6 +24,7 @@ namespace Otus
         {
             this.weaponCurrentManager.OnWeaponSetuped += this.OnCurrentWeaponSetuped;
             this.weaponCurrentManager.OnWeaponChanged += this.OnCurrentWeaponChanged;
+            this.weaponCurrentManager.OnWeaponReset += this.OnCurrentWeaponReset;
             this.weaponsPool.OnWeaponAdded += this.OnWeaponAdded;
         }
 
@@ -31,6 +32,7 @@ namespace Otus
         {
             this.weaponCurrentManager.OnWeaponSetuped -= this.OnCurrentWeaponSetuped;
             this.weaponCurrentManager.OnWeaponChanged -= this.OnCurrentWeaponChanged;
+            this.weaponCurrentManager.OnWeaponReset -= this.OnCurrentWeaponReset;
             this.weaponsPool.OnWeaponAdded -= this.OnWeaponAdded;
         }
 
@@ -51,6 +53,12 @@ namespace Otus
 
             nextWeapon.InvokeMethod(ActionKey.SHOW);
             this.BindToTransform(nextWeapon, this.handTransform);
+        }
+        
+        private void OnCurrentWeaponReset(MonoDynamicObject previousWeapon)
+        {
+            previousWeapon.InvokeMethod(ActionKey.HIDE);
+            this.BindToTransform(previousWeapon, this.poolTransform);
         }
 
         private void OnWeaponAdded(Weapon weapon)

@@ -29,6 +29,7 @@ namespace Otus
         {
             this.Container.Bind<IDynamicObject>().FromInstance(this.player);
 
+            this.Container.Bind<IWeaponAttackComponent>().FromInstance(this.weaponCurrentManager);
             this.Container.Bind<IWeaponCurrentManager>().FromInstance(this.weaponCurrentManager);
             this.Container.Bind<IWeaponsPool>().FromInstance(this.weaponsPool);
             

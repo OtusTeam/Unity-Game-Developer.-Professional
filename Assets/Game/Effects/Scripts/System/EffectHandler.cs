@@ -11,7 +11,7 @@ namespace Otus.GameEffects
         
         [ShowIf("hasCondition")]
         [SerializeField]
-        private MonoDynamicObjectCondition condition;
+        private CompareTagCondition condition;
 
         [SerializeField]
         private Effect[] effects;

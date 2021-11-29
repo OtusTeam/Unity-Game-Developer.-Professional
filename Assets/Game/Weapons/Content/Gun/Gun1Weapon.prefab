@@ -211,7 +211,7 @@ MonoBehaviour:
   isEnable: 1
   config: {fileID: 11400000, guid: 0c1ff201caddb42d283912c2ba68ece4, type: 2}
   firePoint: {fileID: 4216349892898551925}
-  hasDamage: 0
+  hasDamage: 1
   hasEffect: 0
   effectHandler: {fileID: 0}
 --- !u!1 &4216349891932541550

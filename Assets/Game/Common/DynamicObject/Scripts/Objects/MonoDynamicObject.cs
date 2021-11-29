@@ -4,9 +4,19 @@ using UnityEngine;
 
 namespace DynamicObjects
 {
-    public class MonoDynamicObject : MonoBehaviour, IDynamicObject
+    public class MonoDynamicObject : MonoBehaviour, IMonoDynamicObject
     {
         private readonly DynamicObject dynamicObject;
+
+        GameObject IMonoDynamicObject.GameObject
+        {
+            get { return this.gameObject; }
+        }
+
+        Transform IMonoDynamicObject.Transform
+        {
+            get { return this.transform; }
+        }
 
         public MonoDynamicObject()
         {

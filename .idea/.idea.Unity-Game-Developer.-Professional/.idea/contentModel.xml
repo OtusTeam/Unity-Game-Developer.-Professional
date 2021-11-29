@@ -21,6 +21,18 @@
             </e>
           </e>
           <e p="Common" t="Include">
+            <e p="Colliders" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="MonoDynamicObjectCollider.cs" t="Include" />
+                <e p="ObservableCollider.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Conditions" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="CompareTagCondition.cs" t="Include" />
+                <e p="MonoDynamicObjectCondition.cs" t="Include" />
+              </e>
+            </e>
             <e p="DamageSystem" t="Include">
               <e p="DealDamageHandler.cs" t="Include" />
             </e>
@@ -36,6 +48,7 @@
                 <e p="Objects" t="Include">
                   <e p="DynamicObject.cs" t="Include" />
                   <e p="IDynamicObject.cs" t="Include" />
+                  <e p="IMonoDynamicObject.cs" t="Include" />
                   <e p="MonoDynamicObject.cs" t="Include" />
                 </e>
                 <e p="Properties" t="Include">
@@ -47,8 +60,12 @@
                 </e>
                 <e p="Utils" t="Include">
                   <e p="DictionaryArgs.cs" t="Include" />
-                  <e p="MonoDynamicObjectCondition.cs" t="Include" />
                 </e>
+              </e>
+            </e>
+            <e p="HitPointsSystem" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="HitPointsController.cs" t="Include" />
               </e>
             </e>
             <e p="MoveSystem" t="Include">
@@ -60,7 +77,6 @@
             <e p="Scripts" t="Include">
               <e p="AnimationEventReceiver.cs" t="Include" />
               <e p="IUpdateListener.cs" t="Include" />
-              <e p="ObservableCollider.cs" t="Include" />
             </e>
           </e>
           <e p="Effects" t="Include">
@@ -98,6 +114,11 @@
               </e>
             </e>
           </e>
+          <e p="Enemies" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="EnemyInstaller.cs" t="Include" />
+            </e>
+          </e>
           <e p="Inventory" t="Include">
             <e p="Scripts" t="Include">
               <e p="Inventory" t="Include">
@@ -128,9 +149,9 @@
           <e p="Player" t="Include">
             <e p="Scripts" t="Include">
               <e p="PlayerInstaller.cs" t="Include" />
-              <e p="PlayerMoveController.cs" t="Include" />
-              <e p="PlayerWeaponAttackController.cs" t="Include" />
-              <e p="PlayerWeaponChangeController.cs" t="Include" />
+              <e p="PlayerMoveInput.cs" t="Include" />
+              <e p="PlayerWeaponAttackInput.cs" t="Include" />
+              <e p="PlayerWeaponChangeInput.cs" t="Include" />
               <e p="PlayerWeaponsInitializer.cs" t="Include" />
             </e>
           </e>

@@ -1299,6 +1299,10 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 5795432560036534247, guid: 27323a3815277486a938a6808560ea62, type: 3}
+    - target: {fileID: 5795432560714293580, guid: 27323a3815277486a938a6808560ea62, type: 3}
+      propertyPath: m_Name
+      value: Damage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27323a3815277486a938a6808560ea62, type: 3}
 --- !u!1001 &6112559661270503232

@@ -28,7 +28,7 @@
               </e>
             </e>
             <e p="DamageSystem" t="Include">
-              <e p="DealDamageHandler.cs" t="Include" />
+              <e p="DamageDealHandler.cs" t="Include" />
             </e>
             <e p="DynamicObject" t="Include">
               <e p="Scripts" t="Include">
@@ -68,8 +68,9 @@
             </e>
             <e p="MoveSystem" t="Include">
               <e p="Scripts" t="Include">
-                <e p="MoveTransformController.cs" t="Include" />
-                <e p="MoveTransformData.cs" t="Include" />
+                <e p="EntityMoveController.cs" t="Include" />
+                <e p="EntityMoveControllerAdapter.cs" t="Include" />
+                <e p="MoveData.cs" t="Include" />
               </e>
             </e>
             <e p="Scripts" t="Include">
@@ -84,6 +85,10 @@
               <e p="IUpdateListener.cs" t="Include" />
               <e p="Meshes" t="Include">
                 <e p="EntityMesh.cs" t="Include" />
+              </e>
+              <e p="Multipliers" t="Include">
+                <e p="FloatMultiplier.cs" t="Include" />
+                <e p="Multiplier.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -117,12 +122,11 @@
                 </e>
               </e>
               <e p="Entity" t="Include">
+                <e p="EntityEffectManager.cs" t="Include" />
                 <e p="EntityEffectManagerAdapter.cs" t="Include" />
-                <e p="EntityEffectSingleManager.cs" t="Include" />
-                <e p="IEntityEffectManager.cs" t="Include" />
               </e>
               <e p="System" t="Include">
-                <e p="EffectHandler.cs" t="Include" />
+                <e p="EffectApplyHandler.cs" t="Include" />
               </e>
             </e>
           </e>

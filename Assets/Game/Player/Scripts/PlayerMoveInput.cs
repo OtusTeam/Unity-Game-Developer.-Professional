@@ -14,7 +14,7 @@ namespace Otus
 
         private bool isEnable;
 
-        private MoveTransformData moveData;
+        private MoveData moveData;
 
         #region Lifecycle
 
@@ -25,7 +25,7 @@ namespace Otus
 
         private void OnStartGame()
         {
-            this.moveData = new MoveTransformData();
+            this.moveData = new MoveData();
             this.isEnable = true;
         }
 

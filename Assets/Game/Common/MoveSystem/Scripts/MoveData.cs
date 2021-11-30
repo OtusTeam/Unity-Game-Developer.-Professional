@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class MoveTransformData
+    public sealed class MoveData
     {
         public Vector3 direction;
     }

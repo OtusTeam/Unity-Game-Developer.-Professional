@@ -2,23 +2,23 @@ using DynamicObjects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Otus.GameEffects
+namespace Otus
 {
-    public interface IEffectHandler
+    public interface IDamageDealHandler
     {
-        void HandleEffect(Collider target, IEffect effect);
+        void DealDamage(Collider target, int damage);
     }
     
-    public sealed class EffectHandler : MonoBehaviour, IEffectHandler
-    { 
+    public sealed class DamageDealHandler : MonoBehaviour, IDamageDealHandler
+    {
         [SerializeField]
         private bool hasCondition;
         
         [ShowIf("hasCondition")]
         [SerializeField]
-        private CompareTagCondition condition;
-
-        public void HandleEffect(Collider target, IEffect effect)
+        private MonoDynamicObjectCondition condition;
+        
+        public void DealDamage(Collider target, int damage)
         {
             if (!target.TryGetComponent(out IMonoDynamicObject dynamicObject))
             {
@@ -27,7 +27,7 @@ namespace Otus.GameEffects
 
             if (!this.hasCondition || this.condition.IsTrue(dynamicObject))
             {
-                dynamicObject.TryInvokeMethod(ActionKey.START_EFFECT, effect);
+                dynamicObject.TryInvokeMethod(ActionKey.TAKE_DAMAGE, damage);
             }
         }
     }

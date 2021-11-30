@@ -228,6 +228,51 @@ MonoBehaviour:
   weaponDataSet:
   - isSelected: 1
     inventoryConfig: {fileID: 11400000, guid: aaefc239a7a31e04e923b2b0ee9c99e6, type: 2}
+--- !u!1 &1126555792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1126555794}
+  - component: {fileID: 1126555793}
+  m_Layer: 0
+  m_Name: HandlerDeal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1126555794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126555792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5795432560714293581}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1126555793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126555792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9585931a93547acb03f8546150673fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCondition: 1
+  condition: {fileID: 368354164}
 --- !u!1 &1133542869
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +580,7 @@ GameObject:
   - component: {fileID: 1748476112}
   - component: {fileID: 1748476111}
   m_Layer: 0
-  m_Name: Handler
+  m_Name: HandlerApply
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1119,7 +1164,6 @@ MonoBehaviour:
   player: {fileID: 5795432560036534247}
   weaponCurrentManager: {fileID: 5795432560103335555}
   weaponsPool: {fileID: 5795432559484493125}
-  dealDamageHandler: {fileID: 5795432560714293583}
   inventoryItemManager: {fileID: 564651877}
 --- !u!114 &5795432560036534247
 MonoBehaviour:
@@ -1165,7 +1209,7 @@ MonoBehaviour:
   - key: 10001
     value: {fileID: 1748476111}
   - key: 10000
-    value: {fileID: 5795432560714293583}
+    value: {fileID: 1126555793}
 --- !u!1 &5795432560103335553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,9 +1337,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5795432560714293581}
-  - component: {fileID: 5795432560714293583}
   m_Layer: 0
-  m_Name: DealDamage
+  m_Name: DamageSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1311,24 +1354,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1126555794}
   m_Father: {fileID: 5795432561170971340}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5795432560714293583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5795432560714293580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9585931a93547acb03f8546150673fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasCondition: 1
-  condition: {fileID: 368354164}
 --- !u!1 &5795432561170971187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,7 +1484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ba9406442e4d70ab737f6edd0beb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  moveTransform: {fileID: 5795432560036534246}
-  moveEnabled: 1
-  moveLocked: 0
+  parameters:
+    moveEnabled: 1
+    moveLocked: 0
+    moveSpeed: 5
+    moveTransform: {fileID: 5795432560036534246}

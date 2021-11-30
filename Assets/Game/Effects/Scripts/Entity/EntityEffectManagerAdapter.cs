@@ -4,64 +4,65 @@ using Zenject;
 
 namespace Otus.GameEffects
 {
-    public class EntityEffectManagerAdapter : MonoBehaviour
+    public sealed class EntityEffectManagerAdapter : MonoBehaviour
     {
         [Inject]
         private IDynamicObject entity;
 
-        private IEntityEffectManager entityManager;
+        private EntityEffectManager effectManager;
         
         private object ApplyEffect(object data)
         {
             var effect = (IEffect) data;
-            this.entityManager.AddEffect(effect);
+            this.effectManager.AddEffect(effect);
             return null;
         }
 
         private object CancelEffect(object data)
         {
             var effect = (IEffect) data;
-            this.entityManager.RemoveEffect(effect);
+            this.effectManager.RemoveEffect(effect);
             return null;
-        }
-
-        protected virtual IEntityEffectManager ProvideEffectManager(IDynamicObject target)
-        {
-            return new EntityEffectSingleManager(target);
         }
 
         #region Lifecycle
 
         private void Awake()
         {
-            this.entityManager = this.ProvideEffectManager(this.entity);
+            this.effectManager = new EntityEffectManager(this.entity);
 
             this.entity.AddMethod(ActionKey.START_EFFECT, new MethodDelegate(this.ApplyEffect));
             this.entity.AddMethod(ActionKey.STOP_EFFECT, new MethodDelegate(this.CancelEffect));
+            this.entity.AddProperty(PropertyKey.ACTIVE_EFFECTS, new PropertyDelegateProvider(this.GetActiveEffects));
+        }
+
+        private object GetActiveEffects()
+        {
+            return this.effectManager.GetActiveEffects();
         }
 
         private void OnEnable()
         {
-            this.entityManager.OnEffectAdded += this.OnEntityAdded;
-            this.entityManager.OnEffectRemoved += this.OnEntityRemoved;
+            this.effectManager.OnEffectAdded += this.OnEffectAdded;
+            this.effectManager.OnEffectRemoved += this.OnEffectRemoved;
         }
 
         private void OnDisable()
         {
-            this.entityManager.OnEffectAdded -= this.OnEntityAdded;
-            this.entityManager.OnEffectRemoved -= this.OnEntityRemoved;
+            this.effectManager.OnEffectAdded -= this.OnEffectAdded;
+            this.effectManager.OnEffectRemoved -= this.OnEffectRemoved;
         }
 
         #endregion
 
         #region Callbacks
         
-        private void OnEntityAdded(IEffect effect)
+        private void OnEffectAdded(IEffect effect)
         {
             this.entity.InvokeEvent(ActionKey.START_EFFECT, effect);
         }
         
-        private void OnEntityRemoved(IEffect effect)
+        private void OnEffectRemoved(IEffect effect)
         {
             this.entity.InvokeEvent(ActionKey.STOP_EFFECT, effect);
         }

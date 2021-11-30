@@ -11,10 +11,10 @@ namespace DynamicObjects
         ENTITY_MESH = 4,
         
         
-        
         INVENTORY_ITEM = 105,
+        ACTIVE_EFFECTS = 106,
 
-        DEAL_DAMAGE_HANDLER = 10000,
-        EFFECT_HANDLER = 10001
+        DAMAGE_DEAL_HANDLER = 10000,
+        EFFECT_APPLY_HANDLER = 10001
     }
 }

@@ -19,16 +19,16 @@ namespace DynamicObjects
 
     public sealed class PropertyDelegateProvider : IPropertyProvider
     {
-        private readonly Func<object> @delegate;
+        private readonly Func<object> function;
 
-        public PropertyDelegateProvider(Func<object> @delegate)
+        public PropertyDelegateProvider(Func<object> function)
         {
-            this.@delegate = @delegate;
+            this.function = function;
         }
 
         public object ProvideProperty()
         {
-            return this.@delegate.Invoke();
+            return this.function.Invoke();
         }
     }
 

@@ -56,16 +56,16 @@ namespace Weapons
             {
                 this.weapon
                     .GetProperty<IDynamicObject>(PropertyKey.PARENT)
-                    .GetProperty<IDealDamageHandler>(PropertyKey.DEAL_DAMAGE_HANDLER)
-                    .HandleDamage(target, this.damage);
+                    .GetProperty<IDamageDealHandler>(PropertyKey.DAMAGE_DEAL_HANDLER)
+                    .DealDamage(target, this.damage);
             }
             
             if (this.hasEffect)
             {
                 this.weapon
                     .GetProperty<IDynamicObject>(PropertyKey.PARENT)
-                    .GetProperty<IEffectHandler>(PropertyKey.EFFECT_HANDLER)
-                    .HandleEffect(target, this.effect);
+                    .GetProperty<IEffectApplyHandler>(PropertyKey.EFFECT_APPLY_HANDLER)
+                    .ApplyEffect(target, this.effect);
             }
         }
     }

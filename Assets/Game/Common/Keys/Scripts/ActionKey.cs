@@ -11,10 +11,14 @@ namespace DynamicObjects
         HIDE = -4,
         ATTACK = -5,
         COLLECT = -6,
+        
         MOVE = -7,
-        START_EFFECT = -8,
-        STOP_EFFECT = -9,
         LOCK_MOVE = -10,
-        UNLOCK_MOVE = -11
+        UNLOCK_MOVE = -11,
+        ADD_MOVE_MULTIPLIER = -12, 
+        REMOVE_MOVE_MULTIPLIER = -13,
+
+        START_EFFECT = -8,
+        STOP_EFFECT = -9
     }
 }

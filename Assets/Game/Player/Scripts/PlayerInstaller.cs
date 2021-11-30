@@ -16,10 +16,6 @@ namespace Otus
 
         [SerializeField]
         private WeaponsPool weaponsPool;
-
-        [Header("Deal Damage")]
-        [SerializeField]
-        private DealDamageHandler dealDamageHandler;
         
         [Header("Inventory")]
         [SerializeField]
@@ -33,8 +29,6 @@ namespace Otus
             this.Container.Bind<IWeaponCurrentManager>().FromInstance(this.weaponCurrentManager);
             this.Container.Bind<IWeaponsPool>().FromInstance(this.weaponsPool);
             
-            this.Container.Bind<DealDamageHandler>().FromInstance(this.dealDamageHandler);
-
             this.Container.Bind<IInventoryItemManager>().FromInstance(this.inventoryItemManager);
         }
     }

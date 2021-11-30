@@ -19,6 +19,9 @@ namespace DynamicObjects
         REMOVE_MOVE_SPEED_MULTIPLIER = -13,
 
         START_EFFECT = -8,
-        STOP_EFFECT = -9
+        STOP_EFFECT = -9,
+        
+        
+        CHANGE_WEAPON = -100,
     }
 }

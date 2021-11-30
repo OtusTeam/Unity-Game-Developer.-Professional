@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Otus
 {
-    public sealed class WeaponAttackController : MonoBehaviour, IMethodDelegate
+    public sealed class WeaponAttackController : MonoBehaviour
     {
         [SerializeField]
         private Parameters parameters;
@@ -13,15 +13,6 @@ namespace Otus
         [Inject]
         private IDynamicObject weapon;
 
-        object IMethodDelegate.Invoke(object data)
-        {
-            if (this.CanAttack())
-            {
-                this.parameters.triggerComponent.Attack();
-            }
-
-            return null;
-        }
 
         private bool CanAttack()
         {
@@ -54,11 +45,6 @@ namespace Otus
         }
 
         #region Lifecycle
-
-        private void Awake()
-        {
-            this.weapon.AddMethod(ActionKey.ATTACK, this);
-        }
 
         private void OnEnable()
         {

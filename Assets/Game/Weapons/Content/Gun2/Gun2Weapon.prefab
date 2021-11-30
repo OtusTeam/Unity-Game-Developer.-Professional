@@ -55,7 +55,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6599189875018245810}
-  - component: {fileID: 7551325807358576412}
+  - component: {fileID: 6525663727141246222}
+  - component: {fileID: 9034056313272743007}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -82,7 +83,7 @@ Transform:
   m_Father: {fileID: 6384444935164009100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7551325807358576412
+--- !u!114 &6525663727141246222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,16 +92,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 75181347011104941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0fd299deff4e47ab78e948fdbb91dc, type: 3}
+  m_Script: {fileID: 11500000, guid: decc81337a314b909f00020622c26837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameters:
-    triggerComponent: {fileID: 6448607822050645902}
-    slaveComponents:
-    - {fileID: 3272590253545115461}
-    - {fileID: 1285952338}
-    - {fileID: 8204933593257312787}
-    - {fileID: 576353277243574217}
+  isEnable: 1
+  triggerComponent: {fileID: 6448607822050645902}
+  slaveComponents:
+  - {fileID: 3272590253545115461}
+  - {fileID: 1285952338}
+  - {fileID: 8204933593257312787}
+  - {fileID: 576353277243574217}
+--- !u!114 &9034056313272743007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75181347011104941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac393ed2b584d4f92e2a4af74b51139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponComponent: {fileID: 6525663727141246222}
 --- !u!1 &228061638009328644
 GameObject:
   m_ObjectHideFlags: 0

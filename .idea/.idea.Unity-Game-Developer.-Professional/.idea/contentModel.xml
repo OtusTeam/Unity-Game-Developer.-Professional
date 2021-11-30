@@ -57,7 +57,7 @@
                 </e>
               </e>
             </e>
-            <e p="HitPoints" t="Include">
+            <e p="HitPointsSystem 2" t="Include">
               <e p="Scripts" t="Include">
                 <e p="HitPointsController.cs" t="Include" />
               </e>
@@ -125,8 +125,9 @@
                 </e>
               </e>
               <e p="Entity" t="Include">
-                <e p="EntityEffectManager.cs" t="Include" />
                 <e p="EntityEffectManagerAdapter.cs" t="Include" />
+                <e p="EntityEffectSingleManager.cs" t="Include" />
+                <e p="IEntityEffectManager.cs" t="Include" />
               </e>
               <e p="System" t="Include">
                 <e p="EffectApplyHandler.cs" t="Include" />
@@ -135,6 +136,7 @@
           </e>
           <e p="Enemies" t="Include">
             <e p="Scripts" t="Include">
+              <e p="EnemyBrain.cs" t="Include" />
               <e p="EnemyInstaller.cs" t="Include" />
             </e>
           </e>
@@ -167,9 +169,9 @@
           </e>
           <e p="Player" t="Include">
             <e p="Scripts" t="Include">
+              <e p="PlayerAttackInput.cs" t="Include" />
               <e p="PlayerInstaller.cs" t="Include" />
               <e p="PlayerMoveInput.cs" t="Include" />
-              <e p="PlayerWeaponAttackInput.cs" t="Include" />
               <e p="PlayerWeaponChangeInput.cs" t="Include" />
               <e p="PlayerWeaponsInitializer.cs" t="Include" />
             </e>
@@ -210,16 +212,23 @@
                   <e p="WeaponsInventoryController.cs" t="Include" />
                 </e>
                 <e p="System" t="Include">
+                  <e p="WeaponAttackComponentAdapter.cs" t="Include" />
+                  <e p="WeaponAttackCurrentManagerAdapter.cs" t="Include" />
                   <e p="WeaponCurrentManager.cs" t="Include" />
                   <e p="WeaponsPool.cs" t="Include" />
                   <e p="WeaponsVisibilityController.cs" t="Include" />
                 </e>
                 <e p="Weapon" t="Include">
+                  <e p="Component" t="Include">
+                    <e p="WeaponAttackComponent.cs" t="Include" />
+                    <e p="WeaponAttackComponentGroup.cs" t="Include" />
+                  </e>
+                  <e p="System" t="Include">
+                    <e p="WeaponAttackController.cs" t="Include" />
+                    <e p="WeaponInstaller.cs" t="Include" />
+                    <e p="WeaponVisibleController.cs" t="Include" />
+                  </e>
                   <e p="Weapon.cs" t="Include" />
-                  <e p="WeaponAttackComponent.cs" t="Include" />
-                  <e p="WeaponAttackController.cs" t="Include" />
-                  <e p="WeaponInstaller.cs" t="Include" />
-                  <e p="WeaponVisibleController.cs" t="Include" />
                 </e>
               </e>
             </e>

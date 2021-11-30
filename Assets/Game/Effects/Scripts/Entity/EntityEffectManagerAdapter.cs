@@ -9,7 +9,8 @@ namespace Otus.GameEffects
         [Inject]
         private IDynamicObject entity;
 
-        private EntityEffectManager effectManager;
+        [Inject]
+        private IEntityEffectManager effectManager;
         
         private object ApplyEffect(object data)
         {
@@ -29,8 +30,6 @@ namespace Otus.GameEffects
 
         private void Awake()
         {
-            this.effectManager = new EntityEffectManager(this.entity);
-
             this.entity.AddMethod(ActionKey.START_EFFECT, new MethodDelegate(this.ApplyEffect));
             this.entity.AddMethod(ActionKey.STOP_EFFECT, new MethodDelegate(this.CancelEffect));
             this.entity.AddProperty(PropertyKey.ACTIVE_EFFECTS, new PropertyDelegateProvider(this.GetActiveEffects));

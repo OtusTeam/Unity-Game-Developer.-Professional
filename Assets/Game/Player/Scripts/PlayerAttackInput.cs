@@ -1,15 +1,16 @@
+using DynamicObjects;
 using UnityEngine;
 using Zenject;
 
 namespace Otus
 {
-    public sealed class PlayerWeaponAttackInput : MonoBehaviour
+    public sealed class PlayerAttackInput : MonoBehaviour
     {
         [Inject]
         private IGameManager gameManager;
         
         [Inject]
-        private IWeaponAttackComponent attackComponent;
+        private IDynamicObject player;
         
         private bool isEnabled;
         
@@ -47,7 +48,7 @@ namespace Otus
         {
             if (Input.GetMouseButton(0))
             {
-                this.attackComponent.Attack();
+                this.player.TryInvokeMethod(ActionKey.ATTACK);
             }
         }
     }

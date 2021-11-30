@@ -1,25 +1,27 @@
 using System;
 using System.Collections.Generic;
 using DynamicObjects;
+using UnityEngine;
+using Zenject;
 
 namespace Otus.GameEffects
 {
-    public sealed class EntityEffectManager
+    public sealed class EntityEffectSingleManager : MonoBehaviour, IEntityEffectManager
     {
         public event Action<IEffect> OnEffectAdded;
         
         public event Action<IEffect> OnEffectRemoved;
         
-        private readonly IDynamicObject entity;
+        [Inject]
+        private IDynamicObject entity;
 
         private readonly HashSet<IEffect> activeEffects;
 
-        public EntityEffectManager(IDynamicObject entity)
+        public EntityEffectSingleManager()
         {
-            this.entity = entity;
             this.activeEffects = new HashSet<IEffect>();
         }
-        
+
         public void AddEffect(IEffect effect)
         {
             if (this.activeEffects.Add(effect))

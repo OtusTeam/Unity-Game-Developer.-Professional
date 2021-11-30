@@ -28,7 +28,7 @@ namespace Otus
         bool TryGetWeapon(out MonoDynamicObject weapon);
     }
 
-    public sealed class WeaponCurrentManager : MonoBehaviour, IWeaponCurrentManager, IWeaponAttackComponent
+    public sealed class WeaponCurrentManager : MonoBehaviour, IWeaponCurrentManager
     {
         public event IWeaponCurrentManager.WeaponSetupedDelegate OnWeaponSetuped;
 

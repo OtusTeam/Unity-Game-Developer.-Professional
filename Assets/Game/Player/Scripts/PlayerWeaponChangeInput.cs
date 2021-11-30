@@ -57,8 +57,7 @@ namespace Otus
         }
 
         #endregion
-
-
+        
         private void ProcessInputActions()
         {
             var allWeapons = this.weaponsPool.GetAllWeapons();

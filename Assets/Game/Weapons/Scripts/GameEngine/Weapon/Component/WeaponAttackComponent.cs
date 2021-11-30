@@ -3,12 +3,7 @@ using UnityEngine;
 
 namespace Otus
 {
-    public interface IWeaponAttackComponent
-    {
-        void Attack();
-    }
-    
-    public abstract class WeaponAttackComponent : MonoBehaviour, IWeaponAttackComponent
+    public abstract class WeaponAttackComponent : MonoBehaviour
     {
         public abstract event Action OnAttack;
 

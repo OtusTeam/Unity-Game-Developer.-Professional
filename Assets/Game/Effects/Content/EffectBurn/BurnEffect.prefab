@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 62439885702043798}
+  - {fileID: 8256414711614559182}
   - {fileID: 2069776124888734513}
   - {fileID: 5572846916925512954}
 --- !u!1 &2515032729550717893
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2008922339996237755}
-  - component: {fileID: 62439885702043798}
+  - component: {fileID: 8256414711614559182}
   m_Layer: 0
   m_Name: DamageCountdown
   m_TagString: Untagged
@@ -200,7 +200,7 @@ Transform:
   m_Father: {fileID: 350332191621797921}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &62439885702043798
+--- !u!114 &8256414711614559182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +209,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6312182283155544050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3733cc6c88b048e09b1217f71bf418e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 94e4be0dc6c514ef09b55bb70c5985b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: e47a10bb21e294e5598df50de2056739, type: 2}
+  duration: 5
+  period: 1
+  damage: 1
+  remainingSeconds: 0

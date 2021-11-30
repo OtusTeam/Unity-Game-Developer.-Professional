@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Otus.GameEffects
 {
-    public sealed class EffectVFXComponent : EffectComponent
+    public sealed class EffectParticleLoopComponent : EffectComponent
     {
         [SerializeField]
         private float vfxEndTime = 2.5f;

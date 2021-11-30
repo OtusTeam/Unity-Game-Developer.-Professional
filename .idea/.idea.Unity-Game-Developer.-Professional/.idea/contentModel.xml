@@ -98,15 +98,15 @@
             <e p="Content" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
-                  <e p="Abstractions" t="Include" />
                   <e p="EffectBuffMoveSpeedComponent.cs" t="Include" />
                   <e p="EffectCoroutineComponent.cs" t="Include" />
                   <e p="EffectCountdownComponent.cs" t="Include" />
                   <e p="EffectDealDamageCountdownComponent.cs" t="Include" />
                   <e p="EffectMeshColorComponent.cs" t="Include" />
-                  <e p="EffectSFXComponent.cs" t="Include" />
+                  <e p="EffectParticleLoopComponent.cs" t="Include" />
+                  <e p="EffectParticleShowComponent.cs" t="Include" />
+                  <e p="EffectPlaySoundPlayComponent.cs" t="Include" />
                   <e p="EffectTargetDiedComponent.cs" t="Include" />
-                  <e p="EffectVFXComponent.cs" t="Include" />
                 </e>
               </e>
             </e>

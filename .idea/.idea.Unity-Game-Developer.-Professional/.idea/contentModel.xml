@@ -89,6 +89,7 @@
                 <e p="Components" t="Include">
                   <e p="EffectDamageCountdownComponent.cs" t="Include" />
                   <e p="EffectSFXComponent.cs" t="Include" />
+                  <e p="EffectTargetDiedComponent.cs" t="Include" />
                   <e p="EffectVFXComponent.cs" t="Include" />
                 </e>
                 <e p="Configs" t="Include">
@@ -101,12 +102,14 @@
                 <e p="Component" t="Include">
                   <e p="EffectComponent.cs" t="Include" />
                   <e p="EffectComponentGroup.cs" t="Include" />
-                  <e p="EffectComponentPool.cs" t="Include" />
-                  <e p="EffectComponentSystem.cs" t="Include" />
                 </e>
                 <e p="Effect.cs" t="Include" />
-                <e p="EffectInstaller.cs" t="Include" />
                 <e p="IEffect.cs" t="Include" />
+                <e p="System" t="Include">
+                  <e p="EffectComponentPool.cs" t="Include" />
+                  <e p="EffectComponentSystem.cs" t="Include" />
+                  <e p="EffectInstaller.cs" t="Include" />
+                </e>
               </e>
               <e p="Entity" t="Include">
                 <e p="EntityEffectManagerAdapter.cs" t="Include" />

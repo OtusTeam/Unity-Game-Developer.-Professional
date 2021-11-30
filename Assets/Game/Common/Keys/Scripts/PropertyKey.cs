@@ -8,6 +8,7 @@ namespace DynamicObjects
         ROOT = 1,
         PARENT = 2,
         ANIMATOR = 3,
+        VISUAL = 4,
         
         INVENTORY_ITEM = 105,
 

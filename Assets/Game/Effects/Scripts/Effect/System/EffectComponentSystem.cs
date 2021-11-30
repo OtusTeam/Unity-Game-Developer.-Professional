@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Otus.GameEffects
 {
-    public sealed class EffectComponentSystem : Effect
+    public sealed class EffectComponentSystem : Effect, EffectComponent.IHandler
     {
         public override event Action<IEffect, IDynamicObject> OnActivated;
         
@@ -29,7 +29,7 @@ namespace Otus.GameEffects
                 this.activeEffectMap.Add(target, effect);
             }
 
-            effect.Activate(target);
+            effect.Activate(target, this);
             this.OnActivated?.Invoke(this, target);
         }
 
@@ -40,8 +40,9 @@ namespace Otus.GameEffects
                 return;
             }
 
-            effect.Deactivate(target);
+            effect.Deactivate();
             this.activeEffectMap.Remove(target);
+            this.componentPool.Despawn(effect);
             this.OnDeactivated?.Invoke(this, target);
         }
     }

@@ -6,49 +6,38 @@ namespace Otus.GameEffects
     public sealed class EffectVFXComponent : EffectComponent
     {
         [SerializeField]
-        private Transform visualTransform;
-        
-        [SerializeField]
-        private Transform particlesTransform;
+        private float vfxEndTime = 2.5f;
 
         [SerializeField]
-        private ParticleSystem[] particleSystems;
-        
-        public override void Activate(IDynamicObject target)
-        {
-            var targetTransform = target.GetProperty<Transform>(PropertyKey.ROOT);
-            this.SetParent(targetTransform);
-            this.StartVFXs();
-        }
+        private ParticleSystem vfxPrefab;
 
-        public override void Deactivate(IDynamicObject target)
+        private IDynamicObject currentTarget;
+
+        private ParticleSystem currentVFX;
+
+        public override void Activate(IDynamicObject target, IHandler handler)
         {
-            this.SetParent(this.visualTransform);
-            this.StopVFXs();
-        }
-        
-        private void SetParent(Transform parent)
-        {
-            this.particlesTransform.SetParent(parent);
-            this.particlesTransform.position = Vector3.zero;
-            this.particlesTransform.eulerAngles = Vector3.zero;
-        }
-        
-        private void StartVFXs()
-        {
-            for (int i = 0, count = this.particleSystems.Length; i < count; i++)
+            if (this.currentTarget == target)
             {
-                var vfx = this.particleSystems[i];
-                vfx.Play(withChildren:true);
+                return;
             }
+            
+            this.currentTarget = target;
+            
+            var targetTransform = target.GetProperty<Transform>(PropertyKey.ROOT);
+            this.currentVFX = Instantiate(this.vfxPrefab, targetTransform);
+            this.currentVFX.Play(withChildren:true);
         }
-        
-        private void StopVFXs()
+
+        public override void Deactivate()
         {
-            for (int i = 0, count = this.particleSystems.Length; i < count; i++)
+            this.currentTarget = null;
+            if (this.currentVFX != null)
             {
-                var vfx = this.particleSystems[i];
-                vfx.Play(withChildren:true);
+                var previousVFX = this.currentVFX;
+                previousVFX.Stop(withChildren:true);
+                Destroy(previousVFX.gameObject, this.vfxEndTime);
+                this.currentVFX = null;                
             }
         }
     }

@@ -11,24 +11,32 @@ namespace Otus.GameEffects
         private EffectDamageCountdownConfig config;
 
         [ReadOnly]
-        [ShowInInspector]
+        [SerializeField]
         private float remainingSeconds;
-
+        
         private Coroutine takeDamageCoroutine;
 
         private IDynamicObject target;
 
-        public override void Activate(IDynamicObject target)
+        private IHandler targetHandler;
+        
+        public override void Activate(IDynamicObject target, IHandler handler)
         {
             this.ResetState();
 
             this.target = target;
-            this.remainingSeconds = this.config.duration;
+            this.targetHandler = handler;
             this.takeDamageCoroutine = this.StartCoroutine(this.TakeDamageRoutine());
         }
 
+        public override void Deactivate()
+        {
+            this.ResetState();
+        }
+        
         private IEnumerator TakeDamageRoutine()
         {
+            this.remainingSeconds = this.config.duration;
             while (this.remainingSeconds > 0)
             {
                 this.target.TryInvokeMethod(ActionKey.TAKE_DAMAGE, this.config.damage);
@@ -36,16 +44,12 @@ namespace Otus.GameEffects
                 this.remainingSeconds -= this.config.period;
             }
             
-            this.ResetState();
+            this.targetHandler.Deactivate(this.target);
         }
-
-        public override void Deactivate(IDynamicObject target)
-        {
-            this.ResetState();
-        }
-
+        
         private void ResetState()
         {
+            this.targetHandler = null;
             this.target = null;
             
             if (this.takeDamageCoroutine != null)

@@ -302,6 +302,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc611a228da448b9436591787760b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
 --- !u!114 &6112559660283874913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +326,7 @@ MonoBehaviour:
   dynamicObject: {fileID: 6112559660283874911}
   properties:
   - key: 1
-    value: {fileID: 6112559660003284538}
+    value: {fileID: 6112559660003284539}
 --- !u!1 &6112559660804588627
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,13 +400,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff4d6d0d21d4fbb9206b20edac69c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 3
+  hitPoints: 5
   onDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6112559660003284538}
+      - m_Target: {fileID: 6112559660149716959}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6112559661339963402}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace DynamicObjects
 {
-    public class MonoDynamicObject : MonoBehaviour, IMonoDynamicObject
+    public class MonoDynamicObject : SerializedMonoBehaviour, IMonoDynamicObject
     {
         private readonly DynamicObject dynamicObject;
 
@@ -50,6 +52,7 @@ namespace DynamicObjects
             try
             {
                 this.dynamicObject.AddProperty(key, provider);
+                this.DebugPropertyAdded(key);
             }
             catch (Exception)
             {
@@ -60,6 +63,7 @@ namespace DynamicObjects
         public void RemoveProperty(object key)
         {
             this.dynamicObject.RemoveProperty(key);
+            this.DebugPropertyRemoved(key);
         }
 
         public T InvokeMethod<T>(object key, object data = null)
@@ -106,6 +110,7 @@ namespace DynamicObjects
             try
             {
                 this.dynamicObject.AddMethod(key, method);
+                this.DebugMethodAdded(key);
             }
             catch (Exception)
             {
@@ -116,6 +121,7 @@ namespace DynamicObjects
         public void RemoveMethod(object key)
         {
             this.dynamicObject.RemoveMethod(key);
+            this.DebugMethodRemoved(key);
         }
 
         public void AddEventListener(object key, IMethodDelegate callback)
@@ -132,5 +138,39 @@ namespace DynamicObjects
         {
             this.dynamicObject.InvokeEvent(key, data);
         }
+
+#if UNITY_EDITOR
+        [ReadOnly]
+        [ShowInInspector]
+        private List<string> properties = new List<string>();
+        
+        [ReadOnly]
+        [ShowInInspector]
+        private List<string> methods = new List<string>();
+        
+        [Conditional("UNITY_EDITOR")]
+        private void DebugPropertyAdded(object key)
+        {
+            this.properties.Add(key.ToString());
+        }
+
+        [Conditional("UNITY_EDITOR")]
+        private void DebugPropertyRemoved(object key)
+        {
+            this.properties.Remove(key.ToString());
+        }
+
+        [Conditional("UNITY_EDITOR")]
+        private void DebugMethodAdded(object key)
+        {
+            this.methods.Add(key.ToString());
+        }
+
+        [Conditional("UNITY_EDITOR")]
+        private void DebugMethodRemoved(object key)
+        {
+            this.methods.Remove(key.ToString());
+        }
+#endif
     }
 }

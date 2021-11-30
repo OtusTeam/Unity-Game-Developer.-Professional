@@ -5,8 +5,13 @@ namespace Otus.GameEffects
 {
     public abstract class EffectComponent : MonoBehaviour
     {
-        public abstract void Activate(IDynamicObject target);
+        public abstract void Activate(IDynamicObject target, IHandler handler);
 
-        public abstract void Deactivate(IDynamicObject target);
+        public abstract void Deactivate();
+        
+        public interface IHandler
+        {
+            void Deactivate(IDynamicObject target);
+        }
     }
 }

@@ -1073,6 +1073,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc611a228da448b9436591787760b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
 --- !u!114 &5795432560036534242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,7 +1099,7 @@ MonoBehaviour:
   - key: 3
     value: {fileID: 5795432559278685589}
   - key: 1
-    value: {fileID: 1823436318822641319}
+    value: {fileID: 4402720506185340999}
   - key: 10000
     value: {fileID: 5795432560714293583}
   - key: 10001

@@ -20,11 +20,11 @@ namespace Otus.GameEffects
 
         public void HandleEffect(Collider target, IEffect effect)
         {
-            if (!target.TryGetComponent(out MonoDynamicObject dynamicObject))
+            if (!target.TryGetComponent(out IMonoDynamicObject dynamicObject))
             {
                 return;
             }
-            
+
             if (!this.hasCondition || this.condition.IsTrue(dynamicObject))
             {
                 dynamicObject.TryInvokeMethod(ActionKey.START_EFFECT, effect);

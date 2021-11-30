@@ -4,7 +4,12 @@ using UnityEngine;
 
 namespace Otus.GameEffects
 {
-    public sealed class EffectHandler : MonoBehaviour
+    public interface IEffectHandler
+    {
+        void HandleEffect(Collider target, IEffect effect);
+    }
+    
+    public sealed class EffectHandler : MonoBehaviour, IEffectHandler
     { 
         [SerializeField]
         private bool hasCondition;
@@ -13,10 +18,7 @@ namespace Otus.GameEffects
         [SerializeField]
         private CompareTagCondition condition;
 
-        [SerializeField]
-        private Effect[] effects;
-
-        public void HandleEffect(Collider target)
+        public void HandleEffect(Collider target, IEffect effect)
         {
             if (!target.TryGetComponent(out MonoDynamicObject dynamicObject))
             {
@@ -25,15 +27,6 @@ namespace Otus.GameEffects
             
             if (!this.hasCondition || this.condition.IsTrue(dynamicObject))
             {
-                this.ApplyEffects(dynamicObject);
-            }
-        }
-
-        private void ApplyEffects(MonoDynamicObject dynamicObject)
-        {
-            for (int i = 0, count = this.effects.Length; i < count; i++)
-            {
-                var effect = this.effects[i];
                 dynamicObject.TryInvokeMethod(ActionKey.START_EFFECT, effect);
             }
         }

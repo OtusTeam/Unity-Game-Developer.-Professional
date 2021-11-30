@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Otus.GameEffects
 {
-    public class EntityEffectAdapter : MonoBehaviour
+    public class EntityEffectManagerAdapter : MonoBehaviour
     {
         [Inject]
         private IDynamicObject entity;

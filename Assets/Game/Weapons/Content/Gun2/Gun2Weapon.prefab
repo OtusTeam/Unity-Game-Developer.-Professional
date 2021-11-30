@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1285952337}
   - component: {fileID: 1285952338}
   m_Layer: 0
-  m_Name: ComponentCountdown
+  m_Name: Countdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 6599189875018245810}
   - component: {fileID: 7551325807358576412}
   m_Layer: 0
-  m_Name: ControllerAttack
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 4216349891102729279}
   - component: {fileID: 6448607822050645902}
   m_Layer: 0
-  m_Name: ComponentBullet
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,8 +208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnable: 1
-  config: {fileID: 11400000, guid: 0c1ff201caddb42d283912c2ba68ece4, type: 2}
   firePoint: {fileID: 4216349892898551925}
+  hasDamage: 0
+  damage: 0
+  hasEffect: 0
+  effect: {fileID: 0}
 --- !u!1 &4216349891932541550
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +226,7 @@ GameObject:
   - component: {fileID: 1347927060792975038}
   - component: {fileID: 3703512681973967834}
   m_Layer: 0
-  m_Name: Gun2 (Prefab)
+  m_Name: Gun2Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,7 +415,7 @@ GameObject:
   - component: {fileID: 3454530189930675728}
   - component: {fileID: 576353277243574217}
   m_Layer: 0
-  m_Name: ComponentVFX
+  m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +461,7 @@ GameObject:
   - component: {fileID: 7348019874531103701}
   - component: {fileID: 8204933593257312787}
   m_Layer: 0
-  m_Name: ComponentSFX
+  m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,7 +506,7 @@ GameObject:
   - component: {fileID: 8748193714256798761}
   - component: {fileID: 1446971292039615329}
   m_Layer: 0
-  m_Name: ControllerVisible
+  m_Name: Visibility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,7 +579,7 @@ GameObject:
   - component: {fileID: 7917601934747523734}
   - component: {fileID: 3272590253545115461}
   m_Layer: 0
-  m_Name: ComponentAnimator
+  m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +622,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1792092052645256, guid: 0e56aef02a6fcc6408400ea7c75e13a7, type: 3}
       propertyPath: m_Name
-      value: FX_Gunshot_Shotgun_01
+      value: FireVFX
       objectReference: {fileID: 0}
     - target: {fileID: 4573121468440114, guid: 0e56aef02a6fcc6408400ea7c75e13a7, type: 3}
       propertyPath: m_RootOrder

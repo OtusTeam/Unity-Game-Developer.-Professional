@@ -15,19 +15,20 @@ namespace Weapons
         [Inject]
         private IDynamicObject weapon;
 
-        [Header("Bullet")]
-        [SerializeField]
-        private BulletConfig config;
-
-        [SerializeField]
-        private Transform firePoint;
-
         [Inject]
         private IBulletManager bulletManager;
+
+        [Header("Bullet")]
+        [SerializeField]
+        private Transform firePoint;
 
         [Header("Damage")]
         [SerializeField]
         private bool hasDamage;
+
+        [ShowIf("hasDamage")]
+        [SerializeField]
+        private int damage;
 
         [Header("Effects")]
         [SerializeField]
@@ -35,8 +36,8 @@ namespace Weapons
 
         [ShowIf("hasEffect")]
         [SerializeField]
-        private EffectHandler effectHandler;
-
+        private Effect effect;
+        
         protected override void ProcessAttack()
         {
             this.bulletManager.LaunchBullet(
@@ -55,13 +56,16 @@ namespace Weapons
             {
                 this.weapon
                     .GetProperty<IDynamicObject>(PropertyKey.PARENT)
-                    .GetProperty<DealDamageHandler>(PropertyKey.DEAL_DAMAGE_HANDLER)
-                    .HandleDamage(target, this.config.damage);
+                    .GetProperty<IDealDamageHandler>(PropertyKey.DEAL_DAMAGE_HANDLER)
+                    .HandleDamage(target, this.damage);
             }
             
             if (this.hasEffect)
             {
-                this.effectHandler.HandleEffect(target);
+                this.weapon
+                    .GetProperty<IDynamicObject>(PropertyKey.PARENT)
+                    .GetProperty<IEffectHandler>(PropertyKey.EFFECT_HANDLER)
+                    .HandleEffect(target, this.effect);
             }
         }
     }

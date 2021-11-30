@@ -6,7 +6,7 @@ namespace Otus.GameEffects
         fileName = "EffectCountdownDamageConfig",
         menuName = "Effects/New EffectCountdownDamageConfig"
     )]
-    public sealed class EffectCountdownDamageConfig : ScriptableObject
+    public sealed class EffectDamageCountdownConfig : ScriptableObject
     {
         [SerializeField]
         public float duration;

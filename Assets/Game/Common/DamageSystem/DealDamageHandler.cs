@@ -4,7 +4,12 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class DealDamageHandler : MonoBehaviour
+    public interface IDealDamageHandler
+    {
+        void HandleDamage(Collider target, int damage);
+    }
+    
+    public sealed class DealDamageHandler : MonoBehaviour, IDealDamageHandler
     {
         [SerializeField]
         private bool hasCondition;

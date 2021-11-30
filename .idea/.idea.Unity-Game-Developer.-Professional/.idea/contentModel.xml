@@ -39,7 +39,6 @@
             <e p="DynamicObject" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Actions" t="Include">
-                  <e p="ActionKey.cs" t="Include" />
                   <e p="EventBus.cs" t="Include" />
                   <e p="IMethodDelegate.cs" t="Include" />
                   <e p="MethodBus.cs" t="Include" />
@@ -55,7 +54,6 @@
                   <e p="IPropertyProvider.cs" t="Include" />
                   <e p="MonoDynamicProperties.cs" t="Include" />
                   <e p="PropertyBus.cs" t="Include" />
-                  <e p="PropertyKey.cs" t="Include" />
                   <e p="PropertyProvider.cs" t="Include" />
                 </e>
                 <e p="Utils" t="Include">
@@ -66,6 +64,12 @@
             <e p="HitPointsSystem" t="Include">
               <e p="Scripts" t="Include">
                 <e p="HitPointsController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Keys" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="ActionKey.cs" t="Include" />
+                <e p="PropertyKey.cs" t="Include" />
               </e>
             </e>
             <e p="MoveSystem" t="Include">
@@ -83,12 +87,12 @@
             <e p="Content" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
-                  <e p="EffectCountdownDamageComponent.cs" t="Include" />
+                  <e p="EffectDamageCountdownComponent.cs" t="Include" />
                   <e p="EffectSFXComponent.cs" t="Include" />
                   <e p="EffectVFXComponent.cs" t="Include" />
                 </e>
                 <e p="Configs" t="Include">
-                  <e p="EffectCountdownDamageConfig.cs" t="Include" />
+                  <e p="EffectDamageCountdownConfig.cs" t="Include" />
                 </e>
               </e>
             </e>
@@ -97,15 +101,15 @@
                 <e p="Component" t="Include">
                   <e p="EffectComponent.cs" t="Include" />
                   <e p="EffectComponentGroup.cs" t="Include" />
-                  <e p="EffectComponentManager.cs" t="Include" />
                   <e p="EffectComponentPool.cs" t="Include" />
+                  <e p="EffectComponentSystem.cs" t="Include" />
                 </e>
                 <e p="Effect.cs" t="Include" />
                 <e p="EffectInstaller.cs" t="Include" />
                 <e p="IEffect.cs" t="Include" />
               </e>
               <e p="Entity" t="Include">
-                <e p="EntityEffectAdapter.cs" t="Include" />
+                <e p="EntityEffectManagerAdapter.cs" t="Include" />
                 <e p="EntityEffectSingleManager.cs" t="Include" />
                 <e p="IEntityEffectManager.cs" t="Include" />
               </e>

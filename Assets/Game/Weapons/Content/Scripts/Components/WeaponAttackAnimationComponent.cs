@@ -19,7 +19,7 @@ namespace Otus
         {
             this.weapon
                 .GetProperty<IDynamicObject>(PropertyKey.PARENT)
-                .GetProperty<Animator>(PropertyKey.CHARACTER_ANIMATOR)
+                .GetProperty<Animator>(PropertyKey.ANIMATOR)
                 .Play(this.animationName, -1, 0);
             
             this.OnAttack?.Invoke();

@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Otus.GameEffects
 {
-    public sealed class EffectCountdownDamageComponent : EffectComponent
+    public sealed class EffectDamageCountdownComponent : EffectComponent
     {
         [SerializeField]
-        private EffectCountdownDamageConfig config;
+        private EffectDamageCountdownConfig config;
 
         [ReadOnly]
         [ShowInInspector]

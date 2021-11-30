@@ -13,8 +13,5 @@ namespace Otus
 
         [SerializeField]
         public float lifetime;
-
-        [SerializeField]
-        public int damage;
     }
 }

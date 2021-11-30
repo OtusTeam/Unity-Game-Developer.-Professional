@@ -6,10 +6,10 @@ namespace Otus.GameEffects
     public sealed class EffectVFXComponent : EffectComponent
     {
         [SerializeField]
-        private Transform rootTransform;
+        private Transform visualTransform;
         
         [SerializeField]
-        private Transform vfxTransform;
+        private Transform particlesTransform;
 
         [SerializeField]
         private ParticleSystem[] particleSystems;
@@ -23,15 +23,15 @@ namespace Otus.GameEffects
 
         public override void Deactivate(IDynamicObject target)
         {
-            this.SetParent(this.rootTransform);
+            this.SetParent(this.visualTransform);
             this.StopVFXs();
         }
         
         private void SetParent(Transform parent)
         {
-            this.vfxTransform.SetParent(parent);
-            this.vfxTransform.position = Vector3.zero;
-            this.vfxTransform.eulerAngles = Vector3.zero;
+            this.particlesTransform.SetParent(parent);
+            this.particlesTransform.position = Vector3.zero;
+            this.particlesTransform.eulerAngles = Vector3.zero;
         }
         
         private void StartVFXs()

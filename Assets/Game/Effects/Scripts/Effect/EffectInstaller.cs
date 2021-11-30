@@ -8,14 +8,14 @@ namespace Otus.GameEffects
         private const int INITIAL_EFFECT_COUNT = 2;
         
         [SerializeField]
-        private Effect effectPrefab;
+        private EffectComponent effectPrefab;
         
         [SerializeField]
         private Transform effectContainer;
         
         public override void InstallBindings()
         {
-            this.Container.BindMemoryPool<Effect, EffectComponentPool>()
+            this.Container.BindMemoryPool<EffectComponent, EffectComponentPool>()
                 .WithInitialSize(INITIAL_EFFECT_COUNT)
                 .FromComponentInNewPrefab(this.effectPrefab)
                 .UnderTransform(this.effectContainer);

@@ -27,8 +27,10 @@
                 <e p="MonoDynamicObjectCondition.cs" t="Include" />
               </e>
             </e>
-            <e p="DamageSystem" t="Include">
-              <e p="DamageDealHandler.cs" t="Include" />
+            <e p="Damage" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="DamageDealHandler.cs" t="Include" />
+              </e>
             </e>
             <e p="DynamicObject" t="Include">
               <e p="Scripts" t="Include">
@@ -55,7 +57,7 @@
                 </e>
               </e>
             </e>
-            <e p="HitPointsSystem" t="Include">
+            <e p="HitPoints" t="Include">
               <e p="Scripts" t="Include">
                 <e p="HitPointsController.cs" t="Include" />
               </e>
@@ -66,7 +68,7 @@
                 <e p="PropertyKey.cs" t="Include" />
               </e>
             </e>
-            <e p="MoveSystem" t="Include">
+            <e p="Move" t="Include">
               <e p="Scripts" t="Include">
                 <e p="EntityMoveController.cs" t="Include" />
                 <e p="EntityMoveControllerAdapter.cs" t="Include" />
@@ -96,14 +98,15 @@
             <e p="Content" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
-                  <e p="EffectDamageCountdownComponent.cs" t="Include" />
+                  <e p="Abstractions" t="Include" />
+                  <e p="EffectBuffMoveSpeedComponent.cs" t="Include" />
+                  <e p="EffectCoroutineComponent.cs" t="Include" />
+                  <e p="EffectCountdownComponent.cs" t="Include" />
+                  <e p="EffectDealDamageCountdownComponent.cs" t="Include" />
                   <e p="EffectMeshColorComponent.cs" t="Include" />
                   <e p="EffectSFXComponent.cs" t="Include" />
                   <e p="EffectTargetDiedComponent.cs" t="Include" />
                   <e p="EffectVFXComponent.cs" t="Include" />
-                </e>
-                <e p="Configs" t="Include">
-                  <e p="EffectDamageCountdownConfig.cs" t="Include" />
                 </e>
               </e>
             </e>

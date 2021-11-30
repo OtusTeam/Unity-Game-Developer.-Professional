@@ -25,8 +25,8 @@ namespace Otus
             this.entity.AddMethod(ActionKey.MOVE, new MethodDelegate(this.OnMove));
             this.entity.AddMethod(ActionKey.LOCK_MOVE, new MethodDelegate(this.OnLockMove));
             this.entity.AddMethod(ActionKey.UNLOCK_MOVE, new MethodDelegate(this.OnUnlockMove));
-            this.entity.AddMethod(ActionKey.ADD_MOVE_MULTIPLIER, new MethodDelegate(this.OnAddMultiplier));
-            this.entity.AddMethod(ActionKey.REMOVE_MOVE_MULTIPLIER, new MethodDelegate(this.OnRemoveMultiplier));
+            this.entity.AddMethod(ActionKey.ADD_MOVE_SPEED_MULTIPLIER, new MethodDelegate(this.OnAddMultiplier));
+            this.entity.AddMethod(ActionKey.REMOVE_MOVE_SPEED_MULTIPLIER, new MethodDelegate(this.OnRemoveMultiplier));
         }
 
         #region Callbacks
@@ -76,6 +76,7 @@ namespace Otus
 
         #endregion
 
+        //Unity Event
         public void SetEnableMove(bool isMoveEnabled)
         {
             this.parameters.moveEnabled = isMoveEnabled;

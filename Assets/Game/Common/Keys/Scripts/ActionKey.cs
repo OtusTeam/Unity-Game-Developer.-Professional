@@ -15,8 +15,8 @@ namespace DynamicObjects
         MOVE = -7,
         LOCK_MOVE = -10,
         UNLOCK_MOVE = -11,
-        ADD_MOVE_MULTIPLIER = -12, 
-        REMOVE_MOVE_MULTIPLIER = -13,
+        ADD_MOVE_SPEED_MULTIPLIER = -12, 
+        REMOVE_MOVE_SPEED_MULTIPLIER = -13,
 
         START_EFFECT = -8,
         STOP_EFFECT = -9

@@ -4,13 +4,13 @@ using Zenject;
 
 namespace Otus.GameEffects
 {
-    public sealed class EntityEffectManagerAdapter : MonoBehaviour
+    public sealed class EffectEntityAdapter : MonoBehaviour
     {
         [Inject]
         private IDynamicObject entity;
 
         [Inject]
-        private IEntityEffectManager effectManager;
+        private IEffectEntity effectManager;
         
         private object ApplyEffect(object data)
         {

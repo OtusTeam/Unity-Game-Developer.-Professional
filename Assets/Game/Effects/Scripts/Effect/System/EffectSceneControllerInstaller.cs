@@ -3,7 +3,7 @@ using Zenject;
 
 namespace Otus.GameEffects
 {
-    public sealed class EffectInstaller : MonoInstaller
+    public sealed class EffectSceneControllerInstaller : MonoInstaller
     {
         private const int INITIAL_EFFECT_COUNT = 2;
         

@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Otus.GameEffects
 {
-    public sealed class EntityEffectSingleManager : MonoBehaviour, IEntityEffectManager
+    public sealed class EffectEntity : MonoBehaviour, IEffectEntity
     {
         public event Action<IEffect> OnEffectAdded;
         
@@ -17,7 +17,7 @@ namespace Otus.GameEffects
 
         private readonly HashSet<IEffect> activeEffects;
 
-        public EntityEffectSingleManager()
+        public EffectEntity()
         {
             this.activeEffects = new HashSet<IEffect>();
         }

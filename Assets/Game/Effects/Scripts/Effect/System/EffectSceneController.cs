@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Otus.GameEffects
 {
-    public sealed class EffectComponentSystem : Effect, EffectComponent.IHandler
+    public sealed class EffectSceneController : Effect, EffectComponent.IHandler
     {
         public override event Action<IEffect, IDynamicObject> OnActivated;
         
@@ -16,7 +16,7 @@ namespace Otus.GameEffects
         [Inject]
         private EffectComponentPool componentPool;
 
-        public EffectComponentSystem()
+        public EffectSceneController()
         {
             this.activeEffectMap = new Dictionary<IDynamicObject, EffectComponent>();
         }

@@ -28,7 +28,7 @@ namespace Otus
 
         [Header("Effects")]
         [SerializeField]
-        private EntityEffectSingleManager effectManager;
+        private EffectEntity effectManager;
         
         public override void InstallBindings()
         {
@@ -40,7 +40,7 @@ namespace Otus
             this.Container.Bind<IWeaponsPool>().FromInstance(this.weaponsPool);
             
             this.Container.Bind<IInventoryItemManager>().FromInstance(this.inventoryItemManager);
-            this.Container.Bind<IEntityEffectManager>().FromInstance(this.effectManager);
+            this.Container.Bind<IEffectEntity>().FromInstance(this.effectManager);
         }
     }
 }

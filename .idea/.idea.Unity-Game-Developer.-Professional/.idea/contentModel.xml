@@ -157,19 +157,18 @@
                 <e p="IEffect.cs" t="Include" />
                 <e p="System" t="Include">
                   <e p="EffectComponentPool.cs" t="Include" />
-                  <e p="EffectComponentSystem.cs" t="Include" />
-                  <e p="EffectInstaller.cs" t="Include" />
+                  <e p="EffectSceneController.cs" t="Include" />
+                  <e p="EffectSceneControllerInstaller.cs" t="Include" />
                 </e>
               </e>
               <e p="Entity" t="Include">
-                <e p="EntityEffectManagerAdapter.cs" t="Include" />
-                <e p="EntityEffectSingleManager.cs" t="Include" />
-                <e p="IEntityEffectManager.cs" t="Include" />
+                <e p="EffectEntity.cs" t="Include" />
+                <e p="EffectEntityAdapter.cs" t="Include" />
+                <e p="IEffectEntity.cs" t="Include" />
               </e>
               <e p="System" t="Include">
                 <e p="EffectApplyHandler.cs" t="Include" />
                 <e p="EffectManager.cs" t="Include" />
-                <e p="EffectSystem.cs" t="Include" />
               </e>
             </e>
           </e>

@@ -16,13 +16,13 @@ namespace Otus
 
         [Header("Effects")]
         [SerializeField]
-        private EntityEffectSingleManager effectManager;
+        private EffectEntity effectManager;
 
         public override void InstallBindings()
         {
             this.Container.Bind<IDynamicObject>().FromInstance(this.enemy);
             this.Container.Bind<EntityMoveController>().FromInstance(this.moveController);
-            this.Container.Bind<IEntityEffectManager>().FromInstance(this.effectManager);
+            this.Container.Bind<IEffectEntity>().FromInstance(this.effectManager);
         }
     }
 }

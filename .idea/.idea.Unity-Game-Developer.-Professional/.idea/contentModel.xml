@@ -21,12 +21,6 @@
             </e>
           </e>
           <e p="Common" t="Include">
-            <e p="Colliders" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="MonoDynamicObjectCollider.cs" t="Include" />
-                <e p="ObservableCollider.cs" t="Include" />
-              </e>
-            </e>
             <e p="Conditions" t="Include">
               <e p="Scripts" t="Include">
                 <e p="CompareTagCondition.cs" t="Include" />
@@ -79,8 +73,18 @@
               </e>
             </e>
             <e p="Scripts" t="Include">
-              <e p="AnimationEventReceiver.cs" t="Include" />
+              <e p="Animators" t="Include">
+                <e p="AnimationEventReceiver.cs" t="Include" />
+                <e p="EntityAnimator.cs" t="Include" />
+              </e>
+              <e p="Colliders" t="Include">
+                <e p="MonoDynamicObjectCollider.cs" t="Include" />
+                <e p="ObservableCollider.cs" t="Include" />
+              </e>
               <e p="IUpdateListener.cs" t="Include" />
+              <e p="Meshes" t="Include">
+                <e p="EntityMesh.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Effects" t="Include">
@@ -88,6 +92,7 @@
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
                   <e p="EffectDamageCountdownComponent.cs" t="Include" />
+                  <e p="EffectMeshColorComponent.cs" t="Include" />
                   <e p="EffectSFXComponent.cs" t="Include" />
                   <e p="EffectTargetDiedComponent.cs" t="Include" />
                   <e p="EffectVFXComponent.cs" t="Include" />

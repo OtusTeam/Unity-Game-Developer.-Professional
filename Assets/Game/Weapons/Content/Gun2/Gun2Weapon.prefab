@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnable: 1
-  clip: {fileID: 8300000, guid: 0766158ea05a54310be82afbfe0c910b, type: 3}
+  clip: {fileID: 8300000, guid: 79c3cb7a26813d146b07c293b0324039, type: 3}
 --- !u!1 &8850771302957706772
 GameObject:
   m_ObjectHideFlags: 0

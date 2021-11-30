@@ -30,9 +30,54 @@ Transform:
   - {fileID: 2008922339996237755}
   - {fileID: 5052661661612996642}
   - {fileID: 3488757259820743035}
+  - {fileID: 7722489807173287666}
   m_Father: {fileID: 2151947253153869341}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &317942715194136663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7722489807173287666}
+  - component: {fileID: 2484672762940023758}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7722489807173287666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317942715194136663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 350332191621797921}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2484672762940023758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317942715194136663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27738e5209b1411a9c3295433343011b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 64fb9477894fa2e4a997518fbb1c2f15, type: 3}
 --- !u!1 &1624461309369306667
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,6 +126,7 @@ MonoBehaviour:
   - {fileID: 8256414711614559182}
   - {fileID: 2069776124888734513}
   - {fileID: 5572846916925512954}
+  - {fileID: 2484672762940023758}
 --- !u!1 &2515032729550717893
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e4be0dc6c514ef09b55bb70c5985b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
+  duration: 3
   period: 1
   damage: 1
   remainingSeconds: 0

@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff4d6d0d21d4fbb9206b20edac69c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 5
+  hitPoints: 10
   onDied:
     m_PersistentCalls:
       m_Calls:

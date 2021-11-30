@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Otus.GameEffects
 {
-    public sealed class EffectPlaySoundPlayComponent : EffectComponent
+    public sealed class EffectSoundPlayComponent : EffectComponent
     {
         [Inject]
         private SoundManager soundManager;

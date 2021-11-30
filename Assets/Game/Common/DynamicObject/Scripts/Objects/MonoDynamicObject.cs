@@ -33,7 +33,7 @@ namespace DynamicObjects
             }
             catch (KeyNotFoundException)
             {
-                throw new Exception($"Property of {this.name} with {key} is not found!");
+                throw new Exception($"Property {key} of {this.name} is not found!");
             }
         }
 
@@ -56,7 +56,7 @@ namespace DynamicObjects
             }
             catch (Exception)
             {
-                throw new Exception($"Property of {this.name} with {key} is already added!");
+                throw new Exception($"Property {key} of {this.name} is already added!");
             }
         }
 
@@ -74,7 +74,7 @@ namespace DynamicObjects
             }
             catch (KeyNotFoundException)
             {
-                throw new Exception($"Method of {this.name} with {key} is not founded!");
+                throw new Exception($"Method {key} of {this.name} is not found!");
             }
         }
 
@@ -91,7 +91,7 @@ namespace DynamicObjects
             }
             catch (KeyNotFoundException)
             {
-                throw new Exception($"Method of {this.name} with {key} is not founded!");
+                throw new Exception($"Method {key} of {this.name} is not found!");
             }
         }
 
@@ -114,7 +114,7 @@ namespace DynamicObjects
             }
             catch (Exception)
             {
-                throw new Exception($"Method of {this.name} with {key} is already added!");
+                throw new Exception($"Method {key} of {this.name} is already added!");
             }
         }
 

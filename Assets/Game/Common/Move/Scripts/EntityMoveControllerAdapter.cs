@@ -1,18 +1,15 @@
-using System;
 using DynamicObjects;
 using UnityEngine;
 using Zenject;
 
 namespace Otus
 {
-    public class EntityMoveControllerAdapter : MonoBehaviour
+    public sealed class EntityMoveControllerAdapter : MonoBehaviour
     {
         [Inject]
         private IDynamicObject entity;
 
-        [SerializeField]
-        private Parameters parameters;
-
+        [Inject]
         private EntityMoveController moveController;
 
         private float fixedDeltaTime;
@@ -20,7 +17,6 @@ namespace Otus
         private void Awake()
         {
             this.fixedDeltaTime = Time.fixedDeltaTime;
-            this.moveController = new EntityMoveController(this.parameters.moveTransform, this.parameters.moveSpeed);
 
             this.entity.AddMethod(ActionKey.MOVE, new MethodDelegate(this.OnMove));
             this.entity.AddMethod(ActionKey.LOCK_MOVE, new MethodDelegate(this.OnLockMove));
@@ -33,16 +29,6 @@ namespace Otus
 
         private object OnMove(object data)
         {
-            if (!this.parameters.moveEnabled)
-            {
-                return null;
-            }
-
-            if (this.parameters.moveLocked)
-            {
-                return null;
-            }
-
             var moveData = (MoveData) data;
             this.moveController.Move(moveData.direction, this.fixedDeltaTime);
             return null;
@@ -50,13 +36,13 @@ namespace Otus
 
         private object OnLockMove(object data)
         {
-            this.parameters.moveLocked = true;
+            this.moveController.IsLocked = true;
             return null;
         }
 
         private object OnUnlockMove(object data)
         {
-            this.parameters.moveLocked = false;
+            this.moveController.IsLocked = false;
             return null;
         }
 
@@ -75,27 +61,5 @@ namespace Otus
         }
 
         #endregion
-
-        //Unity Event
-        public void SetEnableMove(bool isMoveEnabled)
-        {
-            this.parameters.moveEnabled = isMoveEnabled;
-        }
-
-        [Serializable]
-        private sealed class Parameters
-        {
-            [SerializeField]
-            public bool moveEnabled = true;
-
-            [SerializeField]
-            public bool moveLocked;
-
-            [SerializeField]
-            public float moveSpeed;
-
-            [SerializeField]
-            public Transform moveTransform;
-        }
     }
 }

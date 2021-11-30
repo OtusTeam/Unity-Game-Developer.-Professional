@@ -207,13 +207,14 @@
                   <e p="WeaponCollectController.cs" t="Include" />
                   <e p="WeaponCollectibleComponent.cs" t="Include" />
                 </e>
+                <e p="Entity" t="Include">
+                  <e p="EntityAttackWeaponAdapter.cs" t="Include" />
+                </e>
                 <e p="Inventory" t="Include">
                   <e p="WeaponInventoryComponent.cs" t="Include" />
                   <e p="WeaponsInventoryController.cs" t="Include" />
                 </e>
                 <e p="System" t="Include">
-                  <e p="WeaponAttackComponentAdapter.cs" t="Include" />
-                  <e p="WeaponAttackCurrentManagerAdapter.cs" t="Include" />
                   <e p="WeaponCurrentManager.cs" t="Include" />
                   <e p="WeaponsPool.cs" t="Include" />
                   <e p="WeaponsVisibilityController.cs" t="Include" />
@@ -221,10 +222,10 @@
                 <e p="Weapon" t="Include">
                   <e p="Component" t="Include">
                     <e p="WeaponAttackComponent.cs" t="Include" />
+                    <e p="WeaponAttackComponentAdapter.cs" t="Include" />
                     <e p="WeaponAttackComponentGroup.cs" t="Include" />
                   </e>
                   <e p="System" t="Include">
-                    <e p="WeaponAttackController.cs" t="Include" />
                     <e p="WeaponInstaller.cs" t="Include" />
                     <e p="WeaponVisibleController.cs" t="Include" />
                   </e>

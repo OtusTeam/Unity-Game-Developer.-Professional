@@ -7,14 +7,14 @@ namespace Otus
     public sealed class WeaponAttackComponentAdapter : MonoBehaviour, IMethodDelegate
     {
         [Inject]
-        private IDynamicObject entity;
+        private IDynamicObject weapon;
 
         [SerializeField]
         private WeaponAttackComponent weaponComponent;
 
         private void Awake()
         {
-            this.entity.AddMethod(ActionKey.ATTACK, this);
+            this.weapon.AddMethod(ActionKey.ATTACK, this);
         }
 
         object IMethodDelegate.Invoke(object data)

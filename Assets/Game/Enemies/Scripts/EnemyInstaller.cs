@@ -10,18 +10,19 @@ namespace Otus
         [SerializeField]
         private MonoDynamicObject enemy;
 
+        [Header("Move")]
+        [SerializeField]
+        private EntityMoveController moveController;
+
+        [Header("Effects")]
         [SerializeField]
         private EntityEffectSingleManager effectManager;
 
-        [SerializeField]
-        private WeaponAttackController weapon;
-        
         public override void InstallBindings()
         {
             this.Container.Bind<IDynamicObject>().FromInstance(this.enemy);
+            this.Container.Bind<EntityMoveController>().FromInstance(this.moveController);
             this.Container.Bind<IEntityEffectManager>().FromInstance(this.effectManager);
-            
-            // this.Container.Bind<IWeaponAttackComponent>().FromInstance(this.weapon);
         }
     }
 }

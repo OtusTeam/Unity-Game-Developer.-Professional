@@ -224,7 +224,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5795432559342442354}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1081873682
 MonoBehaviour:
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 1143521625}
   - component: {fileID: 1143521626}
   m_Layer: 0
-  m_Name: ControllerCollect
+  m_Name: ControllerWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,12 +340,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143521624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5795432559342442354}
-  m_RootOrder: 4
+  m_Father: {fileID: 5102392649373953445}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1143521626
 MonoBehaviour:
@@ -439,9 +439,9 @@ MonoBehaviour:
   onDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565055636509426388}
-        m_TargetAssemblyTypeName: Otus.MoveTransformController, Assembly-CSharp
-        m_MethodName: SetEnableMove
+      - m_Target: {fileID: 9120507994988320680}
+        m_TargetAssemblyTypeName: Otus.EntityMoveController, Assembly-CSharp
+        m_MethodName: set_IsEnable
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -580,7 +580,7 @@ Transform:
   m_Children:
   - {fileID: 368354163}
   m_Father: {fileID: 5795432561170971340}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748476110
 GameObject:
@@ -701,6 +701,37 @@ Transform:
   - {fileID: 1527516764}
   m_Father: {fileID: 5795432560036534246}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2274880670595951607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5102392649373953445}
+  m_Layer: 0
+  m_Name: Collect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5102392649373953445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2274880670595951607}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1143521625}
+  m_Father: {fileID: 5795432561170971340}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3268856784526826117
 GameObject:
@@ -905,6 +936,52 @@ Transform:
   m_Father: {fileID: 5795432561170971340}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5342901688695730019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7502843492529889957}
+  - component: {fileID: 9061179389617512006}
+  m_Layer: 0
+  m_Name: AdapterAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7502843492529889957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5342901688695730019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 778466156950221357}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9061179389617512006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5342901688695730019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe4f3a924fe4f58a094d3304f6c3a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 1
+  weapon: {fileID: 0}
+  weaponManager: {fileID: 5795432560103335555}
 --- !u!1 &5795432559278685595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1094,6 @@ Transform:
   - {fileID: 5795432559484493124}
   - {fileID: 5795432560533517453}
   - {fileID: 3727346091271893142}
-  - {fileID: 1143521625}
   - {fileID: 1081873681}
   m_Father: {fileID: 5795432559549222011}
   m_RootOrder: 0
@@ -1174,6 +1250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5795432560036534247}
+  moveController: {fileID: 9120507994988320680}
   weaponCurrentManager: {fileID: 5795432560103335555}
   weaponsPool: {fileID: 5795432559484493125}
   inventoryItemManager: {fileID: 564651877}
@@ -1233,7 +1310,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5795432560103335554}
   - component: {fileID: 5795432560103335555}
-  - component: {fileID: 2326401319689527934}
   m_Layer: 0
   m_Name: ManagerCurrent
   m_TagString: Untagged
@@ -1269,18 +1345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
     parent: {fileID: 5795432560036534247}
---- !u!114 &2326401319689527934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5795432560103335553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21707a91fa864ccbbb8570dc2d0f30f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5795432560231023546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1483,7 @@ Transform:
   - {fileID: 5795432559549222011}
   - {fileID: 5966714232464014401}
   - {fileID: 1474028586}
+  - {fileID: 5102392649373953445}
   - {fileID: 1583295488}
   m_Father: {fileID: 5795432560036534246}
   m_RootOrder: 1
@@ -1478,6 +1543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5127852682689087983}
   - component: {fileID: 1565055636509426388}
+  - component: {fileID: 9120507994988320680}
   m_Layer: 0
   m_Name: ControllerMove
   m_TagString: Untagged
@@ -1511,11 +1577,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ba9406442e4d70ab737f6edd0beb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameters:
-    moveEnabled: 1
-    moveLocked: 0
-    moveSpeed: 5
-    moveTransform: {fileID: 5795432560036534246}
+--- !u!114 &9120507994988320680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362246013010741581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9687c8792e4c7e96267c64824b199f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnable: 1
+  isLocked: 0
+  speed: 5
+  moveTransform: {fileID: 5795432560036534246}
 --- !u!1 &8886717898960259913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 955934633938783715}
+  - {fileID: 7502843492529889957}
   m_Father: {fileID: 5795432561170971340}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

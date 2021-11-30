@@ -2,27 +2,55 @@ using UnityEngine;
 
 namespace Otus
 {
-    public sealed class EntityMoveController
+    public sealed class EntityMoveController : MonoBehaviour
     {
-        private readonly float baseSpeed;
+        public bool IsEnable
+        {
+            get { return this.isEnable; }
+            set { this.isEnable = value; }
+        }
 
-        private readonly Transform moveTransform;
+        public bool IsLocked
+        {
+            get { return this.isLocked; }
+            set { this.isLocked = value; }
+        }
+
+        [SerializeField]
+        private bool isEnable = true;
+
+        [SerializeField]
+        private bool isLocked;
+
+        [SerializeField]
+        private float speed;
+
+        [SerializeField]
+        private Transform moveTransform;
 
         private readonly FloatMultiplierGroup speedMultipliers;
 
-        public EntityMoveController(Transform moveTransform, float speed)
+        public EntityMoveController()
         {
-            this.moveTransform = moveTransform;
-            this.baseSpeed = speed;
             this.speedMultipliers = new FloatMultiplierGroup();
         }
 
         public void Move(Vector3 direction, float deltaTime)
         {
-            var dSpeed = this.baseSpeed * deltaTime * this.speedMultipliers.GetValue();
+            if (!this.isEnable)
+            {
+                return;
+            }
+
+            if (this.isLocked)
+            {
+                return;
+            }
+            
+            var dSpeed = this.speed * deltaTime * this.speedMultipliers.GetValue();
             this.moveTransform.position += direction * dSpeed;
         }
-        
+
         public void AddSpeedMultiplier(IMultiplier<float> multiplier)
         {
             this.speedMultipliers.AddMultiplier(multiplier);

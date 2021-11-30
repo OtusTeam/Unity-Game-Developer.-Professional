@@ -1,11 +1,10 @@
-using System;
 using DynamicObjects;
 using UnityEngine;
 using Zenject;
 
 namespace Otus
 {
-    //Для теста
+    //Плохой код для теста
     public sealed class EnemyBrain : MonoBehaviour
     {
         [Inject]
@@ -14,9 +13,6 @@ namespace Otus
         [Inject]
         private IGameManager gameManager;
 
-        [Inject]
-        // private IWeaponAttackComponent attackComponent;
-
         private bool isEnabled;
 
         [Header("Move")]
@@ -24,7 +20,12 @@ namespace Otus
         private Transform pointA;
 
         [SerializeField]
+        private Transform moveTransform;
+        
+        [SerializeField]
         private Transform pointB;
+
+        private MoveData moveData;
 
         private Transform targetPoint;
         
@@ -32,7 +33,9 @@ namespace Otus
         [SerializeField]
         private float attackCountdown;
 
-        private float currentCountdown;
+        private float timeToAttack;
+
+        #region Lifecycle
 
         private void OnEnable()
         {
@@ -42,7 +45,11 @@ namespace Otus
         private void OnStartGame()
         {
             this.isEnabled = true;
+            
+            this.moveData = new MoveData();
             this.targetPoint = this.pointA;
+
+            this.timeToAttack = this.attackCountdown;
         }
 
         private void FixedUpdate()
@@ -56,18 +63,45 @@ namespace Otus
             this.ProcessAttack();
         }
 
+        private void OnDisable()
+        {
+            this.gameManager.OnStartGame -= this.OnStartGame;
+        }
+
+        #endregion
+
         private void ProcessAttack()
         {
-            
+            this.timeToAttack -= Time.fixedDeltaTime;
+            if (this.timeToAttack <= 0)
+            {
+                this.entity.TryInvokeMethod(ActionKey.ATTACK);
+                this.timeToAttack = this.attackCountdown;
+            }
         }
 
         private void ProcessMove()
         {
-        }
-
-        private void OnDisable()
-        {
-            this.gameManager.OnStartGame -= this.OnStartGame;
+            var distanceVector = this.targetPoint.position - this.moveTransform.position;
+            distanceVector.y = 0;
+            
+            var distance = distanceVector.magnitude;
+            if (distance > 0.1f)
+            {
+                this.moveData.direction = distanceVector.normalized;
+                this.entity.TryInvokeMethod(ActionKey.MOVE, this.moveData);
+            }
+            else
+            {
+                if (this.targetPoint == this.pointA)
+                {
+                    this.targetPoint = this.pointB;
+                }
+                else
+                {
+                    this.targetPoint = this.pointA;
+                }
+            }
         }
     }
 }

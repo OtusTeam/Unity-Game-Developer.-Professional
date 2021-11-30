@@ -1,16 +1,20 @@
 using DynamicObjects;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Zenject;
 
 namespace Otus.GameEffects
 {
     public interface IEffectApplyHandler
     {
-        void ApplyEffect(Collider target, IEffect effect);
+        void ApplyEffect(Collider target, EffectAsset effect);
     }
     
     public sealed class EffectApplyHandler : MonoBehaviour, IEffectApplyHandler
-    { 
+    {
+        [Inject]
+        private EffectManager effectManager;
+        
         [SerializeField]
         private bool hasCondition;
         
@@ -18,7 +22,7 @@ namespace Otus.GameEffects
         [SerializeField]
         private CompareTagCondition condition;
 
-        public void ApplyEffect(Collider target, IEffect effect)
+        public void ApplyEffect(Collider target, EffectAsset effect)
         {
             if (!target.TryGetComponent(out IMonoDynamicObject dynamicObject))
             {
@@ -27,7 +31,7 @@ namespace Otus.GameEffects
 
             if (!this.hasCondition || this.condition.IsTrue(dynamicObject))
             {
-                dynamicObject.TryInvokeMethod(ActionKey.START_EFFECT, effect);
+                this.effectManager.ApplyEffect(effect, dynamicObject);
             }
         }
     }

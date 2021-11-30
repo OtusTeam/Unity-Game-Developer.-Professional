@@ -53,16 +53,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d1cce10-3aab-4a31-922f-a1212750884e" name="Default Changelist" comment="Добавил Epic Toon FX">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Asset/EffectAsset.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Asset/EffectAsset.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Developer.-Professional/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/EffectBurn/BurnEffect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/EffectBurn/BurnEffect.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/EffectSlowdown/SlowdownEffect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/EffectSlowdown/SlowdownEffect.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectPlaySoundPlayComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectSoundPlayComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectPlaySoundPlayComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectSoundPlayComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Enemies/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/Bullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/Bullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/BulletConfig.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/BulletConfig.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/BulletSystem.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Bullets/BulletSystem.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Colliders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectApplyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectApplyHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun1/Gun1Weapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun1/Gun1Weapon.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun2/Gun2Weapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Gun2/Gun2Weapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackBulletComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackBulletComponent.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,15 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/Common/MoveSystem/Scripts/EntityMoveManagerAdapter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/MoveSystem/Scripts/EntityMoveController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/MoveSystem/Scripts/EntityMoveControllerAdapter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/Abstractions/EffectRoutineComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/Abstractions/EffectTimeProcessComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Configs/EffectDamageCountdownConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectDamageCountdownComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectBuffMoveSpeedCountdownComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/Abstractions/EffectCoroutineComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectBuffMoveSpeedComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectCountdownComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectBurnComponent.cs" />
@@ -161,6 +164,15 @@
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/System/EntityAttackWeaponAdapter.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Weapons/Scripts/GameEngine/Entity/EntityAttackWeaponAdapter.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectSoundPlayComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Effect/System/EffectComponentSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Asset/EffectAset.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectApplyHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/Asset/EffectAsset.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Scripts/System/EffectManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Weapons/Content/Scripts/Components/WeaponAttackBulletComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Scripts/GameInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Effects/Content/Scripts/Components/EffectCoroutineComponent.cs" />
       </list>
     </option>
   </component>
@@ -219,7 +231,7 @@
       <workItem from="1637993833003" duration="7883000" />
       <workItem from="1638102707309" duration="2109000" />
       <workItem from="1638200893377" duration="10092000" />
-      <workItem from="1638254133743" duration="21117000" />
+      <workItem from="1638254133743" duration="24056000" />
     </task>
     <task id="LOCAL-00001" summary="Провел урок по прокачке персонажа">
       <created>1635297557292</created>
@@ -473,7 +485,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638280385510</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Добавил Epic Toon FX">
+      <created>1638281358233</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1638281358233</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Добавил Epic Toon FX">
+      <created>1638281368688</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1638281368688</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,14 +563,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="417" y="163" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1638269919105" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638278742458">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638283909034">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638278742458" />
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1638280390381">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638283909034" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2" timestamp="1638281369796">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638280390381" />
+    <state x="320" y="174" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638281369796" />
     <state x="423" y="188" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1638280346525">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -561,13 +587,13 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="167" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1637482694639" />
-    <state x="385" y="210" width="670" height="675" key="run.anything.popup" timestamp="1638268664500">
+    <state x="385" y="210" width="670" height="675" key="run.anything.popup" timestamp="1638283514925">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="210" width="670" height="675" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638268664500" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638281145419">
+    <state x="385" y="210" width="670" height="675" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638283514925" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638284865550">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638281145419" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638284865550" />
   </component>
 </project>

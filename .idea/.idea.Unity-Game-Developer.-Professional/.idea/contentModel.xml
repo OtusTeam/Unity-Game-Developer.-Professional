@@ -145,6 +145,9 @@
               </e>
             </e>
             <e p="Scripts" t="Include">
+              <e p="Asset" t="Include">
+                <e p="EffectAsset.cs" t="Include" />
+              </e>
               <e p="Effect" t="Include">
                 <e p="Component" t="Include">
                   <e p="EffectComponent.cs" t="Include" />
@@ -165,6 +168,8 @@
               </e>
               <e p="System" t="Include">
                 <e p="EffectApplyHandler.cs" t="Include" />
+                <e p="EffectManager.cs" t="Include" />
+                <e p="EffectSystem.cs" t="Include" />
               </e>
             </e>
           </e>

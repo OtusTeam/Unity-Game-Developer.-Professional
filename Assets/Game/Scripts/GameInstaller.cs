@@ -1,4 +1,5 @@
 using Otus;
+using Otus.GameEffects;
 using Zenject;
 
 namespace Game.Scripts
@@ -9,6 +10,7 @@ namespace Game.Scripts
         {
             this.Container.Bind<SoundManager>().FromComponentInHierarchy().AsCached();
             this.Container.Bind<IGameManager>().FromComponentInHierarchy().AsCached();
+            this.Container.Bind<EffectManager>().FromComponentInHierarchy().AsCached();
         }
     }
 }

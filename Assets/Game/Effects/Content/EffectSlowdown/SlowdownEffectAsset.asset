@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84765c1f72f2475babb13a6801fc505e, type: 3}
+  m_Name: SlowdownEffectAsset
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7260628987103664975, guid: 6215f75965f9f46fb9a2a5f3e1f0a007, type: 3}

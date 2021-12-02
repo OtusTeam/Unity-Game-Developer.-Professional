@@ -1,20 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="" />
+    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Iniitial commit">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/GameElementId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/GameElementId.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/GameSubsystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/GameSubsystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/GUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GUIName.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GUIName.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GUISystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GUISystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementLayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementLayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementMap.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementSet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementSet.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Entity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/Entity/MonoEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/Entity/MonoEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Tags.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/GameElements.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/GameElements.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/GameElements.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/GameElements.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/db/2351aa48/UnityGameElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/Component/IComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/5e/3b569e17/UnityGameSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/Component/MonoComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/Entity/MonoEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/Entity/Entity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/Entity/IEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/db/2351aa48/UnityGameElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/System/MonoEntityManagerInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/cd/3ebd7ea9/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/System/IEntityManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/aa/fb78068d/UnityGameElementSet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/System/MonoEntityManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/24/ea572122/UnityGameElementGroup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/System/EntityManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/GameContext.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Scripts/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/GameSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Tags/Scripts/TagType.cs" />
@@ -33,10 +96,46 @@
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/System/MonoEntityManagerInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/System/MonoEntityManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entity/Scripts/Entity/MonoEntity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GameInterfaceId.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GameInterface.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GUIType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GUIPublicName.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GUIName.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/GUI/Scripts/GUISystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/GameElementId.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/GameSubsystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameElementUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameControllerGroup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementGroup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/AbstractGameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/BaseGameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameElementLayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameElementMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameElementSet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameLayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementLayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementSet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementLayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/UnityGameElementSet.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="21ifOPhGgw4YkoGXWVNx9vnZ35v" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -79,7 +178,16 @@
       <option name="presentableId" value="Default" />
       <updated>1638428813959</updated>
       <workItem from="1638428829222" duration="3497000" />
+      <workItem from="1638432576869" duration="7178000" />
     </task>
+    <task id="LOCAL-00001" summary="Iniitial commit">
+      <created>1638432596450</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638432596450</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,21 +195,42 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Iniitial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Iniitial commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="154" key="RiderGenerateDialog" timestamp="1638431788449">
+    <state x="517" y="154" key="RiderGenerateDialog" timestamp="1638441276198">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638431788449" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638432515620">
+    <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638441276198" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638441332838">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638432515620" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638441332838" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638432624177">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638432624177" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1638431553316">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638431553316" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638440796358">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638440796358" />
   </component>
 </project>

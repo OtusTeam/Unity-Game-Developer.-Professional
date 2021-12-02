@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameEngine
 {
-    public sealed class GameSystem : UnityGameSystem
+    public sealed class MonoGameContext : MonoGameSystem
     {
         [SerializeField]
         private bool autoRun;

@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using GameElements.Unity;
+using UnityEngine;
 
 namespace GameEngine
 {
-    public sealed class MonoEntityManager : UnityGameElement, IEntityManager
+    public sealed class MonoEntityManager : MonoBehaviour, IEntityManager
     {
         public event Action<IEntity> OnEntityAdded
         {
@@ -38,6 +38,16 @@ namespace GameEngine
         public IEnumerable<IEntity> GetEntities()
         {
             return this.entityManager.GetEntities();
+        }
+        
+        private void Awake()
+        {
+            var initialEntities = FindObjectsOfType<MonoEntity>();
+            for (int i = 0, count = initialEntities.Length; i < count; i++)
+            {
+                var entity = initialEntities[i];
+                this.entityManager.AddEntity(entity);
+            }
         }
     }
 }

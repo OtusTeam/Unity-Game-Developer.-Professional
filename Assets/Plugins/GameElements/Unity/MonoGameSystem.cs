@@ -4,7 +4,7 @@ using UnityEngine;
 namespace GameElements.Unity
 {
     /// <inheritdoc cref="IGameElementSystem"/>
-    public class UnityGameSystem : MonoBehaviour, IGameSystem
+    public class MonoGameSystem : MonoBehaviour, IGameSystem
     {
         #region Events
 
@@ -53,7 +53,7 @@ namespace GameElements.Unity
 
         private readonly IGameSystem gameSystem;
         
-        public UnityGameSystem()
+        public MonoGameSystem()
         {
             this.gameSystem = new GameSystem();
         }

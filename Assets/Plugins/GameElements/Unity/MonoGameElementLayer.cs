@@ -1,11 +1,16 @@
+using UnityEngine;
+
 namespace GameElements.Unity
 {
-     /// <inheritdoc cref="IGameElementLayer"/>
-    public abstract class UnityGameElementLayer : UnityGameElement, IGameElementLayer
+    /// <inheritdoc cref="IGameElementLayer"/>
+    public sealed class MonoGameElementLayer : MonoGameElement, IGameElementLayer
     {
+        [SerializeField]
+        private MonoBehaviour[] gameElements;
+
         private readonly GameElementLayer layer;
 
-        public UnityGameElementLayer()
+        public MonoGameElementLayer()
         {
             this.layer = new GameElementLayer();
         }
@@ -30,6 +35,20 @@ namespace GameElements.Unity
             return this.layer.TryGetElement(out element);
         }
 
+        #region Lifecycle
+
+        private void Awake()
+        {
+            for (int i = 0, count = this.gameElements.Length; i < count; i++)
+            {
+                var gameElement = this.gameElements[i];
+                if (gameElement != null)
+                {
+                    this.AddElement(gameElement);
+                }
+            }
+        }
+
         protected override void OnSetup()
         {
             base.OnSetup();
@@ -43,5 +62,7 @@ namespace GameElements.Unity
             IGameElement gameElement = this.layer;
             gameElement.Dispose();
         }
+
+        #endregion
     }
 }

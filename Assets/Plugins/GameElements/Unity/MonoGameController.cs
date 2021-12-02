@@ -1,6 +1,6 @@
 namespace GameElements.Unity
 {
-    public abstract class UnityGameController : UnityGameElement
+    public abstract class MonoGameController : MonoGameElement
     {
         #region Lifecycle
 

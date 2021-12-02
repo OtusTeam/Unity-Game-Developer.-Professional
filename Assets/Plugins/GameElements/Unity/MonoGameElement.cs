@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameElements.Unity
 {
-    public abstract class UnityGameElement : MonoBehaviour, IGameElement
+    public abstract class MonoGameElement : MonoBehaviour, IGameElement
     {
         protected IGameSystem GameSystem { get; private set; }
 

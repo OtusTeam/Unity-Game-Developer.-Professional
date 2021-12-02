@@ -20,9 +20,9 @@ namespace Prototype.GameEngine
             for (int i = 0, count = entities.Count; i < count; i++)
             {
                 var entity = entities[i];
-                if (entity.TryGetComponent(out IMapRenderer renderer))
+                if (entity.TryGetComponent(out MapEntityRenderComponent component))
                 {
-                    renderer.Render(plane);
+                    component.OnRender(plane);
                 }
             }
         }

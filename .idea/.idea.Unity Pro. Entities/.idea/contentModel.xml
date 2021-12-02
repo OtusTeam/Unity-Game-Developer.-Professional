@@ -29,9 +29,18 @@
           </e>
           <e p="GameEngine" t="Include">
             <e p="Components" t="Include">
-              <e p="Scripts" t="Include">
+              <e p="Position" t="Include">
                 <e p="PositionComponent.cs" t="Include" />
+              </e>
+              <e p="Rotation" t="Include">
                 <e p="RotationComponent.cs" t="Include" />
+              </e>
+              <e p="SizeComponent" t="Include">
+                <e p="SizeComponent.cs" t="Include" />
+              </e>
+              <e p="Team" t="Include">
+                <e p="TeamComponent.cs" t="Include" />
+                <e p="TeamType.cs" t="Include" />
               </e>
             </e>
             <e p="Context" t="Include">
@@ -45,6 +54,7 @@
               <e p="Renderer" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="MapEntitiesRenderer.cs" t="Include" />
+                  <e p="MapEntityRenderComponent.cs" t="Include" />
                   <e p="MapRenderEntityConfig.cs" t="Include" />
                 </e>
               </e>

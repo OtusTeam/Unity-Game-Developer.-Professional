@@ -35,6 +35,9 @@
                   <e p="IEntity.cs" t="Include" />
                   <e p="MonoEntity.cs" t="Include" />
                 </e>
+                <e p="Flags" t="Include">
+                  <e p="EntityFlag.cs" t="Include" />
+                </e>
                 <e p="System" t="Include">
                   <e p="EntityManager.cs" t="Include" />
                   <e p="IEntityManager.cs" t="Include" />
@@ -42,14 +45,24 @@
                 </e>
               </e>
             </e>
-            <e p="Tags" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="FlagType.cs" t="Include" />
-              </e>
-            </e>
             <e p="World" t="Include">
               <e p="Scripts" t="Include">
                 <e p="WorldArea.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="GameInteface" t="Include">
+            <e p="Maps" t="Include">
+              <e p="Minimap" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="MinimapAnimationController.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="IMapRenderer.cs" t="Include" />
+                <e p="MapRenderController.cs" t="Include" />
+                <e p="MapRenderPipeline.cs" t="Include" />
+                <e p="MapRenderPipelineConfig.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -60,7 +73,6 @@
               <e p="GameController.cs" t="Include" />
               <e p="GameElement.cs" t="Include" />
               <e p="GameElementLayer.cs" t="Include" />
-              <e p="GameElementMap.cs" t="Include" />
               <e p="GameElementSet.cs" t="Include" />
               <e p="GameSystem.cs" t="Include" />
             </e>

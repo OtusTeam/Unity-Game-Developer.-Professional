@@ -1,4 +1,4 @@
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public interface IEntityComponent
     {

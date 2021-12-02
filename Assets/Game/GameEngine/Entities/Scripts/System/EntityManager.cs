@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public sealed class EntityManager : IEntityManager
     {

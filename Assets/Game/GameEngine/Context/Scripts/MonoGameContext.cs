@@ -2,7 +2,7 @@ using System.Collections;
 using GameElements.Unity;
 using UnityEngine;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public sealed class MonoGameContext : MonoGameSystem
     {

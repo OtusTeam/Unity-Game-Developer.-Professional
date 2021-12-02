@@ -1,7 +1,10 @@
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public enum GameElementId
     {
-        NONE
+        NONE,
+        
+        
+        MINIMAP
     }
 }

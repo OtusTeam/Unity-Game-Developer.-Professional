@@ -4,7 +4,7 @@ using GameElements;
 using GameElements.Unity;
 using UnityEngine;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public sealed class MonoGameModule : MonoGameElement
     {
@@ -73,11 +73,11 @@ namespace GameEngine
             }
         }
 
-        protected override void OnSetup()
+        protected override void OnSetup(IGameSystem system)
         {
-            base.OnSetup();
+            base.OnSetup(system);
             IGameElement container = this.container;
-            container.Setup(this.GameSystem);
+            container.Setup(system);
         }
 
         protected override void OnDispose()

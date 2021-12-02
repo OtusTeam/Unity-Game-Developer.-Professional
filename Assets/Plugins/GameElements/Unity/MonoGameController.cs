@@ -1,21 +1,29 @@
+using System;
+
 namespace GameElements.Unity
 {
     public abstract class MonoGameController : MonoGameElement
     {
+        protected IGameSystem CurrentGameSystem { get; private set; }
+
         #region Lifecycle
 
-        protected sealed override void OnSetup()
+        protected sealed override void OnSetup(IGameSystem system)
         {
-            base.OnSetup();
-            
-            var system = this.GameSystem;
+            if (this.CurrentGameSystem != null)
+            {
+                throw new Exception($"{this.GetType().Name} is already setuped!");
+            }
+
+            this.CurrentGameSystem = system;
+
             system.OnGamePrepare += this.OnPrepareGame;
             system.OnGameReady += this.OnReadyGame;
             system.OnGameStart += this.OnStartGame;
             system.OnGamePause += this.OnPauseGame;
             system.OnGameResume += this.OnResumeGame;
             system.OnGameFinish += this.OnFinishGame;
-            
+
             var gameState = system.State;
             if (gameState >= GameState.FINISH)
             {
@@ -72,8 +80,13 @@ namespace GameElements.Unity
         protected sealed override void OnDispose()
         {
             base.OnDispose();
-            
-            var system = this.GameSystem;
+
+            if (this.CurrentGameSystem == null)
+            {
+                return;
+            }
+
+            var system = this.CurrentGameSystem;
             system.OnGamePrepare -= this.OnPrepareGame;
             system.OnGameReady -= this.OnReadyGame;
             system.OnGameStart -= this.OnStartGame;
@@ -81,7 +94,7 @@ namespace GameElements.Unity
             system.OnGameResume -= this.OnResumeGame;
             system.OnGameFinish -= this.OnFinishGame;
         }
-        
+
         #endregion
     }
 }

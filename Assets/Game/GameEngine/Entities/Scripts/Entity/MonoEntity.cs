@@ -1,29 +1,33 @@
+using System;
 using System.Collections.Generic;
 using GameElements;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
-    public sealed class MonoEntity : MonoBehaviour, IEntity
+    public sealed class MonoEntity : SerializedMonoBehaviour, IEntity
     {
         public IGameSystem CurrentGameSystem
         {
             get { return this.entity.CurrentGameSystem; }
         }
 
-        [SerializeField]
-        private GameObject[] components;
-        
+        [ReadOnly]
+        [ShowInInspector]
         private Entity entity;
 
-        void IEntity.AddComponent<T>(T component)
+        [SerializeField]
+        private Parameters parameters;
+
+        void IEntity.AddComponent(object component)
         {
             this.entity.AddComponent(component);
         }
 
-        void IEntity.RemoveComponent<T>()
+        void IEntity.RemoveComponent(object component)
         {
-            this.entity.RemoveComponent<T>();
+            this.entity.RemoveComponent(component);
         }
 
         IEnumerable<T> IEntity.GetComponents<T>()
@@ -31,19 +35,19 @@ namespace GameEngine
             return this.entity.GetComponents<T>();
         }
 
-        void IEntity.AddFlag(FlagType flag)
+        void IEntity.AddFlag(EntityFlag entityFlag)
         {
-            this.entity.AddFlag(flag);
+            this.entity.AddFlag(entityFlag);
         }
 
-        void IEntity.RemoveFlag(FlagType flag)
+        void IEntity.RemoveFlag(EntityFlag entityFlag)
         {
-            this.entity.RemoveFlag(flag);
+            this.entity.RemoveFlag(entityFlag);
         }
 
-        bool IEntity.ContainsFlag(FlagType flag)
+        bool IEntity.ContainsFlag(EntityFlag entityFlag)
         {
-            return this.entity.ContainsFlag(flag);
+            return this.entity.ContainsFlag(entityFlag);
         }
 
         void IEntity.BindContext(IGameSystem gameSystem)
@@ -55,23 +59,43 @@ namespace GameEngine
         {
             this.entity.ResetContext();
         }
-        
+
         private void Awake()
         {
-            this.entity = new Entity();
-            this.InitializeComponents();
+            this.InitializeEntity();
         }
 
-        private void InitializeComponents()
+        private void InitializeEntity()
         {
-            for (int i = 0, count = this.components.Length; i < count; i++)
+            this.entity = new Entity();
+            this.entity.AddFlag(this.parameters.initialFlags);
+
+            var components = this.parameters.initialComponents;
+            for (int i = 0, count = components.Length; i < count; i++)
             {
-                var componentGO = this.components[i];
-                if (componentGO != null && componentGO.TryGetComponent(out IEntityComponent component))
+                var component = components[i];
+                if (component != null)
                 {
                     this.entity.AddComponent(component);
                 }
             }
         }
+
+        [Serializable]
+        public sealed class Parameters
+        {
+            [SerializeField]
+            public EntityFlag initialFlags;
+            
+            [SerializeField]
+            public MonoBehaviour[] initialComponents;
+        }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            this.Awake();
+        }
+#endif
     }
 }

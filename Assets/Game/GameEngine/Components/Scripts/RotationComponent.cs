@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public interface IRotationComponent
     {

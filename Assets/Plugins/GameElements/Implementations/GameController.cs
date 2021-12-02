@@ -1,14 +1,22 @@
+using System;
+
 namespace GameElements
 {
     public abstract class GameController : GameElement
     {
+        protected IGameSystem CurrentGameSystem { get; private set; }
+        
         #region Lifecycle
 
-        protected sealed override void OnSetup()
+        protected sealed override void OnSetup(IGameSystem system)
         {
-            base.OnSetup();
+            if (this.CurrentGameSystem != null)
+            {
+                throw new Exception($"{this.GetType().Name} is already setuped!");
+            }
             
-            var system = this.GameSystem;
+            this.CurrentGameSystem = system;
+            
             system.OnGamePrepare += this.OnPrepareGame;
             system.OnGameReady += this.OnReadyGame;
             system.OnGameStart += this.OnStartGame;
@@ -72,8 +80,13 @@ namespace GameElements
         protected sealed override void OnDispose()
         {
             base.OnDispose();
+
+            if (this.CurrentGameSystem == null)
+            {
+                return;
+            }
             
-            var system = this.GameSystem;
+            var system = this.CurrentGameSystem;
             system.OnGamePrepare -= this.OnPrepareGame;
             system.OnGameReady -= this.OnReadyGame;
             system.OnGameStart -= this.OnStartGame;

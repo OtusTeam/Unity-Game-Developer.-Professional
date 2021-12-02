@@ -49,11 +49,11 @@ namespace GameElements.Unity
             }
         }
 
-        protected override void OnSetup()
+        protected override void OnSetup(IGameSystem system)
         {
-            base.OnSetup();
+            base.OnSetup(system);
             IGameElement gameElement = this.layer;
-            gameElement.Setup(this.GameSystem);
+            gameElement.Setup(system);
         }
 
         protected override void OnDispose()

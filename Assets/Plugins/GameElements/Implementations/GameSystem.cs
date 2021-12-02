@@ -190,12 +190,12 @@ namespace GameElements
 
         public T GetElement<T>()
         {
-            return GameElementUtils.Find<T>(this.elementMap);
+            return GameElementUtils.FindValue<T>(this.elementMap);
         }
 
         public bool TryGetElement<T>(out T element)
         {
-            if (GameElementUtils.TryFind(this.elementMap, out T result))
+            if (GameElementUtils.TryFindValue(this.elementMap, out T result))
             {
                 element = result;
                 return true;

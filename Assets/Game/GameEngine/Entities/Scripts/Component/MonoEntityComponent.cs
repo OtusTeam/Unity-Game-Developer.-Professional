@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public abstract class MonoEntityComponent : MonoBehaviour, IEntityComponent
     {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public sealed class MonoEntityManager : MonoBehaviour, IEntityManager
     {

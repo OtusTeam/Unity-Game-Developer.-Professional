@@ -1,74 +1,90 @@
 using System;
 using System.Collections.Generic;
 using GameElements;
+using Sirenix.OdinInspector;
+using UnityEngine;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
+    [Serializable]
     public sealed class Entity : IEntity
     {
         public IGameSystem CurrentGameSystem { get; private set; }
 
-        private readonly Dictionary<Type, object> componentMap;
+        [ShowInInspector]
+        private EntityFlag entityFlags;
 
-        private FlagType flags;
+        [ShowInInspector]
+        private List<object> components;
 
         public Entity()
         {
-            this.flags = FlagType.NONE;
-            this.componentMap = new Dictionary<Type, object>();
+            this.entityFlags = EntityFlag.NONE;
+            this.components = new List<object>();
         }
 
-        public void AddComponent<T>(T component)
+        public void AddComponent(object component)
         {
-            this.componentMap.Add(typeof(T), component);
+            this.components.Add(component);
         }
 
-        public void RemoveComponent<T>()
+        public void RemoveComponent(object component)
         {
-            this.componentMap.Remove(typeof(T));
+            this.components.Remove(component);
         }
 
         public T GetComponent<T>()
         {
-            return (T) this.componentMap[typeof(T)];
+            for (int i = 0, count = this.components.Count; i < count; i++)
+            {
+                if (this.components[i] is T component)
+                {
+                    return component;
+                }
+            }
+
+            throw new Exception($"Component of type {typeof(T).Name} is not found");
         }
 
         public bool TryGetComponent<T>(out T component)
         {
-            if (this.componentMap.TryGetValue(typeof(T), out var value))
+            for (int i = 0, count = this.components.Count; i < count; i++)
             {
-                component = (T) value;
-                return true;
+                if (this.components[i] is T result)
+                {
+                    component = result;
+                    return true;
+                }
             }
-
+            
             component = default;
             return false;
         }
 
         public IEnumerable<T> GetComponents<T>()
         {
-            foreach (var pair in this.componentMap)
+            for (int i = 0, count = this.components.Count; i < count; i++)
             {
-                if (pair.Value is T component)
+                if (this.components[i] is T component)
                 {
                     yield return component;
                 }
             }
         }
 
-        public void AddFlag(FlagType flag)
+        public void AddFlag(EntityFlag entityFlag)
         {
-            this.flags |= flag;
+            this.entityFlags |= entityFlag;
         }
 
-        public void RemoveFlag(FlagType flag)
+        public void RemoveFlag(EntityFlag entityFlag)
         {
-            this.flags &= ~flag;
+            this.entityFlags &= ~entityFlag;
         }
 
-        public bool ContainsFlag(FlagType flag)
+        public bool ContainsFlag(EntityFlag entityFlag)
         {
-            return this.flags.HasFlag(flag);
+            return this.entityFlags.HasFlag(entityFlag);
         }
 
         public void BindContext(IGameSystem gameSystem)

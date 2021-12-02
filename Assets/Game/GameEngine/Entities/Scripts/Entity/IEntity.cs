@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using GameElements;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public interface IEntity
     {
         IGameSystem CurrentGameSystem { get; }
-        
-        void AddComponent<T>(T component);
 
-        void RemoveComponent<T>();
+        void AddComponent(object component);
+        
+        void RemoveComponent(object component);
 
         T GetComponent<T>();
 
@@ -17,11 +17,11 @@ namespace GameEngine
         
         IEnumerable<T> GetComponents<T>();
 
-        void AddFlag(FlagType flag);
+        void AddFlag(EntityFlag entityFlag);
 
-        void RemoveFlag(FlagType flag);
+        void RemoveFlag(EntityFlag entityFlag);
 
-        bool ContainsFlag(FlagType flag);
+        bool ContainsFlag(EntityFlag entityFlag);
 
         void BindContext(IGameSystem gameSystem);
 

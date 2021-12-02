@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace GameEngine
+namespace Prototype.GameEngine
 {
     public sealed class WorldArea : MonoBehaviour
     {

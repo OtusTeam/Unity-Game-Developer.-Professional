@@ -6,6 +6,8 @@ namespace GameElements
     /// <inheritdoc cref="IGameElementLayer"/>
     public sealed class GameElementLayer : GameElement, IGameElementLayer
     {
+        private IGameSystem currentGameSystem;
+        
         private readonly Dictionary<Type, object> elementMap;
 
         public GameElementLayer()
@@ -27,11 +29,15 @@ namespace GameElements
             }
 
             this.elementMap.Add(type, element);
-            if (element is IGameElement gameElement)
+            
+            if (this.currentGameSystem != null)
             {
-                gameElement.Setup(this.GameSystem);
+                if (element is IGameElement gameElement)
+                {
+                    gameElement.Setup(this.currentGameSystem);
+                }
             }
-
+            
             return true;
         }
 
@@ -53,12 +59,12 @@ namespace GameElements
 
         public T GetElement<T>()
         {
-            return GameElementUtils.Find<T>(this.elementMap);
+            return GameElementUtils.FindValue<T>(this.elementMap);
         }
 
         public bool TryGetElement<T>(out T element)
         {
-            if (GameElementUtils.TryFind(this.elementMap, out IGameElement result))
+            if (GameElementUtils.TryFindValue(this.elementMap, out IGameElement result))
             {
                 element = (T) result;
                 return true;
@@ -68,14 +74,15 @@ namespace GameElements
             return false;
         }
 
-        protected override void OnSetup()
+        protected override void OnSetup(IGameSystem system)
         {
-            base.OnSetup();
+            base.OnSetup(system);
+            this.currentGameSystem = system;
             foreach (var element in this.elementMap.Values)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Setup(this.GameSystem);
+                    gameElement.Setup(system);
                 }
             }
         }

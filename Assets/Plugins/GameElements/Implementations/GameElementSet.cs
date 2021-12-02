@@ -5,6 +5,8 @@ namespace GameElements
     /// <inheritdoc cref="IGameElementSet"/>
     public sealed class GameElementSet : GameElement, IGameElementSet
     {
+        private IGameSystem currentGameSystem;
+
         private readonly HashSet<object> elements;
 
         public GameElementSet()
@@ -24,9 +26,12 @@ namespace GameElements
                 return false;
             }
 
-            if (element is IGameElement gameElement)
+            if (this.currentGameSystem != null)
             {
-                gameElement.Setup(this.GameSystem);
+                if (element is IGameElement gameElement)
+                {
+                    gameElement.Setup(this.currentGameSystem);
+                }    
             }
 
             return true;
@@ -52,14 +57,15 @@ namespace GameElements
             return this.elements.Contains(element);
         }
 
-        protected override void OnSetup()
+        protected override void OnSetup(IGameSystem system)
         {
-            base.OnSetup();
+            base.OnSetup(system);
+            this.currentGameSystem = system;
             foreach (var element in this.elements)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Setup(this.GameSystem);
+                    gameElement.Setup(system);
                 }
             }
         }

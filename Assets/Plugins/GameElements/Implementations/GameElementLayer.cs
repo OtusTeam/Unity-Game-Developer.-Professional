@@ -15,7 +15,7 @@ namespace GameElements
         
         public GameElementLayer(Dictionary<Type, object> elementMap)
         {
-            this.elementMap = elementMap;
+            this.elementMap = new Dictionary<Type, object>(elementMap);
         }
 
         public bool AddElement(object element)

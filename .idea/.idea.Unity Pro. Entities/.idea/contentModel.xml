@@ -11,6 +11,12 @@
       <e p="Assets" t="Include">
         <e p="Game" t="Include">
           <e p="GameEngine" t="Include">
+            <e p="Components" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="PositionComponent.cs" t="Include" />
+                <e p="RotationComponent.cs" t="Include" />
+              </e>
+            </e>
             <e p="Context" t="Include">
               <e p="Scripts" t="Include">
                 <e p="GameElementId.cs" t="Include" />
@@ -18,11 +24,11 @@
                 <e p="MonoGameModule.cs" t="Include" />
               </e>
             </e>
-            <e p="Entity" t="Include">
+            <e p="Entities" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Component" t="Include">
-                  <e p="IComponent.cs" t="Include" />
-                  <e p="MonoComponent.cs" t="Include" />
+                  <e p="IEntityComponent.cs" t="Include" />
+                  <e p="MonoEntityComponent.cs" t="Include" />
                 </e>
                 <e p="Entity" t="Include">
                   <e p="Entity.cs" t="Include" />
@@ -38,7 +44,12 @@
             </e>
             <e p="Tags" t="Include">
               <e p="Scripts" t="Include">
-                <e p="TagType.cs" t="Include" />
+                <e p="FlagType.cs" t="Include" />
+              </e>
+            </e>
+            <e p="World" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="WorldArea.cs" t="Include" />
               </e>
             </e>
           </e>

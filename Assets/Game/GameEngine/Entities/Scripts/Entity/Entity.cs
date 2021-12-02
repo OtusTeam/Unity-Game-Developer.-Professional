@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using GameElements;
+using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -9,17 +10,14 @@ namespace Prototype.GameEngine
     [Serializable]
     public sealed class Entity : IEntity
     {
-        public IGameSystem CurrentGameSystem { get; private set; }
-
-        [ShowInInspector]
-        private EntityFlag entityFlags;
+        [CanBeNull]
+        public IGameSystem GameSystem { get; private set; }
 
         [ShowInInspector]
         private List<object> components;
 
         public Entity()
         {
-            this.entityFlags = EntityFlag.NONE;
             this.components = new List<object>();
         }
 
@@ -71,30 +69,15 @@ namespace Prototype.GameEngine
                 }
             }
         }
-
-        public void AddFlag(EntityFlag entityFlag)
-        {
-            this.entityFlags |= entityFlag;
-        }
-
-        public void RemoveFlag(EntityFlag entityFlag)
-        {
-            this.entityFlags &= ~entityFlag;
-        }
-
-        public bool ContainsFlag(EntityFlag entityFlag)
-        {
-            return this.entityFlags.HasFlag(entityFlag);
-        }
-
+        
         public void BindContext(IGameSystem gameSystem)
         {
-            this.CurrentGameSystem = gameSystem;
+            this.GameSystem = gameSystem;
         }
 
         public void ResetContext()
         {
-            this.CurrentGameSystem = null;
+            this.GameSystem = null;
         }
     }
 }

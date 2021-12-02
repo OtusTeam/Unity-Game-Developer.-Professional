@@ -5,7 +5,7 @@ namespace Prototype.GameEngine
 {
     public interface IEntity
     {
-        IGameSystem CurrentGameSystem { get; }
+        IGameSystem GameSystem { get; }
 
         void AddComponent(object component);
         
@@ -16,12 +16,6 @@ namespace Prototype.GameEngine
         bool TryGetComponent<T>(out T component);
         
         IEnumerable<T> GetComponents<T>();
-
-        void AddFlag(EntityFlag entityFlag);
-
-        void RemoveFlag(EntityFlag entityFlag);
-
-        bool ContainsFlag(EntityFlag entityFlag);
 
         void BindContext(IGameSystem gameSystem);
 

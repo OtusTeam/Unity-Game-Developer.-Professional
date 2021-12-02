@@ -1,4 +1,4 @@
-using System;
+using GameElements;
 using GameElements.Unity;
 using UnityEngine;
 
@@ -6,26 +6,54 @@ namespace Prototype.GUI
 {
     public sealed class MapRenderController : MonoGameController
     {
+        [SerializeField]
+        private Transform plane;
+        
+        [SerializeField]
+        private MapRenderConfig config;
+
+        [Range(0.01f, 1.0f)]
+        [SerializeField]
+        private float renderPeriod = 0.25f;
+
+        private float currentTime;
+
         private IMapRenderer mapRenderer;
 
-        [SerializeField]
-        private Parameters parameters;
-        
         private void Awake()
         {
-            this.mapRenderer = this.parameters.mapRenderer.GetComponent<IMapRenderer>();
             this.enabled = false;
+            this.mapRenderer = this.config.CreateRenderer();
         }
 
-        protected override void OnReadyGame(object sender)
+        protected override void OnSetuped(IGameSystem system)
         {
-            base.OnReadyGame(sender);
+            base.OnSetuped(system);
+            if (this.mapRenderer is IGameElement gameElement)
+            {
+                gameElement.Setup(system);
+            }
+        }
+
+        protected override void OnStartGame(object sender)
+        {
+            base.OnStartGame(sender);
+            
+            this.mapRenderer.Render(this.plane);
+            this.currentTime = this.renderPeriod;
             this.enabled = true;
         }
 
         private void LateUpdate()
         {
-            this.mapRenderer.Render(this.parameters.mapPlane);
+            this.currentTime -= Time.deltaTime;
+            if (this.currentTime > 0)
+            {
+                return;
+            }
+
+            this.mapRenderer.Render(this.plane);
+            this.currentTime += this.renderPeriod;
         }
 
         protected override void OnFinishGame(object sender)
@@ -33,15 +61,14 @@ namespace Prototype.GUI
             base.OnFinishGame(sender);
             this.enabled = false;
         }
-
-        [Serializable]
-        public sealed class Parameters
+        
+        protected override void OnDisposed()
         {
-            [SerializeField]
-            public Transform mapPlane;
-            
-            [SerializeField]
-            public GameObject mapRenderer;
+            base.OnDisposed();
+            if (this.mapRenderer is IGameElement gameElement)
+            {
+                gameElement.Dispose();
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Prototype.GameEngine
             this.entityManager.RemoveEntity(entity);
         }
 
-        public IEnumerable<IEntity> GetEntities()
+        public IList<IEntity> GetEntities()
         {
             return this.entityManager.GetEntities();
         }

@@ -10,6 +10,23 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Game" t="Include">
+          <e p="Content" t="Include">
+            <e p="Gas" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="MapGasRenderComponent.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Minerals" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="MapMineralsRenderComponent.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Units" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="MapUnitRenderComponent.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="GameEngine" t="Include">
             <e p="Components" t="Include">
               <e p="Scripts" t="Include">
@@ -25,6 +42,12 @@
               </e>
             </e>
             <e p="Entities" t="Include">
+              <e p="Renderer" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="MapEntitiesRenderer.cs" t="Include" />
+                  <e p="MapRenderEntityConfig.cs" t="Include" />
+                </e>
+              </e>
               <e p="Scripts" t="Include">
                 <e p="Component" t="Include">
                   <e p="IEntityComponent.cs" t="Include" />
@@ -34,9 +57,6 @@
                   <e p="Entity.cs" t="Include" />
                   <e p="IEntity.cs" t="Include" />
                   <e p="MonoEntity.cs" t="Include" />
-                </e>
-                <e p="Flags" t="Include">
-                  <e p="EntityFlag.cs" t="Include" />
                 </e>
                 <e p="System" t="Include">
                   <e p="EntityManager.cs" t="Include" />
@@ -59,10 +79,15 @@
                 </e>
               </e>
               <e p="Scripts" t="Include">
-                <e p="IMapRenderer.cs" t="Include" />
+                <e p="Abstractions" t="Include">
+                  <e p="IMapRenderer.cs" t="Include" />
+                </e>
+                <e p="Configs" t="Include">
+                  <e p="MapRenderConfig.cs" t="Include" />
+                  <e p="MapRenderPipelineConfig.cs" t="Include" />
+                </e>
                 <e p="MapRenderController.cs" t="Include" />
-                <e p="MapRenderPipeline.cs" t="Include" />
-                <e p="MapRenderPipelineConfig.cs" t="Include" />
+                <e p="MapRendererPipeline.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -125,6 +150,11 @@
               </e>
             </e>
             <e p="Readme.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Tools" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Debugger.cs" t="Include" />
           </e>
         </e>
       </e>

@@ -8,9 +8,9 @@ namespace Prototype.GameEngine
 {
     public sealed class MonoEntity : SerializedMonoBehaviour, IEntity
     {
-        public IGameSystem CurrentGameSystem
+        public IGameSystem GameSystem
         {
-            get { return this.entity.CurrentGameSystem; }
+            get { return this.entity.GameSystem; }
         }
 
         [ReadOnly]
@@ -35,21 +35,6 @@ namespace Prototype.GameEngine
             return this.entity.GetComponents<T>();
         }
 
-        void IEntity.AddFlag(EntityFlag entityFlag)
-        {
-            this.entity.AddFlag(entityFlag);
-        }
-
-        void IEntity.RemoveFlag(EntityFlag entityFlag)
-        {
-            this.entity.RemoveFlag(entityFlag);
-        }
-
-        bool IEntity.ContainsFlag(EntityFlag entityFlag)
-        {
-            return this.entity.ContainsFlag(entityFlag);
-        }
-
         void IEntity.BindContext(IGameSystem gameSystem)
         {
             this.entity.BindContext(gameSystem);
@@ -68,7 +53,6 @@ namespace Prototype.GameEngine
         private void InitializeEntity()
         {
             this.entity = new Entity();
-            this.entity.AddFlag(this.parameters.initialFlags);
 
             var components = this.parameters.initialComponents;
             for (int i = 0, count = components.Length; i < count; i++)
@@ -84,9 +68,6 @@ namespace Prototype.GameEngine
         [Serializable]
         public sealed class Parameters
         {
-            [SerializeField]
-            public EntityFlag initialFlags;
-            
             [SerializeField]
             public MonoBehaviour[] initialComponents;
         }

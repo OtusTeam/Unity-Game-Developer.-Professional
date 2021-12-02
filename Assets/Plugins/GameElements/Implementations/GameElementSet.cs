@@ -1,11 +1,13 @@
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace GameElements
 {
     /// <inheritdoc cref="IGameElementSet"/>
     public sealed class GameElementSet : GameElement, IGameElementSet
     {
-        private IGameSystem currentGameSystem;
+        [CanBeNull]
+        private IGameSystem gameSystem;
 
         private readonly HashSet<object> elements;
 
@@ -26,11 +28,11 @@ namespace GameElements
                 return false;
             }
 
-            if (this.currentGameSystem != null)
+            if (this.gameSystem != null)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Setup(this.currentGameSystem);
+                    gameElement.Setup(this.gameSystem);
                 }    
             }
 
@@ -59,8 +61,7 @@ namespace GameElements
 
         protected override void OnSetup(IGameSystem system)
         {
-            base.OnSetup(system);
-            this.currentGameSystem = system;
+            this.gameSystem = system;
             foreach (var element in this.elements)
             {
                 if (element is IGameElement gameElement)
@@ -72,7 +73,6 @@ namespace GameElements
 
         protected override void OnDispose()
         {
-            base.OnDispose();
             foreach (var element in this.elements)
             {
                 if (element is IGameElement gameElement)

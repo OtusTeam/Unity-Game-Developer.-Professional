@@ -1,29 +1,32 @@
 using System;
+using JetBrains.Annotations;
 
 namespace GameElements
 {
     public abstract class GameController : GameElement
     {
-        protected IGameSystem CurrentGameSystem { get; private set; }
-        
+        [CanBeNull]
+        protected IGameSystem GameSystem { get; private set; }
+
         #region Lifecycle
 
         protected sealed override void OnSetup(IGameSystem system)
         {
-            if (this.CurrentGameSystem != null)
+            if (this.GameSystem != null)
             {
                 throw new Exception($"{this.GetType().Name} is already setuped!");
             }
-            
-            this.CurrentGameSystem = system;
-            
+
+            this.GameSystem = system;
+
             system.OnGamePrepare += this.OnPrepareGame;
             system.OnGameReady += this.OnReadyGame;
             system.OnGameStart += this.OnStartGame;
             system.OnGamePause += this.OnPauseGame;
             system.OnGameResume += this.OnResumeGame;
             system.OnGameFinish += this.OnFinishGame;
-            
+            this.OnSetuped(system);
+
             var gameState = system.State;
             if (gameState >= GameState.FINISH)
             {
@@ -51,6 +54,10 @@ namespace GameElements
             {
                 this.OnPauseGame(this);
             }
+        }
+
+        protected virtual void OnSetuped(IGameSystem system)
+        {
         }
 
         protected virtual void OnPrepareGame(object sender)
@@ -81,20 +88,26 @@ namespace GameElements
         {
             base.OnDispose();
 
-            if (this.CurrentGameSystem == null)
+            if (this.GameSystem == null)
             {
                 return;
             }
-            
-            var system = this.CurrentGameSystem;
+
+            var system = this.GameSystem;
             system.OnGamePrepare -= this.OnPrepareGame;
             system.OnGameReady -= this.OnReadyGame;
             system.OnGameStart -= this.OnStartGame;
             system.OnGamePause -= this.OnPauseGame;
             system.OnGameResume -= this.OnResumeGame;
             system.OnGameFinish -= this.OnFinishGame;
+
+            this.OnDisposed();
         }
-        
+
+        protected virtual void OnDisposed()
+        {
+        }
+
         #endregion
     }
 }

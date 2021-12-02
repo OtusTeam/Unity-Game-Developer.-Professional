@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace GameElements
 {
     /// <inheritdoc cref="IGameElementLayer"/>
     public sealed class GameElementLayer : GameElement, IGameElementLayer
     {
-        private IGameSystem currentGameSystem;
+        [CanBeNull]
+        private IGameSystem gameSystem;
         
         private readonly Dictionary<Type, object> elementMap;
 
@@ -30,11 +32,11 @@ namespace GameElements
 
             this.elementMap.Add(type, element);
             
-            if (this.currentGameSystem != null)
+            if (this.gameSystem != null)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Setup(this.currentGameSystem);
+                    gameElement.Setup(this.gameSystem);
                 }
             }
             
@@ -76,8 +78,7 @@ namespace GameElements
 
         protected override void OnSetup(IGameSystem system)
         {
-            base.OnSetup(system);
-            this.currentGameSystem = system;
+            this.gameSystem = system;
             foreach (var element in this.elementMap.Values)
             {
                 if (element is IGameElement gameElement)
@@ -89,9 +90,7 @@ namespace GameElements
 
         protected override void OnDispose()
         {
-            base.OnDispose();
-            var elements = this.elementMap.Values;
-            foreach (var element in elements)
+            foreach (var element in this.elementMap.Values)
             {
                 if (element is IGameElement gameElement)
                 {

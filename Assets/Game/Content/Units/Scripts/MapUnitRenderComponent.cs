@@ -1,0 +1,12 @@
+using Prototype.GUI;
+using UnityEngine;
+
+namespace Prototype.GameEngine
+{
+    public sealed class MapUnitRenderComponent : MonoBehaviour, IMapRenderer
+    {
+        public void Render(Transform plane)
+        {
+        }
+    }
+}

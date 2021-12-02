@@ -2,14 +2,7 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public interface IPositionComponent
-    {
-        Vector3 GetPosition();
-
-        void SetPosition(Vector3 position);
-    }
-    
-    public sealed class PositionComponent : MonoEntityComponent, IPositionComponent
+    public sealed class PositionComponent : MonoEntityComponent
     {
         [SerializeField]
         private Transform target;

@@ -45,14 +45,12 @@ namespace GameElements.Unity
 
         protected override void OnSetup(IGameSystem system)
         {
-            base.OnSetup(system);
             IGameElement gameElement = this.set;
             gameElement.Setup(system);
         }
 
         protected override void OnDispose()
         {
-            base.OnDispose();
             IGameElement gameElement = this.set;
             gameElement.Dispose();
         }

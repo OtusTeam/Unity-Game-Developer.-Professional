@@ -2,14 +2,7 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public interface IRotationComponent
-    {
-        float GetRotation();
-
-        void SetRotation(float rotation);
-    }
-    
-    public sealed class RotationComponent : MonoBehaviour, IRotationComponent
+    public sealed class RotationComponent : MonoBehaviour
     {
         [SerializeField]
         private Transform targetTransform;

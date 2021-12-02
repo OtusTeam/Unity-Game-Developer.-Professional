@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Prototype.GUI
+namespace Prototype.GameInterface
 {
     [CreateAssetMenu(
         fileName = "MapRendererPipelineConfig",

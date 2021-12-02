@@ -1,4 +1,4 @@
-using Prototype.GUI;
+using Prototype.GameInterface;
 
 namespace Prototype.GameEngine
 {

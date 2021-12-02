@@ -1,7 +1,7 @@
 using GameElements.Unity;
 using UnityEngine;
 
-namespace Prototype.GUI
+namespace Prototype.GameInterface
 {
     public sealed class MinimapAnimationController : MonoGameController
     {

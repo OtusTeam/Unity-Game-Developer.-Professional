@@ -1,7 +1,7 @@
 using GameElements;
 using UnityEngine;
 
-namespace Prototype.GUI
+namespace Prototype.GameInterface
 {
     public sealed class MapRendererPipeline : IMapRenderer, IGameElement
     {

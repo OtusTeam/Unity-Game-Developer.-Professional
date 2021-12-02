@@ -1,8 +1,11 @@
+using JetBrains.Annotations;
+
 namespace Prototype.GameEngine
 {
     public interface IEntityComponent
     {
-        public IEntity CurrentEntity { get; }
+        [CanBeNull]
+        public IEntity Entity { get; }
 
         void BindEntity(IEntity entity);
 

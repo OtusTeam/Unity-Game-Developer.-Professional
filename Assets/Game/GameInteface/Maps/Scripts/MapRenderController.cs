@@ -2,7 +2,7 @@ using GameElements;
 using GameElements.Unity;
 using UnityEngine;
 
-namespace Prototype.GUI
+namespace Prototype.GameInterface
 {
     public sealed class MapRenderController : MonoGameController
     {

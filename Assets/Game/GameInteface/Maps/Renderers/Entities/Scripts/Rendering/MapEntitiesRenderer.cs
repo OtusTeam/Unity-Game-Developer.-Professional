@@ -6,7 +6,7 @@ namespace Prototype.GameInterface
 {
     public sealed class MapEntitiesRenderer : GameController, IMapRenderer
     {
-        private readonly MapEntityLayerRender render;
+        private readonly MapEntityLayerRender layerRender;
 
         private readonly MapEntityLayerProvider layerProvider;
 
@@ -14,20 +14,20 @@ namespace Prototype.GameInterface
         
         public MapEntitiesRenderer(MapEntity prefab)
         {
-            this.render = new MapEntityLayerRender();
+            this.layerRender = new MapEntityLayerRender();
             this.layerProvider = new MapEntityLayerProvider(prefab);
         }
 
         public void Render(RectTransform layerTransform)
         {
-            if (this.render == null)
+            if (this.layerRender == null)
             {
                 DebugLogger.Error("Render is not initialized!");
                 return;
             }
 
             var mapLayer = this.layerProvider.Provide(layerTransform);
-            this.render.Render(mapLayer);
+            this.layerRender.Render(mapLayer);
         }
 
         protected override bool Initialize(IGameSystem system)
@@ -37,7 +37,7 @@ namespace Prototype.GameInterface
                 return false;
             }
 
-            this.cullController = new MapEntityCullController(entityManager, this.render);
+            this.cullController = new MapEntityCullController(entityManager, this.layerRender);
             return true;
         }
 

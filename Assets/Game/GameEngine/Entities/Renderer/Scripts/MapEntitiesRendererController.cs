@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class MapEntitiesRendererElement : GameController, IMapRenderer
+    public sealed class MapEntitiesRendererController : GameController, IMapRenderer
     {
-        private MapEntitiesRenderController renderer;
+        private MapEntitiesCullRenderer renderer;
 
         public void Render(RectTransform plane)
         {
@@ -14,13 +14,17 @@ namespace Prototype.GameEngine
             {
                 this.renderer.Render(plane);
             }
+            else
+            {
+                DebugLogger.Error("Render is not initialized!");
+            }
         }
         
         protected override bool Initialize(IGameSystem system)
         {
             if (system.TryGetElement(out IEntityManager entityManager))
             {
-                this.renderer = new MapEntitiesRenderController(entityManager);
+                this.renderer = new MapEntitiesCullRenderer(entityManager);
                 return true;
             }
 

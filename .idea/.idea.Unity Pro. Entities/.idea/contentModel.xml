@@ -60,9 +60,8 @@
                 </e>
                 <e p="Scripts" t="Include">
                   <e p="MapEntitiesCullRenderer.cs" t="Include" />
-                  <e p="MapEntitiesRenderController.cs" t="Include" />
                   <e p="MapEntitiesRenderer.cs" t="Include" />
-                  <e p="MapEntitiesRendererElement.cs" t="Include" />
+                  <e p="MapEntitiesRendererController.cs" t="Include" />
                 </e>
               </e>
               <e p="Scripts" t="Include">

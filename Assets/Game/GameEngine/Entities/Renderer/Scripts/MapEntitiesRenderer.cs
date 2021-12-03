@@ -6,8 +6,6 @@ namespace Prototype.GameEngine
 {
     public sealed class MapEntitiesRenderer : IMapRenderer
     {
-        private readonly IEntityManager entityManager;
-
         private readonly List<MapEntityRenderComponent> addedEntities;
 
         private readonly List<MapEntityRenderComponent> processingEntities;
@@ -16,32 +14,45 @@ namespace Prototype.GameEngine
 
         private readonly List<MapEntityRenderComponent> cache;
 
-        public MapEntitiesRenderer(IEntityManager entityManager)
+        public MapEntitiesRenderer()
         {
-            this.entityManager = entityManager;
             this.addedEntities = new List<MapEntityRenderComponent>();
             this.processingEntities = new List<MapEntityRenderComponent>();
             this.removedEntities = new List<MapEntityRenderComponent>();
             this.cache = new List<MapEntityRenderComponent>();
         }
 
-        public void Start()
+        public void AddEntities(IList<IEntity> entities)
         {
-            this.entityManager.OnEntityAdded += this.OnEntityAdded;
-            this.entityManager.OnEntityRemoved += this.OnEntityRemoved;
-
-            var entities = this.entityManager.GetEntities();
             for (int i = 0, count = entities.Count; i < count; i++)
             {
                 var entity = entities[i];
-                
+                this.AddEntity(entity);
+            }
+        }
+        
+        public void AddEntity(IEntity entity)
+        {
+            if (entity.TryGetComponent(out MapEntityRenderComponent component))
+            {
+                this.addedEntities.Add(component);
+                this.processingEntities.Add(component);
             }
         }
 
-        public void Stop()
+        public void RemoveEntity(IEntity entity)
         {
-            this.entityManager.OnEntityAdded -= this.OnEntityAdded;
-            this.entityManager.OnEntityRemoved -= this.OnEntityRemoved;
+            if (entity.TryGetComponent(out MapEntityRenderComponent component))
+            {
+                this.removedEntities.Add(component);
+                this.processingEntities.Remove(component);
+            }
+        }
+
+        public void ClearEntities()
+        {
+            this.removedEntities.AddRange(this.processingEntities);
+            this.processingEntities.Clear();
         }
 
         public void Render(RectTransform plane)
@@ -66,20 +77,6 @@ namespace Prototype.GameEngine
                 }
             }
         }
-
-        #region Callbacks
-
-        private void OnEntityAdded(IEntity entity)
-        {
-            this.AddEntity(entity);
-        }
-        
-        private void OnEntityRemoved(IEntity entity)
-        {
-            this.RemoveEntity(entity);
-        }
-
-        #endregion
 
         private void UpdateRender(RectTransform plane)
         {
@@ -109,24 +106,6 @@ namespace Prototype.GameEngine
                 {
                     component.OnStartRender(plane);
                 }
-            }
-        }
-
-        private void AddEntity(IEntity entity)
-        {
-            if (entity.TryGetComponent(out MapEntityRenderComponent component))
-            {
-                this.addedEntities.Add(component);
-                this.processingEntities.Add(component);
-            }
-        }
-
-        private void RemoveEntity(IEntity entity)
-        {
-            if (entity.TryGetComponent(out MapEntityRenderComponent component))
-            {
-                this.removedEntities.Add(component);
-                this.processingEntities.Remove(component);
             }
         }
     }

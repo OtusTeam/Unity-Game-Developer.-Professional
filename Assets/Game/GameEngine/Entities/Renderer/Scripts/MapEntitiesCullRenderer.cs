@@ -7,18 +7,12 @@ namespace Prototype.GameEngine
     {
         private readonly IEntityManager entityManager;
 
-        private MapEntitiesRenderer renderer;
-        
+        private readonly MapEntitiesRenderer renderer;
+
         public MapEntitiesCullRenderer(IEntityManager entityManager)
         {
             this.entityManager = entityManager;
-        }
-        
-        
-
-        public void Render(RectTransform plane)
-        {
-            
+            this.renderer = new MapEntitiesRenderer();
         }
 
         public void Start()
@@ -27,103 +21,33 @@ namespace Prototype.GameEngine
             this.entityManager.OnEntityRemoved += this.OnEntityRemoved;
 
             var entities = this.entityManager.GetEntities();
-            for (int i = 0, count = entities.Count; i < count; i++)
-            {
-                var entity = entities[i];
-                
-            }
+            this.renderer.AddEntities(entities);
         }
 
         public void Stop()
         {
             this.entityManager.OnEntityAdded -= this.OnEntityAdded;
             this.entityManager.OnEntityRemoved -= this.OnEntityRemoved;
+            this.renderer.ClearEntities();
         }
 
         public void Render(RectTransform plane)
         {
-            this.StartRender(plane);
-            this.UpdateRender(plane);
-            this.EndRender(plane);
-        }
-
-        private void StartRender(RectTransform plane)
-        {
-            this.cache.Clear();
-            this.cache.AddRange(this.addedEntities);
-            this.addedEntities.Clear();
-
-            for (int i = 0, count = this.cache.Count; i < count; i++)
-            {
-                var entity = this.cache[i];
-                if (entity.TryGetComponent(out MapEntityRenderComponent component))
-                {
-                    component.OnStartRender(plane);
-                }
-            }
+            this.renderer.Render(plane);
         }
 
         #region Callbacks
 
         private void OnEntityAdded(IEntity entity)
         {
-            this.AddEntity(entity);
+            this.renderer.AddEntity(entity);
         }
-        
+
         private void OnEntityRemoved(IEntity entity)
         {
-            this.RemoveEntity(entity);
+            this.renderer.RemoveEntity(entity);
         }
 
         #endregion
-
-        private void UpdateRender(RectTransform plane)
-        {
-            this.cache.Clear();
-            this.cache.AddRange(this.processingEntities);
-
-            for (int i = 0, count = this.cache.Count; i < count; i++)
-            {
-                var entity = this.cache[i];
-                if (entity.TryGetComponent(out MapEntityRenderComponent component))
-                {
-                    component.OnUpdateRender(plane);
-                }
-            }
-        }
-
-        private void EndRender(RectTransform plane)
-        {
-            this.cache.Clear();
-            this.cache.AddRange(this.removedEntities);
-            this.removedEntities.Clear();
-
-            for (int i = 0, count = this.cache.Count; i < count; i++)
-            {
-                var entity = this.cache[i];
-                if (entity.TryGetComponent(out MapEntityRenderComponent component))
-                {
-                    component.OnStartRender(plane);
-                }
-            }
-        }
-
-        private void AddEntity(IEntity entity)
-        {
-            if (entity.TryGetComponent(out MapEntityRenderComponent component))
-            {
-                this.addedEntities.Add(component);
-                this.processingEntities.Add(component);
-            }
-        }
-
-        private void RemoveEntity(IEntity entity)
-        {
-            if (entity.TryGetComponent(out MapEntityRenderComponent component))
-            {
-                this.removedEntities.Add(component);
-                this.processingEntities.Remove(component);
-            }
-        }
     }
 }

@@ -10,33 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Запустилось">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Gas.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Gas/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Gas/Materials/Gas.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Gas/Materials/Gas.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Gas/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Gas/Scripts/MapGasRenderComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Gas/Scripts/MapGasRenderComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Minerals.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Minerals/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Minerals/Materials/Minerals.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Minerals/Materials/Minerals.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Minerals/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Minerals/Scripts/MapMineralsRenderComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Minerals/Scripts/MapMineralsRenderComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials/Unit.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials/Unit.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Teams/Configs/TeamConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Teams/Configs/TeamConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/World/Scripts/WorldVector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/World/Scripts/WorldVector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Minimap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Minimap.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Entity.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Entity.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesCullRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesCullRenderer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-    </list>
+    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Сделал миникарту" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,7 +162,7 @@
       <workItem from="1638428829222" duration="3497000" />
       <workItem from="1638432576869" duration="29048000" />
       <workItem from="1638503200294" duration="847000" />
-      <workItem from="1638504177198" duration="22130000" />
+      <workItem from="1638504177198" duration="22805000" />
     </task>
     <task id="LOCAL-00001" summary="Iniitial commit">
       <created>1638432596450</created>
@@ -288,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638530400413</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Сделал миникарту">
+      <created>1638533403470</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1638533403470</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +301,8 @@
     <MESSAGE value="Написал код для урока. Осталось продебажить" />
     <MESSAGE value="Дебажим" />
     <MESSAGE value="Запустилось" />
-    <option name="LAST_COMMIT_MESSAGE" value="Запустилось" />
+    <MESSAGE value="Сделал миникарту" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал миникарту" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="154" key="RiderGenerateDialog" timestamp="1638531020072">
@@ -331,10 +313,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638531423533" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638530401569">
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638533406934">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638530401569" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638533406934" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638506247702">
       <screen x="0" y="0" width="1440" height="900" />

@@ -17,5 +17,10 @@ namespace Prototype.GameEngine
             this.x = x;
             this.z = z;
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(x)}: {x}, {nameof(z)}: {z}";
+        }
     }
 }

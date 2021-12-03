@@ -1,6 +1,5 @@
 using GameElements;
 using Prototype.GameEngine;
-using UnityEngine;
 
 namespace Prototype.GameInterface
 {
@@ -22,13 +21,13 @@ namespace Prototype.GameInterface
         
         protected override bool Initialize(IGameSystem system)
         {
-            if (system.TryGetService(out IEntityManager entityManager))
+            if (!system.TryGetService(out IEntityManager entityManager))
             {
-                this.renderer = new MapEntitiesCullRenderer(entityManager);
-                return true;
+                return false;
             }
 
-            return false;
+            this.renderer = new MapEntitiesCullRenderer(entityManager);
+            return true;
         }
 
         protected override void OnStartGame()

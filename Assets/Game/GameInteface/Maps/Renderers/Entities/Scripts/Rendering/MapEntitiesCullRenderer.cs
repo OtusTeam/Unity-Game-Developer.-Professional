@@ -1,5 +1,4 @@
 using Prototype.GameEngine;
-using UnityEngine;
 
 namespace Prototype.GameInterface
 {

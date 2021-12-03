@@ -11,16 +11,6 @@
       <e p="Assets" t="Include">
         <e p="Game" t="Include">
           <e p="Content" t="Include">
-            <e p="Gas" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="MapGasRenderComponent.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Minerals" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="MapMineralsRenderComponent.cs" t="Include" />
-              </e>
-            </e>
             <e p="Units" t="Include">
               <e p="Scripts" t="Include">
                 <e p="MapUnitRenderComponent.cs" t="Include" />

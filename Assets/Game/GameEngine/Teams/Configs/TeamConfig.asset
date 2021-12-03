@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infos:
   - id: 0
-    color: {r: 0, g: 0.105446815, b: 1, a: 1}
+    color: {r: 0.9607843, g: 0.36862746, b: 0.105882354, a: 1}
   - id: 1
     color: {r: 1, g: 0.69112855, b: 0, a: 1}
   - id: 2
-    color: {r: 0.9056604, g: 0, b: 0, a: 1}
+    color: {r: 0, g: 0, b: 0, a: 1}

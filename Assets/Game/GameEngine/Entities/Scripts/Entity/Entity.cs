@@ -35,7 +35,7 @@ namespace Prototype.GameEngine
             
             if (component is IEntityComponent entityComponent)
             {
-                entityComponent.ResetEntity();
+                entityComponent.UnbindEntity();
             }
         }
 
@@ -68,20 +68,20 @@ namespace Prototype.GameEngine
 
         private void Awake()
         {
-            this.InitializeEntity();
+            this.componentLayer = new GameElementLayer();
+            this.InitializeComponentLayer();
         }
 
-        private void InitializeEntity()
+        private void InitializeComponentLayer()
         {
-            this.componentLayer = new GameElementLayer();
-
+            IEntity entity = this;
             var components = this.parameters.initialComponents;
             for (int i = 0, count = components.Length; i < count; i++)
             {
                 var component = components[i];
                 if (component != null)
                 {
-                    this.componentLayer.AddElement(component);
+                    entity.AddComponent(component);
                 }
             }
         }

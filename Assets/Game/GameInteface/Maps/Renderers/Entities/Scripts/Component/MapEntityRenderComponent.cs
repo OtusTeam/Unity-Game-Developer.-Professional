@@ -44,14 +44,6 @@ namespace Prototype.GameInterface
         
         private MapEntityLayer.Args ProvideArgs()
         {
-            var entity = this.Entity;
-            var gameSystem = this.GameSystem;
-            gameSystem.GetService<WorldArea>();
-            
-            
-            
-            
-            
             var worldArea = this.worldArea.Value;
 
             var worldPosition = this.positionComponent.Value.GetPosition();

@@ -4,6 +4,6 @@ namespace Prototype.GameEngine
     {
         void BindEntity(IEntity entity);
 
-        void ResetEntity();
+        void UnbindEntity();
     }
 }

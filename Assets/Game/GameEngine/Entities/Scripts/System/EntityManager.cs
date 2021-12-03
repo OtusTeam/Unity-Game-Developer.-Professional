@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class EntityManager : MonoBehaviour, IEntityManager
+    public sealed class EntityManager : MonoBehaviour, IEntityManager, IGameElement
     {
         private const string ENTITY_TAG = "Entity";
         
@@ -58,6 +58,16 @@ namespace Prototype.GameEngine
                     this.entitySet.AddElement(entity);
                 }
             }
+        }
+
+        void IGameElement.BindGame(IGameSystem system)
+        {
+            this.entitySet.BindGame(system);
+        }
+
+        void IGameElement.UnbindGame()
+        {
+            this.entitySet.UnbindGame();
         }
     }
 }

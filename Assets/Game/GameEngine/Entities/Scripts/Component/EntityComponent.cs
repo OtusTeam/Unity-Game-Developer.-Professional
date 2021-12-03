@@ -15,7 +15,7 @@ namespace Prototype.GameEngine
             this.Entity = entity;
         }
 
-        void IEntityComponent.ResetEntity()
+        void IEntityComponent.UnbindEntity()
         {
             this.Entity = null;
         }

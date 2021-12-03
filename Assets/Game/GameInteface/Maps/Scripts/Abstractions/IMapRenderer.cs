@@ -4,6 +4,6 @@ namespace Prototype.GameInterface
 {
     public interface IMapRenderer
     {
-        void Render(Transform plane);
+        void Render(RectTransform plane);
     }
 }

@@ -1,33 +1,93 @@
 using System;
-using JetBrains.Annotations;
 
 namespace GameElements.Unity
 {
     public abstract class MonoGameController : MonoGameElement
     {
-        [CanBeNull]
-        protected IGameSystem GameSystem { get; private set; }
-
+        private IGameSystem gameSystem;
+        
         #region Lifecycle
 
-        protected sealed override void OnSetup(IGameSystem system)
+        protected sealed override void BindGame(IGameSystem system)
         {
-            if (this.GameSystem != null)
+            if (this.gameSystem != null)
             {
-                throw new Exception($"{this.GetType().Name} is already setuped!");
+                throw new Exception($"{this.GetType().Name} is already bound!");
             }
 
-            this.GameSystem = system;
+            this.gameSystem = system;
+            this.OnBindGame(system);
+            this.SynchonizeWithGame(system);
+        }
+        
+        protected virtual void OnBindGame(IGameSystem system)
+        {
+        }
 
-            system.OnGamePrepare += this.OnPrepareGame;
-            system.OnGameReady += this.OnReadyGame;
-            system.OnGameStart += this.OnStartGame;
-            system.OnGamePause += this.OnPauseGame;
-            system.OnGameResume += this.OnResumeGame;
-            system.OnGameFinish += this.OnFinishGame;
+        private void OnInitialize()
+        {
+            if (this.Initialize(this.gameSystem))
+            {
+                this.gameSystem.OnGameReady += this.OnReadyGame;
+                this.gameSystem.OnGameStart += this.OnStartGame;
+                this.gameSystem.OnGamePause += this.OnPauseGame;
+                this.gameSystem.OnGameResume += this.OnResumeGame;
+                this.gameSystem.OnGameFinish += this.OnFinishGame;
+            }
+        }
+
+        protected virtual bool Initialize(IGameSystem system)
+        {
+            return true;
+        }
+
+        protected virtual void OnReadyGame()
+        {
+        }
+
+        protected virtual void OnStartGame()
+        {
+        }
+
+        protected virtual void OnPauseGame()
+        {
+        }
+
+        protected virtual void OnResumeGame()
+        {
+        }
+
+        protected virtual void OnFinishGame()
+        {
+        }
+
+        protected sealed override void UnbindGame()
+        {
+            if (this.gameSystem == null)
+            {
+                return;
+            }
             
-            this.OnSetuped(system);
+            var system = this.gameSystem;
+            this.gameSystem = null;
+            
+            system.OnGameInitialize -= this.OnInitialize;
+            system.OnGameReady -= this.OnReadyGame;
+            system.OnGameStart -= this.OnStartGame;
+            system.OnGamePause -= this.OnPauseGame;
+            system.OnGameResume -= this.OnResumeGame;
+            system.OnGameFinish -= this.OnFinishGame;
+            this.OnUnbindGame();
+        }
 
+        protected virtual void OnUnbindGame()
+        {
+        }
+
+        #endregion
+        
+        private void SynchonizeWithGame(IGameSystem system)
+        {
             var gameState = system.State;
             if (gameState >= GameState.FINISH)
             {
@@ -36,77 +96,37 @@ namespace GameElements.Unity
 
             if (gameState < GameState.PREPARE)
             {
+                system.OnGameInitialize += this.OnInitialize;
                 return;
             }
 
-            this.OnPrepareGame(this);
-
-            if (gameState >= GameState.READY)
+            if (!this.Initialize(system))
             {
-                this.OnReadyGame(this);
+                return;
             }
 
-            if (gameState >= GameState.PLAY)
+            if (gameState < GameState.READY)
             {
-                this.OnStartGame(this);
+                system.OnGameReady += this.OnReadyGame;
+                return;
+            }
+            
+            this.OnReadyGame();
+            if (gameState < GameState.PLAY)
+            {
+                system.OnGameStart += this.OnStartGame;
+                return;
             }
 
+            this.OnStartGame();
+            system.OnGamePause += this.OnPauseGame;
+            system.OnGameResume += this.OnResumeGame;
+            system.OnGameFinish += this.OnFinishGame;
+            
             if (gameState == GameState.PAUSE)
             {
-                this.OnPauseGame(this);
+                this.OnPauseGame();
             }
         }
-
-        protected virtual void OnSetuped(IGameSystem system)
-        {
-        }
-
-        protected virtual void OnPrepareGame(object sender)
-        {
-        }
-
-        protected virtual void OnReadyGame(object sender)
-        {
-        }
-
-        protected virtual void OnStartGame(object sender)
-        {
-        }
-
-        protected virtual void OnPauseGame(object sender)
-        {
-        }
-
-        protected virtual void OnResumeGame(object sender)
-        {
-        }
-
-        protected virtual void OnFinishGame(object sender)
-        {
-        }
-
-        protected sealed override void OnDispose()
-        {
-            if (this.GameSystem == null)
-            {
-                return;
-            }
-
-            var system = this.GameSystem;
-            system.OnGamePrepare -= this.OnPrepareGame;
-            system.OnGameReady -= this.OnReadyGame;
-            system.OnGameStart -= this.OnStartGame;
-            system.OnGamePause -= this.OnPauseGame;
-            system.OnGameResume -= this.OnResumeGame;
-            system.OnGameFinish -= this.OnFinishGame;
-            
-            this.OnDisposed();
-        }
-
-        protected virtual void OnDisposed()
-        {
-        }
-
-        #endregion
     }
 }

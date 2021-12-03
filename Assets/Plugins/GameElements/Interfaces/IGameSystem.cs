@@ -1,9 +1,43 @@
+using System;
+
 namespace GameElements
 {
-    /// <summary>
-    ///     <para>A game context contract.</para>
-    /// </summary>
-    public interface IGameSystem : IGameObservable, IGameStateable, IGameElementLayer
+    public interface IGameSystem
     {
+        GameState State { get; }
+        
+        event Action OnGameInitialize;
+        
+        event Action OnGameReady;
+        
+        event Action OnGameStart;
+        
+        event Action OnGamePause;
+
+        event Action OnGameResume;
+
+        event Action OnGameFinish;
+
+        void InitializeGame();
+
+        void ReadyGame();
+
+        void StartGame();
+
+        void PauseGame();
+        
+        void ResumeGame();
+    
+        void FinishGame();
+
+        void DestroyGame();
+
+        bool AddElement(object element);
+
+        bool RemoveElement(object element);
+
+        T GetElement<T>();
+
+        bool TryGetElement<T>(out T element);
     }
 }

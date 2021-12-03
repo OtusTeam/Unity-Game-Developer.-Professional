@@ -8,17 +8,17 @@ namespace GameElements
     {
         #region Event
 
-        public event Action<object> OnGamePrepare;
+        public event Action OnGameInitialize;
 
-        public event Action<object> OnGameReady;
+        public event Action OnGameReady;
 
-        public event Action<object> OnGameStart;
+        public event Action OnGameStart;
 
-        public event Action<object> OnGamePause;
+        public event Action OnGamePause;
 
-        public event Action<object> OnGameResume;
+        public event Action OnGameResume;
 
-        public event Action<object> OnGameFinish;
+        public event Action OnGameFinish;
 
         #endregion
         
@@ -34,7 +34,7 @@ namespace GameElements
             this.elementMap = new Dictionary<Type, object>();
         }
 
-        public void PrepareGame(object sender)
+        public void InitializeGame()
         {
             if (this.State != GameState.CREATE)
             {
@@ -42,15 +42,15 @@ namespace GameElements
             }
 
             this.State = GameState.PREPARE;
-            this.OnPrepareGame(sender);
-            this.OnGamePrepare?.Invoke(sender);
+            this.OnInitializeGame();
+            this.OnGameInitialize?.Invoke();
         }
 
-        protected virtual void OnPrepareGame(object sender)
+        protected virtual void OnInitializeGame()
         {
         }
 
-        public void ReadyGame(object sender)
+        public void ReadyGame()
         {
             if (this.State != GameState.PREPARE)
             {
@@ -58,15 +58,15 @@ namespace GameElements
             }
 
             this.State = GameState.READY;
-            this.OnReadyGame(this);
-            this.OnGameReady?.Invoke(sender);
+            this.OnReadyGame();
+            this.OnGameReady?.Invoke();
         }
 
-        protected virtual void OnReadyGame(object sender)
+        protected virtual void OnReadyGame()
         {
         }
 
-        public void StartGame(object sender)
+        public void StartGame()
         {
             if (this.State != GameState.READY)
             {
@@ -74,15 +74,15 @@ namespace GameElements
             }
 
             this.State = GameState.PLAY;
-            this.OnStartGame(sender);
-            this.OnGameStart?.Invoke(sender);
+            this.OnStartGame();
+            this.OnGameStart?.Invoke();
         }
 
-        protected virtual void OnStartGame(object sender)
+        protected virtual void OnStartGame()
         {
         }
 
-        public void PauseGame(object sender)
+        public void PauseGame()
         {
             if (this.State == GameState.PAUSE)
             {
@@ -90,15 +90,15 @@ namespace GameElements
             }
 
             this.State = GameState.PAUSE;
-            this.OnPauseGame(sender);
-            this.OnGamePause?.Invoke(sender);
+            this.OnPauseGame();
+            this.OnGamePause?.Invoke();
         }
 
-        protected virtual void OnPauseGame(object sender)
+        protected virtual void OnPauseGame()
         {
         }
 
-        public void ResumeGame(object sender)
+        public void ResumeGame()
         {
             if (this.State != GameState.PAUSE)
             {
@@ -107,14 +107,14 @@ namespace GameElements
 
             this.State = GameState.PLAY;
             this.OnResumeGame();
-            this.OnGameResume?.Invoke(sender);
+            this.OnGameResume?.Invoke();
         }
 
         protected virtual void OnResumeGame()
         {
         }
 
-        public void FinishGame(object sender)
+        public void FinishGame()
         {
             if (this.State > GameState.FINISH)
             {
@@ -122,15 +122,15 @@ namespace GameElements
             }
 
             this.State = GameState.FINISH;
-            this.OnFinishGame(sender);
-            this.OnGameFinish?.Invoke(sender);
+            this.OnFinishGame();
+            this.OnGameFinish?.Invoke();
         }
 
-        protected virtual void OnFinishGame(object sender)
+        protected virtual void OnFinishGame()
         {
         }
 
-        public void DestroyGame(object sender)
+        public void DestroyGame()
         {
             if (this.State != GameState.FINISH)
             {
@@ -142,14 +142,14 @@ namespace GameElements
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Dispose();
+                    gameElement.UnbindGame();
                 }
             }
             
-            this.OnDestroyGame(sender);
+            this.OnDestroyGame();
         }
 
-        protected virtual void OnDestroyGame(object sender)
+        protected virtual void OnDestroyGame()
         {
         }
 
@@ -166,7 +166,7 @@ namespace GameElements
             this.elementMap.Add(type, element);
             if (element is IGameElement controller)
             {
-                controller.Setup(this);
+                controller.BindGame(this);
             }
 
             return true;
@@ -182,7 +182,7 @@ namespace GameElements
 
             if (element is IGameElement gameElement)
             {
-                gameElement.Dispose();
+                gameElement.UnbindGame();
             }
 
             return true;

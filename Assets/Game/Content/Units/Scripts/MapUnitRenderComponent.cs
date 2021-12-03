@@ -21,7 +21,7 @@ namespace Prototype.GameEngine
             public Color color;
         }
         
-        public void Render(Transform plane)
+        public void Render(RectTransform plane)
         {
             var positionComponent = this.Entity.GetComponent<PositionComponent>();
             positionComponent.GetPosition();

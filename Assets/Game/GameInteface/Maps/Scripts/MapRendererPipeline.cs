@@ -12,7 +12,7 @@ namespace Prototype.GameInterface
             this.orderedRenderers = orderedRenderers;
         }
             
-        public void Render(Transform plane)
+        public void Render(RectTransform plane)
         {
             for (int i = 0, count = this.orderedRenderers.Length; i < count; i++)
             {
@@ -21,26 +21,26 @@ namespace Prototype.GameInterface
             }
         }
             
-        void IGameElement.Setup(IGameSystem system)
+        void IGameElement.BindGame(IGameSystem system)
         {
             for (int i = 0, count = this.orderedRenderers.Length; i < count; i++)
             {
                 var renderer = this.orderedRenderers[i];
                 if (renderer is IGameElement gameElement)
                 {
-                    gameElement.Setup(system);
+                    gameElement.BindGame(system);
                 }
             }
         }
 
-        void IGameElement.Dispose()
+        void IGameElement.UnbindGame()
         {
             for (int i = 0, count = this.orderedRenderers.Length; i < count; i++)
             {
                 var renderer = this.orderedRenderers[i];
                 if (renderer is IGameElement gameElement)
                 {
-                    gameElement.Dispose();
+                    gameElement.UnbindGame();
                 }
             }
         }

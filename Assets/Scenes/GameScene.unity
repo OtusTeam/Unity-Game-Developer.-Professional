@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 743580210}
   - component: {fileID: 743580209}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background (Screenshoot)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2408,10 +2408,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   parameters:
+    initialFlags: 1
     initialComponents:
     - {fileID: 1780110363}
     - {fileID: 1115833628}
-    initialFlags: 1
 --- !u!1 &1991033532
 GameObject:
   m_ObjectHideFlags: 0

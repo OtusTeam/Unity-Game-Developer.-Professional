@@ -1,12 +1,9 @@
 using System.Collections.Generic;
-using JetBrains.Annotations;
 
 namespace GameElements
 {
-    /// <inheritdoc cref="IGameElementSet"/>
-    public sealed class GameElementSet : GameElement, IGameElementSet
+    public sealed class GameElementSet : GameElement
     {
-        [CanBeNull]
         private IGameSystem gameSystem;
 
         private readonly HashSet<object> elements;
@@ -32,7 +29,7 @@ namespace GameElements
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Setup(this.gameSystem);
+                    gameElement.BindGame(this.gameSystem);
                 }    
             }
 
@@ -41,17 +38,20 @@ namespace GameElements
 
         public bool RemoveElement(object element)
         {
-            if (this.elements.Remove(element))
+            if (!this.elements.Remove(element))
+            {
+                return false;
+            }
+
+            if (this.gameSystem != null)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Dispose();
-                }
-
-                return true;
+                    gameElement.UnbindGame();
+                }    
             }
-
-            return false;
+            
+            return true;
         }
 
         public bool ContainsElement(object element)
@@ -59,25 +59,25 @@ namespace GameElements
             return this.elements.Contains(element);
         }
 
-        protected override void OnSetup(IGameSystem system)
+        protected override void BindGame(IGameSystem system)
         {
             this.gameSystem = system;
             foreach (var element in this.elements)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Setup(system);
+                    gameElement.BindGame(system);
                 }
             }
         }
 
-        protected override void OnDispose()
+        protected override void UnbindGame()
         {
             foreach (var element in this.elements)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Dispose();
+                    gameElement.UnbindGame();
                 }
             }
         }

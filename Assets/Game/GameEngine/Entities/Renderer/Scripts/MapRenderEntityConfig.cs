@@ -6,7 +6,7 @@ namespace Prototype.GameEngine
     {
         public override IMapRenderer CreateRenderer()
         {
-            return new MapEntitiesRenderer();
+            return new MapEntitiesRendererController();
         }
     }
 }

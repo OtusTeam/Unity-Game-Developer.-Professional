@@ -1,8 +1,5 @@
 namespace GameElements
 {
-    /// <summary>
-    ///     <para>A game state.</para>
-    /// </summary>
     public enum GameState
     {
         CREATE = 1,
@@ -12,13 +9,5 @@ namespace GameElements
         PAUSE = 5,
         FINISH = 6,
         DESTROY = 7
-    }
-
-    /// <summary>
-    ///     <para>Provides a game state.</para>
-    /// </summary>
-    public interface IGameStateable
-    {
-        GameState State { get; }
     }
 }

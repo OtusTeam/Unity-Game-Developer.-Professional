@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace GameElements
 {
-    public static class GameElementUtils
+    internal static class GameElementUtils
     {
-        public static T FindValue<T>(Dictionary<Type, object> map)
+        internal static T FindValue<T>(Dictionary<Type, object> map)
         {
             return (T) FindValue(map, typeof(T));
         }
 
-        public static object FindValue(Dictionary<Type, object> map, Type requiredType)
+        internal static object FindValue(Dictionary<Type, object> map, Type requiredType)
         {
             if (map.ContainsKey(requiredType))
             {
@@ -26,10 +26,10 @@ namespace GameElements
                 }
             }
 
-            throw new Exception("Value is not found!");
+            throw new Exception($"Value of type {requiredType.Name} is not found!");
         }
 
-        public static bool TryFindValue<T>(Dictionary<Type, object> map, out T item)
+        internal static bool TryFindValue<T>(Dictionary<Type, object> map, out T item)
         {
             var requiredType = typeof(T);
             if (map.ContainsKey(requiredType))
@@ -48,7 +48,7 @@ namespace GameElements
                 }
             }
 
-            item = default(T);
+            item = default;
             return false;
         }
     }

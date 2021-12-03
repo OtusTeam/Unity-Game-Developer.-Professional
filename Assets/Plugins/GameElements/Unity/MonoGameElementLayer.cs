@@ -2,8 +2,7 @@ using UnityEngine;
 
 namespace GameElements.Unity
 {
-    /// <inheritdoc cref="IGameElementLayer"/>
-    public sealed class MonoGameElementLayer : MonoGameElement, IGameElementLayer
+    public sealed class MonoGameElementLayer : MonoGameElement
     {
         [SerializeField]
         private MonoBehaviour[] gameElements;
@@ -49,18 +48,18 @@ namespace GameElements.Unity
             }
         }
 
-        protected override void OnSetup(IGameSystem system)
+        protected override void BindGame(IGameSystem system)
         {
             IGameElement gameElement = this.layer;
-            gameElement.Setup(system);
+            gameElement.BindGame(system);
         }
 
-        protected override void OnDispose()
+        protected override void UnbindGame()
         {
             IGameElement gameElement = this.layer;
-            gameElement.Dispose();
+            gameElement.UnbindGame();
         }
-
+        
         #endregion
     }
 }

@@ -7,7 +7,7 @@ namespace Prototype.GameInterface
     public sealed class MapRenderController : MonoGameController
     {
         [SerializeField]
-        private Transform plane;
+        private RectTransform plane;
         
         [SerializeField]
         private MapRenderConfig config;
@@ -26,19 +26,16 @@ namespace Prototype.GameInterface
             this.mapRenderer = this.config.CreateRenderer();
         }
 
-        protected override void OnSetuped(IGameSystem system)
+        protected override void OnBindGame(IGameSystem system)
         {
-            base.OnSetuped(system);
             if (this.mapRenderer is IGameElement gameElement)
             {
-                gameElement.Setup(system);
+                gameElement.BindGame(system);
             }
         }
-
-        protected override void OnStartGame(object sender)
+        
+        protected override void OnStartGame()
         {
-            base.OnStartGame(sender);
-            
             this.mapRenderer.Render(this.plane);
             this.currentTime = this.renderPeriod;
             this.enabled = true;
@@ -56,18 +53,17 @@ namespace Prototype.GameInterface
             this.currentTime += this.renderPeriod;
         }
 
-        protected override void OnFinishGame(object sender)
+        protected override void OnFinishGame()
         {
-            base.OnFinishGame(sender);
+            base.OnFinishGame();
             this.enabled = false;
         }
-        
-        protected override void OnDisposed()
+
+        protected override void OnUnbindGame()
         {
-            base.OnDisposed();
             if (this.mapRenderer is IGameElement gameElement)
             {
-                gameElement.Dispose();
+                gameElement.UnbindGame();
             }
         }
     }

@@ -5,7 +5,7 @@ namespace Prototype.GameEngine
 {
     public sealed class MapGasRenderComponent : MonoBehaviour, IMapRenderer
     {
-        public void Render(Transform plane)
+        public void Render(RectTransform plane)
         {
             
         }

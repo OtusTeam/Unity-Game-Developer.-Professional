@@ -2,8 +2,8 @@ namespace GameElements
 {
     public interface IGameElement
     {
-        void Setup(IGameSystem system);
+        void BindGame(IGameSystem system);
 
-        void Dispose();
+        void UnbindGame();
     }
 }

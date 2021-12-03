@@ -1,24 +1,30 @@
+using System;
 using UnityEngine;
 
 namespace GameElements.Unity
 {
     public abstract class MonoGameElement : MonoBehaviour, IGameElement
     {
-        void IGameElement.Setup(IGameSystem system)
+        void IGameElement.BindGame(IGameSystem system)
         {
-            this.OnSetup(system);
+            if (system == null)
+            {
+                throw new Exception("The system is null!");
+            }
+            
+            this.BindGame(system);
         }
 
-        protected virtual void OnSetup(IGameSystem system)
+        protected virtual void BindGame(IGameSystem system)
         {
         }
 
-        void IGameElement.Dispose()
+        void IGameElement.UnbindGame()
         {
-            this.OnDispose();
+            this.UnbindGame();
         }
 
-        protected virtual void OnDispose()
+        protected virtual void UnbindGame()
         {
         }
     }

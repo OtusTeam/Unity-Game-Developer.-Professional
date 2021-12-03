@@ -73,18 +73,16 @@ namespace Prototype.GameEngine
             }
         }
 
-        protected override void OnSetup(IGameSystem system)
+        protected override void BindGame(IGameSystem system)
         {
-            base.OnSetup(system);
             IGameElement container = this.container;
-            container.Setup(system);
+            container.BindGame(system);
         }
 
-        protected override void OnDispose()
+        protected override void UnbindGame()
         {
-            base.OnDispose();
             IGameElement container = this.container;
-            container.Dispose();
+            container.UnbindGame();
         }
 
         #endregion

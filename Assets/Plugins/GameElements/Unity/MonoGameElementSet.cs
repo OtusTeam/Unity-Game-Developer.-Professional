@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace GameElements.Unity
 {
-    public sealed class MonoGameElementSet : MonoGameElement, IGameElementSet
+    public sealed class MonoGameElementSet : MonoGameElement
     {
         [SerializeField]
         private MonoBehaviour[] gameElements;
@@ -43,16 +43,16 @@ namespace GameElements.Unity
             }
         }
 
-        protected override void OnSetup(IGameSystem system)
+        protected override void BindGame(IGameSystem system)
         {
             IGameElement gameElement = this.set;
-            gameElement.Setup(system);
+            gameElement.BindGame(system);
         }
 
-        protected override void OnDispose()
+        protected override void UnbindGame()
         {
             IGameElement gameElement = this.set;
-            gameElement.Dispose();
+            gameElement.UnbindGame();
         }
 
         #endregion

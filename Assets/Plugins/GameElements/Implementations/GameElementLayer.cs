@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 
 namespace GameElements
 {
-    /// <inheritdoc cref="IGameElementLayer"/>
-    public sealed class GameElementLayer : GameElement, IGameElementLayer
+    public sealed class GameElementLayer : GameElement
     {
-        [CanBeNull]
         private IGameSystem gameSystem;
         
         private readonly Dictionary<Type, object> elementMap;
@@ -36,7 +33,7 @@ namespace GameElements
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Setup(this.gameSystem);
+                    gameElement.BindGame(this.gameSystem);
                 }
             }
             
@@ -51,11 +48,14 @@ namespace GameElements
                 return false;
             }
 
-            if (element is IGameElement gameElement)
+            if (this.gameSystem != null)
             {
-                gameElement.Dispose();
+                if (element is IGameElement gameElement)
+                {
+                    gameElement.UnbindGame();
+                }    
             }
-
+            
             return true;
         }
 
@@ -76,25 +76,25 @@ namespace GameElements
             return false;
         }
 
-        protected override void OnSetup(IGameSystem system)
+        protected override void BindGame(IGameSystem system)
         {
             this.gameSystem = system;
             foreach (var element in this.elementMap.Values)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Setup(system);
+                    gameElement.BindGame(system);
                 }
             }
         }
 
-        protected override void OnDispose()
+        protected override void UnbindGame()
         {
             foreach (var element in this.elementMap.Values)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.Dispose();
+                    gameElement.UnbindGame();
                 }
             }
         }

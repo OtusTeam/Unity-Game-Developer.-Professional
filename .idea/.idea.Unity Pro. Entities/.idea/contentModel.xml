@@ -53,7 +53,7 @@
             <e p="Entities" t="Include">
               <e p="Renderer" t="Include">
                 <e p="Scripts" t="Include">
-                  <e p="MapEntitiesRenderer.cs" t="Include" />
+                  <e p="MapEntitiesRendererController.cs" t="Include" />
                   <e p="MapEntityRenderComponent.cs" t="Include" />
                   <e p="MapRenderEntityConfig.cs" t="Include" />
                 </e>
@@ -113,10 +113,6 @@
             </e>
             <e p="Interfaces" t="Include">
               <e p="IGameElement.cs" t="Include" />
-              <e p="IGameElementLayer.cs" t="Include" />
-              <e p="IGameElementMap.cs" t="Include" />
-              <e p="IGameElementSet.cs" t="Include" />
-              <e p="IGameObservable.cs" t="Include" />
               <e p="IGameSystem.cs" t="Include" />
             </e>
             <e p="Unity" t="Include">

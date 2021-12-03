@@ -10,7 +10,6 @@ namespace Prototype.GameEngine
     [Serializable]
     public sealed class Entity : IEntity
     {
-        [CanBeNull]
         public IGameSystem GameSystem { get; private set; }
 
         [ShowInInspector]

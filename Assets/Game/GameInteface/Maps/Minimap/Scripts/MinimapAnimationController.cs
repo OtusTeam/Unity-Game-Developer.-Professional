@@ -1,3 +1,4 @@
+using GameElements;
 using GameElements.Unity;
 using UnityEngine;
 
@@ -14,21 +15,21 @@ namespace Prototype.GameInterface
         [SerializeField]
         private Animator animator;
 
-        protected override void OnReadyGame(object sender)
+        protected override void OnReadyGame()
         {
-            base.OnReadyGame(sender);
+            base.OnReadyGame();
             this.animator.Play(HIDDEN_ANIMATION_NAME);
         }
 
-        protected override void OnStartGame(object sender)
+        protected override void OnStartGame()
         {
-            base.OnStartGame(sender);
+            base.OnStartGame();
             this.animator.Play(SHOW_ANIMATION_NAME);
         }
 
-        protected override void OnFinishGame(object sender)
+        protected override void OnFinishGame()
         {
-            base.OnFinishGame(sender);
+            base.OnFinishGame();
             this.animator.Play(HIDE_ANIMATION_NAME);
         }
     }

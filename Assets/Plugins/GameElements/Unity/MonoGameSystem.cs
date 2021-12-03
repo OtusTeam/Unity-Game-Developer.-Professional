@@ -3,42 +3,41 @@ using UnityEngine;
 
 namespace GameElements.Unity
 {
-    /// <inheritdoc cref="IGameElementSystem"/>
     public class MonoGameSystem : MonoBehaviour, IGameSystem
     {
         #region Events
 
-        public event Action<object> OnGamePrepare
+        public event Action OnGameInitialize
         {
-            add { this.gameSystem.OnGamePrepare += value; }
-            remove { this.gameSystem.OnGamePrepare -= value; }
+            add { this.gameSystem.OnGameInitialize += value; }
+            remove { this.gameSystem.OnGameInitialize -= value; }
         }
 
-        public event Action<object> OnGameReady
+        public event Action OnGameReady
         {
             add { this.gameSystem.OnGameReady += value; }
             remove { this.gameSystem.OnGameReady -= value; }
         }
 
-        public event Action<object> OnGameStart
+        public event Action OnGameStart
         {
             add { this.gameSystem.OnGameStart += value; }
             remove { this.gameSystem.OnGameStart -= value; }
         }
 
-        public event Action<object> OnGamePause
+        public event Action OnGamePause
         {
             add { this.gameSystem.OnGamePause += value; }
             remove { this.gameSystem.OnGameResume -= value; }
         }
 
-        public event Action<object> OnGameResume
+        public event Action OnGameResume
         {
             add { this.gameSystem.OnGameResume += value; }
             remove { this.gameSystem.OnGameResume -= value; }
         }
 
-        public event Action<object> OnGameFinish
+        public event Action OnGameFinish
         {
             add { this.gameSystem.OnGameFinish += value; }
             remove { this.gameSystem.OnGameFinish -= value; }
@@ -60,39 +59,39 @@ namespace GameElements.Unity
 
         #region Lifecycle
 
-        public void PrepareGame(object sender)
+        public virtual void InitializeGame()
         {
-            this.gameSystem.PrepareGame(sender);
+            this.gameSystem.InitializeGame();
         }
 
-        public void ReadyGame(object sender)
+        public void ReadyGame()
         {
-            this.gameSystem.ReadyGame(sender);
+            this.gameSystem.ReadyGame();
         }
 
-        public void StartGame(object sender)
+        public void StartGame()
         {
-            this.gameSystem.StartGame(sender);
+            this.gameSystem.StartGame();
         }
 
-        public void PauseGame(object sender)
+        public void PauseGame()
         {
-            this.gameSystem.PauseGame(sender);
+            this.gameSystem.PauseGame();
         }
 
-        public void ResumeGame(object sender)
+        public void ResumeGame()
         {
-            this.gameSystem.ResumeGame(sender);
+            this.gameSystem.ResumeGame();
         }
 
-        public void FinishGame(object sender)
+        public void FinishGame()
         {
-            this.gameSystem.FinishGame(sender);
+            this.gameSystem.FinishGame();
         }
 
-        public void DestroyGame(object sender)
+        public void DestroyGame()
         {
-            this.gameSystem.DestroyGame(sender);
+            this.gameSystem.DestroyGame();
         }
 
         #endregion

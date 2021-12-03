@@ -12,8 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Подкрутил код!">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/MapEntityRenderComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/MapEntityRenderComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Components/Position/PositionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Components/Position/PositionComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Scripts/MinimapAnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Scripts/MinimapAnimationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,13 +66,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Scripts/MinimapAnimationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/MonoEntityComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/IEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/MonoEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/MonoEntityManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameElementUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementLayer.cs" />
@@ -79,12 +78,10 @@
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementSet.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementLayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/EntityManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/EntityComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/IEntityComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/World/Scripts/WorldVector.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameContext.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityArgs.cs" />
@@ -113,8 +110,13 @@
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntityCuller.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRender.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntityCullController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Components/Position/PositionComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/MapEntityRenderComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Scripts/MinimapAnimationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs" />
       </list>
     </option>
   </component>
@@ -129,6 +131,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34989354" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30021292" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -145,10 +149,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4974">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="4974" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -166,7 +170,7 @@
       <workItem from="1638428829222" duration="3497000" />
       <workItem from="1638432576869" duration="29048000" />
       <workItem from="1638503200294" duration="847000" />
-      <workItem from="1638504177198" duration="30674000" />
+      <workItem from="1638504177198" duration="35362000" />
     </task>
     <task id="LOCAL-00001" summary="Iniitial commit">
       <created>1638432596450</created>
@@ -294,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638546751219</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Подкрутил код!">
+      <created>1638550979782</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1638550979783</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,30 +343,94 @@
     <option name="LAST_COMMIT_MESSAGE" value="Подкрутил код!" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1440" height="339" key="GridCell.Tab.0.bottom" timestamp="1638554069352">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1638554069352" />
+    <state width="1440" height="339" key="GridCell.Tab.0.center" timestamp="1638554069346">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1638554069346" />
+    <state width="1440" height="339" key="GridCell.Tab.0.left" timestamp="1638554069345">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1638554069345" />
+    <state width="1440" height="339" key="GridCell.Tab.0.right" timestamp="1638554069347">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1638554069347" />
+    <state width="1440" height="339" key="GridCell.Tab.1.bottom" timestamp="1638554069359">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1638554069359" />
+    <state width="1440" height="339" key="GridCell.Tab.1.center" timestamp="1638554069355">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1638554069355" />
+    <state width="1440" height="339" key="GridCell.Tab.1.left" timestamp="1638554069353">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1638554069353" />
+    <state width="1440" height="339" key="GridCell.Tab.1.right" timestamp="1638554069357">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1638554069357" />
+    <state width="1440" height="339" key="GridCell.Tab.2.bottom" timestamp="1638554069367">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1638554069367" />
+    <state width="1440" height="339" key="GridCell.Tab.2.center" timestamp="1638554069365">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1638554069365" />
+    <state width="1440" height="339" key="GridCell.Tab.2.left" timestamp="1638554069364">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1638554069364" />
+    <state width="1440" height="339" key="GridCell.Tab.2.right" timestamp="1638554069366">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1638554069366" />
+    <state width="1440" height="339" key="GridCell.Tab.3.bottom" timestamp="1638554069375">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.3.bottom/0.0.1440.900@0.0.1440.900" timestamp="1638554069375" />
+    <state width="1440" height="339" key="GridCell.Tab.3.center" timestamp="1638554069372">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.3.center/0.0.1440.900@0.0.1440.900" timestamp="1638554069372" />
+    <state width="1440" height="339" key="GridCell.Tab.3.left" timestamp="1638554069371">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.3.left/0.0.1440.900@0.0.1440.900" timestamp="1638554069371" />
+    <state width="1440" height="339" key="GridCell.Tab.3.right" timestamp="1638554069373">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="339" key="GridCell.Tab.3.right/0.0.1440.900@0.0.1440.900" timestamp="1638554069373" />
     <state x="517" y="154" key="RiderGenerateDialog" timestamp="1638537348796">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638537348796" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638549967015">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638557323021">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638549967015" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638546752274">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638557323021" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638550981208">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638546752274" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638550981208" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638540672664">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="290" y="205" width="860" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1638540672664" />
-    <state x="385" y="210" key="run.anything.popup" timestamp="1638536758125">
+    <state x="385" y="210" key="run.anything.popup" timestamp="1638556925152">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638536758125" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638546014222">
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638556925152" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638557560999">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638546014222" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638557560999" />
   </component>
 </project>

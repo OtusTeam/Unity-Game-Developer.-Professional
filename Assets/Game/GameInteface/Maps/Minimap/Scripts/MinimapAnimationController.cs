@@ -1,3 +1,5 @@
+using System;
+using GameElements;
 using GameElements.Unity;
 using UnityEngine;
 
@@ -10,10 +12,10 @@ namespace Prototype.GameInterface
         private const string SHOW_ANIMATION_NAME = "Show";
 
         private const string HIDE_ANIMATION_NAME = "Hide";
-        
+
         [SerializeField]
         private Animator animator;
-
+        
         protected override void OnReadyGame()
         {
             base.OnReadyGame();

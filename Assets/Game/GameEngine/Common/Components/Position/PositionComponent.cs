@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class PositionComponent : EntityComponent
+    public sealed class PositionComponent : MonoBehaviour
     {
         [SerializeField]
         private Transform target;

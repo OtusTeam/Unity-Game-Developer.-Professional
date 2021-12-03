@@ -136,8 +136,7 @@ namespace GameElements
                 return;
             }
 
-            IGameElement gameElement = this.serviceLayer;
-            gameElement.UnbindGame();
+            this.serviceLayer.UnbindGame();
             this.OnDestroyGame();
             this.State = GameState.CREATE;
         }

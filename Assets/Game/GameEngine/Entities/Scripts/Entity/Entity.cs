@@ -56,14 +56,12 @@ namespace Prototype.GameEngine
 
         void IGameElement.BindGame(IGameSystem gameSystem)
         {
-            IGameElement gameElement = this.componentLayer;
-            gameElement.BindGame(gameSystem);
+            this.componentLayer.BindGame(gameSystem);
         }
 
         void IGameElement.UnbindGame()
         {
-            IGameElement gameElement = this.componentLayer;
-            gameElement.UnbindGame();
+            this.componentLayer.UnbindGame();
         }
 
         private void Awake()

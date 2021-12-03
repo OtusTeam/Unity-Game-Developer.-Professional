@@ -2,19 +2,19 @@ using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public abstract class MapLayer : MonoBehaviour
+    public abstract class MapLayer
     {
-        [SerializeField]
-        private RectTransform rectTransform;
+        protected readonly RectTransform transform;
+        
+        private readonly Vector2 pivot;
+        
+        private readonly Rect rect;
 
-        private Vector2 pivot;
-        
-        private Rect rect;
-        
-        private void Start()
+        public MapLayer(RectTransform transform)
         {
-            this.rect = this.rectTransform.rect;
-            this.pivot = this.rectTransform.pivot;
+            this.transform = transform;
+            this.rect = transform.rect;
+            this.pivot = transform.pivot;
         }
 
         protected Vector2 TransformPosition(Vector2 normalizedVector)

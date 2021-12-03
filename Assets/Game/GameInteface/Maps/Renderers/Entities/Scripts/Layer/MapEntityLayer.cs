@@ -1,21 +1,22 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class MapEntityLayer : MapLayer
+    public sealed class MapEntityLayer : MapLayer, IMapEntityLayer
     {
-        [SerializeField]
-        private Transform container;
+        private readonly IPool<MapEntity> entityPool;
 
-        [SerializeField]
-        private MapEntity entityPrefab;
-        
-        private IPool<MapEntity> entityPool;
+        private readonly Dictionary<int, MapEntity> activeEntities;
 
-        private Dictionary<int, MapEntity> activeEntities;
-        
-        public void AddEntity(Args args, out int entityId)
+        public MapEntityLayer(RectTransform transform, MapEntity prefab) : base(transform)
+        {
+            this.activeEntities = new Dictionary<int, MapEntity>();
+            this.entityPool = new EntityPool(new EntityFactory(prefab, transform));
+        }
+
+        public void AddEntity(MapEntityArgs args, out int entityId)
         {
             var entity = this.entityPool.Pop();
             entityId = entity.Id;
@@ -24,14 +25,14 @@ namespace Prototype.GameInterface
             this.UpdateEntity(entity, args);
         }
 
-        public void UpdateEntity(int entityId, Args args)
+        public void UpdateEntity(int entityId, MapEntityArgs args)
         {
             if (this.activeEntities.TryGetValue(entityId, out var entity))
             {
                 this.UpdateEntity(entity, args);
             }
         }
-        
+
         public void RemoveEntity(int entityId)
         {
             if (this.activeEntities.TryGetValue(entityId, out var entity))
@@ -40,14 +41,8 @@ namespace Prototype.GameInterface
                 this.entityPool.Push(entity);
             }
         }
-        
-        private void Awake()
-        {
-            this.entityPool = new EntityPool(new EntityFactory(this.entityPrefab, this.container));
-            this.activeEntities = new Dictionary<int, MapEntity>();
-        }
 
-        private void UpdateEntity(MapEntity entity, Args args)
+        private void UpdateEntity(MapEntity entity, MapEntityArgs args)
         {
             var screenPosition = this.TransformPosition(args.normalizedPosition);
             var screenSize = this.TransformVector(args.normalizedSize);
@@ -58,17 +53,10 @@ namespace Prototype.GameInterface
             entity.SetIcon(args.icon);
         }
 
-        public struct Args
-        {
-            public Vector2 normalizedPosition;
 
-            public Vector2 normalizedSize;
-
-            public Color color;
-
-            public Sprite icon;
-        }
-
+        /// <summary>
+        ///     <para>Entity factory.</para>
+        /// </summary>
         private sealed class EntityFactory : IFactory<MapEntity>
         {
             private readonly MapEntity prefab;
@@ -92,6 +80,9 @@ namespace Prototype.GameInterface
             }
         }
 
+        /// <summary>
+        ///     <para>Entity pool.</para>
+        /// </summary>
         private sealed class EntityPool : IPool<MapEntity>
         {
             private readonly IPool<MapEntity> pool;

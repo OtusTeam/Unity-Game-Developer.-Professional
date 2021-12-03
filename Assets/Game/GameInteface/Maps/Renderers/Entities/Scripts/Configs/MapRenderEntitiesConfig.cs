@@ -1,4 +1,3 @@
-using Prototype.GameInterface;
 using UnityEngine;
 
 namespace Prototype.GameInterface
@@ -7,11 +6,14 @@ namespace Prototype.GameInterface
         fileName = "MapRenderEntitiesConfig",
         menuName = "GameInterface/Maps/New MapRenderEntitiesConfig"
     )]
-    public class MapRenderEntitiesConfig : MapRenderConfig
+    public sealed class MapRenderEntitiesConfig : MapRenderConfig
     {
+        [SerializeField]
+        private MapEntity entityPrefab;
+        
         public override IMapRenderer CreateRenderer()
         {
-            return new MapEntitiesRenderController();
+            return new MapEntitiesRenderSystem(this.entityPrefab);
         }
     }
 }

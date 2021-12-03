@@ -167,7 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e26bb68060de4992ad6fecb74cb5e0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
+  gameLaunched: 0
+  autoRun: 0
   subsystems:
   - {fileID: 1037918548}
   - {fileID: 1658984562}

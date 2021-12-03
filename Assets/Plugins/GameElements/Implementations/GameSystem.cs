@@ -136,10 +136,10 @@ namespace GameElements
                 return;
             }
 
-            this.OnDestroyGame();
-            this.State = GameState.DESTROY;
             IGameElement gameElement = this.serviceLayer;
             gameElement.UnbindGame();
+            this.OnDestroyGame();
+            this.State = GameState.CREATE;
         }
 
         protected virtual void OnDestroyGame()

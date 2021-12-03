@@ -2,10 +2,10 @@ namespace Prototype.GameInterface
 {
     public interface IMapEntityRenderComponent
     {
-        void StartRender(MapEntityLayer layer);
+        void StartRender(IMapEntityLayer layer);
 
-        void UpdateRender(MapEntityLayer layer);
+        void UpdateRender(IMapEntityLayer layer);
 
-        void FinishRender(MapEntityLayer layer);
+        void FinishRender(IMapEntityLayer layer);
     }
 }

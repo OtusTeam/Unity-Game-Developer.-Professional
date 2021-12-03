@@ -1,11 +1,16 @@
 using System.Collections;
 using GameElements.Unity;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Prototype.GameEngine
 {
     public sealed class MonoGameContext : MonoGameSystem
     {
+        [ReadOnly]
+        [SerializeField]
+        private bool gameLaunched;
+        
         [SerializeField]
         private bool autoRun;
 
@@ -16,7 +21,7 @@ namespace Prototype.GameEngine
         {
             this.LoadSubsystems();
         }
-
+        
         private void LoadSubsystems()
         {
             for (int i = 0, count = this.subsystems.Length; i < count; i++)
@@ -25,20 +30,41 @@ namespace Prototype.GameEngine
                 this.AddService(subsystem);
             }
         }
-        
+
         private IEnumerator Start()
         {
-            if (!this.autoRun)
+            if (this.autoRun)
             {
-                yield break;
+                yield return new WaitForEndOfFrame();
+                this.LaunchGame();
             }
-
-            yield return new WaitForEndOfFrame();
-            this.InitializeGame();
-            yield return new WaitForEndOfFrame();
-            this.ReadyGame();
-            yield return new WaitForEndOfFrame();
-            this.StartGame();
         }
+
+        private void LaunchGame()
+        {
+            this.InitializeGame();
+            this.ReadyGame();
+            this.StartGame();
+            this.gameLaunched = true;
+        }
+
+#if UNITY_EDITOR
+
+        [HideIf("autoRun")]
+        [Button("Launch Game")]
+        private void Editor_LaunchGame()
+        {
+            this.LaunchGame();
+        }
+
+        [ShowIf("gameLaunched")]
+        [Button("End Game")]
+        private void Editor_FinishGame()
+        {
+            this.FinishGame();
+            this.DestroyGame();
+            this.gameLaunched = false;
+        }
+#endif
     }
 }

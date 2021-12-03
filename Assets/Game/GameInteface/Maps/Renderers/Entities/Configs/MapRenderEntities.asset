@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec8a979bb374317bf59889978b74305, type: 3}
   m_Name: MapRenderEntities
   m_EditorClassIdentifier: 
+  entityPrefab: {fileID: 1093921098788836956, guid: 1623f104a4a06487695b1cac23826658, type: 3}

@@ -1,4 +1,5 @@
 using GameElements;
+using UnityEngine;
 
 namespace Prototype.GameInterface
 {
@@ -11,12 +12,12 @@ namespace Prototype.GameInterface
             this.orderedRenderers = orderedRenderers;
         }
             
-        public void Render(MapLayer layer)
+        public void Render(RectTransform layerTransform)
         {
             for (int i = 0, count = this.orderedRenderers.Length; i < count; i++)
             {
                 var render = this.orderedRenderers[i];
-                render.Render(layer);
+                render.Render(layerTransform);
             }
         }
             

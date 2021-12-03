@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace Prototype.GameInterface
 {
     public interface IMapRenderer
     {
-        void Render(MapLayer layer);
+        void Render(RectTransform layerTransform);
     }
 }

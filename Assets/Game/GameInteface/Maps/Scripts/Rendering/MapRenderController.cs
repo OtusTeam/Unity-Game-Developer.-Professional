@@ -7,8 +7,8 @@ namespace Prototype.GameInterface
     public sealed class MapRenderController : MonoGameController
     {
         [SerializeField]
-        private MapLayer layer;
-        
+        private RectTransform layer;
+
         [SerializeField]
         private MapRenderConfig config;
 
@@ -64,6 +64,11 @@ namespace Prototype.GameInterface
             if (this.mapRenderer is IGameElement gameElement)
             {
                 gameElement.UnbindGame();
+            }
+
+            foreach (Transform child in this.layer)
+            {
+                Destroy(child.gameObject);
             }
         }
     }

@@ -21,19 +21,19 @@ namespace Prototype.GameInterface
             this.worldArea = this.GetServiceLazy<WorldArea>();
         }
 
-        public void StartRender(MapEntityLayer layer)
+        public void StartRender(IMapEntityLayer layer)
         {
             var args = this.ProvideArgs();
             layer.AddEntity(args, out this.mapEntityId);
         }
 
-        public void UpdateRender(MapEntityLayer layer)
+        public void UpdateRender(IMapEntityLayer layer)
         {
             var args = this.ProvideArgs();
             layer.UpdateEntity(this.mapEntityId, args);
         }
 
-        public void FinishRender(MapEntityLayer layer)
+        public void FinishRender(IMapEntityLayer layer)
         {
             layer.RemoveEntity(this.mapEntityId);
         }
@@ -42,7 +42,7 @@ namespace Prototype.GameInterface
 
         protected abstract Sprite ProvideIcon();
         
-        private MapEntityLayer.Args ProvideArgs()
+        private MapEntityArgs ProvideArgs()
         {
             var worldArea = this.worldArea.Value;
 
@@ -54,7 +54,7 @@ namespace Prototype.GameInterface
             var normalizedSize = worldArea.NormalizeVector(worldSize);
             var normalizedUISize = new Vector2(normalizedSize.x, normalizedSize.z);
 
-            var args = new MapEntityLayer.Args
+            var args = new MapEntityArgs
             {
                 normalizedPosition = normalizedUIPosition,
                 normalizedSize = normalizedUISize,

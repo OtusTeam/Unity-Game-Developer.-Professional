@@ -10,7 +10,36 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Сделал миникарту" />
+    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Готово!">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/IMapEntityLayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/IMapEntityLayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityLayerProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityLayerProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Minimap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Minimap.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Configs/MapRenderEntities.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Configs/MapRenderEntities.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/IMapEntityRenderComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/IMapEntityRenderComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/MapEntityRenderComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/MapEntityRenderComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Configs/MapRenderEntitiesConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Configs/MapRenderEntitiesConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntity.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesCullRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesCullRenderer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRender.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Layer/MapLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Layer/MapLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/IMapRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/IMapRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/MapRenderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/MapRenderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/MapRendererPipeline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/MapRendererPipeline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,20 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Plane/MapPlaneLayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Plane/MapPlane.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/MapRendererPipeline.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Configs/MapObjectAsset.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Layer/MapEntityLayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/IMapEntityRenderComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityArgs.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/GameObjectPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Scripts/IGameObjectFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/World/Scripts/WorldArea.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Scripts/IFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Scripts/IPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Scripts/GameObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Scripts/Pool.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Scripts/GameObjectFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Team/TeamId.cs" />
@@ -82,15 +97,11 @@
         <option value="$PROJECT_DIR$/Assets/Game/Content/Units/Scripts/MapUnitRenderComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/SizeComponent/SizeComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityLayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Scripts/MinimapAnimationController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/MapRenderController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/MonoEntityComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/IEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/MonoEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/MonoEntityManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameModule.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameElementUtils.cs" />
@@ -100,17 +111,35 @@
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/IEntityManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementSet.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementLayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameContext.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/EntityManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/EntityComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/IEntityComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesCullRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/World/Scripts/WorldVector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameContext.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityArgs.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Layer/MapLayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/IMapEntityRenderComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Component/MapEntityRenderComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Layer/IMapLayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/IMapRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Layer/MapLayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Configs/MapRenderEntitiesConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesCullRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesDrawer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesBufferedRender.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesBuffer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/MapRenderController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityLayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/IMapEntityLayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityLayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Layer/MapEntityLayerProvider.cs" />
       </list>
     </option>
   </component>
@@ -162,7 +191,7 @@
       <workItem from="1638428829222" duration="3497000" />
       <workItem from="1638432576869" duration="29048000" />
       <workItem from="1638503200294" duration="847000" />
-      <workItem from="1638504177198" duration="22805000" />
+      <workItem from="1638504177198" duration="27163000" />
     </task>
     <task id="LOCAL-00001" summary="Iniitial commit">
       <created>1638432596450</created>
@@ -269,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638533403470</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Готово!">
+      <created>1638534190802</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1638534190802</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,33 +338,34 @@
     <MESSAGE value="Дебажим" />
     <MESSAGE value="Запустилось" />
     <MESSAGE value="Сделал миникарту" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал миникарту" />
+    <MESSAGE value="Готово!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Готово!" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="154" key="RiderGenerateDialog" timestamp="1638531020072">
+    <state x="517" y="154" key="RiderGenerateDialog" timestamp="1638537348796">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638531020072" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638531423533">
+    <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638537348796" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638539199455">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638531423533" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638533406934">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638539199455" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638534193204">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638533406934" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638534193204" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638506247702">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="290" y="205" width="860" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1638506247702" />
-    <state x="385" y="210" key="run.anything.popup" timestamp="1638528261964">
+    <state x="385" y="210" key="run.anything.popup" timestamp="1638536758125">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638528261964" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638530969052">
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638536758125" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638536194176">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638530969052" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638536194176" />
   </component>
 </project>

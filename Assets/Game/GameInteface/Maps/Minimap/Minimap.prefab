@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0efdf02088dc4f2ebb73e88ce9fe82f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layer: {fileID: 171222162}
+  layer: {fileID: 8074497475033639690}
   config: {fileID: 11400000, guid: c031227cf88484fb09fa2ab4365c72b8, type: 2}
   renderPeriod: 0.25
 --- !u!1 &8074497475033639691
@@ -222,7 +222,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8074497475033639690}
   - component: {fileID: 8074497475033639688}
-  - component: {fileID: 171222162}
   m_Layer: 5
   m_Name: Plane (Entity)
   m_TagString: Untagged
@@ -257,21 +256,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8074497475033639691}
   m_CullTransparentMesh: 1
---- !u!114 &171222162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8074497475033639691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b0ae2c2b124519b00d07eb560d8905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectTransform: {fileID: 8074497475033639690}
-  container: {fileID: 8074497475033639690}
-  entityPrefab: {fileID: 1093921098788836956, guid: 1623f104a4a06487695b1cac23826658, type: 3}
 --- !u!1 &8074497475193927240
 GameObject:
   m_ObjectHideFlags: 0

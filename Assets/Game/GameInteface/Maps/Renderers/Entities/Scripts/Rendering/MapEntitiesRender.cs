@@ -3,7 +3,7 @@ using Prototype.GameEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class MapEntitiesRenderer : IMapRenderer
+    public sealed class MapEntitiesRender
     {
         private readonly List<IMapEntityRenderComponent> addedEntities;
 
@@ -13,7 +13,7 @@ namespace Prototype.GameInterface
 
         private readonly List<IMapEntityRenderComponent> cache;
 
-        public MapEntitiesRenderer()
+        public MapEntitiesRender()
         {
             this.addedEntities = new List<IMapEntityRenderComponent>();
             this.processingEntities = new List<IMapEntityRenderComponent>();
@@ -47,23 +47,14 @@ namespace Prototype.GameInterface
             }
         }
 
-        public void ClearEntities()
+        public void Render(IMapEntityLayer entityLayer)
         {
-            this.removedEntities.AddRange(this.processingEntities);
-            this.processingEntities.Clear();
+            this.StartRender(entityLayer);
+            this.UpdateRender(entityLayer);
+            this.EndRender(entityLayer);
         }
 
-        public void Render(MapLayer layer)
-        {
-            if (layer is MapEntityLayer entityLayer)
-            {
-                this.StartRender(entityLayer);
-                this.UpdateRender(entityLayer);
-                this.EndRender(entityLayer);
-            }
-        }
-
-        private void StartRender(MapEntityLayer layer)
+        private void StartRender(IMapEntityLayer layer)
         {
             this.cache.Clear();
             this.cache.AddRange(this.addedEntities);
@@ -76,7 +67,7 @@ namespace Prototype.GameInterface
             }
         }
 
-        private void UpdateRender(MapEntityLayer layer)
+        private void UpdateRender(IMapEntityLayer layer)
         {
             this.cache.Clear();
             this.cache.AddRange(this.processingEntities);
@@ -88,7 +79,7 @@ namespace Prototype.GameInterface
             }
         }
 
-        private void EndRender(MapEntityLayer layer)
+        private void EndRender(IMapEntityLayer layer)
         {
             this.cache.Clear();
             this.cache.AddRange(this.removedEntities);

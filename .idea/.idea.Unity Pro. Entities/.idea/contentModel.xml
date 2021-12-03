@@ -92,13 +92,15 @@
                       <e p="MapRenderEntitiesConfig.cs" t="Include" />
                     </e>
                     <e p="Layer" t="Include">
+                      <e p="IMapEntityLayer.cs" t="Include" />
                       <e p="MapEntity.cs" t="Include" />
+                      <e p="MapEntityArgs.cs" t="Include" />
                       <e p="MapEntityLayer.cs" t="Include" />
+                      <e p="MapEntityLayerProvider.cs" t="Include" />
                     </e>
                     <e p="Rendering" t="Include">
-                      <e p="MapEntitiesCullRenderer.cs" t="Include" />
-                      <e p="MapEntitiesRenderController.cs" t="Include" />
-                      <e p="MapEntitiesRenderer.cs" t="Include" />
+                      <e p="MapEntitiesRender.cs" t="Include" />
+                      <e p="MapEntitiesRenderSystem.cs" t="Include" />
                     </e>
                   </e>
                 </e>

@@ -13,11 +13,11 @@ namespace Prototype.GameEngine
         
         public event Action<IEntity> OnEntityRemoved;
 
-        private GameElementSet entitySet;
+        private GameElementContainer entityContainer;
 
         public void AddEntity(IEntity entity)
         {
-            if (this.entitySet.AddElement(entity))
+            if (this.entityContainer.AddElement(entity))
             {
                 this.OnEntityAdded?.Invoke(entity);
             }
@@ -25,7 +25,7 @@ namespace Prototype.GameEngine
 
         public void RemoveEntity(IEntity entity)
         {
-            if (this.entitySet.RemoveElement(entity))
+            if (this.entityContainer.RemoveElement(entity))
             {
                 this.OnEntityRemoved?.Invoke(entity);
             }
@@ -33,7 +33,7 @@ namespace Prototype.GameEngine
 
         public IEnumerable<IEntity> GetEntities()
         {
-            foreach (var entity in this.entitySet)
+            foreach (var entity in this.entityContainer)
             {
                 yield return (IEntity) entity;
             }
@@ -41,7 +41,7 @@ namespace Prototype.GameEngine
         
         private void Awake()
         {
-            this.entitySet = new GameElementSet();
+            this.entityContainer = new GameElementContainer();
             this.InitializeEntities();
         }
 
@@ -55,19 +55,19 @@ namespace Prototype.GameEngine
                 var entityGO = entitiesGO[i];
                 if (entityGO.TryGetComponent(out IEntity entity))
                 {
-                    this.entitySet.AddElement(entity);
+                    this.entityContainer.AddElement(entity);
                 }
             }
         }
 
         void IGameElement.BindGame(IGameSystem system)
         {
-            this.entitySet.BindGame(system);
+            this.entityContainer.BindGame(system);
         }
 
         void IGameElement.UnbindGame()
         {
-            this.entitySet.UnbindGame();
+            this.entityContainer.UnbindGame();
         }
     }
 }

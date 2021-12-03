@@ -3,7 +3,7 @@ using Prototype.GameEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class MapEntitiesRender
+    public sealed class MapEntityLayerRender
     {
         private readonly List<IMapEntityRenderComponent> addedEntities;
 
@@ -13,7 +13,7 @@ namespace Prototype.GameInterface
 
         private readonly List<IMapEntityRenderComponent> cache;
 
-        public MapEntitiesRender()
+        public MapEntityLayerRender()
         {
             this.addedEntities = new List<IMapEntityRenderComponent>();
             this.processingEntities = new List<IMapEntityRenderComponent>();

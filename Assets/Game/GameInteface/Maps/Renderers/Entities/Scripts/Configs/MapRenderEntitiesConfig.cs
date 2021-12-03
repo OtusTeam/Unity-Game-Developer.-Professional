@@ -13,7 +13,7 @@ namespace Prototype.GameInterface
         
         public override IMapRenderer CreateRenderer()
         {
-            return new MapEntitiesRenderSystem(this.entityPrefab);
+            return new MapEntitiesRenderer(this.entityPrefab);
         }
     }
 }

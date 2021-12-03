@@ -10,13 +10,13 @@ namespace Prototype.GameEngine
         [SerializeField]
         private Element[] gameElements;
 
-        private readonly GameElementSet container;
+        private readonly GameElementContainer container;
         
         private readonly Dictionary<GameElementId, object> publicMap;
 
         public MonoGameModule()
         {
-            this.container = new GameElementSet();
+            this.container = new GameElementContainer();
             this.publicMap = new Dictionary<GameElementId, object>();
         }
         

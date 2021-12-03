@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace GameElements
 {
-    public sealed class GameElementSet : IGameElement, IEnumerable<object>
+    public sealed class GameElementContainer : IGameElement, IEnumerable<object>
     {
         private IGameSystem gameSystem;
 
         private readonly HashSet<object> elements;
 
-        public GameElementSet()
+        public GameElementContainer()
         {
             this.elements = new HashSet<object>();
         }

@@ -2,33 +2,33 @@ using UnityEngine;
 
 namespace GameElements.Unity
 {
-    public sealed class MonoGameElementSet : MonoBehaviour, IGameElement
+    public sealed class MonoGameElementContainer : MonoBehaviour, IGameElement
     {
         [SerializeField]
         private MonoBehaviour[] gameElements;
 
-        private GameElementSet set;
+        private GameElementContainer container;
 
         public bool AddElement(object element)
         {
-            return this.set.AddElement(element);
+            return this.container.AddElement(element);
         }
 
         public bool RemoveElement(object element)
         {
-            return this.set.RemoveElement(element);
+            return this.container.RemoveElement(element);
         }
 
         public bool ContainsElement(object element)
         {
-            return this.set.ContainsElement(element);
+            return this.container.ContainsElement(element);
         }
 
         #region Lifecycle
 
         private void Awake()
         {
-            this.set = new GameElementSet();
+            this.container = new GameElementContainer();
             this.IniitializeElementSet();
         }
 
@@ -46,12 +46,12 @@ namespace GameElements.Unity
 
         void IGameElement.BindGame(IGameSystem system)
         {
-            this.set.BindGame(system);
+            this.container.BindGame(system);
         }
 
         void IGameElement.UnbindGame()
         {
-            this.set.UnbindGame();
+            this.container.UnbindGame();
         }
 
         #endregion

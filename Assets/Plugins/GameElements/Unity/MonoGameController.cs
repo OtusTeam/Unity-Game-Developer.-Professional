@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameElements.Unity
 {
-    //Дублирует код 
+    //Дублирует код Game Controller
     public abstract class MonoGameController : MonoBehaviour, IGameElement
     {
         private IGameSystem gameSystem;

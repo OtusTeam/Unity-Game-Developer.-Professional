@@ -1,9 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace GameElements
 {
-    public sealed class GameElementLayer : GameElement
+    public sealed class GameElementLayer : IGameElement, IEnumerable<object>
     {
         private IGameSystem gameSystem;
         
@@ -12,11 +13,6 @@ namespace GameElements
         public GameElementLayer()
         {
             this.elementMap = new Dictionary<Type, object>();
-        }
-        
-        public GameElementLayer(Dictionary<Type, object> elementMap)
-        {
-            this.elementMap = new Dictionary<Type, object>(elementMap);
         }
 
         public bool AddElement(object element)
@@ -61,22 +57,58 @@ namespace GameElements
 
         public T GetElement<T>()
         {
-            return GameElementUtils.FindValue<T>(this.elementMap);
+            var requiredType = typeof(T);
+            if (this.elementMap.ContainsKey(requiredType))
+            {
+                return (T) this.elementMap[requiredType];
+            }
+
+            foreach (var key in this.elementMap.Keys)
+            {
+                if (requiredType.IsAssignableFrom(key))
+                {
+                    return (T) this.elementMap[key];
+                }
+            }
+
+            throw new Exception($"Element of type {requiredType.Name} is not found!");
+        }
+        
+        public IEnumerable<T> GetElements<T>()
+        {
+            foreach (var pair in this.elementMap)
+            {
+                var element = pair.Value;
+                if (element is T tElement)
+                {
+                    yield return tElement;
+                }
+            }
         }
 
         public bool TryGetElement<T>(out T element)
         {
-            if (GameElementUtils.TryFindValue(this.elementMap, out IGameElement result))
+            var requiredType = typeof(T);
+            if (this.elementMap.ContainsKey(requiredType))
             {
-                element = (T) result;
+                element = (T) this.elementMap[requiredType];
                 return true;
+            }
+
+            foreach (var key in this.elementMap.Keys)
+            {
+                if (requiredType.IsAssignableFrom(key))
+                {
+                    element = (T) this.elementMap[key];
+                    return true;
+                }
             }
 
             element = default;
             return false;
         }
 
-        protected override void BindGame(IGameSystem system)
+        public void BindGame(IGameSystem system)
         {
             this.gameSystem = system;
             foreach (var element in this.elementMap.Values)
@@ -88,7 +120,7 @@ namespace GameElements
             }
         }
 
-        protected override void UnbindGame()
+        public void UnbindGame()
         {
             foreach (var element in this.elementMap.Values)
             {
@@ -97,6 +129,19 @@ namespace GameElements
                     gameElement.UnbindGame();
                 }
             }
+        }
+
+        public IEnumerator<object> GetEnumerator()
+        {
+            foreach (var element in this.elementMap.Values)
+            {
+                yield return element;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
     }
 }

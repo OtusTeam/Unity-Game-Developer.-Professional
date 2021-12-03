@@ -1,12 +1,9 @@
 using System.Collections.Generic;
-using GameElements;
 
 namespace Prototype.GameEngine
 {
     public interface IEntity
     {
-        IGameSystem GameSystem { get; }
-
         void AddComponent(object component);
         
         void RemoveComponent(object component);
@@ -16,9 +13,5 @@ namespace Prototype.GameEngine
         bool TryGetComponent<T>(out T component);
         
         IEnumerable<T> GetComponents<T>();
-
-        void BindContext(IGameSystem gameSystem);
-
-        void ResetContext();
     }
 }

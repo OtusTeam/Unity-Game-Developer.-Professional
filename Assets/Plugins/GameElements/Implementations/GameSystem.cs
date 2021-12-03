@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 
 namespace GameElements
 {
-    /// <inheritdoc cref="IGameElementSystem"/>
     public class GameSystem : IGameSystem
     {
         #region Event
@@ -24,14 +22,14 @@ namespace GameElements
         
         public GameState State { get; protected set; }
 
-        private readonly Dictionary<Type, object> elementMap;
-
-        #region Lifecycle
+        private readonly GameElementLayer serviceLayer;
+        
+        #region GameCycle
 
         public GameSystem()
         {
             this.State = GameState.CREATE;
-            this.elementMap = new Dictionary<Type, object>();
+            this.serviceLayer = new GameElementLayer();
         }
 
         public void InitializeGame()
@@ -41,6 +39,7 @@ namespace GameElements
                 return;
             }
 
+            this.serviceLayer.BindGame(this);
             this.State = GameState.PREPARE;
             this.OnInitializeGame();
             this.OnGameInitialize?.Invoke();
@@ -137,16 +136,10 @@ namespace GameElements
                 return;
             }
 
-            this.State = GameState.DESTROY;
-            foreach (var element in this.elementMap.Values)
-            {
-                if (element is IGameElement gameElement)
-                {
-                    gameElement.UnbindGame();
-                }
-            }
-            
             this.OnDestroyGame();
+            this.State = GameState.DESTROY;
+            IGameElement gameElement = this.serviceLayer;
+            gameElement.UnbindGame();
         }
 
         protected virtual void OnDestroyGame()
@@ -155,54 +148,28 @@ namespace GameElements
 
         #endregion
 
-        public bool AddElement(object element)
+        #region Services
+
+        public bool AddService(object service)
         {
-            var type = element.GetType();
-            if (this.elementMap.ContainsKey(type))
-            {
-                return false;
-            }
-
-            this.elementMap.Add(type, element);
-            if (element is IGameElement controller)
-            {
-                controller.BindGame(this);
-            }
-
-            return true;
+            return this.serviceLayer.AddElement(service);
         }
 
-        public bool RemoveElement(object element)
+        public bool RemoveService(object service)
         {
-            var type = element.GetType();
-            if (!this.elementMap.Remove(type))
-            {
-                return false;
-            }
-
-            if (element is IGameElement gameElement)
-            {
-                gameElement.UnbindGame();
-            }
-
-            return true;
+            return this.serviceLayer.RemoveElement(service);
         }
 
-        public T GetElement<T>()
+        public T GetService<T>()
         {
-            return GameElementUtils.FindValue<T>(this.elementMap);
+            return this.serviceLayer.GetElement<T>();
         }
 
-        public bool TryGetElement<T>(out T element)
+        public bool TryGetService<T>(out T service)
         {
-            if (GameElementUtils.TryFindValue(this.elementMap, out T result))
-            {
-                element = result;
-                return true;
-            }
-
-            element = default;
-            return false;
+            return this.serviceLayer.TryGetElement(out service);
         }
+
+        #endregion
     }
 }

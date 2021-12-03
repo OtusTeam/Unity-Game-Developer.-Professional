@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public abstract class MapEntityRenderComponent : MonoEntityComponent, IMapEntityRenderComponent
+    public abstract class MapEntityRenderComponent : EntityComponent, IMapEntityRenderComponent
     {
         private readonly Lazy<PositionComponent> positionComponent;
 
@@ -18,7 +18,7 @@ namespace Prototype.GameInterface
         {
             this.positionComponent = this.GetComponentLazy<PositionComponent>();
             this.sizeComponent = this.GetComponentLazy<SizeComponent>();
-            this.worldArea = this.GetSubsystemLazy<WorldArea>();
+            this.worldArea = this.GetServiceLazy<WorldArea>();
         }
 
         public void StartRender(MapEntityLayer layer)
@@ -44,6 +44,14 @@ namespace Prototype.GameInterface
         
         private MapEntityLayer.Args ProvideArgs()
         {
+            var entity = this.Entity;
+            var gameSystem = this.GameSystem;
+            gameSystem.GetService<WorldArea>();
+            
+            
+            
+            
+            
             var worldArea = this.worldArea.Value;
 
             var worldPosition = this.positionComponent.Value.GetPosition();

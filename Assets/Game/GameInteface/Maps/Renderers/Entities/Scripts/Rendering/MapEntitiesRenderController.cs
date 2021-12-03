@@ -22,7 +22,7 @@ namespace Prototype.GameInterface
         
         protected override bool Initialize(IGameSystem system)
         {
-            if (system.TryGetElement(out IEntityManager entityManager))
+            if (system.TryGetService(out IEntityManager entityManager))
             {
                 this.renderer = new MapEntitiesCullRenderer(entityManager);
                 return true;

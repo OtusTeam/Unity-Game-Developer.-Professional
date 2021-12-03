@@ -12,12 +12,17 @@ namespace Prototype.GameEngine
         [SerializeField]
         private MonoBehaviour[] subsystems;
 
+        private void Awake()
+        {
+            this.LoadSubsystems();
+        }
+
         private void LoadSubsystems()
         {
             for (int i = 0, count = this.subsystems.Length; i < count; i++)
             {
                 var subsystem = this.subsystems[i];
-                this.AddElement(subsystem);
+                this.AddService(subsystem);
             }
         }
         
@@ -28,8 +33,6 @@ namespace Prototype.GameEngine
                 yield break;
             }
 
-            yield return new WaitForEndOfFrame();
-            this.LoadSubsystems();
             yield return new WaitForEndOfFrame();
             this.InitializeGame();
             yield return new WaitForEndOfFrame();

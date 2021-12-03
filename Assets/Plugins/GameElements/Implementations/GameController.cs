@@ -2,13 +2,13 @@ using System;
 
 namespace GameElements
 {
-    public abstract class GameController : GameElement
+    public abstract class GameController : IGameElement
     {
         private IGameSystem gameSystem;
         
         #region Lifecycle
 
-        protected sealed override void BindGame(IGameSystem system)
+        void IGameElement.BindGame(IGameSystem system)
         {
             if (this.gameSystem != null)
             {
@@ -61,7 +61,7 @@ namespace GameElements
         {
         }
 
-        protected sealed override void UnbindGame()
+        void IGameElement.UnbindGame()
         {
             if (this.gameSystem == null)
             {

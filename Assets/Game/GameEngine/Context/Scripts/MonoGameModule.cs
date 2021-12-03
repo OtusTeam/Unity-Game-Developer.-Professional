@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using GameElements;
-using GameElements.Unity;
 using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class MonoGameModule : MonoGameElement
+    public sealed class MonoGameModule : MonoBehaviour, IGameElement
     {
         [SerializeField]
         private Element[] gameElements;
@@ -73,16 +72,14 @@ namespace Prototype.GameEngine
             }
         }
 
-        protected override void BindGame(IGameSystem system)
+        void IGameElement.BindGame(IGameSystem system)
         {
-            IGameElement container = this.container;
-            container.BindGame(system);
+            this.container.BindGame(system);
         }
 
-        protected override void UnbindGame()
+        void IGameElement.UnbindGame()
         {
-            IGameElement container = this.container;
-            container.UnbindGame();
+            this.container.UnbindGame();
         }
 
         #endregion

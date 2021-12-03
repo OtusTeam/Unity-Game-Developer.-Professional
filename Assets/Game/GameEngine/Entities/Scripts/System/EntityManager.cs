@@ -1,50 +1,63 @@
 using System;
 using System.Collections.Generic;
+using GameElements;
+using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class EntityManager : IEntityManager
+    public sealed class EntityManager : MonoBehaviour, IEntityManager
     {
+        private const string ENTITY_TAG = "Entity";
+        
         public event Action<IEntity> OnEntityAdded;
         
         public event Action<IEntity> OnEntityRemoved;
 
-        private readonly HashSet<IEntity> entitySet;
-
-        private readonly List<IEntity> entityList;
-
-        public EntityManager()
-        {
-            this.entitySet = new HashSet<IEntity>();
-            this.entityList = new List<IEntity>();
-        }
-
-        public EntityManager(IEnumerable<IEntity> entities)
-        {
-            this.entitySet = new HashSet<IEntity>(entities);
-        }
+        private GameElementSet entitySet;
 
         public void AddEntity(IEntity entity)
         {
-            if (this.entitySet.Add(entity))
+            if (this.entitySet.AddElement(entity))
             {
-                this.entityList.Add(entity);
                 this.OnEntityAdded?.Invoke(entity);
             }
         }
 
         public void RemoveEntity(IEntity entity)
         {
-            if (this.entitySet.Remove(entity))
+            if (this.entitySet.RemoveElement(entity))
             {
-                this.entityList.Remove(entity);
                 this.OnEntityRemoved?.Invoke(entity);
             }
         }
 
-        public IList<IEntity> GetEntities()
+        public IEnumerable<IEntity> GetEntities()
         {
-            return this.entityList;
+            foreach (var entity in this.entitySet)
+            {
+                yield return (IEntity) entity;
+            }
+        }
+        
+        private void Awake()
+        {
+            this.entitySet = new GameElementSet();
+            this.InitializeEntities();
+        }
+
+        private void InitializeEntities()
+        {
+            var entitiesGO = GameObject.FindGameObjectsWithTag(ENTITY_TAG);
+            var count = entitiesGO.Length;
+
+            for (var i = 0; i < count; i++)
+            {
+                var entityGO = entitiesGO[i];
+                if (entityGO.TryGetComponent(out IEntity entity))
+                {
+                    this.entitySet.AddElement(entity);
+                }
+            }
         }
     }
 }

@@ -1,14 +1,16 @@
 using System;
+using UnityEngine;
 
 namespace GameElements.Unity
 {
-    public abstract class MonoGameController : MonoGameElement
+    //Дублирует код 
+    public abstract class MonoGameController : MonoBehaviour, IGameElement
     {
         private IGameSystem gameSystem;
         
         #region Lifecycle
 
-        protected sealed override void BindGame(IGameSystem system)
+        void IGameElement.BindGame(IGameSystem system)
         {
             if (this.gameSystem != null)
             {
@@ -61,7 +63,7 @@ namespace GameElements.Unity
         {
         }
 
-        protected sealed override void UnbindGame()
+        void IGameElement.UnbindGame()
         {
             if (this.gameSystem == null)
             {

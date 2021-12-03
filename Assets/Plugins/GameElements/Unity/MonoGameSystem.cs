@@ -96,24 +96,24 @@ namespace GameElements.Unity
 
         #endregion
 
-        public bool AddElement(object element)
+        public bool AddService(object service)
         {
-            return this.gameSystem.AddElement(element);
+            return this.gameSystem.AddService(service);
         }
 
-        public bool RemoveElement(object element)
+        public bool RemoveService(object service)
         {
-            return this.gameSystem.RemoveElement(element);
+            return this.gameSystem.RemoveService(service);
         }
 
-        public T GetElement<T>()
+        public T GetService<T>()
         {
-            return this.gameSystem.GetElement<T>();
+            return this.gameSystem.GetService<T>();
         }
 
-        public bool TryGetElement<T>(out T element)
+        public bool TryGetService<T>(out T service)
         {
-            return this.gameSystem.TryGetElement(out element);
+            return this.gameSystem.TryGetService(out service);
         }
     }
 }

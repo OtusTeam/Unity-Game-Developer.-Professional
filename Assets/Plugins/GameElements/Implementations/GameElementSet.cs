@@ -1,8 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 
 namespace GameElements
 {
-    public sealed class GameElementSet : GameElement
+    public sealed class GameElementSet : IGameElement, IEnumerable<object>
     {
         private IGameSystem gameSystem;
 
@@ -11,11 +12,6 @@ namespace GameElements
         public GameElementSet()
         {
             this.elements = new HashSet<object>();
-        }
-
-        public GameElementSet(IEnumerable<object> elements)
-        {
-            this.elements = new HashSet<object>(elements);
         }
 
         public bool AddElement(object element)
@@ -59,7 +55,7 @@ namespace GameElements
             return this.elements.Contains(element);
         }
 
-        protected override void BindGame(IGameSystem system)
+        public void BindGame(IGameSystem system)
         {
             this.gameSystem = system;
             foreach (var element in this.elements)
@@ -71,7 +67,7 @@ namespace GameElements
             }
         }
 
-        protected override void UnbindGame()
+        public void UnbindGame()
         {
             foreach (var element in this.elements)
             {
@@ -80,6 +76,19 @@ namespace GameElements
                     gameElement.UnbindGame();
                 }
             }
+        }
+
+        public IEnumerator<object> GetEnumerator()
+        {
+            foreach (var element in this.elements)
+            {
+                yield return element;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
     }
 }

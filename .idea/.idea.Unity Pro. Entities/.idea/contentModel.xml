@@ -53,18 +53,16 @@
             <e p="Entities" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Component" t="Include">
+                  <e p="EntityComponent.cs" t="Include" />
                   <e p="IEntityComponent.cs" t="Include" />
-                  <e p="MonoEntityComponent.cs" t="Include" />
                 </e>
                 <e p="Entity" t="Include">
                   <e p="Entity.cs" t="Include" />
                   <e p="IEntity.cs" t="Include" />
-                  <e p="MonoEntity.cs" t="Include" />
                 </e>
                 <e p="System" t="Include">
                   <e p="EntityManager.cs" t="Include" />
                   <e p="IEntityManager.cs" t="Include" />
-                  <e p="MonoEntityManager.cs" t="Include" />
                 </e>
               </e>
             </e>
@@ -136,7 +134,6 @@
           <e p="GameElements" t="Include">
             <e p="Implementations" t="Include">
               <e p="GameController.cs" t="Include" />
-              <e p="GameElement.cs" t="Include" />
               <e p="GameElementLayer.cs" t="Include" />
               <e p="GameElementSet.cs" t="Include" />
               <e p="GameSystem.cs" t="Include" />
@@ -147,13 +144,11 @@
             </e>
             <e p="Unity" t="Include">
               <e p="MonoGameController.cs" t="Include" />
-              <e p="MonoGameElement.cs" t="Include" />
               <e p="MonoGameElementLayer.cs" t="Include" />
               <e p="MonoGameElementSet.cs" t="Include" />
               <e p="MonoGameSystem.cs" t="Include" />
             </e>
             <e p="Utils" t="Include">
-              <e p="GameElementUtils.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
             </e>
           </e>

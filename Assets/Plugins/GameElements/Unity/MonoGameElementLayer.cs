@@ -1,18 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameElements.Unity
 {
-    public sealed class MonoGameElementLayer : MonoGameElement
+    public sealed class MonoGameElementLayer : MonoBehaviour, IGameElement
     {
         [SerializeField]
         private MonoBehaviour[] gameElements;
 
-        private readonly GameElementLayer layer;
-
-        public MonoGameElementLayer()
-        {
-            this.layer = new GameElementLayer();
-        }
+        private GameElementLayer layer;
 
         public bool AddElement(object element)
         {
@@ -29,6 +25,11 @@ namespace GameElements.Unity
             return this.layer.GetElement<T>();
         }
 
+        public IEnumerable<T> GetElements<T>()
+        {
+            return this.layer.GetElements<T>();
+        }
+
         public bool TryGetElement<T>(out T element)
         {
             return this.layer.TryGetElement(out element);
@@ -38,26 +39,30 @@ namespace GameElements.Unity
 
         private void Awake()
         {
+            this.layer = new GameElementLayer();
+            this.InitializeElementLayer();
+        }
+
+        private void InitializeElementLayer()
+        {
             for (int i = 0, count = this.gameElements.Length; i < count; i++)
             {
                 var gameElement = this.gameElements[i];
                 if (gameElement != null)
                 {
-                    this.AddElement(gameElement);
+                    this.layer.AddElement(gameElement);
                 }
             }
         }
 
-        protected override void BindGame(IGameSystem system)
+        void IGameElement.BindGame(IGameSystem system)
         {
-            IGameElement gameElement = this.layer;
-            gameElement.BindGame(system);
+            this.layer.BindGame(system);
         }
 
-        protected override void UnbindGame()
+        void IGameElement.UnbindGame()
         {
-            IGameElement gameElement = this.layer;
-            gameElement.UnbindGame();
+            this.layer.UnbindGame();
         }
         
         #endregion

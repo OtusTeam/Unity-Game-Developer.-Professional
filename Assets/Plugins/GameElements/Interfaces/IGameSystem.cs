@@ -4,8 +4,6 @@ namespace GameElements
 {
     public interface IGameSystem
     {
-        GameState State { get; }
-        
         event Action OnGameInitialize;
         
         event Action OnGameReady;
@@ -17,6 +15,8 @@ namespace GameElements
         event Action OnGameResume;
 
         event Action OnGameFinish;
+        
+        GameState State { get; }
 
         void InitializeGame();
 
@@ -32,12 +32,12 @@ namespace GameElements
 
         void DestroyGame();
 
-        bool AddElement(object element);
+        bool AddService(object service);
 
-        bool RemoveElement(object element);
+        bool RemoveService(object service);
 
-        T GetElement<T>();
+        T GetService<T>();
 
-        bool TryGetElement<T>(out T element);
+        bool TryGetService<T>(out T service);
     }
 }

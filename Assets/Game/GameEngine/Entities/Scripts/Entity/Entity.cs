@@ -1,82 +1,103 @@
 using System;
 using System.Collections.Generic;
 using GameElements;
-using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    [Serializable]
-    public sealed class Entity : IEntity
+    public sealed class Entity : MonoBehaviour, IEntity, IGameElement
     {
-        public IGameSystem GameSystem { get; private set; }
+        private GameElementLayer componentLayer;
+        
+        [SerializeField]
+        private Parameters parameters;
 
-        [ShowInInspector]
-        private List<object> components;
-
-        public Entity()
+        void IEntity.AddComponent(object component)
         {
-            this.components = new List<object>();
-        }
-
-        public void AddComponent(object component)
-        {
-            this.components.Add(component);
-        }
-
-        public void RemoveComponent(object component)
-        {
-            this.components.Remove(component);
-        }
-
-        public T GetComponent<T>()
-        {
-            for (int i = 0, count = this.components.Count; i < count; i++)
+            if (!this.componentLayer.AddElement(component))
             {
-                if (this.components[i] is T component)
-                {
-                    return component;
-                }
-            }
-
-            throw new Exception($"Component of type {typeof(T).Name} is not found");
-        }
-
-        public bool TryGetComponent<T>(out T component)
-        {
-            for (int i = 0, count = this.components.Count; i < count; i++)
-            {
-                if (this.components[i] is T result)
-                {
-                    component = result;
-                    return true;
-                }
+                return;
             }
             
-            component = default;
-            return false;
+            if (component is IEntityComponent entityComponent)
+            {
+                entityComponent.BindEntity(this);
+            }
         }
 
-        public IEnumerable<T> GetComponents<T>()
+        void IEntity.RemoveComponent(object component)
         {
-            for (int i = 0, count = this.components.Count; i < count; i++)
+            if (!this.componentLayer.RemoveElement(component))
             {
-                if (this.components[i] is T component)
+                return;
+            }
+            
+            if (component is IEntityComponent entityComponent)
+            {
+                entityComponent.ResetEntity();
+            }
+        }
+
+        T IEntity.GetComponent<T>()
+        {
+            return this.componentLayer.GetElement<T>();
+        }
+
+        bool IEntity.TryGetComponent<T>(out T component)
+        {
+            return this.componentLayer.TryGetElement(out component);
+        }
+
+        IEnumerable<T> IEntity.GetComponents<T>()
+        {
+            return this.componentLayer.GetElements<T>();
+        }
+
+        void IGameElement.BindGame(IGameSystem gameSystem)
+        {
+            IGameElement gameElement = this.componentLayer;
+            gameElement.BindGame(gameSystem);
+        }
+
+        void IGameElement.UnbindGame()
+        {
+            IGameElement gameElement = this.componentLayer;
+            gameElement.UnbindGame();
+        }
+
+        private void Awake()
+        {
+            this.InitializeEntity();
+        }
+
+        private void InitializeEntity()
+        {
+            this.componentLayer = new GameElementLayer();
+
+            var components = this.parameters.initialComponents;
+            for (int i = 0, count = components.Length; i < count; i++)
+            {
+                var component = components[i];
+                if (component != null)
                 {
-                    yield return component;
+                    this.componentLayer.AddElement(component);
                 }
             }
         }
-        
-        public void BindContext(IGameSystem gameSystem)
+
+        [Serializable]
+        public sealed class Parameters
         {
-            this.GameSystem = gameSystem;
+            [SerializeField]
+            public MonoBehaviour[] initialComponents;
         }
 
-        public void ResetContext()
+#if UNITY_EDITOR
+        private void OnValidate()
         {
-            this.GameSystem = null;
+            this.Awake();
         }
+#endif
     }
 }

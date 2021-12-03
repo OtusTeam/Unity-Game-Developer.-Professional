@@ -6,11 +6,11 @@ namespace Prototype.GameInterface
     public sealed class MapEntityLayer : MapLayer
     {
         [SerializeField]
-        private MapEntity entity;
-
-        [SerializeField]
         private Transform container;
 
+        [SerializeField]
+        private MapEntity entityPrefab;
+        
         private IPool<MapEntity> entityPool;
 
         private Dictionary<int, MapEntity> activeEntities;
@@ -43,7 +43,7 @@ namespace Prototype.GameInterface
         
         private void Awake()
         {
-            this.entityPool = new EntityPool(new EntityFactory(this.entity, this.container));
+            this.entityPool = new EntityPool(new EntityFactory(this.entityPrefab, this.container));
             this.activeEntities = new Dictionary<int, MapEntity>();
         }
 

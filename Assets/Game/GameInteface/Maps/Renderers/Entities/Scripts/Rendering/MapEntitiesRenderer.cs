@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using Prototype.GameEngine;
-using Prototype.GameInterface;
-using UnityEngine;
 
 namespace Prototype.GameInterface
 {
@@ -23,11 +21,10 @@ namespace Prototype.GameInterface
             this.cache = new List<IMapEntityRenderComponent>();
         }
 
-        public void AddEntities(IList<IEntity> entities)
+        public void AddEntities(IEnumerable<IEntity> entities)
         {
-            for (int i = 0, count = entities.Count; i < count; i++)
+            foreach (var entity in entities)
             {
-                var entity = entities[i];
                 this.AddEntity(entity);
             }
         }

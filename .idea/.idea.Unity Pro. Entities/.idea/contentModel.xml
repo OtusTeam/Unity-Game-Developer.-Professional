@@ -28,19 +28,19 @@
             </e>
           </e>
           <e p="GameEngine" t="Include">
-            <e p="Components" t="Include">
-              <e p="Position" t="Include">
-                <e p="PositionComponent.cs" t="Include" />
+            <e p="Common" t="Include">
+              <e p="Components" t="Include">
+                <e p="Position" t="Include">
+                  <e p="PositionComponent.cs" t="Include" />
+                </e>
+                <e p="SizeComponent" t="Include">
+                  <e p="SizeComponent.cs" t="Include" />
+                </e>
               </e>
-              <e p="Rotation" t="Include">
-                <e p="RotationComponent.cs" t="Include" />
-              </e>
-              <e p="SizeComponent" t="Include">
-                <e p="SizeComponent.cs" t="Include" />
-              </e>
-              <e p="Team" t="Include">
-                <e p="TeamComponent.cs" t="Include" />
-                <e p="TeamType.cs" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="IFactory.cs" t="Include" />
+                <e p="IPool.cs" t="Include" />
+                <e p="Pool.cs" t="Include" />
               </e>
             </e>
             <e p="Context" t="Include">
@@ -51,19 +51,6 @@
               </e>
             </e>
             <e p="Entities" t="Include">
-              <e p="Renderer" t="Include">
-                <e p="Component" t="Include">
-                  <e p="MapEntityRenderComponent.cs" t="Include" />
-                </e>
-                <e p="Configs" t="Include">
-                  <e p="MapRenderEntitiesConfig.cs" t="Include" />
-                </e>
-                <e p="Scripts" t="Include">
-                  <e p="MapEntitiesCullRenderer.cs" t="Include" />
-                  <e p="MapEntitiesRenderer.cs" t="Include" />
-                  <e p="MapEntitiesRendererController.cs" t="Include" />
-                </e>
-              </e>
               <e p="Scripts" t="Include">
                 <e p="Component" t="Include">
                   <e p="IEntityComponent.cs" t="Include" />
@@ -81,9 +68,21 @@
                 </e>
               </e>
             </e>
+            <e p="Teams" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Component" t="Include">
+                  <e p="TeamComponent.cs" t="Include" />
+                </e>
+                <e p="Config" t="Include">
+                  <e p="TeamConfig.cs" t="Include" />
+                </e>
+                <e p="TeamId.cs" t="Include" />
+              </e>
+            </e>
             <e p="World" t="Include">
               <e p="Scripts" t="Include">
                 <e p="WorldArea.cs" t="Include" />
+                <e p="WorldVector.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -94,16 +93,41 @@
                   <e p="MinimapAnimationController.cs" t="Include" />
                 </e>
               </e>
-              <e p="Scripts" t="Include">
-                <e p="Abstractions" t="Include">
-                  <e p="IMapRenderer.cs" t="Include" />
+              <e p="Renderers" t="Include">
+                <e p="Entities" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="Component" t="Include">
+                      <e p="IMapEntityRenderComponent.cs" t="Include" />
+                      <e p="MapEntityRenderComponent.cs" t="Include" />
+                    </e>
+                    <e p="Configs" t="Include">
+                      <e p="MapRenderEntitiesConfig.cs" t="Include" />
+                    </e>
+                    <e p="Layer" t="Include">
+                      <e p="MapEntity.cs" t="Include" />
+                      <e p="MapEntityLayer.cs" t="Include" />
+                    </e>
+                    <e p="Rendering" t="Include">
+                      <e p="MapEntitiesCullRenderer.cs" t="Include" />
+                      <e p="MapEntitiesRenderController.cs" t="Include" />
+                      <e p="MapEntitiesRenderer.cs" t="Include" />
+                    </e>
+                  </e>
                 </e>
+              </e>
+              <e p="Scripts" t="Include">
                 <e p="Configs" t="Include">
                   <e p="MapRenderConfig.cs" t="Include" />
                   <e p="MapRenderPipelineConfig.cs" t="Include" />
                 </e>
-                <e p="MapRenderController.cs" t="Include" />
-                <e p="MapRendererPipeline.cs" t="Include" />
+                <e p="Layer" t="Include">
+                  <e p="MapLayer.cs" t="Include" />
+                </e>
+                <e p="Rendering" t="Include">
+                  <e p="IMapRenderer.cs" t="Include" />
+                  <e p="MapRenderController.cs" t="Include" />
+                  <e p="MapRendererPipeline.cs" t="Include" />
+                </e>
               </e>
             </e>
           </e>

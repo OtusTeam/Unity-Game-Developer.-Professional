@@ -6,21 +6,18 @@ namespace Prototype.GameEngine
 {
     public sealed class WorldArea : MonoBehaviour
     {
-        public float SizeX
-        {
-            get { return this.sizeX; }
-        }
-
-        public float SizeZ
-        {
-            get { return this.sizeZ; }
-        }
-
         [SerializeField]
         private float sizeX;
 
         [SerializeField]
         private float sizeZ;
+
+        public WorldVector NormalizeVector(WorldVector vector)
+        {
+            var normalizedX = Mathf.Clamp01(vector.x / this.sizeX);
+            var normalizedZ = Mathf.Clamp01(vector.z / this.sizeZ);
+            return new WorldVector(normalizedX, normalizedZ);
+        }
 
 #if UNITY_EDITOR
 

@@ -5,7 +5,7 @@ namespace Prototype.GameEngine
 {
     public sealed class MapMineralsRenderComponent : MonoBehaviour, IMapRenderer
     {
-        public void Render(RectTransform plane)
+        public void Render(MapLayer layer)
         {
             
         }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Prototype.GameEngine
@@ -14,6 +15,16 @@ namespace Prototype.GameEngine
         void IEntityComponent.ResetEntity()
         {
             this.Entity = null;
+        }
+
+        protected Lazy<T> GetComponentLazy<T>()
+        {
+            return new Lazy<T>(() => this.Entity.GetComponent<T>());
+        }
+
+        protected Lazy<T> GetSubsystemLazy<T>()
+        {
+            return new Lazy<T>(() => this.Entity.GameSystem.GetElement<T>());
         }
     }
 }

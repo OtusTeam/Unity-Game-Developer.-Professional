@@ -5,34 +5,31 @@ using Color = UnityEngine.Color;
 
 namespace Prototype.GameEngine
 {
-    public sealed class MapUnitRenderComponent : MonoEntityComponent, IMapRenderer
+    public sealed class MapUnitRenderComponent : MapEntityRenderComponent
     {
-
         [SerializeField]
         private Sprite icon;
-        
-        [Serializable]
-        private sealed class TeamInfo
-        {
-            [SerializeField]
-            public TeamType team;
 
-            [SerializeField]
-            public Color color;
+        [SerializeField]
+        private TeamConfig teamConfig;
+
+        private readonly Lazy<TeamComponent> teamComponent;
+
+        public MapUnitRenderComponent()
+        {
+            this.teamComponent = this.GetComponentLazy<TeamComponent>();
         }
-        
-        public void Render(RectTransform plane)
+
+        protected override Color ProvideColor()
         {
-            var positionComponent = this.Entity.GetComponent<PositionComponent>();
-            positionComponent.GetPosition();
+            var teamId = this.teamComponent.Value.Id;
+            var teamInfo = this.teamConfig.GetTeam(teamId);
+            return teamInfo.color;
+        }
 
-            var sizeComponent = this.Entity.GetComponent<SizeComponent>();
-            sizeComponent.GetSizeX();
-            sizeComponent.GetSizeZ();
-                
-
-            var teamComponent = this.Entity.GetComponent<TeamComponent>();
-            teamComponent.GetTeamType();
+        protected override Sprite ProvideIcon()
+        {
+            return this.icon;
         }
     }
 }

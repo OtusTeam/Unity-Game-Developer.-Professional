@@ -52,10 +52,17 @@
             </e>
             <e p="Entities" t="Include">
               <e p="Renderer" t="Include">
-                <e p="Scripts" t="Include">
-                  <e p="MapEntitiesRendererController.cs" t="Include" />
+                <e p="Component" t="Include">
                   <e p="MapEntityRenderComponent.cs" t="Include" />
-                  <e p="MapRenderEntityConfig.cs" t="Include" />
+                </e>
+                <e p="Configs" t="Include">
+                  <e p="MapRenderEntitiesConfig.cs" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="MapEntitiesCullRenderer.cs" t="Include" />
+                  <e p="MapEntitiesRenderController.cs" t="Include" />
+                  <e p="MapEntitiesRenderer.cs" t="Include" />
+                  <e p="MapEntitiesRendererElement.cs" t="Include" />
                 </e>
               </e>
               <e p="Scripts" t="Include">

@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace GameElements.Unity
 {
@@ -119,6 +121,58 @@ namespace GameElements.Unity
         public bool TryGetService<T>(out T service)
         {
             return this.gameSystem.TryGetService(out service);
+        }
+        
+        [SerializeField]
+        private bool autoRun;
+
+        [Space]
+        [SerializeField]
+        private Object[] services;
+
+        [Space]
+        [SerializeField]
+        private Object[] gameElements;
+
+        private void Awake()
+        {
+            this.LoadSubsystems();
+            this.LoadGameElements();
+        }
+
+        private IEnumerator Start()
+        {
+            if (this.autoRun)
+            {
+                yield return new WaitForEndOfFrame();
+                this.InitGame();
+                this.ReadyGame();
+                this.StartGame();
+            }
+        }
+        
+        private void LoadGameElements()
+        {
+            for (int i = 0, count = this.gameElements.Length; i < count; i++)
+            {
+                var element = this.gameElements[i];
+                if (element is IGameElement gameElement)
+                {
+                    this.AddElement(gameElement);
+                }
+            }
+        }
+
+        private void LoadSubsystems()
+        {
+            for (int i = 0, count = this.services.Length; i < count; i++)
+            {
+                var subsystem = this.services[i];
+                if (subsystem != null)
+                {
+                    this.RegisterService(subsystem);
+                }
+            }
         }
     }
 }

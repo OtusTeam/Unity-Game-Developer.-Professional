@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameElements.Unity
 {
-    public sealed class MonoGameElementContainer : MonoBehaviour, IGameElementGroup
+    public sealed class MonoGameElementDirectory : MonoBehaviour, IGameElementGroup
     {
         [SerializeField]
         private Transform[] containers;

@@ -33,11 +33,6 @@
                 <e p="Pool.cs" t="Include" />
               </e>
             </e>
-            <e p="Context" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="MonoGameContext.cs" t="Include" />
-              </e>
-            </e>
             <e p="Entities" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Component" t="Include">
@@ -133,7 +128,7 @@
               <e p="IGameSystem.cs" t="Include" />
             </e>
             <e p="Unity" t="Include">
-              <e p="MonoGameElementContainer.cs" t="Include" />
+              <e p="MonoGameElementDirectory.cs" t="Include" />
               <e p="MonoGameElementGroup.cs" t="Include" />
               <e p="MonoGameElementLayer.cs" t="Include" />
               <e p="MonoGameSystem.cs" t="Include" />

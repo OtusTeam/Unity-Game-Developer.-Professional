@@ -20,7 +20,7 @@ namespace GameElements
 
         private readonly GenericDictionary serviceMap;
 
-        private readonly IGameElementContext elementContext;
+        private readonly GameElementContext elementContext;
 
         public GameSystem()
         {

@@ -121,6 +121,7 @@
         <e p="Plugins" t="Include">
           <e p="GameElements" t="Include">
             <e p="Implementations" t="Include">
+              <e p="GameElementContext.cs" t="Include" />
               <e p="GameSystem.cs" t="Include" />
             </e>
             <e p="Interfaces" t="Include">
@@ -134,10 +135,8 @@
               <e p="MonoGameSystem.cs" t="Include" />
             </e>
             <e p="Utils" t="Include">
-              <e p="GameElementContext.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
               <e p="GenericDictionary.cs" t="Include" />
-              <e p="IGameElementContext.cs" t="Include" />
             </e>
           </e>
           <e p="Sirenix" t="Include">

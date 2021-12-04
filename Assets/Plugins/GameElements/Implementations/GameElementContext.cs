@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace GameElements
 {
-    public sealed class GameElementContext : IGameElementContext
+    public sealed class GameElementContext
     {
         private readonly IGameSystem gameSystem;
 

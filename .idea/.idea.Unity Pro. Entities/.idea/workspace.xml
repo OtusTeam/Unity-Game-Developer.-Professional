@@ -11,16 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Реализовал новый сервис локатор">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Context.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameContext.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementBrowser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementContainer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementBrowser.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameElementContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameElementContext.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementContext.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/IGameElementContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/IGameElementContext.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntityCuller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRender.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntityCullController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Common/Components/Position/PositionComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameElementContainer.cs" />
@@ -98,7 +91,6 @@
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Interfaces/IGameSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/ObjectLayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/TypedDictionary.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GenericDictionary.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/IGameElementContext.cs" />
@@ -113,13 +105,16 @@
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Renderers/Entities/Scripts/Rendering/MapEntitiesRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameElementContext.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementGroup.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Minimap/Scripts/MinimapAnimationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Context/Scripts/MonoGameContext.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementLayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementBrowser.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Unity/MonoGameElementDirectory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Utils/GameElementContext.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameElementContext.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Implementations/GameSystem.cs" />
       </list>
     </option>
   </component>
@@ -174,7 +169,7 @@
       <workItem from="1638432576869" duration="29048000" />
       <workItem from="1638503200294" duration="847000" />
       <workItem from="1638504177198" duration="35691000" />
-      <workItem from="1638603001714" duration="17916000" />
+      <workItem from="1638603001714" duration="18225000" />
     </task>
     <task id="LOCAL-00001" summary="Iniitial commit">
       <created>1638432596450</created>
@@ -337,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638628178370</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Реализовал новый сервис локатор">
+      <created>1638642978075</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1638642978075</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,10 +467,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638642448869" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638628179591">
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638642979312">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638628179591" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638642979312" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638540672664">
       <screen x="0" y="0" width="1440" height="900" />

@@ -12,28 +12,28 @@ namespace GameElements
     
     public interface IGameInitElement : IGameElement
     {
-        void InitGame(IGameSystem gameSystem);
+        void InitGame(IGameSystem system);
     }
     
     public interface IGameReadyElement : IGameElement
     {
-        void ReadyGame(IGameSystem gameSystem);
+        void ReadyGame(IGameSystem system);
     }
 
     public interface IGameStartElement : IGameElement
     {
-        void StartGame(IGameSystem gameSystem);
+        void StartGame(IGameSystem system);
     }
 
     public interface IGamePauseElement : IGameElement
     {
-        void PauseGame(IGameSystem gameSystem);
+        void PauseGame(IGameSystem system);
 
-        void ResumeGame(IGameSystem gameSystem);
+        void ResumeGame(IGameSystem system);
     }
 
     public interface IGameFinishElement : IGameElement
     {
-        void FinishGame(IGameSystem gameSystem);
+        void FinishGame(IGameSystem system);
     }
 }

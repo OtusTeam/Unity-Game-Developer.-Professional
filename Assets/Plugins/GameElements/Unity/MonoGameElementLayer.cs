@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace GameElements.Unity
 {
-    public class MonoGameElementLayer : MonoGameElementContainer
+    public class MonoGameElementLayer : MonoGameElementGroup
     {
         private GenericDictionary elementMap;
 

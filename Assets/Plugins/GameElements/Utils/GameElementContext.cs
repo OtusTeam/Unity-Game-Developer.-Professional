@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace GameElements
 {
@@ -159,6 +160,7 @@ namespace GameElements
                 return;
             }
 
+            Debug.Log($"ADD ELEMENT {element.GetType().Name}");
             if (gameState < GameState.INITIALIZED)
             {
                 return;

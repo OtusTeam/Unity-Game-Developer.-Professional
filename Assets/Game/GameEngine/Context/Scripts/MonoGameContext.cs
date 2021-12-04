@@ -1,4 +1,5 @@
 using System.Collections;
+using GameElements;
 using GameElements.Unity;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -15,19 +16,38 @@ namespace Prototype.GameEngine
         private bool autoRun;
 
         [SerializeField]
-        private MonoBehaviour[] subsystems;
+        private Object[] subsystems;
+
+        [SerializeField]
+        private Object[] gameElements;
 
         private void Awake()
         {
             this.LoadSubsystems();
+            this.LoadGameElements();
         }
-        
+
+        private void LoadGameElements()
+        {
+            for (int i = 0, count = this.gameElements.Length; i < count; i++)
+            {
+                var element = this.gameElements[i];
+                if (element is IGameElement gameElement)
+                {
+                    this.AddElement(gameElement);
+                }
+            }
+        }
+
         private void LoadSubsystems()
         {
             for (int i = 0, count = this.subsystems.Length; i < count; i++)
             {
                 var subsystem = this.subsystems[i];
-                this.RegisterService(subsystem);
+                if (subsystem != null)
+                {
+                    this.RegisterService(subsystem);
+                }
             }
         }
 

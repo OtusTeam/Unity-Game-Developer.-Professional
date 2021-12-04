@@ -134,7 +134,7 @@
             </e>
             <e p="Unity" t="Include">
               <e p="MonoGameElementContainer.cs" t="Include" />
-              <e p="MonoGameElementController.cs" t="Include" />
+              <e p="MonoGameElementGroup.cs" t="Include" />
               <e p="MonoGameElementLayer.cs" t="Include" />
               <e p="MonoGameSystem.cs" t="Include" />
             </e>

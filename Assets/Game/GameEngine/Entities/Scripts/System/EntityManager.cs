@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using GameElements;
 using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class EntityManager : MonoBehaviour, IEntityManager, IGameInitElement
+    public sealed class EntityManager : MonoBehaviour, IEntityManager
     {
         private const string ENTITY_TAG = "Entity";
 
@@ -15,8 +14,6 @@ namespace Prototype.GameEngine
 
         private readonly HashSet<IEntity> entities;
 
-        private IGameSystem gameSystem;
-        
         public IEnumerable<IEntity> GetEntities()
         {
             foreach (var entity in this.entities)
@@ -27,32 +24,18 @@ namespace Prototype.GameEngine
 
         public void AddEntity(IEntity entity)
         {
-            if (!this.entities.Add(entity))
+            if (this.entities.Add(entity))
             {
-                return;
+                this.OnEntityAdded?.Invoke(entity);
             }
-
-            if (entity is IGameElement gameElement)
-            {
-                this.gameSystem.AddElement(gameElement);
-            }
-
-            this.OnEntityAdded?.Invoke(entity);
         }
 
         public void RemoveEntity(IEntity entity)
         {
-            if (!this.entities.Remove(entity))
+            if (this.entities.Remove(entity))
             {
-                return;
+                this.OnEntityRemoved?.Invoke(entity);
             }
-
-            if (entity is IGameElement gameElement)
-            {
-                this.gameSystem.RemoveElement(gameElement);
-            }
-
-            this.OnEntityRemoved?.Invoke(entity);
         }
 
         public EntityManager()
@@ -60,9 +43,8 @@ namespace Prototype.GameEngine
             this.entities = new HashSet<IEntity>();
         }
 
-        void IGameInitElement.InitGame(IGameSystem gameSystem)
+        private void Awake()
         {
-            this.gameSystem = gameSystem;
             this.InitializeEntities();
         }
 

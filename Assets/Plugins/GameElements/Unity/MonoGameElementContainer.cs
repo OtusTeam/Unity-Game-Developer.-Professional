@@ -4,19 +4,22 @@ using UnityEngine;
 
 namespace GameElements.Unity
 {
-    public class MonoGameElementContainer : MonoBehaviour, IGameElementGroup
+    public sealed class MonoGameElementContainer : MonoBehaviour, IGameElementGroup
     {
         [SerializeField]
-        protected MonoBehaviour[] gameElements;
-
+        private Transform[] containers;
+        
         public IEnumerator<IGameElement> GetEnumerator()
         {
-            foreach (var element in this.gameElements)
+            foreach (var container in this.containers)
             {
-                if (element is IGameElement gameElement)
+                foreach (Transform child in container)
                 {
-                    yield return gameElement;
-                }
+                    if (child.TryGetComponent(out IGameElement gameElement))
+                    {
+                        yield return gameElement;
+                    }
+                }    
             }
         }
 

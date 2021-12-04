@@ -1,16 +1,17 @@
 using System;
+using GameElements;
 using Prototype.GameEngine;
 using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public abstract class MapEntityRenderComponent : EntityComponent, IMapEntityRenderComponent
+    public abstract class MapEntityRenderComponent : EntityComponent, IMapEntityRenderComponent, IGameInitElement
     {
         private readonly Lazy<PositionComponent> positionComponent;
 
         private readonly Lazy<SizeComponent> sizeComponent;
 
-        private readonly Lazy<WorldArea> worldArea;
+        private WorldArea worldArea;
 
         private int mapEntityId;
 
@@ -18,7 +19,11 @@ namespace Prototype.GameInterface
         {
             this.positionComponent = this.GetComponentLazy<PositionComponent>();
             this.sizeComponent = this.GetComponentLazy<SizeComponent>();
-            this.worldArea = this.GetServiceLazy<WorldArea>();
+        }
+        
+        void IGameInitElement.InitGame(IGameSystem system)
+        {
+            this.worldArea = system.GetService<WorldArea>();
         }
 
         public void StartRender(IMapEntityLayer layer)
@@ -44,14 +49,12 @@ namespace Prototype.GameInterface
         
         private MapEntityArgs ProvideArgs()
         {
-            var worldArea = this.worldArea.Value;
-
             var worldPosition = this.positionComponent.Value.GetPosition();
-            var normalizedPosition = worldArea.NormalizeVector(worldPosition);
+            var normalizedPosition = this.worldArea.NormalizeVector(worldPosition);
             var normalizedUIPosition = new Vector2(normalizedPosition.x, normalizedPosition.z);
 
             var worldSize = this.sizeComponent.Value.GetSize();
-            var normalizedSize = worldArea.NormalizeVector(worldSize);
+            var normalizedSize = this.worldArea.NormalizeVector(worldSize);
             var normalizedUISize = new Vector2(normalizedSize.x, normalizedSize.z);
 
             var args = new MapEntityArgs

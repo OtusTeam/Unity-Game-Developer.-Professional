@@ -5,10 +5,8 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class Entity : MonoBehaviour, IEntity, IGameInitElement
+    public sealed class Entity : MonoBehaviour, IEntity
     {
-        private IGameSystem gameSystem;
-        
         private GenericDictionary componentMap;
         
         [SerializeField]
@@ -55,30 +53,14 @@ namespace Prototype.GameEngine
         private void SetupComponentMap()
         {
             this.componentMap = new GenericDictionary();
+            IEntity entity = this; 
             var components = this.parameters.initialComponents;
             for (int i = 0, count = components.Length; i < count; i++)
             {
                 var component = components[i];
                 if (component != null)
                 {
-                    this.componentMap.Add(component);
-                }
-            }
-        }
-
-        void IGameInitElement.InitGame(IGameSystem gameSystem)
-        {
-            this.gameSystem = gameSystem;
-            this.InitializeComponents(gameSystem);
-        }
-
-        private void InitializeComponents(IGameSystem gameSystem)
-        {
-            foreach (var component in this.componentMap)
-            {
-                if (component is IGameElement gameElement)
-                {
-                    gameSystem.AddElement(gameElement);
+                    entity.AddComponent(component);
                 }
             }
         }
@@ -96,6 +78,5 @@ namespace Prototype.GameEngine
             this.Awake();
         }
 #endif
-        
     }
 }

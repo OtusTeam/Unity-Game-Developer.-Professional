@@ -56,6 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4992366409746762107}
   - component: {fileID: 4992366409746762106}
+  - component: {fileID: 7043466107908732863}
   m_Layer: 0
   m_Name: UnitPrefab
   m_TagString: Entity
@@ -97,6 +98,20 @@ MonoBehaviour:
     - {fileID: 4992366409595975461}
     - {fileID: 4992366411567524035}
     - {fileID: 4992366410518532662}
+--- !u!114 &7043466107908732863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4992366409746762108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c47dce5d9e4094b6fa292b1bb0f614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containers:
+  - {fileID: 4992366411733980470}
 --- !u!1 &4992366409940120598
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using GameElements;
 using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class MapRendererPipeline : IMapRenderer, IGameElement
+    public sealed class MapRendererPipeline : IMapRenderer, IGameElementGroup
     {
         private readonly IMapRenderer[] orderedRenderers;
 
@@ -20,29 +22,22 @@ namespace Prototype.GameInterface
                 render.Render(layerTransform);
             }
         }
-            
-        void IGameElement.BindGame(IGameSystem system)
+
+        public IEnumerator<IGameElement> GetEnumerator()
         {
             for (int i = 0, count = this.orderedRenderers.Length; i < count; i++)
             {
                 var renderer = this.orderedRenderers[i];
                 if (renderer is IGameElement gameElement)
                 {
-                    gameElement.BindGame(system);
+                    yield return gameElement;
                 }
             }
         }
 
-        void IGameElement.Dispose()
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            for (int i = 0, count = this.orderedRenderers.Length; i < count; i++)
-            {
-                var renderer = this.orderedRenderers[i];
-                if (renderer is IGameElement gameElement)
-                {
-                    gameElement.Dispose();
-                }
-            }
+            return this.GetEnumerator();
         }
     }
 }

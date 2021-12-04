@@ -1,10 +1,12 @@
 using GameElements;
-using GameElements.Unity;
 using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class MapRenderController : MonoGameController
+    public sealed class MapRenderController : MonoBehaviour, 
+        IGameInitElement,
+        IGameStartElement,
+        IGameFinishElement
     {
         [SerializeField]
         private RectTransform layer;
@@ -26,15 +28,15 @@ namespace Prototype.GameInterface
             this.mapRenderer = this.config.CreateRenderer();
         }
 
-        protected override void OnBindGame(IGameSystem system)
+        void IGameInitElement.InitGame(IGameSystem system)
         {
             if (this.mapRenderer is IGameElement gameElement)
             {
-                gameElement.BindGame(system);
+                system.AddElement(gameElement);
             }
         }
-        
-        protected override void OnStartedGame()
+
+        void IGameStartElement.StartGame(IGameSystem system)
         {
             this.mapRenderer.Render(this.layer);
             this.currentTime = this.renderPeriod;
@@ -53,23 +55,9 @@ namespace Prototype.GameInterface
             this.currentTime += this.renderPeriod;
         }
 
-        protected override void OnFinishedGame()
+        void IGameFinishElement.FinishGame(IGameSystem system)
         {
-            base.OnFinishedGame();
             this.enabled = false;
-        }
-
-        protected override void OnUnbindGame()
-        {
-            if (this.mapRenderer is IGameElement gameElement)
-            {
-                gameElement.Dispose();
-            }
-
-            foreach (Transform child in this.layer)
-            {
-                Destroy(child.gameObject);
-            }
         }
     }
 }

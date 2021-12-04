@@ -1,11 +1,12 @@
-using System;
 using GameElements;
-using GameElements.Unity;
 using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class MinimapAnimationController : MonoGameController
+    public sealed class MinimapAnimationController : MonoBehaviour, 
+        IGameReadyElement,
+        IGameStartElement,
+        IGameFinishElement
     {
         private const string HIDDEN_ANIMATION_NAME = "Hidden";
 
@@ -15,22 +16,19 @@ namespace Prototype.GameInterface
 
         [SerializeField]
         private Animator animator;
-        
-        protected override void OnReadyGame()
+
+        void IGameReadyElement.ReadyGame(IGameSystem system)
         {
-            base.OnReadyGame();
             this.animator.Play(HIDDEN_ANIMATION_NAME);
         }
 
-        protected override void OnStartedGame()
+        void IGameStartElement.StartGame(IGameSystem system)
         {
-            base.OnStartedGame();
             this.animator.Play(SHOW_ANIMATION_NAME);
         }
 
-        protected override void OnFinishedGame()
+        void IGameFinishElement.FinishGame(IGameSystem system)
         {
-            base.OnFinishedGame();
             this.animator.Play(HIDE_ANIMATION_NAME);
         }
     }

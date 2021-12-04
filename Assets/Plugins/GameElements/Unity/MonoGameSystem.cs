@@ -7,10 +7,10 @@ namespace GameElements.Unity
     {
         #region Events
 
-        public event Action OnGameInitialize
+        public event Action OnGameInitialized
         {
-            add { this.gameSystem.OnGameInitialize += value; }
-            remove { this.gameSystem.OnGameInitialize -= value; }
+            add { this.gameSystem.OnGameInitialized += value; }
+            remove { this.gameSystem.OnGameInitialized -= value; }
         }
 
         public event Action OnGameReady
@@ -19,28 +19,28 @@ namespace GameElements.Unity
             remove { this.gameSystem.OnGameReady -= value; }
         }
 
-        public event Action OnGameStart
+        public event Action OnGameStarted
         {
-            add { this.gameSystem.OnGameStart += value; }
-            remove { this.gameSystem.OnGameStart -= value; }
+            add { this.gameSystem.OnGameStarted += value; }
+            remove { this.gameSystem.OnGameStarted -= value; }
         }
 
-        public event Action OnGamePause
+        public event Action OnGamePaused
         {
-            add { this.gameSystem.OnGamePause += value; }
-            remove { this.gameSystem.OnGameResume -= value; }
+            add { this.gameSystem.OnGamePaused += value; }
+            remove { this.gameSystem.OnGameResumed -= value; }
         }
 
-        public event Action OnGameResume
+        public event Action OnGameResumed
         {
-            add { this.gameSystem.OnGameResume += value; }
-            remove { this.gameSystem.OnGameResume -= value; }
+            add { this.gameSystem.OnGameResumed += value; }
+            remove { this.gameSystem.OnGameResumed -= value; }
         }
 
-        public event Action OnGameFinish
+        public event Action OnGameFinished
         {
-            add { this.gameSystem.OnGameFinish += value; }
-            remove { this.gameSystem.OnGameFinish -= value; }
+            add { this.gameSystem.OnGameFinished += value; }
+            remove { this.gameSystem.OnGameFinished -= value; }
         }
 
         #endregion
@@ -59,9 +59,9 @@ namespace GameElements.Unity
 
         #region Lifecycle
 
-        public virtual void InitializeGame()
+        public virtual void InitGame()
         {
-            this.gameSystem.InitializeGame();
+            this.gameSystem.InitGame();
         }
 
         public void ReadyGame()
@@ -89,21 +89,21 @@ namespace GameElements.Unity
             this.gameSystem.FinishGame();
         }
 
-        public void DestroyGame()
+        public void DisposeGame()
         {
-            this.gameSystem.DestroyGame();
+            this.gameSystem.DisposeGame();
         }
 
         #endregion
 
-        public bool AddService(object service)
+        public bool RegisterService(object service)
         {
-            return this.gameSystem.AddService(service);
+            return this.gameSystem.RegisterService(service);
         }
 
-        public bool RemoveService(object service)
+        public bool UnregisterService(object service)
         {
-            return this.gameSystem.RemoveService(service);
+            return this.gameSystem.UnregisterService(service);
         }
 
         public T GetService<T>()

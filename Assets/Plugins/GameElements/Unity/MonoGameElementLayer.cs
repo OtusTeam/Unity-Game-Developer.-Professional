@@ -60,9 +60,9 @@ namespace GameElements.Unity
             this.layer.BindGame(system);
         }
 
-        void IGameElement.UnbindGame()
+        void IGameElement.Dispose()
         {
-            this.layer.UnbindGame();
+            this.layer.Dispose();
         }
         
         #endregion

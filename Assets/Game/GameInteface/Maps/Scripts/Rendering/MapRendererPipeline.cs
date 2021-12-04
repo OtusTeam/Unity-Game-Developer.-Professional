@@ -33,14 +33,14 @@ namespace Prototype.GameInterface
             }
         }
 
-        void IGameElement.UnbindGame()
+        void IGameElement.Dispose()
         {
             for (int i = 0, count = this.orderedRenderers.Length; i < count; i++)
             {
                 var renderer = this.orderedRenderers[i];
                 if (renderer is IGameElement gameElement)
                 {
-                    gameElement.UnbindGame();
+                    gameElement.Dispose();
                 }
             }
         }

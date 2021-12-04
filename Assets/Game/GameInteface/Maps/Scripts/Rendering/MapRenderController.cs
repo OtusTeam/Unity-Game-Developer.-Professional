@@ -34,7 +34,7 @@ namespace Prototype.GameInterface
             }
         }
         
-        protected override void OnStartGame()
+        protected override void OnStartedGame()
         {
             this.mapRenderer.Render(this.layer);
             this.currentTime = this.renderPeriod;
@@ -53,9 +53,9 @@ namespace Prototype.GameInterface
             this.currentTime += this.renderPeriod;
         }
 
-        protected override void OnFinishGame()
+        protected override void OnFinishedGame()
         {
-            base.OnFinishGame();
+            base.OnFinishedGame();
             this.enabled = false;
         }
 
@@ -63,7 +63,7 @@ namespace Prototype.GameInterface
         {
             if (this.mapRenderer is IGameElement gameElement)
             {
-                gameElement.UnbindGame();
+                gameElement.Dispose();
             }
 
             foreach (Transform child in this.layer)

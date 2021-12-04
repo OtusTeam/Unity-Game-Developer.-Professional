@@ -49,9 +49,9 @@ namespace GameElements.Unity
             this.container.BindGame(system);
         }
 
-        void IGameElement.UnbindGame()
+        void IGameElement.Dispose()
         {
-            this.container.UnbindGame();
+            this.container.Dispose();
         }
 
         #endregion

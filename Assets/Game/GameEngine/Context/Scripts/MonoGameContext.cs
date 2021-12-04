@@ -27,7 +27,7 @@ namespace Prototype.GameEngine
             for (int i = 0, count = this.subsystems.Length; i < count; i++)
             {
                 var subsystem = this.subsystems[i];
-                this.AddService(subsystem);
+                this.RegisterService(subsystem);
             }
         }
 
@@ -42,7 +42,7 @@ namespace Prototype.GameEngine
 
         private void LaunchGame()
         {
-            this.InitializeGame();
+            this.InitGame();
             this.ReadyGame();
             this.StartGame();
             this.gameLaunched = true;
@@ -62,7 +62,7 @@ namespace Prototype.GameEngine
         private void Editor_FinishGame()
         {
             this.FinishGame();
-            this.DestroyGame();
+            this.DisposeGame();
             this.gameLaunched = false;
         }
 #endif

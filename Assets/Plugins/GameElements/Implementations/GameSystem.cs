@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace GameElements
 {
@@ -6,43 +7,45 @@ namespace GameElements
     {
         #region Event
 
-        public event Action OnGameInitialize;
+        public event Action OnGameInitialized;
 
         public event Action OnGameReady;
 
-        public event Action OnGameStart;
+        public event Action OnGameStarted;
 
-        public event Action OnGamePause;
+        public event Action OnGamePaused;
 
-        public event Action OnGameResume;
+        public event Action OnGameResumed;
 
-        public event Action OnGameFinish;
+        public event Action OnGameFinished;
 
         #endregion
         
         public GameState State { get; protected set; }
 
-        private readonly GameElementLayer serviceLayer;
-        
+        private readonly Layer serviceLayer;
+
+        private readonly HashSet<IGameElement> gameElements;
+
         #region GameCycle
 
         public GameSystem()
         {
-            this.State = GameState.CREATE;
-            this.serviceLayer = new GameElementLayer();
+            this.State = GameState.NOT_INIITIALIZED;
+            this.serviceLayer = new Layer();
+            this.gameElements = new HashSet<IGameElement>();
         }
 
-        public void InitializeGame()
+        public void InitGame()
         {
-            if (this.State != GameState.CREATE)
+            if (this.State != GameState.NOT_INIITIALIZED)
             {
                 return;
             }
 
-            this.serviceLayer.BindGame(this);
-            this.State = GameState.PREPARE;
+            this.State = GameState.INITIALIZE;
             this.OnInitializeGame();
-            this.OnGameInitialize?.Invoke();
+            this.OnGameInitialized?.Invoke();
         }
 
         protected virtual void OnInitializeGame()
@@ -51,7 +54,7 @@ namespace GameElements
 
         public void ReadyGame()
         {
-            if (this.State != GameState.PREPARE)
+            if (this.State != GameState.INITIALIZE)
             {
                 return;
             }
@@ -74,7 +77,7 @@ namespace GameElements
 
             this.State = GameState.PLAY;
             this.OnStartGame();
-            this.OnGameStart?.Invoke();
+            this.OnGameStarted?.Invoke();
         }
 
         protected virtual void OnStartGame()
@@ -90,7 +93,7 @@ namespace GameElements
 
             this.State = GameState.PAUSE;
             this.OnPauseGame();
-            this.OnGamePause?.Invoke();
+            this.OnGamePaused?.Invoke();
         }
 
         protected virtual void OnPauseGame()
@@ -106,7 +109,7 @@ namespace GameElements
 
             this.State = GameState.PLAY;
             this.OnResumeGame();
-            this.OnGameResume?.Invoke();
+            this.OnGameResumed?.Invoke();
         }
 
         protected virtual void OnResumeGame()
@@ -122,23 +125,46 @@ namespace GameElements
 
             this.State = GameState.FINISH;
             this.OnFinishGame();
-            this.OnGameFinish?.Invoke();
+            this.OnGameFinished?.Invoke();
         }
 
         protected virtual void OnFinishGame()
         {
         }
 
-        public void DestroyGame()
+        public void DisposeGame()
         {
             if (this.State != GameState.FINISH)
             {
                 return;
             }
-
-            this.serviceLayer.UnbindGame();
+            
             this.OnDestroyGame();
-            this.State = GameState.CREATE;
+            this.State = GameState.NOT_INIITIALIZED;
+        }
+
+        public void AddElement(IGameElement element)
+        {
+            var gameElements = GameElementUtils.CollectElements(element);
+            foreach (var gameElement in gameElements)
+            {
+                
+                
+                if (this.)
+                {
+                    
+                }
+                
+                if (gameElement is IGameElement)
+                {
+                    
+                }
+            }
+        }
+
+        public void RemoveElement(IGameElement element)
+        {
+            
         }
 
         protected virtual void OnDestroyGame()
@@ -149,26 +175,51 @@ namespace GameElements
 
         #region Services
 
-        public bool AddService(object service)
+        public bool RegisterService(object service)
         {
-            return this.serviceLayer.AddElement(service);
+            return this.serviceLayer.Add(service);
         }
 
-        public bool RemoveService(object service)
+        public bool UnregisterService(object service)
         {
-            return this.serviceLayer.RemoveElement(service);
+            return this.serviceLayer.Remove(service);
         }
 
         public T GetService<T>()
         {
-            return this.serviceLayer.GetElement<T>();
+            return this.serviceLayer.Get<T>();
         }
 
         public bool TryGetService<T>(out T service)
         {
-            return this.serviceLayer.TryGetElement(out service);
+            return this.serviceLayer.TryGet(out service);
         }
 
         #endregion
+        
+        
+        
+
+        private void ActivateElement(IGameElement element, IGameSystem system)
+        {
+            if (!this.gameElements.Add(element))
+            {
+                return;
+            }
+            
+            
+            
+        }
+        
+        private void DeactivateElement(IGameElement element, IGameSystem system)
+        {
+            if (this.gameElements.Remove(element))
+            {
+                if (element is IGameDisposeElement disposeElement)
+                {
+                    disposeElement.DisposeGame(system);
+                }
+            }
+        }
     }
 }

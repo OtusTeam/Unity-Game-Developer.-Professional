@@ -59,9 +59,9 @@ namespace Prototype.GameEngine
             this.componentLayer.BindGame(gameSystem);
         }
 
-        void IGameElement.UnbindGame()
+        void IGameElement.Dispose()
         {
-            this.componentLayer.UnbindGame();
+            this.componentLayer.Dispose();
         }
 
         private void Awake()

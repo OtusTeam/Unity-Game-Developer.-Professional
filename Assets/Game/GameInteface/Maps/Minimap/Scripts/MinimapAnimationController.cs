@@ -22,15 +22,15 @@ namespace Prototype.GameInterface
             this.animator.Play(HIDDEN_ANIMATION_NAME);
         }
 
-        protected override void OnStartGame()
+        protected override void OnStartedGame()
         {
-            base.OnStartGame();
+            base.OnStartedGame();
             this.animator.Play(SHOW_ANIMATION_NAME);
         }
 
-        protected override void OnFinishGame()
+        protected override void OnFinishedGame()
         {
-            base.OnFinishGame();
+            base.OnFinishedGame();
             this.animator.Play(HIDE_ANIMATION_NAME);
         }
     }

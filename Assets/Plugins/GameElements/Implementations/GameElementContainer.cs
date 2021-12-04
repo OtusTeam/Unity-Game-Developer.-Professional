@@ -43,7 +43,7 @@ namespace GameElements
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.UnbindGame();
+                    gameElement.Dispose();
                 }    
             }
             
@@ -67,13 +67,13 @@ namespace GameElements
             }
         }
 
-        public void UnbindGame()
+        public void Dispose()
         {
             foreach (var element in this.elements)
             {
                 if (element is IGameElement gameElement)
                 {
-                    gameElement.UnbindGame();
+                    gameElement.Dispose();
                 }
             }
         }

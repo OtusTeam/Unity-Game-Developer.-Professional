@@ -65,9 +65,9 @@ namespace Prototype.GameEngine
             this.entityContainer.BindGame(system);
         }
 
-        void IGameElement.UnbindGame()
+        void IGameElement.Dispose()
         {
-            this.entityContainer.UnbindGame();
+            this.entityContainer.Dispose();
         }
     }
 }

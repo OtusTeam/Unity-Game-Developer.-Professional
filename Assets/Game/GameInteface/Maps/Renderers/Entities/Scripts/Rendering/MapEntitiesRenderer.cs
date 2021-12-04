@@ -47,9 +47,9 @@ namespace Prototype.GameInterface
             this.cullController.Start();
         }
 
-        protected override void OnFinishGame()
+        protected override void OnFinishedGame()
         {
-            base.OnFinishGame();
+            base.OnFinishedGame();
             this.cullController.Finish();
         }
     }

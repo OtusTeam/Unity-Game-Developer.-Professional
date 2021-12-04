@@ -24,15 +24,15 @@ namespace GameElements
         {
         }
 
-        private void OnInitialize()
+        private void OnInitialized()
         {
             if (this.Initialize(this.gameSystem))
             {
                 this.gameSystem.OnGameReady += this.OnReadyGame;
-                this.gameSystem.OnGameStart += this.OnStartGame;
-                this.gameSystem.OnGamePause += this.OnPauseGame;
-                this.gameSystem.OnGameResume += this.OnResumeGame;
-                this.gameSystem.OnGameFinish += this.OnFinishGame;
+                this.gameSystem.OnGameStarted += this.OnStartedGame;
+                this.gameSystem.OnGamePaused += this.OnPausedGame;
+                this.gameSystem.OnGameResumed += this.OnResumedGame;
+                this.gameSystem.OnGameFinished += this.OnFinishedGame;
             }
         }
 
@@ -45,23 +45,23 @@ namespace GameElements
         {
         }
 
-        protected virtual void OnStartGame()
+        protected virtual void OnStartedGame()
         {
         }
 
-        protected virtual void OnPauseGame()
+        protected virtual void OnPausedGame()
         {
         }
 
-        protected virtual void OnResumeGame()
+        protected virtual void OnResumedGame()
         {
         }
 
-        protected virtual void OnFinishGame()
+        protected virtual void OnFinishedGame()
         {
         }
 
-        void IGameElement.UnbindGame()
+        void IGameElement.Dispose()
         {
             if (this.gameSystem == null)
             {
@@ -71,12 +71,12 @@ namespace GameElements
             var system = this.gameSystem;
             this.gameSystem = null;
             
-            system.OnGameInitialize -= this.OnInitialize;
+            system.OnGameInitialized -= this.OnInitialized;
             system.OnGameReady -= this.OnReadyGame;
-            system.OnGameStart -= this.OnStartGame;
-            system.OnGamePause -= this.OnPauseGame;
-            system.OnGameResume -= this.OnResumeGame;
-            system.OnGameFinish -= this.OnFinishGame;
+            system.OnGameStarted -= this.OnStartedGame;
+            system.OnGamePaused -= this.OnPausedGame;
+            system.OnGameResumed -= this.OnResumedGame;
+            system.OnGameFinished -= this.OnFinishedGame;
             this.OnUnbindGame();
         }
 
@@ -94,9 +94,9 @@ namespace GameElements
                 return;
             }
 
-            if (gameState < GameState.PREPARE)
+            if (gameState < GameState.INITIALIZE)
             {
-                system.OnGameInitialize += this.OnInitialize;
+                system.OnGameInitialized += this.OnInitialized;
                 return;
             }
 
@@ -114,18 +114,18 @@ namespace GameElements
             this.OnReadyGame();
             if (gameState < GameState.PLAY)
             {
-                system.OnGameStart += this.OnStartGame;
+                system.OnGameStarted += this.OnStartedGame;
                 return;
             }
 
-            this.OnStartGame();
-            system.OnGamePause += this.OnPauseGame;
-            system.OnGameResume += this.OnResumeGame;
-            system.OnGameFinish += this.OnFinishGame;
+            this.OnStartedGame();
+            system.OnGamePaused += this.OnPausedGame;
+            system.OnGameResumed += this.OnResumedGame;
+            system.OnGameFinished += this.OnFinishedGame;
             
             if (gameState == GameState.PAUSE)
             {
-                this.OnPauseGame();
+                this.OnPausedGame();
             }
         }
     }

@@ -2,8 +2,8 @@ namespace GameElements
 {
     public enum GameState
     {
-        CREATE = 1,
-        PREPARE = 2,
+        NOT_INIITIALIZED = 1,
+        INITIALIZE = 2,
         READY = 3,
         PLAY = 4,
         PAUSE = 5,

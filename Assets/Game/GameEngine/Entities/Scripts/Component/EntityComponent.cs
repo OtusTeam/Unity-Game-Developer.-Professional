@@ -25,7 +25,7 @@ namespace Prototype.GameEngine
             this.GameSystem = system;
         }
 
-        void IGameElement.UnbindGame()
+        void IGameElement.Dispose()
         {
             this.GameSystem = null;
         }

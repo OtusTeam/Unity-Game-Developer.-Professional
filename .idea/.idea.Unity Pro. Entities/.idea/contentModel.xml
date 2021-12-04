@@ -134,7 +134,7 @@
               <e p="GameSystem.cs" t="Include" />
             </e>
             <e p="Interfaces" t="Include">
-              <e p="IGameElement.cs" t="Include" />
+              <e p="GameElements.cs" t="Include" />
               <e p="IGameSystem.cs" t="Include" />
             </e>
             <e p="Unity" t="Include">
@@ -144,7 +144,9 @@
               <e p="MonoGameSystem.cs" t="Include" />
             </e>
             <e p="Utils" t="Include">
+              <e p="GameElementUtils.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
+              <e p="Layer.cs" t="Include" />
             </e>
           </e>
           <e p="Sirenix" t="Include">

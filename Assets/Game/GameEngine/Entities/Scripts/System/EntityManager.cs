@@ -5,69 +5,80 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class EntityManager : MonoBehaviour, IEntityManager, IGameElement
+    public sealed class EntityManager : MonoBehaviour, IEntityManager, IGameInitElement
     {
         private const string ENTITY_TAG = "Entity";
-        
+
         public event Action<IEntity> OnEntityAdded;
-        
+
         public event Action<IEntity> OnEntityRemoved;
 
-        private GameElementContainer entityContainer;
+        private readonly HashSet<IEntity> entities;
+
+        private IGameSystem gameSystem;
+        
+        public IEnumerable<IEntity> GetEntities()
+        {
+            foreach (var entity in this.entities)
+            {
+                yield return entity;
+            }
+        }
 
         public void AddEntity(IEntity entity)
         {
-            if (this.entityContainer.AddElement(entity))
+            if (!this.entities.Add(entity))
             {
-                this.OnEntityAdded?.Invoke(entity);
+                return;
             }
+
+            if (entity is IGameElement gameElement)
+            {
+                this.gameSystem.AddElement(gameElement);
+            }
+
+            this.OnEntityAdded?.Invoke(entity);
         }
 
         public void RemoveEntity(IEntity entity)
         {
-            if (this.entityContainer.RemoveElement(entity))
+            if (!this.entities.Remove(entity))
             {
-                this.OnEntityRemoved?.Invoke(entity);
+                return;
             }
+
+            if (entity is IGameElement gameElement)
+            {
+                this.gameSystem.RemoveElement(gameElement);
+            }
+
+            this.OnEntityRemoved?.Invoke(entity);
         }
 
-        public IEnumerable<IEntity> GetEntities()
+        public EntityManager()
         {
-            foreach (var entity in this.entityContainer)
-            {
-                yield return (IEntity) entity;
-            }
+            this.entities = new HashSet<IEntity>();
         }
-        
-        private void Awake()
+
+        void IGameInitElement.InitGame(IGameSystem gameSystem)
         {
-            this.entityContainer = new GameElementContainer();
+            this.gameSystem = gameSystem;
             this.InitializeEntities();
         }
 
         private void InitializeEntities()
         {
-            var entitiesGO = GameObject.FindGameObjectsWithTag(ENTITY_TAG);
-            var count = entitiesGO.Length;
+            var gameObjects = GameObject.FindGameObjectsWithTag(ENTITY_TAG);
+            var count = gameObjects.Length;
 
             for (var i = 0; i < count; i++)
             {
-                var entityGO = entitiesGO[i];
-                if (entityGO.TryGetComponent(out IEntity entity))
+                var gameObject = gameObjects[i];
+                if (gameObject.TryGetComponent(out IEntity entity))
                 {
-                    this.entityContainer.AddElement(entity);
+                    this.AddEntity(entity);
                 }
             }
-        }
-
-        void IGameElement.BindGame(IGameSystem system)
-        {
-            this.entityContainer.BindGame(system);
-        }
-
-        void IGameElement.Dispose()
-        {
-            this.entityContainer.Dispose();
         }
     }
 }

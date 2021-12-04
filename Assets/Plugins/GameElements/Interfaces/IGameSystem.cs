@@ -15,7 +15,7 @@ namespace GameElements
         event Action OnGameResumed;
 
         event Action OnGameFinished;
-        
+
         GameState State { get; }
 
         void InitGame();
@@ -30,8 +30,6 @@ namespace GameElements
     
         void FinishGame();
 
-        void DisposeGame();
-        
         void AddElement(IGameElement element);
 
         void RemoveElement(IGameElement element);

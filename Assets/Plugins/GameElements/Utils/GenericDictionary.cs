@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace GameElements
 {
-    public sealed class Layer : IEnumerable<object>
+    public sealed class GenericDictionary : IEnumerable<object>
     {
         private readonly Dictionary<Type, object> itemMap;
 
-        public Layer()
+        public GenericDictionary()
         {
             this.itemMap = new Dictionary<Type, object>();
         }

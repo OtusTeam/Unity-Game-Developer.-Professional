@@ -1,70 +1,43 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace GameElements.Unity
 {
-    public sealed class MonoGameElementLayer : MonoBehaviour, IGameElement
+    public class MonoGameElementLayer : MonoGameElementContainer
     {
-        [SerializeField]
-        private MonoBehaviour[] gameElements;
-
-        private GameElementLayer layer;
-
-        public bool AddElement(object element)
-        {
-            return this.layer.AddElement(element);
-        }
-
-        public bool RemoveElement(object element)
-        {
-            return this.layer.RemoveElement(element);
-        }
+        private GenericDictionary elementMap;
 
         public T GetElement<T>()
         {
-            return this.layer.GetElement<T>();
+            return this.elementMap.Get<T>();
         }
 
         public IEnumerable<T> GetElements<T>()
         {
-            return this.layer.GetElements<T>();
+            return this.elementMap.All<T>();
         }
 
         public bool TryGetElement<T>(out T element)
         {
-            return this.layer.TryGetElement(out element);
+            return this.elementMap.TryGet(out element);
         }
-
-        #region Lifecycle
-
+        
         private void Awake()
         {
-            this.layer = new GameElementLayer();
-            this.InitializeElementLayer();
+            this.elementMap = new GenericDictionary();
+            this.InitializeElements();
         }
 
-        private void InitializeElementLayer()
+        private void InitializeElements()
         {
-            for (int i = 0, count = this.gameElements.Length; i < count; i++)
+            var count = this.gameElements.Length;
+            for (var i = 0; i < count; i++)
             {
-                var gameElement = this.gameElements[i];
-                if (gameElement != null)
+                var element = this.gameElements[i];
+                if (element != null)
                 {
-                    this.layer.AddElement(gameElement);
+                    this.elementMap.Add(element);
                 }
             }
         }
-
-        void IGameElement.BindGame(IGameSystem system)
-        {
-            this.layer.BindGame(system);
-        }
-
-        void IGameElement.Dispose()
-        {
-            this.layer.Dispose();
-        }
-        
-        #endregion
     }
 }

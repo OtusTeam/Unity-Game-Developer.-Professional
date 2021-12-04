@@ -62,7 +62,6 @@ namespace Prototype.GameEngine
         private void Editor_FinishGame()
         {
             this.FinishGame();
-            this.DisposeGame();
             this.gameLaunched = false;
         }
 #endif

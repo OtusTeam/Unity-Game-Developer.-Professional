@@ -89,9 +89,14 @@ namespace GameElements.Unity
             this.gameSystem.FinishGame();
         }
 
-        public void DisposeGame()
+        public void AddElement(IGameElement element)
         {
-            this.gameSystem.DisposeGame();
+            this.gameSystem.AddElement(element);
+        }
+
+        public void RemoveElement(IGameElement element)
+        {
+            this.gameSystem.RemoveElement(element);
         }
 
         #endregion

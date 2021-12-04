@@ -2,8 +2,6 @@ namespace Prototype.GameEngine
 {
     public interface IEntityComponent
     {
-        void BindEntity(IEntity entity);
-
-        void UnbindEntity();
+        void SetEntity(IEntity entity);
     }
 }

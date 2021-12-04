@@ -1,85 +1,84 @@
 using System;
 using System.Collections.Generic;
 using GameElements;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class Entity : MonoBehaviour, IEntity, IGameElement
+    public sealed class Entity : MonoBehaviour, IEntity, IGameInitElement
     {
-        private GameElementLayer componentLayer;
+        private IGameSystem gameSystem;
+        
+        private GenericDictionary componentMap;
         
         [SerializeField]
         private Parameters parameters;
 
         void IEntity.AddComponent(object component)
         {
-            if (!this.componentLayer.AddElement(component))
+            if (!this.componentMap.Add(component))
             {
                 return;
             }
             
             if (component is IEntityComponent entityComponent)
             {
-                entityComponent.BindEntity(this);
+                entityComponent.SetEntity(this);
             }
         }
 
         void IEntity.RemoveComponent(object component)
         {
-            if (!this.componentLayer.RemoveElement(component))
-            {
-                return;
-            }
-            
-            if (component is IEntityComponent entityComponent)
-            {
-                entityComponent.UnbindEntity();
-            }
+            this.componentMap.Remove(component);
         }
 
         T IEntity.GetComponent<T>()
         {
-            return this.componentLayer.GetElement<T>();
+            return this.componentMap.Get<T>();
         }
 
         bool IEntity.TryGetComponent<T>(out T component)
         {
-            return this.componentLayer.TryGetElement(out component);
+            return this.componentMap.TryGet(out component);
         }
 
         IEnumerable<T> IEntity.GetComponents<T>()
         {
-            return this.componentLayer.GetElements<T>();
-        }
-
-        void IGameElement.BindGame(IGameSystem gameSystem)
-        {
-            this.componentLayer.BindGame(gameSystem);
-        }
-
-        void IGameElement.Dispose()
-        {
-            this.componentLayer.Dispose();
+            return this.componentMap.All<T>();
         }
 
         private void Awake()
         {
-            this.componentLayer = new GameElementLayer();
-            this.InitializeComponentLayer();
+            this.SetupComponentMap();
         }
 
-        private void InitializeComponentLayer()
+        private void SetupComponentMap()
         {
-            IEntity entity = this;
+            this.componentMap = new GenericDictionary();
             var components = this.parameters.initialComponents;
             for (int i = 0, count = components.Length; i < count; i++)
             {
                 var component = components[i];
                 if (component != null)
                 {
-                    entity.AddComponent(component);
+                    this.componentMap.Add(component);
+                }
+            }
+        }
+
+        void IGameInitElement.InitGame(IGameSystem gameSystem)
+        {
+            this.gameSystem = gameSystem;
+            this.InitializeComponents(gameSystem);
+        }
+
+        private void InitializeComponents(IGameSystem gameSystem)
+        {
+            foreach (var component in this.componentMap)
+            {
+                if (component is IGameElement gameElement)
+                {
+                    gameSystem.AddElement(gameElement);
                 }
             }
         }
@@ -97,5 +96,6 @@ namespace Prototype.GameEngine
             this.Awake();
         }
 #endif
+        
     }
 }

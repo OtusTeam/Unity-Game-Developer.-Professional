@@ -32,13 +32,8 @@ namespace GameElements
         void ResumeGame(IGameSystem gameSystem);
     }
 
-    public interface IGameFinishElement
+    public interface IGameFinishElement : IGameElement
     {
         void FinishGame(IGameSystem gameSystem);
-    }
-
-    public interface IGameDisposeElement : IGameElement
-    {
-        void DisposeGame(IGameSystem gameSystem);
     }
 }

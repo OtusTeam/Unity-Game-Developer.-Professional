@@ -35,9 +35,7 @@
             </e>
             <e p="Context" t="Include">
               <e p="Scripts" t="Include">
-                <e p="GameElementId.cs" t="Include" />
                 <e p="MonoGameContext.cs" t="Include" />
-                <e p="MonoGameModule.cs" t="Include" />
               </e>
             </e>
             <e p="Entities" t="Include">
@@ -128,9 +126,6 @@
         <e p="Plugins" t="Include">
           <e p="GameElements" t="Include">
             <e p="Implementations" t="Include">
-              <e p="GameController.cs" t="Include" />
-              <e p="GameElementContainer.cs" t="Include" />
-              <e p="GameElementLayer.cs" t="Include" />
               <e p="GameSystem.cs" t="Include" />
             </e>
             <e p="Interfaces" t="Include">
@@ -138,15 +133,16 @@
               <e p="IGameSystem.cs" t="Include" />
             </e>
             <e p="Unity" t="Include">
-              <e p="MonoGameController.cs" t="Include" />
               <e p="MonoGameElementContainer.cs" t="Include" />
+              <e p="MonoGameElementController.cs" t="Include" />
               <e p="MonoGameElementLayer.cs" t="Include" />
               <e p="MonoGameSystem.cs" t="Include" />
             </e>
             <e p="Utils" t="Include">
-              <e p="GameElementUtils.cs" t="Include" />
+              <e p="GameElementContext.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
-              <e p="Layer.cs" t="Include" />
+              <e p="GenericDictionary.cs" t="Include" />
+              <e p="IGameElementContext.cs" t="Include" />
             </e>
           </e>
           <e p="Sirenix" t="Include">

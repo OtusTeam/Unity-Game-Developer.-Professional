@@ -1,9 +1,9 @@
 using GameElements;
-using Prototype.UI;
+using Prototype.GameEngine;
 
-namespace Prototype.GameEngine
+namespace Prototype.UI
 {
-    public sealed class TradingViewController
+    public sealed class CharacterTradeController
     { 
         private readonly ITradeManager tradeManager;
 
@@ -11,7 +11,7 @@ namespace Prototype.GameEngine
 
         private ITrader currentTrader;
 
-        public TradingViewController(IGameSystem gameSystem)
+        public CharacterTradeController(IGameSystem gameSystem)
         {
             this.tradeManager = gameSystem.GetService<ITradeManager>();
         }

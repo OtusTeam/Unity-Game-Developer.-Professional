@@ -10,42 +10,34 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Подкрутил сервис-локатор">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Money.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Money/MoneyComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Money/MoneyComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Resource.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Resource/ResourceComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Resource/ResourceComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeEnterController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeEnterController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradePoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradePoint.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/Trading.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/Trading/TradeCharacter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/Trading/TradeCharacter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/Trading/Trader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/Trading/Trader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts/ITradeCharacter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts/ITradeCharacter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts/ITrader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts/ITrader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingPopup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingPopup.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingViewController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingViewController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/GameSystemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/GameSystemManager.cs" afterDir="false" />
+    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Написал пример попапа">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Controllers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterResourceController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterResourceController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Elements.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Elements/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Elements/Scripts/CharacterResourcesView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Elements/Scripts/CharacterResourcesView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Elements/Scripts/TraderPriceView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Elements/Scripts/TraderPriceView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeEnterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeEnterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts/ITradeCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/Scripts/ITradeCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts/ITradeCharacter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/Scripts/ITradeCharacter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts/ITrader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/Scripts/ITrader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Models/Scripts/ITrader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/Scripts/ITrader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterTradeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingViewController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterTradeController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Internal/GameElementContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Internal/GameElementContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +80,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/GameInteface/Maps/Scripts/Rendering/IMapRenderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/5e/3b569e17/UnityGameSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/EntityComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Projects/Unity Pro. Entities/Assets/Plugins/GameElements/Scripts/Internal/GameElementContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Teams/Scripts/Component/TeamComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/IEntity.cs" root0="FORCE_HIGHLIGHTING" />
@@ -97,19 +90,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/Injector/GamePopupInjector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/GamePopupFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/GameInjector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/IGameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/AbstractGameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/MonoGameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/Configs/PopupAssets.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/Scripts/DontDestroy/DontDestroyOnLoad.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Scripts/GameInterface.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/GameSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Internal/GameElementContext.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Screens/Scripts/GameScreen.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameElementDirectory.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameElementGroup.cs" />
@@ -145,8 +128,18 @@
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/Trading/TradeCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingPopupController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingPopup.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Internal/GameElementContext.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Domain/Scripts/ITradeCharacter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingUIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/CharacterResourcesView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Elements/Scripts/CharacterResourceController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Elements/Scripts/CharacterResourcesView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterTradeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Elements/Scripts/TraderPriceView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/TradingPopup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterResourceController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeEnterController.cs" />
       </list>
     </option>
@@ -203,7 +196,7 @@
       <workItem from="1638503200294" duration="847000" />
       <workItem from="1638504177198" duration="35691000" />
       <workItem from="1638603001714" duration="18484000" />
-      <workItem from="1638675429020" duration="22852000" />
+      <workItem from="1638675429020" duration="25080000" />
     </task>
     <task id="LOCAL-00001" summary="Iniitial commit">
       <created>1638432596450</created>
@@ -422,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638698645187</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Написал пример попапа">
+      <created>1638704453579</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1638704453579</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,9 +463,14 @@
     <MESSAGE value="Реализовал систему попапов" />
     <MESSAGE value="Собираю систему попапов" />
     <MESSAGE value="Подкрутил сервис-локатор" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подкрутил сервис-локатор" />
+    <MESSAGE value="Написал пример попапа" />
+    <option name="LAST_COMMIT_MESSAGE" value="Написал пример попапа" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1638707005590">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1638707005590" />
     <state width="1440" height="339" key="GridCell.Tab.0.bottom" timestamp="1638565916980">
       <screen x="0" y="25" width="1440" height="790" />
     </state>
@@ -550,14 +555,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638703253125" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638704405945">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638706549961">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638704405945" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638698646681">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638706549961" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638704456399">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638698646681" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638704456399" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638680847639">
       <screen x="0" y="0" width="1440" height="900" />
@@ -567,9 +572,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638698634191" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638703291227">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1638705501415">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638703291227" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1638705501415" />
   </component>
 </project>

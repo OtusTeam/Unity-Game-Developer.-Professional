@@ -1,6 +1,6 @@
 using System;
 
-namespace Prototype.UI
+namespace Prototype
 {
     public interface ITradeCharacter
     {

@@ -38,6 +38,12 @@
               </e>
             </e>
           </e>
+          <e p="Domain" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ITradeCharacter.cs" t="Include" />
+              <e p="ITrader.cs" t="Include" />
+            </e>
+          </e>
           <e p="GameEngine" t="Include">
             <e p="Components" t="Include">
               <e p="Money" t="Include">
@@ -158,17 +164,22 @@
             </e>
           </e>
           <e p="UI" t="Include">
-            <e p="Models" t="Include">
+            <e p="Controllers" t="Include">
               <e p="Scripts" t="Include">
-                <e p="ITradeCharacter.cs" t="Include" />
-                <e p="ITrader.cs" t="Include" />
+                <e p="CharacterResourceController.cs" t="Include" />
+                <e p="CharacterTradeController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Elements" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="CharacterResourcesView.cs" t="Include" />
+                <e p="TraderPriceView.cs" t="Include" />
               </e>
             </e>
             <e p="Popups" t="Include">
               <e p="Content" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="TradingPopup.cs" t="Include" />
-                  <e p="TradingViewController.cs" t="Include" />
                 </e>
               </e>
               <e p="Scripts" t="Include">

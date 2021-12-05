@@ -1,4 +1,3 @@
-using System;
 using GameElements;
 using Popups;
 using Prototype.UI;
@@ -37,10 +36,10 @@ namespace Prototype.GameEngine
             }
             
             var trader = new Trader(point);
-            
-            var popupManager = this.GameSystem.GetService<IPopupManager>();
-            var popupArgs = new TradingPopup.Args(character, trader);
-            popupManager.ShowPopup<TradingPopup>(popupArgs);
+            //
+            // var popupManager = this.GameSystem.GetService<IPopupManager>();
+            // var popupArgs = new TradingPopup.Args(character, trader);
+            // popupManager.ShowPopup<TradingPopup>(popupArgs);
         }
 
         private bool IsCharacter(IEntity entity, out ITradeCharacter tradeCharacter)

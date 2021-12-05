@@ -40,8 +40,14 @@
           </e>
           <e p="GameEngine" t="Include">
             <e p="Components" t="Include">
+              <e p="Money" t="Include">
+                <e p="MoneyComponent.cs" t="Include" />
+              </e>
               <e p="Position" t="Include">
                 <e p="PositionComponent.cs" t="Include" />
+              </e>
+              <e p="Resource" t="Include">
+                <e p="ResourceComponent.cs" t="Include" />
               </e>
               <e p="SizeComponent" t="Include">
                 <e p="SizeComponent.cs" t="Include" />
@@ -72,6 +78,19 @@
                   <e p="TeamConfig.cs" t="Include" />
                 </e>
                 <e p="TeamId.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Trading" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="System" t="Include">
+                  <e p="TradeEnterController.cs" t="Include" />
+                  <e p="TradeManager.cs" t="Include" />
+                  <e p="TradePoint.cs" t="Include" />
+                </e>
+                <e p="Trading" t="Include">
+                  <e p="TradeCharacter.cs" t="Include" />
+                  <e p="Trader.cs" t="Include" />
+                </e>
               </e>
             </e>
             <e p="World" t="Include">
@@ -139,7 +158,19 @@
             </e>
           </e>
           <e p="UI" t="Include">
+            <e p="Models" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="ITradeCharacter.cs" t="Include" />
+                <e p="ITrader.cs" t="Include" />
+              </e>
+            </e>
             <e p="Popups" t="Include">
+              <e p="Content" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="TradingPopup.cs" t="Include" />
+                  <e p="TradingViewController.cs" t="Include" />
+                </e>
+              </e>
               <e p="Scripts" t="Include">
                 <e p="Configs" t="Include">
                   <e p="PopupAssets.cs" t="Include" />

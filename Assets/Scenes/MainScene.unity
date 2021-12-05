@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -143,6 +143,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3763ea46fa834f8a8d15661fed3b94e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1804133996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6360043860937750910, guid: 383e9c92f765f4a088b1fa6fb1de742e, type: 3}
+  m_PrefabInstance: {fileID: 6360043859748321958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2accffbfe4bf45b18b56f4bbb63c690d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6360043859748321958
@@ -261,9 +272,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7726016460694075537, guid: c60c93abda9a24f0f90ba86b8a621c35, type: 3}
+      propertyPath: externalGameComponents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726016460694075537, guid: c60c93abda9a24f0f90ba86b8a621c35, type: 3}
+      propertyPath: externalGameComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 1804133996}
     - target: {fileID: 7726016460694075566, guid: c60c93abda9a24f0f90ba86b8a621c35, type: 3}
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7726016460694075567, guid: c60c93abda9a24f0f90ba86b8a621c35, type: 3}
+      propertyPath: parameters.services.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726016460694075567, guid: c60c93abda9a24f0f90ba86b8a621c35, type: 3}
+      propertyPath: parameters.services.Array.data[0]
+      value: 
+      objectReference: {fileID: 1804133996}
+    - target: {fileID: 7726016460694075567, guid: c60c93abda9a24f0f90ba86b8a621c35, type: 3}
+      propertyPath: parameters.services.Array.data[1]
+      value: 
+      objectReference: {fileID: 1804133996}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c60c93abda9a24f0f90ba86b8a621c35, type: 3}

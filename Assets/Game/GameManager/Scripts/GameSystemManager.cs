@@ -5,6 +5,7 @@ using GameElements;
 using GameElements.Unity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 namespace Prototype.GameManagment
 {
@@ -23,14 +24,17 @@ namespace Prototype.GameManagment
 
         private MonoGameSystem gameSystem;
 
-        private readonly HashSet<object> serviceCache;
+        [SerializeField]
+        private Parameters parameters;
 
-        private readonly HashSet<IGameElement> injectCache;
+        private readonly HashSet<object> servicesCache;
+
+        private readonly HashSet<IGameElement> gameElementsCache;
 
         public GameSystemManager()
         {
-            this.serviceCache = new HashSet<object>();
-            this.injectCache = new HashSet<IGameElement>();
+            this.servicesCache = new HashSet<object>();
+            this.gameElementsCache = new HashSet<IGameElement>();
         }
 
         public override void LoadGame()
@@ -55,7 +59,7 @@ namespace Prototype.GameManagment
 
         public override void RegisterService(object service)
         {
-            if (!this.serviceCache.Add(service))
+            if (!this.servicesCache.Add(service))
             {
                 return;
             }
@@ -68,7 +72,7 @@ namespace Prototype.GameManagment
 
         public override void UnregisterService(object service)
         {
-            if (!this.serviceCache.Remove(service))
+            if (!this.servicesCache.Remove(service))
             {
                 return;
             }
@@ -96,7 +100,7 @@ namespace Prototype.GameManagment
                 return;
             }
 
-            if (!this.injectCache.Add(gameElement))
+            if (!this.gameElementsCache.Add(gameElement))
             {
                 return;
             }
@@ -114,7 +118,7 @@ namespace Prototype.GameManagment
                 return;
             }
 
-            if (!this.injectCache.Remove(gameElement))
+            if (!this.gameElementsCache.Remove(gameElement))
             {
                 return;
             }
@@ -136,12 +140,12 @@ namespace Prototype.GameManagment
             var gameSystemGO = GameObject.FindWithTag(GAME_CONTEXT_TAG);
             var gameSystem = gameSystemGO.GetComponent<MonoGameSystem>();
 
-            foreach (var externalService in this.serviceCache)
+            foreach (var externalService in this.servicesCache)
             {
                 gameSystem.RegisterService(externalService);
             }
 
-            foreach (var externalElement in this.injectCache)
+            foreach (var externalElement in this.gameElementsCache)
             {
                 gameSystem.AddElement(externalElement);
             }
@@ -159,12 +163,12 @@ namespace Prototype.GameManagment
             var gameSystem = this.gameSystem;
             this.gameSystem = null;
 
-            foreach (var externalElement in this.injectCache)
+            foreach (var externalElement in this.gameElementsCache)
             {
                 gameSystem.RemoveElement(externalElement);
             }
 
-            foreach (var externalService in this.serviceCache)
+            foreach (var externalService in this.servicesCache)
             {
                 gameSystem.UnregisterService(externalService);
             }
@@ -176,6 +180,34 @@ namespace Prototype.GameManagment
             }
             
             this.OnGameUnloaded?.Invoke();
+        }
+        
+        private void Awake()
+        {
+            foreach (var service in this.parameters.services)
+            {
+                this.servicesCache.Add(service);
+            }
+
+            foreach (var element in this.parameters.gameElements)
+            {
+                if (element is IGameElement gameElement)
+                {
+                    this.gameElementsCache.Add(gameElement);
+                }
+            }
+        }
+
+        [Serializable]
+        public sealed class Parameters
+        {
+            [Space]
+            [SerializeField]
+            public Object[] services;
+
+            [Space]
+            [SerializeField]
+            public Object[] gameElements;
         }
     }
 }

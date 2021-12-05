@@ -6,8 +6,9 @@ namespace GameElements
     {
     }
     
-    public interface IGameElementGroup : IGameElement, IEnumerable<IGameElement>
+    public interface IGameElementGroup : IGameElement
     {
+        IEnumerable<IGameElement> GetElements();
     }
     
     public interface IGameInitElement : IGameElement

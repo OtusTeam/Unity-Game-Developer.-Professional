@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ namespace GameElements.Unity
         [SerializeField]
         private Transform[] containers;
         
-        public IEnumerator<IGameElement> GetEnumerator()
+        public IEnumerable<IGameElement> GetElements()
         {
             foreach (var container in this.containers)
             {
@@ -21,11 +20,6 @@ namespace GameElements.Unity
                     }
                 }    
             }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
         }
     }
 }

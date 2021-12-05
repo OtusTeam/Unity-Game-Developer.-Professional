@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,21 +7,17 @@ namespace GameElements.Unity
     {
         [SerializeField]
         protected Object[] gameElements;
-
-        public IEnumerator<IGameElement> GetEnumerator()
+        
+        public IEnumerable<IGameElement> GetElements()
         {
-            foreach (var element in this.gameElements)
+            for (int i = 0, count = this.gameElements.Length; i < count; i++)
             {
+                var element = this.gameElements[i];
                 if (element is IGameElement gameElement)
                 {
                     yield return gameElement;
                 }
             }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
         }
     }
 }

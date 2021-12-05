@@ -7,8 +7,6 @@ namespace GameElements.Unity
 {
     public class MonoGameSystem : MonoBehaviour, IGameSystem
     {
-        #region Events
-
         public event Action OnGameInitialized
         {
             add { this.gameSystem.OnGameInitialized += value; }
@@ -45,8 +43,6 @@ namespace GameElements.Unity
             remove { this.gameSystem.OnGameFinished -= value; }
         }
 
-        #endregion
-
         public GameState State
         {
             get { return this.gameSystem.State; }
@@ -58,8 +54,6 @@ namespace GameElements.Unity
         {
             this.gameSystem = new GameSystem();
         }
-
-        #region Lifecycle
 
         public virtual void InitGame()
         {
@@ -101,8 +95,6 @@ namespace GameElements.Unity
             this.gameSystem.RemoveElement(element);
         }
 
-        #endregion
-
         public bool RegisterService(object service)
         {
             return this.gameSystem.RegisterService(service);
@@ -136,7 +128,7 @@ namespace GameElements.Unity
 
         private void Awake()
         {
-            this.LoadSubsystems();
+            this.LoadServices();
             this.LoadGameElements();
         }
 
@@ -163,7 +155,7 @@ namespace GameElements.Unity
             }
         }
 
-        private void LoadSubsystems()
+        private void LoadServices()
         {
             for (int i = 0, count = this.services.Length; i < count; i++)
             {

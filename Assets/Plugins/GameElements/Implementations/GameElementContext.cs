@@ -132,7 +132,7 @@ namespace GameElements
             
             if (element is IGameElementGroup elementGroup)
             {
-                foreach (var child in elementGroup)
+                foreach (var child in elementGroup.GetElements())
                 {
                     this.AddRecursively(child, ref addedElements);
                 }
@@ -144,7 +144,7 @@ namespace GameElements
             this.gameElements.Remove(element);
             if (element is IGameElementGroup elementGroup)
             {
-                foreach (var child in elementGroup)
+                foreach (var child in elementGroup.GetElements())
                 {
                     this.RemoveRecursively(child);
                 }

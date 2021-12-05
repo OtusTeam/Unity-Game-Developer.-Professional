@@ -4,15 +4,12 @@ namespace Prototype.GameInterface
 {
     public abstract class MapLayer
     {
-        protected readonly RectTransform transform;
-        
         private readonly Vector2 pivot;
         
         private readonly Rect rect;
 
         public MapLayer(RectTransform transform)
         {
-            this.transform = transform;
             this.rect = transform.rect;
             this.pivot = transform.pivot;
         }

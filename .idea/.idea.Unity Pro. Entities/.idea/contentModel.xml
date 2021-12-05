@@ -131,7 +131,6 @@
             <e p="Unity" t="Include">
               <e p="MonoGameElementDirectory.cs" t="Include" />
               <e p="MonoGameElementGroup.cs" t="Include" />
-              <e p="MonoGameElementLayer.cs" t="Include" />
               <e p="MonoGameSystem.cs" t="Include" />
             </e>
             <e p="Utils" t="Include">

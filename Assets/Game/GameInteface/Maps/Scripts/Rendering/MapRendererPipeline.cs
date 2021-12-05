@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using GameElements;
 using UnityEngine;
@@ -22,8 +21,8 @@ namespace Prototype.GameInterface
                 render.Render(layerTransform);
             }
         }
-
-        public IEnumerator<IGameElement> GetEnumerator()
+        
+        public IEnumerable<IGameElement> GetElements()
         {
             for (int i = 0, count = this.orderedRenderers.Length; i < count; i++)
             {
@@ -33,11 +32,6 @@ namespace Prototype.GameInterface
                     yield return gameElement;
                 }
             }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
         }
     }
 }

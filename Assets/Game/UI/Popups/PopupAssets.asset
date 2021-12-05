@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 212c2ecddc5940f99c4f6c1957d6275e, type: 3}
-  m_Name: PopupManagerConfig
+  m_Name: PopupAssets
   m_EditorClassIdentifier: 
   screenInfos:
   - initialized: 1

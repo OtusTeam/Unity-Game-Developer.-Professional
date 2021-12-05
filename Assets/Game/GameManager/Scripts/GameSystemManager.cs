@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using GameElements;
@@ -10,6 +11,12 @@ namespace Prototype.GameManagment
     //TODO: Абстрактный пример GameManager... 
     public sealed class GameSystemManager : GameManager
     {
+        public override event Action OnGameLoaded;
+
+        public override event Action OnGameStarted;
+        
+        public override event Action OnGameUnloaded;
+
         private const string GAME_SCENE = "GameScene";
         
         private const string GAME_CONTEXT_TAG = "GameContext";
@@ -126,6 +133,7 @@ namespace Prototype.GameManagment
             gameSystem.ReadyGame();
             
             this.gameSystem = gameSystem;
+            this.OnGameLoaded?.Invoke();
         }
 
         private IEnumerator UnloadGameRoutine()
@@ -148,6 +156,8 @@ namespace Prototype.GameManagment
             {
                 yield return null;
             }
+            
+            this.OnGameUnloaded?.Invoke();
         }
     }
 }

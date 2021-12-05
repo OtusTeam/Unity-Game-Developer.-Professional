@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e14107d4156455a83310387c5aae5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  factory: {fileID: 0}
+  factory: {fileID: 1228226729}
 --- !u!1001 &211614772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1362,8 +1362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 474267376}
-  inactiveRoot: {fileID: 0}
-  resources: {fileID: 0}
+  inactiveRoot: {fileID: 98078958}
+  resources: {fileID: 11400000, guid: fdfb4a8daa5f449b8a61704b2e3f9ac2, type: 2}
   injectors:
   - {fileID: 1371082337}
 --- !u!1 &1272441319
@@ -1999,7 +1999,7 @@ GameObject:
   - component: {fileID: 1833361229}
   - component: {fileID: 1833361230}
   m_Layer: 5
-  m_Name: View
+  m_Name: GameInterface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2581,14 +2581,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7f3da2ee76c429fb04af2a66f86570, type: 3}
---- !u!114 &8074497475801175144 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4070856531232790428, guid: dd7f3da2ee76c429fb04af2a66f86570, type: 3}
+--- !u!1 &8074497475801175144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8074497475284838204, guid: dd7f3da2ee76c429fb04af2a66f86570, type: 3}
   m_PrefabInstance: {fileID: 8074497475801175143}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb9f118c71a41ba8d7ff1aae02d95f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

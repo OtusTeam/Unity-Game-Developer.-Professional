@@ -1,9 +1,16 @@
+using System;
 using UnityEngine;
 
 namespace Prototype.GameManagment
 {
     public abstract class GameManager : MonoBehaviour
     {
+        public abstract event Action OnGameLoaded;
+
+        public abstract event Action OnGameStarted;
+
+        public abstract event Action OnGameUnloaded;
+        
         public abstract void LoadGame();
 
         public abstract void StartGame();

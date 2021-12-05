@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Prototype.GameInterface
+namespace Prototype
 {
     public class Pool<T> : IPool<T> where T : Object
     {

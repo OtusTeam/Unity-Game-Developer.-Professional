@@ -1,4 +1,4 @@
-namespace Prototype.GameInterface
+namespace Prototype
 {
     public interface IFactory<out T>
     {

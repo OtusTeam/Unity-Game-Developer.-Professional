@@ -1,4 +1,4 @@
-namespace Prototype.GameInterface
+namespace Prototype
 {
     public interface IPool<T>
     {

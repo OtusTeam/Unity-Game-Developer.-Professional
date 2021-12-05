@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace GameElements
 {
-    public sealed class GameElementContext
+    internal sealed class GameElementContext
     {
         private readonly IGameSystem gameSystem;
 
@@ -10,14 +10,14 @@ namespace GameElements
 
         private readonly List<IGameElement> cache;
         
-        public GameElementContext(IGameSystem gameSystem)
+        internal GameElementContext(IGameSystem gameSystem)
         {
             this.gameSystem = gameSystem;
             this.gameElements = new HashSet<IGameElement>();
             this.cache = new List<IGameElement>();
         }
         
-        public void AddElement(IGameElement element)
+        internal void AddElement(IGameElement element)
         {
             var addedElements = new HashSet<IGameElement>();
             this.AddRecursively(element, ref addedElements);
@@ -28,12 +28,12 @@ namespace GameElements
             }
         }
 
-        public void RemoveElement(IGameElement element)
+        internal void RemoveElement(IGameElement element)
         {
             this.RemoveRecursively(element);
         }
         
-        public void InitGame()
+        internal void InitGame()
         {
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);
@@ -48,7 +48,7 @@ namespace GameElements
             }
         }
 
-        public void ReadyGame()
+        internal void ReadyGame()
         {
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);
@@ -63,7 +63,7 @@ namespace GameElements
             }
         }
 
-        public void StartGame()
+        internal void StartGame()
         {
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);
@@ -78,7 +78,7 @@ namespace GameElements
             }
         }
 
-        public void PauseGame()
+        internal void PauseGame()
         {
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);
@@ -93,7 +93,7 @@ namespace GameElements
             }
         }
 
-        public void ResumeGame()
+        internal void ResumeGame()
         {
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);
@@ -108,7 +108,7 @@ namespace GameElements
             }
         }
 
-        public void FinishGame()
+        internal void FinishGame()
         {
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);

@@ -10,6 +10,14 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Game" t="Include">
+          <e p="Common" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="AnimationEventReceiver.cs" t="Include" />
+              <e p="IFactory.cs" t="Include" />
+              <e p="IPool.cs" t="Include" />
+              <e p="Pool.cs" t="Include" />
+            </e>
+          </e>
           <e p="Content" t="Include">
             <e p="Units" t="Include">
               <e p="Scripts" t="Include">
@@ -18,19 +26,12 @@
             </e>
           </e>
           <e p="GameEngine" t="Include">
-            <e p="Common" t="Include">
-              <e p="Components" t="Include">
-                <e p="Position" t="Include">
-                  <e p="PositionComponent.cs" t="Include" />
-                </e>
-                <e p="SizeComponent" t="Include">
-                  <e p="SizeComponent.cs" t="Include" />
-                </e>
+            <e p="Components" t="Include">
+              <e p="Position" t="Include">
+                <e p="PositionComponent.cs" t="Include" />
               </e>
-              <e p="Scripts" t="Include">
-                <e p="IFactory.cs" t="Include" />
-                <e p="IPool.cs" t="Include" />
-                <e p="Pool.cs" t="Include" />
+              <e p="SizeComponent" t="Include">
+                <e p="SizeComponent.cs" t="Include" />
               </e>
             </e>
             <e p="Entities" t="Include">
@@ -117,25 +118,52 @@
               </e>
             </e>
           </e>
+          <e p="UI" t="Include">
+            <e p="Popups" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Configs" t="Include">
+                  <e p="PopupAssets.cs" t="Include" />
+                </e>
+                <e p="Popup.cs" t="Include" />
+                <e p="PopupAnimated.cs" t="Include" />
+                <e p="System" t="Include">
+                  <e p="PopupFactory.cs" t="Include" />
+                  <e p="PopupManager.cs" t="Include" />
+                  <e p="PopupSupplier.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
         </e>
         <e p="Plugins" t="Include">
           <e p="GameElements" t="Include">
-            <e p="Implementations" t="Include">
-              <e p="GameElementContext.cs" t="Include" />
-              <e p="GameSystem.cs" t="Include" />
-            </e>
-            <e p="Interfaces" t="Include">
+            <e p="GameElements.asmref" t="Include" />
+            <e p="Scripts" t="Include">
               <e p="GameElements.cs" t="Include" />
-              <e p="IGameSystem.cs" t="Include" />
-            </e>
-            <e p="Unity" t="Include">
-              <e p="MonoGameElementDirectory.cs" t="Include" />
-              <e p="MonoGameElementGroup.cs" t="Include" />
-              <e p="MonoGameSystem.cs" t="Include" />
-            </e>
-            <e p="Utils" t="Include">
               <e p="GameState.cs" t="Include" />
-              <e p="GenericDictionary.cs" t="Include" />
+              <e p="GameSystem.cs" t="Include" />
+              <e p="IGameSystem.cs" t="Include" />
+              <e p="Internal" t="Include">
+                <e p="GameElementContext.cs" t="Include" />
+              </e>
+              <e p="Unity" t="Include">
+                <e p="MonoGameElementDirectory.cs" t="Include" />
+                <e p="MonoGameElementGroup.cs" t="Include" />
+                <e p="MonoGameSystem.cs" t="Include" />
+              </e>
+              <e p="Utils" t="Include">
+                <e p="GenericDictionary.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Popups" t="Include">
+            <e p="Popups.asmref" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="IPopup.cs" t="Include" />
+              <e p="IPopupFactory.cs" t="Include" />
+              <e p="IPopupManager.cs" t="Include" />
+              <e p="IPopupSupplier.cs" t="Include" />
+              <e p="PopupManager.cs" t="Include" />
             </e>
           </e>
           <e p="Sirenix" t="Include">

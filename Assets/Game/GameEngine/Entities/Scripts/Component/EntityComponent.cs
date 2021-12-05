@@ -5,16 +5,16 @@ namespace Prototype.GameEngine
 {
     public abstract class EntityComponent : MonoBehaviour, IEntityComponent
     {
-        protected IEntity Entity { get; private set; }
-
-        void IEntityComponent.SetEntity(IEntity entity)
+        IEntity IEntityComponent.Entity
         {
-            this.Entity = entity;
+            set { this.entity = value; }
         }
+
+        private IEntity entity;
 
         protected Lazy<T> GetComponentLazy<T>()
         {
-            return new Lazy<T>(() => this.Entity.GetComponent<T>());
+            return new Lazy<T>(() => this.entity.GetComponent<T>());
         }
     }
 }

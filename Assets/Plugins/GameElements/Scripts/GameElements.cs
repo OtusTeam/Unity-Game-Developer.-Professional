@@ -5,17 +5,22 @@ namespace GameElements
     public interface IGameElement
     {
     }
-    
+
+    public interface IGameContextElement : IGameElement
+    {
+        IGameSystem GameSystem { set; }
+    }
+
     public interface IGameElementGroup : IGameElement
     {
         IEnumerable<IGameElement> GetElements();
     }
-    
+
     public interface IGameInitElement : IGameElement
     {
         void InitGame(IGameSystem system);
     }
-    
+
     public interface IGameReadyElement : IGameElement
     {
         void ReadyGame(IGameSystem system);

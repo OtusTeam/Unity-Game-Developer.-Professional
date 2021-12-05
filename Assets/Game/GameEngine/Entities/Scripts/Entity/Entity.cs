@@ -21,7 +21,7 @@ namespace Prototype.GameEngine
             
             if (component is IEntityComponent entityComponent)
             {
-                entityComponent.SetEntity(this);
+                entityComponent.Entity = this;
             }
         }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Prototype.UI
 {
-    public abstract class PopupAnimated : Popup
+    public class PopupAnimated : Popup
     {
         private const string OPEN_ANIMATION_NAME = "Open";
 

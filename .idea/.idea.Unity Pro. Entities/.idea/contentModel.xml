@@ -12,10 +12,20 @@
         <e p="Game" t="Include">
           <e p="Common" t="Include">
             <e p="Scripts" t="Include">
-              <e p="AnimationEventReceiver.cs" t="Include" />
-              <e p="IFactory.cs" t="Include" />
-              <e p="IPool.cs" t="Include" />
-              <e p="Pool.cs" t="Include" />
+              <e p="Animation" t="Include">
+                <e p="AnimationEventReceiver.cs" t="Include" />
+              </e>
+              <e p="Factory" t="Include">
+                <e p="IFactory.cs" t="Include" />
+              </e>
+              <e p="Injector" t="Include">
+                <e p="IInjector.cs" t="Include" />
+                <e p="MonoInjector.cs" t="Include" />
+              </e>
+              <e p="Pool" t="Include">
+                <e p="IPool.cs" t="Include" />
+                <e p="Pool.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Content" t="Include">
@@ -118,6 +128,13 @@
               </e>
             </e>
           </e>
+          <e p="GameManager" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="GameInjector.cs" t="Include" />
+              <e p="GameManager.cs" t="Include" />
+              <e p="GameSystemManager.cs" t="Include" />
+            </e>
+          </e>
           <e p="UI" t="Include">
             <e p="Popups" t="Include">
               <e p="Scripts" t="Include">
@@ -160,7 +177,6 @@
             <e p="Popups.asmref" t="Include" />
             <e p="Scripts" t="Include">
               <e p="IPopup.cs" t="Include" />
-              <e p="IPopupFactory.cs" t="Include" />
               <e p="IPopupManager.cs" t="Include" />
               <e p="IPopupSupplier.cs" t="Include" />
               <e p="PopupManager.cs" t="Include" />

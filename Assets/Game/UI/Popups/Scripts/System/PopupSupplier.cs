@@ -8,15 +8,12 @@ namespace Prototype.UI
     public sealed class PopupSupplier : MonoBehaviour, IPopupSupplier
     {
         [SerializeField]
-        private GameObject factoryGO;
-
-        private IPopupFactory factory;
+        private PopupFactory factory;
         
         private Dictionary<Type, Popup> cashedPopupMap;
 
         private void Awake()
         {
-            this.factory = this.factoryGO.GetComponent<IPopupFactory>();
             this.cashedPopupMap = new Dictionary<Type, Popup>();
         }
 

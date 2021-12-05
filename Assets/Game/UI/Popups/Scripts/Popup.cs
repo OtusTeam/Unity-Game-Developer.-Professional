@@ -29,26 +29,18 @@ namespace Prototype.UI
 
         protected void Close()
         {
-            this.StartCoroutine(this.CloseNextFrame());
-        }
-
-        private IEnumerator ShowNextFrame(object data)
-        {
-            //Нужно отыграть после метода Start (Опционально).
-            yield return new WaitForEndOfFrame();
-            
-            this.OnShow(data);
-        }
-
-        private IEnumerator CloseNextFrame()
-        {
-            //Нужно доиграть кадр (Опционалльно).
-            yield return new WaitForEndOfFrame();
-            
             if (this.handler != null)
             {
                 this.handler.Close(this.GetType());
             }
+        }
+
+        private IEnumerator ShowNextFrame(object data)
+        {
+            //Можно отыграть после метода Start (Опционально).
+            yield return new WaitForEndOfFrame();
+            
+            this.OnShow(data);
         }
     }
 }

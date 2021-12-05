@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public abstract class MapEntityRenderComponent : EntityComponent, IMapEntityRenderComponent, IGameInitElement
+    public abstract class MapEntityRenderComponent : EntityComponent, IMapEntityRenderComponent,
+        IGameInitElement
     {
         private readonly Lazy<PositionComponent> positionComponent;
 

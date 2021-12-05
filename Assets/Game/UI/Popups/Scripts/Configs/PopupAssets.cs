@@ -12,7 +12,7 @@ namespace Prototype.UI
     public sealed class PopupAssets : ScriptableObject, ISerializationCallbackReceiver
     {
         [SerializeField]
-        private PopupInfo[] popupInfos;
+        private PopupInfo[] popupInfos = new PopupInfo[0];
 
         private Dictionary<Type, string> prefabPathMap;
         

@@ -153,6 +153,11 @@ namespace GameElements
         
         private void ActivateElement(IGameElement element)
         {
+            if (element is IGameContextElement contextElement)
+            {
+                contextElement.GameSystem = this.gameSystem;
+            }
+            
             var gameState = this.gameSystem.State;
             if (gameState >= GameState.FINISH)
             {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Prototype.UI
 {
-    public class PopupFactory : MonoBehaviour, IPopupFactory
+    public sealed class PopupFactory : MonoBehaviour
     {
         [SerializeField]
         private Transform container;
@@ -15,6 +15,9 @@ namespace Prototype.UI
         [SerializeField]
         private PopupAssets resources;
 
+        [SerializeField]
+        private MonoInjector[] injectors;
+        
         public IPopup CreatePopup(Type popupType)
         {
             var prefab = this.resources.Load(popupType);
@@ -22,12 +25,18 @@ namespace Prototype.UI
 
             //Dependency Injection:
             this.InjectPopup(popup);
+            
             popup.transform.SetParent(this.container);
             return popup;
         }
 
-        protected virtual void InjectPopup(Popup popup)
+        private void InjectPopup(Popup popup)
         {
+            for (int i = 0, count = this.injectors.Length; i < count; i++)
+            {
+                var injector = this.injectors[i];
+                injector.InjectContext(popup);
+            }
         }
     }
 }

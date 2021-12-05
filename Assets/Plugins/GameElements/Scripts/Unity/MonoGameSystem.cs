@@ -55,8 +55,10 @@ namespace GameElements.Unity
             this.gameSystem = new GameSystem();
         }
 
-        public virtual void InitGame()
+        public void InitGame()
         {
+            this.LoadServices();
+            this.LoadGameElements();
             this.gameSystem.InitGame();
         }
 
@@ -125,12 +127,6 @@ namespace GameElements.Unity
         [Space]
         [SerializeField]
         private Object[] gameElements;
-
-        private void Awake()
-        {
-            this.LoadServices();
-            this.LoadGameElements();
-        }
 
         private IEnumerator Start()
         {

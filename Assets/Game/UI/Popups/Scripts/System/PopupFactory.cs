@@ -35,7 +35,7 @@ namespace Prototype.UI
             for (int i = 0, count = this.injectors.Length; i < count; i++)
             {
                 var injector = this.injectors[i];
-                injector.InjectContext(popup);
+                injector.InjectContextInto(popup);
             }
         }
     }

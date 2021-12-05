@@ -89,7 +89,7 @@ namespace Prototype.GameManagment
             return this.gameSystem.TryGetService(out service);
         }
         
-        public override void InjectGame(object target)
+        public override void AddGameComponent(object target)
         {
             if (!(target is IGameElement gameElement))
             {
@@ -106,7 +106,25 @@ namespace Prototype.GameManagment
                 this.gameSystem.AddElement(gameElement);
             }
         }
-        
+
+        public override void RemoveGameComponent(object component)
+        {
+            if (!(component is IGameElement gameElement))
+            {
+                return;
+            }
+
+            if (!this.injectCache.Remove(gameElement))
+            {
+                return;
+            }
+
+            if (this.gameSystem != null)
+            {
+                this.gameSystem.RemoveElement(gameElement);
+            }
+        }
+
         private IEnumerator LoadGameRoutine()
         {
             var operation = SceneManager.LoadSceneAsync(GAME_SCENE, LoadSceneMode.Single);

@@ -4,6 +4,6 @@ namespace Prototype
 {
     public abstract class MonoInjector : MonoBehaviour, IInjector
     {
-        public abstract void InjectContext(object target);
+        public abstract void InjectContextInto(object target);
     }
 }

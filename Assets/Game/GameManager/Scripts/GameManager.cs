@@ -27,6 +27,8 @@ namespace Prototype.GameManagment
 
         public abstract bool TryGetService<T>(out T service);
 
-        public abstract void InjectGame(object target);
+        public abstract void AddGameComponent(object component);
+
+        public abstract void RemoveGameComponent(object component);
     }
 }

@@ -8,9 +8,9 @@ namespace Prototype.UI
         [SerializeField]
         private GameManager gameManager;
 
-        public override void InjectContext(object target)
+        public override void InjectContextInto(object target)
         {
-            this.gameManager.InjectGame(target);
+            this.gameManager.AddGameComponent(target);
         }
     }
 }

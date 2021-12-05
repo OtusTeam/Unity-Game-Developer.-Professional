@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212c2ecddc5940f99c4f6c1957d6275e, type: 3}
   m_Name: PopupAssets
   m_EditorClassIdentifier: 
-  screenInfos:
-  - initialized: 1
+  popupInfos:
+  - initialized: 0
     popupPrefab: {fileID: 0}
-    className: WeedIsland.UI.UpgradesPopup
-    prefabId: PopupUpgrades
-  - initialized: 1
-    popupPrefab: {fileID: 0}
-    className: WeedIsland.UI.WinPopup
-    prefabId: PopupWin
+    className: 
+    prefabId: 

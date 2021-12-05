@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace GameElements
 {
@@ -35,6 +36,7 @@ namespace GameElements
         
         internal void InitGame()
         {
+            Debug.Log("INIT GAME");
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);
 
@@ -50,6 +52,8 @@ namespace GameElements
 
         internal void ReadyGame()
         {
+            Debug.Log("READY GAME");
+
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);
             
@@ -65,6 +69,8 @@ namespace GameElements
 
         internal void StartGame()
         {
+            Debug.Log("START GAME");
+
             this.cache.Clear();
             this.cache.AddRange(this.gameElements);
             
@@ -153,6 +159,15 @@ namespace GameElements
         
         private void ActivateElement(IGameElement element)
         {
+            if (element is MonoBehaviour mb)
+            {
+                Debug.Log($"ACTIVATE ELEMENT {mb.name}");
+            }
+            else
+            {
+                Debug.Log($"ACTIVATE ELEMENT {element.GetType().Name}");
+            }
+
             if (element is IGameContextElement contextElement)
             {
                 contextElement.GameSystem = this.gameSystem;

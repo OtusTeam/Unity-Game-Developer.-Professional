@@ -2,6 +2,6 @@ namespace Prototype
 {
     public interface IInjector
     {
-        void InjectContext(object target);
+        void InjectContextInto(object target);
     }
 }

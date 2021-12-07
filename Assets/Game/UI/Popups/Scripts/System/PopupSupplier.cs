@@ -21,7 +21,6 @@ namespace Prototype.UI
             if (this.cashedPopupMap.TryGetValue(name, out var popup))
             {
                 popup.gameObject.SetActive(true);
-                
             }
             else
             {

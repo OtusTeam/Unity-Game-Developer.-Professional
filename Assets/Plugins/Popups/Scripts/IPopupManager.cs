@@ -10,10 +10,10 @@ namespace Popups
         
         void ShowPopup(PopupName name, object data = null);
 
+        bool IsPopupShown(PopupName name);
+
         void HidePopup(PopupName name);
 
         void HideAllPopups();
-
-        bool IsPopupShown(PopupName name);
     }
 }

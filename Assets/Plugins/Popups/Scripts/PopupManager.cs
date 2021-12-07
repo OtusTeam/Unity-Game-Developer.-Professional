@@ -35,6 +35,14 @@ namespace Popups
             return this.activePopupMap.ContainsKey(name);
         }
 
+        public void HidePopup(PopupName name)
+        {
+            if (this.IsPopupShown(name))
+            {
+                this.HidePopupInternal(name);
+            }
+        }
+
         public void HideAllPopups()
         {
             this.cache.Clear();
@@ -47,14 +55,6 @@ namespace Popups
             }
         }
 
-        public void HidePopup(PopupName name)
-        {
-            if (this.IsPopupShown(name))
-            {
-                this.HidePopupInternal(name);
-            }
-        }
-        
         void IPopup.Handler.Close(IPopup popup)
         {
             if (this.TryGetName(popup, out var popupName))

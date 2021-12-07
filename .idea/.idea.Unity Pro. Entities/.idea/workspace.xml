@@ -11,19 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Подредачил Popup System">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/ViewAnimator.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/GameSystemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/GameSystemManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/PopupSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/PopupSystem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Resources/PopupTrading.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Resources/PopupTrading.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/Popup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/Popup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/PopupAnimated.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/ViewAnimator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/PopupAnimated.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/_Lesson.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/_Lesson/PopupFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/_Lesson/PopupFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupSupplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupSupplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,12 +99,9 @@
         <option value="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterResourceController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Trading/Scripts/System/TradeEnterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupId.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupSupplier.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupSupplier.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/Configs/PopupAssets.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupName.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/PopupAnimated.cs" />
@@ -124,6 +113,9 @@
         <option value="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/GameInjector.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/Popup.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/_Lesson/PopupFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupSupplier.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupFactory.cs" />
       </list>
     </option>
@@ -182,7 +174,7 @@
       <workItem from="1638603001714" duration="18484000" />
       <workItem from="1638675429020" duration="28076000" />
       <workItem from="1638758514925" duration="190000" />
-      <workItem from="1638849703032" duration="5936000" />
+      <workItem from="1638849703032" duration="7407000" />
     </task>
     <task id="LOCAL-00001" summary="Iniitial commit">
       <created>1638432596450</created>
@@ -429,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638851390239</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Подредачил Popup System">
+      <created>1638882787850</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1638882787850</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,14 +562,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638703253125" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638882732965">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638882831874">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638882732965" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638851391463">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638882831874" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638882789006">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638851391463" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638882789006" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638680847639">
       <screen x="0" y="0" width="1440" height="900" />

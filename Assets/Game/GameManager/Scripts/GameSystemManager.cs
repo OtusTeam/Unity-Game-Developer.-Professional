@@ -95,7 +95,7 @@ namespace Prototype.GameManagment
         
         public override void AddGameComponent(object target)
         {
-            if (!(target is IGameElement gameElement))
+            if (!this.TryGetGameElement(target, out var gameElement))
             {
                 return;
             }
@@ -113,7 +113,7 @@ namespace Prototype.GameManagment
 
         public override void RemoveGameComponent(object component)
         {
-            if (!(component is IGameElement gameElement))
+            if (!this.TryGetGameElement(component, out var gameElement))
             {
                 return;
             }
@@ -196,6 +196,28 @@ namespace Prototype.GameManagment
                     this.gameElementsCache.Add(gameElement);
                 }
             }
+        }
+
+        private bool TryGetGameElement(object target, out IGameElement element)
+        {
+            if (target is IGameElement gameElement)
+            {
+                element = gameElement;
+                return true;
+            }
+            
+            if (target is MonoBehaviour monoBehaviour && monoBehaviour.TryGetComponent(out element))
+            {
+                return true;
+            }
+
+            if (target is GameObject gameObject && gameObject.TryGetComponent(out element))
+            {
+                return true;
+            }
+
+            element = default;
+            return false;
         }
 
         [Serializable]

@@ -168,6 +168,7 @@
               <e p="Scripts" t="Include">
                 <e p="CharacterResourceController.cs" t="Include" />
                 <e p="CharacterTradeController.cs" t="Include" />
+                <e p="ViewAnimator.cs" t="Include" />
               </e>
             </e>
             <e p="Elements" t="Include">
@@ -183,14 +184,10 @@
                 </e>
               </e>
               <e p="Scripts" t="Include">
-                <e p="_Lesson" t="Include">
-                  <e p="PopupFactory.cs" t="Include" />
-                </e>
                 <e p="Configs" t="Include">
                   <e p="PopupAssets.cs" t="Include" />
                 </e>
                 <e p="Popup.cs" t="Include" />
-                <e p="PopupAnimated.cs" t="Include" />
                 <e p="System" t="Include">
                   <e p="PopupFactory.cs" t="Include" />
                   <e p="PopupManager.cs" t="Include" />

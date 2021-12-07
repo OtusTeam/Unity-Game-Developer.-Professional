@@ -1,33 +1,42 @@
 using System.Collections;
 using Popups;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Prototype.UI
 {
     public class Popup : MonoBehaviour, IPopup
     {
+        [SerializeField]
+        private UnityEvent<object> onShow;
+
+        [SerializeField]
+        private UnityEvent onHide;
+
         private IPopup.Handler handler;
-        
+
         void IPopup.Show(IPopup.Handler handler, object data)
         {
             this.handler = handler;
-            this.StartCoroutine(this.ShowNextFrame(data));
-        }
-
-        protected virtual void OnShow(object data)
-        {
+            this.StartCoroutine(this.ShowInNextFrame(data));
         }
 
         void IPopup.Hide()
         {
             this.OnHide();
+            this.onHide?.Invoke();
         }
 
-        protected virtual void OnHide()
+        private IEnumerator ShowInNextFrame(object data)
         {
+            //Можно отыграть после метода Start (Опционально).
+            yield return new WaitForEndOfFrame();
+            this.OnShow();
+            this.onShow?.Invoke(data);
         }
 
-        protected void Close()
+        //Unity Event
+        public void Close()
         {
             if (this.handler != null)
             {
@@ -35,12 +44,12 @@ namespace Prototype.UI
             }
         }
 
-        private IEnumerator ShowNextFrame(object data)
+        protected virtual void OnShow()
         {
-            //Можно отыграть после метода Start (Опционально).
-            yield return new WaitForEndOfFrame();
-            
-            this.OnShow(data);
+        }
+
+        protected virtual void OnHide()
+        {
         }
     }
 }

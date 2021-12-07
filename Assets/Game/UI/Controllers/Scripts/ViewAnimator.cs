@@ -3,15 +3,16 @@ using UnityEngine;
 
 namespace Prototype.UI
 {
-    public class PopupAnimated : Popup
+    public sealed class ViewAnimator : MonoBehaviour
     {
         private const string OPEN_ANIMATION_NAME = "Open";
 
         private const string CLOSE_ANIMATION_NAME = "Close";
 
-        private const string OPENED_ANIMATION_MESSAGE = "opened";
-
         private const string CLOSED_ANIMATION_MESSAGE = "closed";
+
+        [SerializeField]
+        private Popup popup;
         
         [Space]
         [Header("Animation")]
@@ -26,7 +27,9 @@ namespace Prototype.UI
         [SerializeField]
         private AnimationEventReceiver animationReceiver;
 
-        protected override void OnShow(object data)
+        #region Events
+        
+        public void OnShow(object data)
         {
             if (this.hasAnimation)
             {
@@ -34,42 +37,26 @@ namespace Prototype.UI
                 this.animator.Play(OPEN_ANIMATION_NAME, -1, 0);
             }
         }
-        
-        protected virtual void OnShowAnimationFinished()
-        {
-        }
 
-        protected override void OnHide()
+        public void OnHide()
         {
-            if (this.hasAnimation)
-            {
-                this.animationReceiver.OnAnimationEvent -= this.OnAnimationEvent;
-            }
-        }
+            this.animationReceiver.OnAnimationEvent -= this.OnAnimationEvent;
 
-        protected void CloseWithAnimation()
-        {
             if (this.hasAnimation)
             {
                 this.animator.Play(CLOSE_ANIMATION_NAME, -1, 0);
             }
             else
             {
-                this.Close();
+                this.popup.Close();
             }
         }
 
-        #region AnimationEvent
-
         private void OnAnimationEvent(string message)
         {
-            if (message == OPENED_ANIMATION_MESSAGE)
+            if (message == CLOSED_ANIMATION_MESSAGE)
             {
-                this.OnShowAnimationFinished();
-            }
-            else if (message == CLOSED_ANIMATION_MESSAGE)
-            {
-                this.Close();
+                this.popup.Close();
             }
         }
         

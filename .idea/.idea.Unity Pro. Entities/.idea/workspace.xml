@@ -14,8 +14,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupSupplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupSupplier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,12 +109,12 @@
         <option value="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/ViewAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/GameSystemManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameManager/Scripts/GameInjector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/Popup.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/_Lesson/PopupFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupSupplier.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/System/PopupSupplier.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Scripts/Popup.cs" />
       </list>
     </option>
   </component>
@@ -174,7 +172,7 @@
       <workItem from="1638603001714" duration="18484000" />
       <workItem from="1638675429020" duration="28076000" />
       <workItem from="1638758514925" duration="190000" />
-      <workItem from="1638849703032" duration="7407000" />
+      <workItem from="1638849703032" duration="8152000" />
     </task>
     <task id="LOCAL-00001" summary="Iniitial commit">
       <created>1638432596450</created>
@@ -428,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638882787850</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Подредачил Popup System">
+      <created>1638892325771</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1638892325771</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,14 +567,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1638703253125" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1638882831874">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1638893675375">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638882831874" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638882789006">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1638893675375" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1638892327274">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638882789006" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1638892327274" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638680847639">
       <screen x="0" y="0" width="1440" height="900" />

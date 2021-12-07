@@ -24,7 +24,7 @@ namespace Prototype.UI
             }
             else
             {
-                popup = (Popup) this.factory.CreatePopup(name);
+                popup = this.factory.CreatePopup(name);
                 this.cashedPopupMap.Add(name, popup);
             }
 
@@ -34,8 +34,10 @@ namespace Prototype.UI
 
         void IPopupSupplier.UnloadPopup(IPopup popup)
         {
-            var monoPopup = (Popup) popup;
-            monoPopup.gameObject.SetActive(false);
+            if (popup is Popup monoPopup)
+            {
+                monoPopup.gameObject.SetActive(false);
+            }
         }
     }
 }

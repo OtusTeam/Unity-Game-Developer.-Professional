@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Popups;
 using UnityEngine;
@@ -10,24 +9,24 @@ namespace Prototype.UI
         [SerializeField]
         private PopupFactory factory;
         
-        private Dictionary<Type, Popup> cashedPopupMap;
+        private Dictionary<PopupName, Popup> cashedPopupMap;
 
         private void Awake()
         {
-            this.cashedPopupMap = new Dictionary<Type, Popup>();
+            this.cashedPopupMap = new Dictionary<PopupName, Popup>();
         }
 
-        IPopup IPopupSupplier.LoadPopup(Type popupType)
+        IPopup IPopupSupplier.LoadPopup(PopupName name)
         {
-            if (this.cashedPopupMap.TryGetValue(popupType, out var popup))
+            if (this.cashedPopupMap.TryGetValue(name, out var popup))
             {
                 popup.gameObject.SetActive(true);
                 
             }
             else
             {
-                popup = (Popup) this.factory.CreatePopup(popupType);
-                this.cashedPopupMap.Add(popupType, popup);
+                popup = (Popup) this.factory.CreatePopup(name);
+                this.cashedPopupMap.Add(name, popup);
             }
 
             popup.transform.SetAsLastSibling();

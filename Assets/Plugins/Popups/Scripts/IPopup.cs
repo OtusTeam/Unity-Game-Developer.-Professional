@@ -1,5 +1,3 @@
-using System;
-
 namespace Popups
 {
     public interface IPopup
@@ -10,7 +8,7 @@ namespace Popups
 
         public interface Handler
         {
-            void Close(Type popupType);
+            void Close(IPopup popup);
         }
     }
 }

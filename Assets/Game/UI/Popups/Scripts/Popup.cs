@@ -31,7 +31,7 @@ namespace Prototype.UI
         {
             if (this.handler != null)
             {
-                this.handler.Close(this.GetType());
+                this.handler.Close(this);
             }
         }
 

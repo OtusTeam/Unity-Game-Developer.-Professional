@@ -6,13 +6,13 @@ namespace Prototype.UI
 {
     public sealed class PopupManager : MonoBehaviour, IPopupManager
     {
-        public event Action<Type> OnPopupShown
+        public event Action<PopupName> OnPopupShown
         {
             add { this.manager.OnPopupShown += value; }
             remove { this.manager.OnPopupShown -= value; }
         }
 
-        public event Action<Type> OnPopupHidden
+        public event Action<PopupName> OnPopupHidden
         {
             add { this.manager.OnPopupHidden += value; }
             remove { this.manager.OnPopupHidden -= value; }
@@ -29,24 +29,24 @@ namespace Prototype.UI
             this.manager = new Popups.PopupManager(supplier);
         }
 
-        public void ShowPopup(Type popupType, object data = null)
+        public void ShowPopup(PopupName name, object data = null)
         {
-            this.manager.ShowPopup(popupType, data);
+            this.manager.ShowPopup(name, data);
         }
 
-        public void HidePopup(Type popupType)
+        public bool IsPopupShown(PopupName name)
         {
-            this.manager.HidePopup(popupType);
+            return this.manager.IsPopupShown(name);
+        }
+
+        public void HidePopup(PopupName name)
+        {
+            this.manager.HidePopup(name);
         }
 
         public void HideAllPopups()
         {
             this.manager.HideAllPopups();
-        }
-
-        public bool IsPopupShown(Type popupType)
-        {
-            return this.manager.IsPopupShown(popupType);
         }
     }
 }

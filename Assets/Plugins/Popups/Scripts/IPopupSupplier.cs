@@ -1,10 +1,8 @@
-using System;
-
 namespace Popups
 {
     public interface IPopupSupplier
     {
-        IPopup LoadPopup(Type popupType);
+        IPopup LoadPopup(PopupName popupName);
 
         void UnloadPopup(IPopup popup);
     }

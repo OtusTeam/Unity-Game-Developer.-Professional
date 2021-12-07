@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Popups;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -12,13 +13,16 @@ namespace Prototype.UI
     public sealed class PopupAssets : ScriptableObject, ISerializationCallbackReceiver
     {
         [SerializeField]
+        private string resourcePath;
+        
+        [SerializeField]
         private PopupInfo[] popupInfos = new PopupInfo[0];
 
-        private Dictionary<Type, string> prefabPathMap;
+        private Dictionary<PopupName, string> prefabPathMap;
         
-        public Popup Load(Type popupType)
+        public Popup LoadPrefab(PopupName name)
         {
-            var prefabPath = this.prefabPathMap[popupType];
+            var prefabPath = this.prefabPathMap[name];
             var prefab = Resources.Load<Popup>(prefabPath);
             return prefab;
         }
@@ -26,15 +30,12 @@ namespace Prototype.UI
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
             var count = this.popupInfos.Length;
-            this.prefabPathMap = new Dictionary<Type, string>(count);
+            this.prefabPathMap = new Dictionary<PopupName, string>(count);
             for (var i = 0; i < count; i++)
             {
                 var info = this.popupInfos[i];
-                var type = Type.GetType(info.className); 
-                if (type != null)
-                {
-                    this.prefabPathMap[type] = info.prefabId;
-                }
+                var popupId = info.popupName;
+                this.prefabPathMap[popupId] = this.resourcePath + info.prefabId;
             }
         }
 
@@ -67,7 +68,6 @@ namespace Prototype.UI
             }
 
             info.prefabId = prefab.name;
-            info.className = prefab.GetType().FullName;
             info.popupPrefab = null;
             info.initialized = true;
         }
@@ -76,6 +76,8 @@ namespace Prototype.UI
         [Serializable]
         private sealed class PopupInfo
         {
+            [SerializeField]
+            public PopupName popupName;
             
 #if UNITY_EDITOR
             [SerializeField]
@@ -86,11 +88,7 @@ namespace Prototype.UI
             public Popup popupPrefab;
 #endif
 
-            [ReadOnly]
-            [SerializeField]
-            public string className;
-
-            [ReadOnly]
+            [HideInInspector]
             [SerializeField]
             public string prefabId;
         }

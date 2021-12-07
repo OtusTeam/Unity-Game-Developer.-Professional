@@ -183,6 +183,9 @@
                 </e>
               </e>
               <e p="Scripts" t="Include">
+                <e p="_Lesson" t="Include">
+                  <e p="PopupFactory.cs" t="Include" />
+                </e>
                 <e p="Configs" t="Include">
                   <e p="PopupAssets.cs" t="Include" />
                 </e>
@@ -230,6 +233,7 @@
               <e p="IPopupManager.cs" t="Include" />
               <e p="IPopupSupplier.cs" t="Include" />
               <e p="PopupManager.cs" t="Include" />
+              <e p="PopupName.cs" t="Include" />
             </e>
           </e>
           <e p="Sirenix" t="Include">

@@ -15,10 +15,10 @@ namespace Prototype.UI
 
         private IPopup.Handler handler;
 
-        void IPopup.Show(IPopup.Handler handler, object data)
+        void IPopup.Show(IPopup.Handler handler, IPopupArgs args)
         {
             this.handler = handler;
-            this.StartCoroutine(this.ShowInNextFrame(data));
+            this.StartCoroutine(this.ShowInNextFrame(args));
         }
 
         void IPopup.Hide()

@@ -29,9 +29,9 @@ namespace Prototype.UI
             this.manager = new Popups.PopupManager(supplier);
         }
 
-        public void ShowPopup(PopupName name, object data = null)
+        public void ShowPopup(PopupName name, IPopupArgs args = null)
         {
-            this.manager.ShowPopup(name, data);
+            this.manager.ShowPopup(name, args);
         }
 
         public bool IsPopupShown(PopupName name)

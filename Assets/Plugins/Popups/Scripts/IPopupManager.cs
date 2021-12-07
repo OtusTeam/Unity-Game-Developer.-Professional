@@ -8,7 +8,7 @@ namespace Popups
 
         event Action<PopupName> OnPopupHidden;
         
-        void ShowPopup(PopupName name, object data = null);
+        void ShowPopup(PopupName name, IPopupArgs args = null);
 
         bool IsPopupShown(PopupName name);
 

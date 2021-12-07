@@ -227,6 +227,7 @@
             <e p="Popups.asmref" t="Include" />
             <e p="Scripts" t="Include">
               <e p="IPopup.cs" t="Include" />
+              <e p="IPopupArgs.cs" t="Include" />
               <e p="IPopupManager.cs" t="Include" />
               <e p="IPopupSupplier.cs" t="Include" />
               <e p="PopupManager.cs" t="Include" />

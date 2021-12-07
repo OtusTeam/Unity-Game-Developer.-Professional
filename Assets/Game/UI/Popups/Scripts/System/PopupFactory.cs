@@ -11,10 +11,20 @@ namespace Prototype.UI
         [SerializeField]
         private PopupAssets resources;
 
-        public Popup CreatePopup(PopupName popupType)
+        [SerializeField]
+        private MonoInjector[] injectors;
+
+        public Popup CreatePopup(PopupName name)
         {
-            var prefab = this.resources.LoadPrefab(popupType);
+            var prefab = this.resources.LoadPrefab(name);
             var popup = Instantiate(prefab, this.container);
+
+            //DI:
+            foreach (var injector in this.injectors)
+            {
+                injector.InjectContextInto(popup);
+            }
+
             return popup;
         }
     }

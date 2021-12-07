@@ -2,7 +2,7 @@ namespace Popups
 {
     public interface IPopupSupplier
     {
-        IPopup LoadPopup(PopupName popupName);
+        IPopup LoadPopup(PopupName name);
 
         void UnloadPopup(IPopup popup);
     }

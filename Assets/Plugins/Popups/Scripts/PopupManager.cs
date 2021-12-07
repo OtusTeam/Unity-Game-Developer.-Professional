@@ -22,11 +22,11 @@ namespace Popups
             this.cache = new List<PopupName>();
         }
 
-        public void ShowPopup(PopupName name, object data = null)
+        public void ShowPopup(PopupName name, IPopupArgs args = null)
         {
             if (!this.IsPopupShown(name))
             {
-                this.ShowPopupInternal(name, data);
+                this.ShowPopupInternal(name, args);
             }
         }
 
@@ -63,10 +63,10 @@ namespace Popups
             }
         }
 
-        private void ShowPopupInternal(PopupName name, object data)
+        private void ShowPopupInternal(PopupName name, IPopupArgs args)
         {
             var popup = this.supplier.LoadPopup(name);
-            popup.Show(this, data);
+            popup.Show(handler: this, args);
             
             this.activePopupMap.Add(name, popup);
             this.OnPopupShown?.Invoke(name);

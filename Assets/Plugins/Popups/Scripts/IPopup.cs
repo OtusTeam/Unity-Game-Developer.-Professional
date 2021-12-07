@@ -2,7 +2,7 @@ namespace Popups
 {
     public interface IPopup
     {
-        void Show(Handler handler, object data = null);
+        void Show(Handler handler, IPopupArgs args = null);
 
         void Hide();
 

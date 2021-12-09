@@ -31,7 +31,7 @@ namespace Prototype.GameInterface
 
         public void AddEntity(IEntity entity)
         {
-            if (entity.TryGetComponent(out IMapEntityRenderComponent component))
+            if (entity.TryGetEntityComponent(out IMapEntityRenderComponent component))
             {
                 this.addedEntities.Add(component);
                 this.processingEntities.Add(component);
@@ -40,7 +40,7 @@ namespace Prototype.GameInterface
 
         public void RemoveEntity(IEntity entity)
         {
-            if (entity.TryGetComponent(out IMapEntityRenderComponent component))
+            if (entity.TryGetEntityComponent(out IMapEntityRenderComponent component))
             {
                 this.removedEntities.Add(component);
                 this.processingEntities.Remove(component);

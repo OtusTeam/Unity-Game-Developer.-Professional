@@ -17,7 +17,7 @@ namespace Prototype.GameEngine
 
         public MoveComponent()
         {
-            this.positionComponent = this.GetComponentLazy<PositionComponent>();
+            this.positionComponent = this.GetEntityComponentLazy<PositionComponent>();
         }
 
         public void Move(WorldVector direction, float deltaTime)

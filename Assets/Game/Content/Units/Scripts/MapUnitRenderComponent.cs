@@ -17,7 +17,7 @@ namespace Prototype.GameEngine
 
         public MapUnitRenderComponent()
         {
-            this.teamComponent = this.GetComponentLazy<TeamComponent>();
+            this.teamComponent = this.GetEntityComponentLazy<TeamComponent>();
         }
 
         protected override Color ProvideColor()

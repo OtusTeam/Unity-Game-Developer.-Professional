@@ -15,6 +15,9 @@
               <e p="Animation" t="Include">
                 <e p="AnimationEventReceiver.cs" t="Include" />
               </e>
+              <e p="Collider" t="Include">
+                <e p="ObservableCollider.cs" t="Include" />
+              </e>
               <e p="DontDestroy" t="Include">
                 <e p="DontDestroyOnLoad.cs" t="Include" />
               </e>
@@ -40,15 +43,11 @@
           </e>
           <e p="Domain" t="Include">
             <e p="Scripts" t="Include">
-              <e p="ITradeCharacter.cs" t="Include" />
-              <e p="ITrader.cs" t="Include" />
+              <e p="IGameResource.cs" t="Include" />
             </e>
           </e>
           <e p="GameEngine" t="Include">
             <e p="Components" t="Include">
-              <e p="Money" t="Include">
-                <e p="MoneyComponent.cs" t="Include" />
-              </e>
               <e p="Move" t="Include">
                 <e p="MoveComponent.cs" t="Include" />
               </e>
@@ -57,6 +56,9 @@
               </e>
               <e p="SizeComponent" t="Include">
                 <e p="SizeComponent.cs" t="Include" />
+              </e>
+              <e p="Trigger" t="Include">
+                <e p="TriggerComponent.cs" t="Include" />
               </e>
             </e>
             <e p="Entities" t="Include">
@@ -75,9 +77,24 @@
                 </e>
               </e>
             </e>
+            <e p="Money" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Components" t="Include">
+                  <e p="MoneyStorageComponent.cs" t="Include" />
+                </e>
+                <e p="Configs" t="Include">
+                  <e p="MoneyResourceInfo.cs" t="Include" />
+                </e>
+                <e p="Controllers" t="Include">
+                  <e p="MoneyCollectController.cs" t="Include" />
+                  <e p="MoneyResourceComponent.cs" t="Include" />
+                </e>
+                <e p="MoneyResource.cs" t="Include" />
+              </e>
+            </e>
             <e p="Player" t="Include">
               <e p="Scripts" t="Include">
-                <e p="InputController.cs" t="Include" />
+                <e p="PlayerInputController.cs" t="Include" />
               </e>
             </e>
             <e p="Teams" t="Include">
@@ -170,7 +187,8 @@
             <e p="Popups" t="Include">
               <e p="Content" t="Include">
                 <e p="Scripts" t="Include">
-                  <e p="TradingPopup.cs" t="Include" />
+                  <e p="GameResourcePopup.cs" t="Include" />
+                  <e p="GameResourcePopupArgs.cs" t="Include" />
                 </e>
               </e>
               <e p="Scripts" t="Include">

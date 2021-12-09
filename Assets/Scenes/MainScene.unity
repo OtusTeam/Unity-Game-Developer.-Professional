@@ -168,6 +168,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1371082335}
     - target: {fileID: 6360043860701657615, guid: 383e9c92f765f4a088b1fa6fb1de742e, type: 3}
+      propertyPath: injectors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360043860701657615, guid: 383e9c92f765f4a088b1fa6fb1de742e, type: 3}
       propertyPath: injectors.Array.data[0]
       value: 
       objectReference: {fileID: 1371082337}

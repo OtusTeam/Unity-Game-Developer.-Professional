@@ -18,8 +18,8 @@ namespace Prototype.GameInterface
 
         public MapEntityRenderComponent()
         {
-            this.positionComponent = this.GetComponentLazy<PositionComponent>();
-            this.sizeComponent = this.GetComponentLazy<SizeComponent>();
+            this.positionComponent = this.GetEntityComponentLazy<PositionComponent>();
+            this.sizeComponent = this.GetEntityComponentLazy<SizeComponent>();
         }
         
         void IGameInitElement.InitGame(IGameSystem system)

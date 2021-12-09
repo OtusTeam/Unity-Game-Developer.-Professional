@@ -27,12 +27,12 @@ namespace Prototype.UI
             this.onHide?.Invoke();
         }
 
-        private IEnumerator ShowInNextFrame(object data)
+        private IEnumerator ShowInNextFrame(IPopupArgs args)
         {
             //Можно отыграть после метода Start (Опционально).
             yield return new WaitForEndOfFrame();
-            this.OnShow();
-            this.onShow?.Invoke(data);
+            this.OnShow(args);
+            this.onShow?.Invoke(args);
         }
 
         //Unity Event
@@ -44,7 +44,7 @@ namespace Prototype.UI
             }
         }
 
-        protected virtual void OnShow()
+        protected virtual void OnShow(IPopupArgs args)
         {
         }
 

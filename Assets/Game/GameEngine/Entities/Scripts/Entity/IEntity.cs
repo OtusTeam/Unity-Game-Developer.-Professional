@@ -4,14 +4,14 @@ namespace Prototype.GameEngine
 {
     public interface IEntity
     {
-        void AddComponent(object component);
+        void AddEntityComponent(object component);
         
-        void RemoveComponent(object component);
+        void RemoveEntityComponent(object component);
 
-        T GetComponent<T>();
+        T GetEntityComponent<T>();
 
-        bool TryGetComponent<T>(out T component);
+        bool TryGetEntityComponent<T>(out T component);
         
-        IEnumerable<T> GetComponents<T>();
+        IEnumerable<T> GetEntityComponents<T>();
     }
 }

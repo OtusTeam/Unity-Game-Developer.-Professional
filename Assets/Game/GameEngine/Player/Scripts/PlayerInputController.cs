@@ -3,11 +3,13 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class InputController : MonoBehaviour,
+    public sealed class PlayerInputController : MonoBehaviour,
         IGameStartElement,
         IGameFinishElement
     {
         [SerializeField]
+        private Entity player;
+
         private MoveComponent moveComponent;
 
         private bool moveRequired;
@@ -26,6 +28,7 @@ namespace Prototype.GameEngine
 
         void IGameStartElement.StartGame(IGameSystem system)
         {
+            this.moveComponent = this.player.GetEntityComponent<MoveComponent>();
             this.enabled = true;
         }
 

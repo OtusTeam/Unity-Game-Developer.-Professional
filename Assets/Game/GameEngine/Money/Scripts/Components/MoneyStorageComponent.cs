@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class MoneyComponent : MonoBehaviour
+    public sealed class MoneyStorageComponent : MonoBehaviour
     {
         public event Action<int> OnMoneyChanged;
 
@@ -18,6 +18,12 @@ namespace Prototype.GameEngine
         public void AddMoney(int money)
         {
             this.money += money;
+            this.OnMoneyChanged?.Invoke(money);
+        }
+
+        public void SpendMoney(int money)
+        {
+            this.money -= money;
             this.OnMoneyChanged?.Invoke(money);
         }
     }

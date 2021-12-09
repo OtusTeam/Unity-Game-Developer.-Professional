@@ -12,7 +12,7 @@ namespace Prototype.GameEngine
         [SerializeField]
         private Parameters parameters;
 
-        void IEntity.AddComponent(object component)
+        public void AddEntityComponent(object component)
         {
             if (!this.componentMap.Add(component))
             {
@@ -25,22 +25,22 @@ namespace Prototype.GameEngine
             }
         }
 
-        void IEntity.RemoveComponent(object component)
+        public void RemoveEntityComponent(object component)
         {
             this.componentMap.Remove(component);
         }
 
-        T IEntity.GetComponent<T>()
+        public T GetEntityComponent<T>()
         {
             return this.componentMap.Get<T>();
         }
 
-        bool IEntity.TryGetComponent<T>(out T component)
+        public bool TryGetEntityComponent<T>(out T component)
         {
             return this.componentMap.TryGet(out component);
         }
 
-        IEnumerable<T> IEntity.GetComponents<T>()
+        public IEnumerable<T> GetEntityComponents<T>()
         {
             return this.componentMap.All<T>();
         }
@@ -53,14 +53,13 @@ namespace Prototype.GameEngine
         private void SetupComponentMap()
         {
             this.componentMap = new GenericDictionary();
-            IEntity entity = this; 
             var components = this.parameters.initialComponents;
             for (int i = 0, count = components.Length; i < count; i++)
             {
                 var component = components[i];
                 if (component != null)
                 {
-                    entity.AddComponent(component);
+                    this.AddEntityComponent(component);
                 }
             }
         }

@@ -12,9 +12,9 @@ namespace Prototype.GameEngine
 
         private IEntity entity;
 
-        protected Lazy<T> GetComponentLazy<T>()
+        protected Lazy<T> GetEntityComponentLazy<T>()
         {
-            return new Lazy<T>(() => this.entity.GetComponent<T>());
+            return new Lazy<T>(() => this.entity.GetEntityComponent<T>());
         }
     }
 }

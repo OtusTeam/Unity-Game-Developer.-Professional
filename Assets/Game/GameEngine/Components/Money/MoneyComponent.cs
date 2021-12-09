@@ -6,7 +6,7 @@ namespace Prototype.GameEngine
     public sealed class MoneyComponent : MonoBehaviour
     {
         public event Action<int> OnMoneyChanged;
-        
+
         public int Money
         {
             get { return this.money; }
@@ -17,7 +17,7 @@ namespace Prototype.GameEngine
 
         public void AddMoney(int money)
         {
-            this.money +=money;
+            this.money += money;
             this.OnMoneyChanged?.Invoke(money);
         }
     }

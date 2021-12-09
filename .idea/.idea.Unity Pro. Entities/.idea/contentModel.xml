@@ -49,11 +49,11 @@
               <e p="Money" t="Include">
                 <e p="MoneyComponent.cs" t="Include" />
               </e>
+              <e p="Move" t="Include">
+                <e p="MoveComponent.cs" t="Include" />
+              </e>
               <e p="Position" t="Include">
                 <e p="PositionComponent.cs" t="Include" />
-              </e>
-              <e p="Resource" t="Include">
-                <e p="ResourceComponent.cs" t="Include" />
               </e>
               <e p="SizeComponent" t="Include">
                 <e p="SizeComponent.cs" t="Include" />
@@ -75,6 +75,11 @@
                 </e>
               </e>
             </e>
+            <e p="Player" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="InputController.cs" t="Include" />
+              </e>
+            </e>
             <e p="Teams" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Component" t="Include">
@@ -84,19 +89,6 @@
                   <e p="TeamConfig.cs" t="Include" />
                 </e>
                 <e p="TeamId.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Trading" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="System" t="Include">
-                  <e p="TradeEnterController.cs" t="Include" />
-                  <e p="TradeManager.cs" t="Include" />
-                  <e p="TradePoint.cs" t="Include" />
-                </e>
-                <e p="Trading" t="Include">
-                  <e p="TradeCharacter.cs" t="Include" />
-                  <e p="Trader.cs" t="Include" />
-                </e>
               </e>
             </e>
             <e p="World" t="Include">
@@ -166,8 +158,6 @@
           <e p="UI" t="Include">
             <e p="Controllers" t="Include">
               <e p="Scripts" t="Include">
-                <e p="CharacterResourceController.cs" t="Include" />
-                <e p="CharacterTradeController.cs" t="Include" />
                 <e p="ViewAnimator.cs" t="Include" />
               </e>
             </e>

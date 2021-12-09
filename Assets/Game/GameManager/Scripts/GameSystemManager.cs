@@ -5,7 +5,6 @@ using GameElements;
 using GameElements.Unity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Object = UnityEngine.Object;
 
 namespace Prototype.GameManagment
 {
@@ -15,11 +14,11 @@ namespace Prototype.GameManagment
         public override event Action OnGameLoaded;
 
         public override event Action OnGameStarted;
-        
+
         public override event Action OnGameUnloaded;
 
         private const string GAME_SCENE = "GameScene";
-        
+
         private const string GAME_CONTEXT_TAG = "GameContext";
 
         private MonoGameSystem gameSystem;
@@ -63,7 +62,7 @@ namespace Prototype.GameManagment
             {
                 return;
             }
-            
+
             if (this.gameSystem != null)
             {
                 this.gameSystem.RegisterService(service);
@@ -76,13 +75,13 @@ namespace Prototype.GameManagment
             {
                 return;
             }
-            
+
             if (this.gameSystem != null)
             {
                 this.gameSystem.UnregisterService(service);
             }
         }
-        
+
         public override T GetService<T>()
         {
             return this.gameSystem.GetService<T>();
@@ -92,10 +91,10 @@ namespace Prototype.GameManagment
         {
             return this.gameSystem.TryGetService(out service);
         }
-        
-        public override void AddGameComponent(object target)
+
+        public override void AddGameComponent(object component)
         {
-            if (!this.TryGetGameElement(target, out var gameElement))
+            if (!(component is IGameElement gameElement))
             {
                 return;
             }
@@ -113,7 +112,7 @@ namespace Prototype.GameManagment
 
         public override void RemoveGameComponent(object component)
         {
-            if (!this.TryGetGameElement(component, out var gameElement))
+            if (!(component is IGameElement gameElement))
             {
                 return;
             }
@@ -153,7 +152,7 @@ namespace Prototype.GameManagment
             yield return new WaitForEndOfFrame();
             gameSystem.InitGame();
             gameSystem.ReadyGame();
-            
+
             this.gameSystem = gameSystem;
             this.OnGameLoaded?.Invoke();
         }
@@ -178,15 +177,18 @@ namespace Prototype.GameManagment
             {
                 yield return null;
             }
-            
+
             this.OnGameUnloaded?.Invoke();
         }
-        
+
         private void Awake()
         {
             foreach (var service in this.parameters.services)
             {
-                this.servicesCache.Add(service);
+                if (service != null)
+                {
+                    this.servicesCache.Add(service);
+                }
             }
 
             foreach (var element in this.parameters.gameElements)
@@ -198,38 +200,16 @@ namespace Prototype.GameManagment
             }
         }
 
-        private bool TryGetGameElement(object target, out IGameElement element)
-        {
-            if (target is IGameElement gameElement)
-            {
-                element = gameElement;
-                return true;
-            }
-            
-            if (target is MonoBehaviour monoBehaviour && monoBehaviour.TryGetComponent(out element))
-            {
-                return true;
-            }
-
-            if (target is GameObject gameObject && gameObject.TryGetComponent(out element))
-            {
-                return true;
-            }
-
-            element = default;
-            return false;
-        }
-
         [Serializable]
         public sealed class Parameters
         {
             [Space]
             [SerializeField]
-            public Object[] services;
+            public MonoBehaviour[] services;
 
             [Space]
             [SerializeField]
-            public Object[] gameElements;
+            public MonoBehaviour[] gameElements;
         }
     }
 }

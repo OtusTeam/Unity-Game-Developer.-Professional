@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace GameElements.Unity
 {
     public sealed class MonoGameElementGroup : MonoBehaviour, IGameElementGroup
     {
         [SerializeField]
-        private Object[] gameElements;
+        private MonoBehaviour[] gameElements;
 
         private HashSet<IGameElement> elements;
 
@@ -26,15 +25,10 @@ namespace GameElements.Unity
         {
             for (int i = 0, count = this.gameElements.Length; i < count; i++)
             {
-                var element = this.gameElements[i];
-                if (element is IGameElement gameElement)
+                var monoElement = this.gameElements[i];
+                if (monoElement is IGameElement gameElement)
                 {
                     this.elements.Add(gameElement);
-                }
-                else if (element is GameObject gameObject)
-                {
-                    var elements = gameObject.GetComponents<IGameElement>();
-                    this.elements.UnionWith(elements);
                 }
             }
         }

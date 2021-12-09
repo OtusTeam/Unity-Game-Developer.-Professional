@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace GameElements.Unity
 {
@@ -49,7 +48,7 @@ namespace GameElements.Unity
         }
 
         private readonly IGameSystem gameSystem;
-        
+
         public MonoGameSystem()
         {
             this.gameSystem = new GameSystem();
@@ -116,17 +115,17 @@ namespace GameElements.Unity
         {
             return this.gameSystem.TryGetService(out service);
         }
-        
+
         [SerializeField]
         private bool autoRun;
 
         [Space]
         [SerializeField]
-        private Object[] services;
+        private MonoBehaviour[] services;
 
         [Space]
         [SerializeField]
-        private Object[] gameElements;
+        private MonoBehaviour[] gameElements;
 
         private IEnumerator Start()
         {
@@ -138,13 +137,13 @@ namespace GameElements.Unity
                 this.StartGame();
             }
         }
-        
+
         private void LoadGameElements()
         {
             for (int i = 0, count = this.gameElements.Length; i < count; i++)
             {
-                var element = this.gameElements[i];
-                if (element is IGameElement gameElement)
+                var monoElement = this.gameElements[i];
+                if (monoElement is IGameElement gameElement)
                 {
                     this.AddElement(gameElement);
                 }
@@ -155,10 +154,10 @@ namespace GameElements.Unity
         {
             for (int i = 0, count = this.services.Length; i < count; i++)
             {
-                var subsystem = this.services[i];
-                if (subsystem != null)
+                var monoService = this.services[i];
+                if (monoService != null)
                 {
-                    this.RegisterService(subsystem);
+                    this.RegisterService(monoService);
                 }
             }
         }

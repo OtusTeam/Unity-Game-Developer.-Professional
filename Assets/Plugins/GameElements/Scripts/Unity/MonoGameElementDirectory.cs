@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,15 +23,13 @@ namespace GameElements.Unity
 
         private void LoadElements()
         {
-            foreach (var container in this.containers)
+            for (int i = 0, count = this.containers.Length; i < count; i++)
             {
+                var container = this.containers[i];
                 foreach (Transform child in container)
                 {
                     var gameElements = child.GetComponents<IGameElement>();
-                    foreach (var element in gameElements)
-                    {
-                        this.elements.Add(element);
-                    }
+                    this.elements.UnionWith(gameElements);
                 }
             }
         }

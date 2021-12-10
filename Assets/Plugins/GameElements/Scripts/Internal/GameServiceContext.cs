@@ -23,7 +23,14 @@ namespace GameElements
 
         internal T GetService<T>()
         {
-            return this.serviceMap.Get<T>();
+            try
+            {
+                return this.serviceMap.Get<T>();
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Service of type {typeof(T).Name} is not found");
+            }
         }
 
         internal bool TryGetService<T>(out T service)

@@ -11,6 +11,19 @@
       <e p="Assets" t="Include">
         <e p="Game" t="Include">
           <e p="Common" t="Include">
+            <e p="Popup" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Configs" t="Include">
+                  <e p="PopupAssets.cs" t="Include" />
+                </e>
+                <e p="Popup.cs" t="Include" />
+                <e p="System" t="Include">
+                  <e p="PopupFactory.cs" t="Include" />
+                  <e p="PopupManager.cs" t="Include" />
+                  <e p="PopupSupplier.cs" t="Include" />
+                </e>
+              </e>
+            </e>
             <e p="Scripts" t="Include">
               <e p="Animation" t="Include">
                 <e p="AnimationEventReceiver.cs" t="Include" />
@@ -39,11 +52,6 @@
               <e p="Scripts" t="Include">
                 <e p="MapUnitRenderComponent.cs" t="Include" />
               </e>
-            </e>
-          </e>
-          <e p="Domain" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="IGameResource.cs" t="Include" />
             </e>
           </e>
           <e p="GameEngine" t="Include">
@@ -77,6 +85,11 @@
                 </e>
               </e>
             </e>
+            <e p="Models" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="IGameResource.cs" t="Include" />
+              </e>
+            </e>
             <e p="Money" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
@@ -95,6 +108,11 @@
             <e p="Player" t="Include">
               <e p="Scripts" t="Include">
                 <e p="PlayerInputController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="System" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="GameInjector.cs" t="Include" />
               </e>
             </e>
             <e p="Teams" t="Include">
@@ -164,48 +182,23 @@
                 </e>
               </e>
             </e>
-          </e>
-          <e p="GameManager" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="GameInjector.cs" t="Include" />
-              <e p="GameManager.cs" t="Include" />
-              <e p="GameSystemManager.cs" t="Include" />
-            </e>
-          </e>
-          <e p="UI" t="Include">
-            <e p="Controllers" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="ViewAnimator.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Elements" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="CharacterResourcesView.cs" t="Include" />
-                <e p="TraderPriceView.cs" t="Include" />
-              </e>
-            </e>
             <e p="Popups" t="Include">
-              <e p="Content" t="Include">
-                <e p="Scripts" t="Include">
-                  <e p="GameResourcePopup.cs" t="Include" />
-                  <e p="GameResourcePopupArgs.cs" t="Include" />
-                </e>
-              </e>
               <e p="Scripts" t="Include">
-                <e p="Configs" t="Include">
-                  <e p="PopupAssets.cs" t="Include" />
-                </e>
-                <e p="Popup.cs" t="Include" />
-                <e p="System" t="Include">
-                  <e p="PopupFactory.cs" t="Include" />
-                  <e p="PopupManager.cs" t="Include" />
-                  <e p="PopupSupplier.cs" t="Include" />
-                </e>
+                <e p="GameResourcePopup.cs" t="Include" />
+                <e p="GameResourcePopupArgs.cs" t="Include" />
               </e>
             </e>
-            <e p="Screens" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="GameScreen.cs" t="Include" />
+            <e p="UI" t="Include">
+              <e p="Controllers" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="ViewAnimator.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Elements" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="CharacterResourcesView.cs" t="Include" />
+                  <e p="TraderPriceView.cs" t="Include" />
+                </e>
               </e>
             </e>
           </e>

@@ -175,7 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 22458065781720019}
-  resources: {fileID: 11400000, guid: fdfb4a8daa5f449b8a61704b2e3f9ac2, type: 2}
+  resources: {fileID: 0}
+  injectors: []
 --- !u!1 &22458065069561028
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,7 +52,7 @@ namespace GameElements
                 }
             }
 
-            throw new Exception($"Element of type {requiredType.Name} is not found!");
+            throw new Exception($"Item of type {requiredType.Name} is not found!");
         }
 
         public IEnumerable<T> All<T>()

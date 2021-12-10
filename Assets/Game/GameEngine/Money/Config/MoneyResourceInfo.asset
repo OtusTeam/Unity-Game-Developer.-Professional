@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9837c7480fa24c718eb50818c424b21d, type: 3}
   m_Name: MoneyResourceInfo
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  title: Money
+  icon: {fileID: 21300000, guid: 2ad24c123695141bbb7ca17b8f1cb210, type: 3}
+  rewardFormat: + {0} MONEY

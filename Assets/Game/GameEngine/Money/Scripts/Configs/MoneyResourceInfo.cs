@@ -11,7 +11,6 @@ namespace Prototype.GameEngine
         [SerializeField]
         public Sprite icon;
 
-        [SerializeField]
-        public string title;
+        public string rewardFormat;
     }
 }

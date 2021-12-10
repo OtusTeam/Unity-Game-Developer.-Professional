@@ -10,70 +10,86 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Обрезал Game Manager">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Castle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastle.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastleManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastleManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Character.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacterManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacterManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Domain/GameResource.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Damage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Damage/DamageComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Damage/DamageComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/HitPoints.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/HitPoints/HitPointsComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/HitPoints/HitPointsComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Castle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/Character.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/Character.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharacterManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharacterManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Components.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Components/UnitInfoComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Components/UnitInfoComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Configs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Configs/UnitInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Configs/UnitInfo.cs.meta" afterDir="false" />
+    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Написал интерфейс для персонажа и замка">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Args.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArgument.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArgument.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArgumentName.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArgumentName.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArguments.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArguments.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Utils.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials/Ally.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials/Ally.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials/Enemy.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials/Enemy.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials/Player.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Materials/Player.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs/Enemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs/Enemy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs/Player.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs/Player.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs/UnitPrefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Prefabs/UnitPrefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Scripts/MapUnitRenderComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Units/Scripts/MapUnitRenderComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/IEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/IEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/EntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/EntityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Models/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/GameResource/Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Models/Scripts/IGameResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/GameResource/Scripts/IGameResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Models/Scripts/IGameResource.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/GameResource/Scripts/IGameResource.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations/Popup.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations/Popup.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations/Popup.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations/Popup.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations/PopupClose.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations/PopupClose.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations/PopupClose.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations/PopupClose.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations/PopupNone.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations/PopupNone.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations/PopupNone.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations/PopupNone.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations/PopupOpen.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations/PopupOpen.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Animations/PopupOpen.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Animations/PopupOpen.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/PopupSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/PopupSystem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/PopupSystem.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/PopupSystem.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/Configs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Configs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/Configs/PopupAssets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Configs/PopupAssets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/Configs/PopupAssets.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Configs/PopupAssets.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/Popup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Popup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/Popup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Popup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/System.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/System/PopupFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/System/PopupFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/System/PopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/System/PopupManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/System/PopupSupplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupSupplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/System/PopupSupplier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupSupplier.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/GameResource.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/Reward.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/GameResource/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/Reward/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/GameResource/Scripts/IGameResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/Reward/Scripts/IReward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/GameResource/Scripts/IGameResource.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Domain/Reward/Scripts/IReward.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Config/MoneyResourceInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Config/MoneyResourceInfo.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Configs/MoneyResourceInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Configs/MoneyResourceInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Controllers/MoneyResourceComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Components/MoneyResourceComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Controllers/MoneyResourceComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Components/MoneyResourceComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Controllers/MoneyCollectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Controllers/MoneyCollectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyResource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyResource.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Castle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/GamePopupAssets.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/GamePopupAssets.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Scripts/GameResourcePopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Scripts/RewardPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Scripts/GameResourcePopup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Scripts/RewardPopup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Scripts/GameResourcePopupArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Scripts/GameResourcePopupArgs.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Controllers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Controllers/Scripts/ViewAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Utils/PopupAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Controllers/Scripts/ViewAnimator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Utils/PopupAnimator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Elements/Scripts/CharacterResourcesView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Elements/Scripts/CharacterResourcesView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Elements/Scripts/TraderPriceView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Elements/Scripts/TraderPriceView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Popups.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Popups.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupArgs.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopupManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopupManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupSupplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopupSupplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupSupplier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopupSupplier.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/PopupManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/PopupManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/PopupName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupName.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/PopupName.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,50 +141,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Money/MoneyComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Money/MoneyCharacterComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Trigger/EntityTriggerComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/EntityComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Player/Scripts/PlayerInputController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyStorageComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyResourceConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyResourceInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyResourceComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupName.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyCollectController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Domain/Scripts/IGameResource.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyResource.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/GameResourcePopup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/UI/Popups/Content/Scripts/GameResourcePopupArgs.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/Scripts/Collider/ObservableCollider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Trigger/TriggerComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoServiceGroup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/GameService.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameServiceGroup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/IGameSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Internal/GameElementContext.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Internal/ServiceContext.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/GameSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/System/Scripts/GameSystemInjector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/System/Scripts/GameInjector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Utils/GenericDictionary.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Internal/GameServiceContext.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Character/CharacterComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Character/CharacterInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Characters/CharacterInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Characters/CharacterComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/HitPoints/HitPointsComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Damage/DamageComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Characters/Configs/CharacterInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/EntityManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/IEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Characters/UnitComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Components/UnitMapRenderComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Components/UnitInfoComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Configs/UnitInfo.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Configs/MoneyResourceInfo.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/CharacterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacterManager.cs" />
@@ -176,6 +154,44 @@
         <option value="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastle.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastleManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharacterManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/IPopupManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/Popups/Scripts/PopupManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/Popup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/Popup/Scripts/System/PopupManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArg.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopupSupplier.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupSupplier.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Domain/GameResource/Scripts/GameResourceArg.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIParameters.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArgName.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArgs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/Scripts/Args/UIArgumentName.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/Scripts/Args/UIArguments.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArgument.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopupManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/PopupManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/IPopup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/System/PopupManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArguments.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Popup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Controllers/Scripts/ViewAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Elements/Scripts/ViewAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Elements/Scripts/ShowableAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Scripts/GameResourcePopup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Domain/GameResource/Scripts/IReward.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Args/UIArgumentName.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Scripts/RewardPopup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/UI/Elements/Scripts/PopupAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Utils/PopupAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Lib/PopupName.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Popup/Scripts/Unity/Configs/PopupAssets.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyResource.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/MoneyReward.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Domain/Reward/Scripts/IReward.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Configs/MoneyResourceInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Controllers/MoneyCollectController.cs" />
       </list>
     </option>
   </component>
@@ -236,7 +252,7 @@
       <workItem from="1638849703032" duration="10535000" />
       <workItem from="1638966903042" duration="379000" />
       <workItem from="1639047405014" duration="7389000" />
-      <workItem from="1639128622967" duration="5062000" />
+      <workItem from="1639128622967" duration="9988000" />
     </task>
     <task id="LOCAL-00001" summary="Iniitial commit">
       <created>1638432596450</created>
@@ -553,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639131419413</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Написал интерфейс для персонажа и замка">
+      <created>1639134490665</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1639134490665</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Написал интерфейс для персонажа и замка">
+      <created>1639134497310</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1639134497310</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +605,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Подготовил Game Context (не брать)" />
     <MESSAGE value="Написал рендер карты" />
     <MESSAGE value="Написал рендер для Юнита" />
     <MESSAGE value="Реализовал Game System (Глобальная система)" />
@@ -600,7 +629,8 @@
     <MESSAGE value="Написал скрипты для денег" />
     <MESSAGE value="Написал service context" />
     <MESSAGE value="Обрезал Game Manager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обрезал Game Manager" />
+    <MESSAGE value="Написал интерфейс для персонажа и замка" />
+    <option name="LAST_COMMIT_MESSAGE" value="Написал интерфейс для персонажа и замка" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1638707005590">
@@ -687,18 +717,18 @@
     </state>
     <state width="1440" height="339" key="GridCell.Tab.3.right/0.0.1440.900@0.0.1440.900" timestamp="1638554069373" />
     <state width="1440" height="339" key="GridCell.Tab.3.right/0.25.1440.790@0.25.1440.790" timestamp="1638565917330" />
-    <state x="517" y="154" key="RiderGenerateDialog" timestamp="1639133019292">
+    <state x="517" y="154" key="RiderGenerateDialog" timestamp="1639144026384">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1639133019292" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1639134397090">
+    <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1639144026384" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1639144069006">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1639134397090" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1639131421717">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1639144069006" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1639134498895">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1639131421717" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1639134498895" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638680847639">
       <screen x="0" y="0" width="1440" height="900" />
@@ -708,9 +738,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1638698634191" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1639133736303">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1639143958623">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1639133736303" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1639143958623" />
   </component>
 </project>

@@ -1,12 +1,10 @@
 using System;
 using GameElements;
-using Popups;
-using Prototype.UI;
 using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class MoneyCollectController : MonoBehaviour, 
+    public sealed class MoneyCollectController : MonoBehaviour,
         IGameStartElement,
         IGameFinishElement
     {
@@ -18,12 +16,12 @@ namespace Prototype.GameEngine
         private TriggerComponent triggerComponent;
 
         private IPopupManager popupManager;
-        
+
         void IGameStartElement.StartGame(IGameSystem system)
         {
             var entity = this.parameters.collector;
             this.storageComponent = entity.GetEntityComponent<MoneyStorageComponent>();
-            
+
             this.triggerComponent = entity.GetEntityComponent<TriggerComponent>();
             this.triggerComponent.OnTriggerEntered += this.OnTriggerEntered;
 
@@ -47,9 +45,14 @@ namespace Prototype.GameEngine
 
         private void ShowPopup(int money)
         {
-            var moneyResource = new MoneyResource(this.parameters.info, money);
-            var popupArgs = new GameResourcePopupArgs(moneyResource);
-            this.popupManager.ShowPopup(PopupName.POPUP_RESOURCE, popupArgs);
+            var resourceInfo = this.parameters.info;
+            var rewardText = string.Format(resourceInfo.rewardFormat, money);
+            var reward = new BaseReward(resourceInfo.icon, rewardText);
+            
+            var popupArgs = new UIArguments(
+                new UIArgument(UIArgumentName.REWARD, reward)
+            );
+            this.popupManager.ShowPopup(PopupName.POPUP_REWARD, popupArgs);
         }
 
         [Serializable]
@@ -57,7 +60,7 @@ namespace Prototype.GameEngine
         {
             [SerializeField]
             public Entity collector;
-        
+
             [SerializeField]
             public MoneyResourceInfo info;
         }

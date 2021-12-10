@@ -221,7 +221,7 @@
               <e p="IGameSystem.cs" t="Include" />
               <e p="Internal" t="Include">
                 <e p="GameElementContext.cs" t="Include" />
-                <e p="ServiceContext.cs" t="Include" />
+                <e p="GameServiceContext.cs" t="Include" />
               </e>
               <e p="Unity" t="Include">
                 <e p="MonoGameElementDirectory.cs" t="Include" />

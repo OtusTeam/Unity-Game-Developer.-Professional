@@ -20,13 +20,13 @@ namespace GameElements
 
         private readonly GameElementContext elementContext;
 
-        private readonly ServiceContext serviceContext;
+        private readonly GameServiceContext serviceContext;
         
         public GameSystem()
         {
             this.State = GameState.NOT_INITITALIZED;
             this.elementContext = new GameElementContext(this);
-            this.serviceContext = new ServiceContext();
+            this.serviceContext = new GameServiceContext();
         }
 
         public void InitGame()

@@ -2,11 +2,11 @@ using System;
 
 namespace GameElements
 {
-    internal sealed class ServiceContext
+    internal sealed class GameServiceContext
     {
         private readonly GenericDictionary serviceMap;
 
-        internal ServiceContext()
+        internal GameServiceContext()
         {
             this.serviceMap = new GenericDictionary();
         }

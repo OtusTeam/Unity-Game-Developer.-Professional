@@ -33,7 +33,8 @@ namespace Prototype.GameEngine
 
             var id = ++this.idCounter;
             entity.SetupId(id);
-
+            entity.SetActive(true);
+            
             this.entityMap.Add(id, entity);
             this.OnEntityAdded?.Invoke(entity);
         }
@@ -42,6 +43,7 @@ namespace Prototype.GameEngine
         {
             if (this.entityMap.Remove(entity.Id))
             {
+                entity.SetActive(false);
                 this.OnEntityRemoved?.Invoke(entity);
             }
         }

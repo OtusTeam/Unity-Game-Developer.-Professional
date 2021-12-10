@@ -9,7 +9,10 @@ namespace Prototype.GameEngine
     public sealed class MoneyResourceInfo : ScriptableObject
     {
         [SerializeField]
-        public Sprite icon;
+        public Sprite portraitIcon;
+
+        [SerializeField]
+        public Sprite minimapIcon;
 
         public string rewardFormat;
     }

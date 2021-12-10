@@ -5,20 +5,20 @@ namespace Prototype.GameInterface
 {
     public sealed class MapEntityLayerRender
     {
-        private readonly List<IMapEntityRenderComponent> addedEntities;
+        private readonly List<IMapItemComponent> addedEntities;
 
-        private readonly List<IMapEntityRenderComponent> processingEntities;
+        private readonly List<IMapItemComponent> processingEntities;
 
-        private readonly List<IMapEntityRenderComponent> removedEntities;
+        private readonly List<IMapItemComponent> removedEntities;
 
-        private readonly List<IMapEntityRenderComponent> cache;
+        private readonly List<IMapItemComponent> cache;
 
         public MapEntityLayerRender()
         {
-            this.addedEntities = new List<IMapEntityRenderComponent>();
-            this.processingEntities = new List<IMapEntityRenderComponent>();
-            this.removedEntities = new List<IMapEntityRenderComponent>();
-            this.cache = new List<IMapEntityRenderComponent>();
+            this.addedEntities = new List<IMapItemComponent>();
+            this.processingEntities = new List<IMapItemComponent>();
+            this.removedEntities = new List<IMapItemComponent>();
+            this.cache = new List<IMapItemComponent>();
         }
 
         public void AddEntities(IEnumerable<IEntity> entities)
@@ -31,7 +31,7 @@ namespace Prototype.GameInterface
 
         public void AddEntity(IEntity entity)
         {
-            if (entity.TryGetEntityComponent(out IMapEntityRenderComponent component))
+            if (entity.TryGetEntityComponent(out IMapItemComponent component))
             {
                 this.addedEntities.Add(component);
                 this.processingEntities.Add(component);
@@ -40,7 +40,7 @@ namespace Prototype.GameInterface
 
         public void RemoveEntity(IEntity entity)
         {
-            if (entity.TryGetEntityComponent(out IMapEntityRenderComponent component))
+            if (entity.TryGetEntityComponent(out IMapItemComponent component))
             {
                 this.removedEntities.Add(component);
                 this.processingEntities.Remove(component);

@@ -9,6 +9,11 @@ namespace Prototype.GameEngine
     {
         public int Id { get; private set; }
 
+        public bool IsActive
+        {
+            get { return this.gameObject.activeSelf; }
+        }
+
         private GenericDictionary componentMap;
 
         [SerializeField]
@@ -17,6 +22,11 @@ namespace Prototype.GameEngine
         void IEntity.SetupId(int id)
         {
             this.Id = id;
+        }
+
+        public void SetActive(bool isActive)
+        {
+            this.gameObject.SetActive(isActive);
         }
 
         public void AddEntityComponent(object component)

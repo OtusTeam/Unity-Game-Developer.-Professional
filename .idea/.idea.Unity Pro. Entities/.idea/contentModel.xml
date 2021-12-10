@@ -6,6 +6,7 @@
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Unity Pro. Entities.691923087.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -130,6 +131,7 @@
             <e p="Money" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
+                  <e p="MapMoneyComponent.cs" t="Include" />
                   <e p="MoneyResourceComponent.cs" t="Include" />
                   <e p="MoneyStorageComponent.cs" t="Include" />
                 </e>
@@ -144,6 +146,7 @@
             <e p="Player" t="Include">
               <e p="Scripts" t="Include">
                 <e p="PlayerInputController.cs" t="Include" />
+                <e p="PlayerService.cs" t="Include" />
               </e>
             </e>
             <e p="System" t="Include">
@@ -169,8 +172,8 @@
               </e>
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
+                  <e p="MapUnitComponent.cs" t="Include" />
                   <e p="UnitInfoComponent.cs" t="Include" />
-                  <e p="UnitMapRenderComponent.cs" t="Include" />
                 </e>
                 <e p="Configs" t="Include">
                   <e p="UnitInfo.cs" t="Include" />
@@ -195,8 +198,8 @@
                 <e p="Entities" t="Include">
                   <e p="Scripts" t="Include">
                     <e p="Component" t="Include">
-                      <e p="IMapEntityRenderComponent.cs" t="Include" />
-                      <e p="MapEntityRenderComponent.cs" t="Include" />
+                      <e p="IMapItemComponent.cs" t="Include" />
+                      <e p="MapItemComponent.cs" t="Include" />
                     </e>
                     <e p="Configs" t="Include">
                       <e p="MapRenderEntitiesConfig.cs" t="Include" />
@@ -236,6 +239,11 @@
             <e p="Popups" t="Include">
               <e p="Scripts" t="Include">
                 <e p="RewardPopup.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Widgets" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="MoneyWidget.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -293,6 +301,53 @@
               </e>
             </e>
             <e p="Readme.txt" t="Include" />
+          </e>
+        </e>
+        <e p="StylizedWater" t="Include">
+          <e p="_Demo" t="Include">
+            <e p="OrbitCamera.cs" t="Include" />
+          </e>
+          <e p="Changelog.txt" t="Include" />
+          <e p="Effects" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="StylizedWater_Particle_Desktop.shader" t="Include" />
+              <e p="StylizedWater_Particle_Mobile.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="StylizedWaterCore.cs" t="Include" />
+              <e p="StylizedWaterInspector.cs" t="Include" />
+              <e p="SWS_ASEDepthNode.cs" t="Include" />
+              <e p="SWS_NormalMapRenderer.shader" t="Include" />
+              <e p="SWS_ShaderMapRenderer.shader" t="Include" />
+            </e>
+            <e p="EnableDepthBuffer.cs" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="StylizedWaterReflectionBlur.shader" t="Include" />
+            </e>
+            <e p="StylizedWater.cs" t="Include" />
+            <e p="StylizedWaterBlur.cs" t="Include" />
+            <e p="StylizedWaterRenderer.cs" t="Include" />
+            <e p="StylizedWaterResources.cs" t="Include" />
+            <e p="StylizedWaterShadowCaster.cs" t="Include" />
+            <e p="StylizedWaterUtilities.cs" t="Include" />
+            <e p="Textures" t="Include">
+              <e p="Heightmap" t="Include">
+                <e p="Readme.txt" t="Include" />
+              </e>
+              <e p="Intersection" t="Include">
+                <e p="Readme.txt" t="Include" />
+              </e>
+              <e p="Normals" t="Include">
+                <e p="Readme.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Lighting.hlsl" t="Include" />
+            <e p="StylizedWater_Desktop.shader" t="Include" />
+            <e p="StylizedWater_Mobile.shader" t="Include" />
           </e>
         </e>
         <e p="Tools" t="Include">

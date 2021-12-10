@@ -18,13 +18,13 @@ namespace Prototype.GameEngine
         public void AddMoney(int money)
         {
             this.money += money;
-            this.OnMoneyChanged?.Invoke(money);
+            this.OnMoneyChanged?.Invoke(this.money);
         }
 
         public void SpendMoney(int money)
         {
             this.money -= money;
-            this.OnMoneyChanged?.Invoke(money);
+            this.OnMoneyChanged?.Invoke(this.money);
         }
     }
 }

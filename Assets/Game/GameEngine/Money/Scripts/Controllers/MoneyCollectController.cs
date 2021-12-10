@@ -17,6 +17,8 @@ namespace Prototype.GameEngine
 
         private IPopupManager popupManager;
 
+        private IEntityManager entityManager;
+
         void IGameStartElement.StartGame(IGameSystem system)
         {
             var entity = this.parameters.collector;
@@ -25,6 +27,7 @@ namespace Prototype.GameEngine
             this.triggerComponent = entity.GetEntityComponent<TriggerComponent>();
             this.triggerComponent.OnTriggerEntered += this.OnTriggerEntered;
 
+            this.entityManager = system.GetService<IEntityManager>();
             this.popupManager = system.GetService<IPopupManager>();
         }
 
@@ -35,19 +38,22 @@ namespace Prototype.GameEngine
 
         private void OnTriggerEntered(IEntity otherEntity)
         {
-            if (otherEntity.TryGetEntityComponent(out MoneyResourceComponent resourceComponent))
+            if (!otherEntity.TryGetEntityComponent(out MoneyResourceComponent resourceComponent))
             {
-                resourceComponent.Collect(out var money);
-                this.storageComponent.AddMoney(money);
-                this.ShowPopup(money);
+                return;
             }
+
+            var moneyReward = resourceComponent.Money;
+            this.storageComponent.AddMoney(moneyReward);
+            this.entityManager.RemoveEntity(otherEntity);
+            this.ShowRewardPopup(moneyReward);
         }
 
-        private void ShowPopup(int money)
+        private void ShowRewardPopup(int money)
         {
             var resourceInfo = this.parameters.info;
             var rewardText = string.Format(resourceInfo.rewardFormat, money);
-            var reward = new BaseReward(resourceInfo.icon, rewardText);
+            var reward = new BaseReward(resourceInfo.portraitIcon, rewardText);
             
             var popupArgs = new UIArguments(
                 new UIArgument(UIArgumentName.REWARD, reward)

@@ -47,15 +47,33 @@
               </e>
             </e>
           </e>
-          <e p="Content" t="Include">
-            <e p="Units" t="Include">
+          <e p="Domain" t="Include">
+            <e p="Castle" t="Include">
               <e p="Scripts" t="Include">
-                <e p="MapUnitRenderComponent.cs" t="Include" />
+                <e p="ICastle.cs" t="Include" />
+                <e p="ICastleManager.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Character" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="ICharacter.cs" t="Include" />
+                <e p="ICharacterManager.cs" t="Include" />
+              </e>
+            </e>
+            <e p="GameResource" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="IGameResource.cs" t="Include" />
               </e>
             </e>
           </e>
           <e p="GameEngine" t="Include">
             <e p="Components" t="Include">
+              <e p="Damage" t="Include">
+                <e p="DamageComponent.cs" t="Include" />
+              </e>
+              <e p="HitPoints" t="Include">
+                <e p="HitPointsComponent.cs" t="Include" />
+              </e>
               <e p="Move" t="Include">
                 <e p="MoveComponent.cs" t="Include" />
               </e>
@@ -85,14 +103,10 @@
                 </e>
               </e>
             </e>
-            <e p="Models" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="IGameResource.cs" t="Include" />
-              </e>
-            </e>
             <e p="Money" t="Include">
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
+                  <e p="MoneyResourceComponent.cs" t="Include" />
                   <e p="MoneyStorageComponent.cs" t="Include" />
                 </e>
                 <e p="Configs" t="Include">
@@ -100,7 +114,6 @@
                 </e>
                 <e p="Controllers" t="Include">
                   <e p="MoneyCollectController.cs" t="Include" />
-                  <e p="MoneyResourceComponent.cs" t="Include" />
                 </e>
                 <e p="MoneyResource.cs" t="Include" />
               </e>
@@ -124,6 +137,22 @@
                   <e p="TeamConfig.cs" t="Include" />
                 </e>
                 <e p="TeamId.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Units" t="Include">
+              <e p="Castle" t="Include" />
+              <e p="Character" t="Include">
+                <e p="Character.cs" t="Include" />
+                <e p="CharacterManager.cs" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="Components" t="Include">
+                  <e p="UnitInfoComponent.cs" t="Include" />
+                  <e p="UnitMapRenderComponent.cs" t="Include" />
+                </e>
+                <e p="Configs" t="Include">
+                  <e p="UnitInfo.cs" t="Include" />
+                </e>
               </e>
             </e>
             <e p="World" t="Include">

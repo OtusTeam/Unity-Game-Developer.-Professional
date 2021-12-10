@@ -4,7 +4,7 @@ namespace Prototype.GameEngine
 {
     [CreateAssetMenu(
         fileName = "MoneyResourceInfo",
-        menuName = "Money/New MoneyResourceInfo"
+        menuName = "GameEngine/Money/New MoneyResourceInfo"
     )]
     public sealed class MoneyResourceInfo : ScriptableObject
     {

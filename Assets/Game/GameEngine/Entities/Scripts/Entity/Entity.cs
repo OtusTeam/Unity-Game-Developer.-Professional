@@ -7,10 +7,17 @@ namespace Prototype.GameEngine
 {
     public sealed class Entity : MonoBehaviour, IEntity
     {
+        public int Id { get; private set; }
+
         private GenericDictionary componentMap;
-        
+
         [SerializeField]
         private Parameters parameters;
+
+        void IEntity.SetupId(int id)
+        {
+            this.Id = id;
+        }
 
         public void AddEntityComponent(object component)
         {
@@ -18,7 +25,7 @@ namespace Prototype.GameEngine
             {
                 return;
             }
-            
+
             if (component is IEntityComponent entityComponent)
             {
                 entityComponent.Entity = this;

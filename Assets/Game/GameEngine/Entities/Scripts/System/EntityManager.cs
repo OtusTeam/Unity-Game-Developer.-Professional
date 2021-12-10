@@ -12,27 +12,35 @@ namespace Prototype.GameEngine
 
         public event Action<IEntity> OnEntityRemoved;
 
-        private readonly HashSet<IEntity> entities;
+        private readonly Dictionary<int, IEntity> entityMap;
+
+        private int idCounter;
 
         public IEnumerable<IEntity> GetEntities()
         {
-            foreach (var entity in this.entities)
+            foreach (var pair in this.entityMap)
             {
-                yield return entity;
+                yield return pair.Value;
             }
         }
 
         public void AddEntity(IEntity entity)
         {
-            if (this.entities.Add(entity))
+            if (this.entityMap.ContainsKey(entity.Id))
             {
-                this.OnEntityAdded?.Invoke(entity);
+                throw new Exception($"Entity with id {entity.Id} is already added!");
             }
+
+            var id = ++this.idCounter;
+            entity.SetupId(id);
+
+            this.entityMap.Add(id, entity);
+            this.OnEntityAdded?.Invoke(entity);
         }
 
         public void RemoveEntity(IEntity entity)
         {
-            if (this.entities.Remove(entity))
+            if (this.entityMap.Remove(entity.Id))
             {
                 this.OnEntityRemoved?.Invoke(entity);
             }
@@ -40,7 +48,7 @@ namespace Prototype.GameEngine
 
         public EntityManager()
         {
-            this.entities = new HashSet<IEntity>();
+            this.entityMap = new Dictionary<int, IEntity>();
         }
 
         private void Awake()

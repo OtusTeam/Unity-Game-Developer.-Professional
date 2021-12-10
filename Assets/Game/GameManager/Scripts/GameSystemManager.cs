@@ -65,7 +65,7 @@ namespace Prototype.GameManagment
 
             if (this.gameSystem != null)
             {
-                this.gameSystem.RegisterService(service);
+                this.gameSystem.AddService(service);
             }
         }
 
@@ -78,7 +78,7 @@ namespace Prototype.GameManagment
 
             if (this.gameSystem != null)
             {
-                this.gameSystem.UnregisterService(service);
+                this.gameSystem.RemoveService(service);
             }
         }
 
@@ -141,7 +141,7 @@ namespace Prototype.GameManagment
 
             foreach (var externalService in this.servicesCache)
             {
-                gameSystem.RegisterService(externalService);
+                gameSystem.AddService(externalService);
             }
 
             foreach (var externalElement in this.gameElementsCache)
@@ -169,7 +169,7 @@ namespace Prototype.GameManagment
 
             foreach (var externalService in this.servicesCache)
             {
-                gameSystem.UnregisterService(externalService);
+                gameSystem.RemoveService(externalService);
             }
 
             var operation = SceneManager.UnloadSceneAsync(GAME_SCENE);

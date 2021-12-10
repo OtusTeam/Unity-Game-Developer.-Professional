@@ -96,14 +96,14 @@ namespace GameElements.Unity
             this.gameSystem.RemoveElement(element);
         }
 
-        public bool RegisterService(object service)
+        public void AddService(object service)
         {
-            return this.gameSystem.RegisterService(service);
+            this.gameSystem.AddService(service);
         }
 
-        public bool UnregisterService(object service)
+        public void RemoveService(object service)
         {
-            return this.gameSystem.UnregisterService(service);
+            this.gameSystem.RemoveService(service);
         }
 
         public T GetService<T>()
@@ -121,7 +121,7 @@ namespace GameElements.Unity
 
         [Space]
         [SerializeField]
-        private MonoBehaviour[] services;
+        private MonoBehaviour[] gameServices;
 
         [Space]
         [SerializeField]
@@ -152,12 +152,12 @@ namespace GameElements.Unity
 
         private void LoadServices()
         {
-            for (int i = 0, count = this.services.Length; i < count; i++)
+            for (int i = 0, count = this.gameServices.Length; i < count; i++)
             {
-                var monoService = this.services[i];
+                var monoService = this.gameServices[i];
                 if (monoService != null)
                 {
-                    this.RegisterService(monoService);
+                    this.AddService(monoService);
                 }
             }
         }

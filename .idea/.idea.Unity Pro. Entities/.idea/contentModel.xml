@@ -215,15 +215,18 @@
             <e p="GameElements.asmref" t="Include" />
             <e p="Scripts" t="Include">
               <e p="GameElements.cs" t="Include" />
+              <e p="GameServices.cs" t="Include" />
               <e p="GameState.cs" t="Include" />
               <e p="GameSystem.cs" t="Include" />
               <e p="IGameSystem.cs" t="Include" />
               <e p="Internal" t="Include">
                 <e p="GameElementContext.cs" t="Include" />
+                <e p="ServiceContext.cs" t="Include" />
               </e>
               <e p="Unity" t="Include">
                 <e p="MonoGameElementDirectory.cs" t="Include" />
                 <e p="MonoGameElementGroup.cs" t="Include" />
+                <e p="MonoGameServiceGroup.cs" t="Include" />
                 <e p="MonoGameSystem.cs" t="Include" />
               </e>
               <e p="Utils" t="Include">

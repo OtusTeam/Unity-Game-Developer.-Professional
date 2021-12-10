@@ -34,9 +34,9 @@ namespace GameElements
 
         void RemoveElement(IGameElement element);
 
-        bool RegisterService(object service);
+        void AddService(object service);
 
-        bool UnregisterService(object service);
+        void RemoveService(object service);
 
         T GetService<T>();
 

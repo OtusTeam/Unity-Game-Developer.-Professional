@@ -18,15 +18,15 @@ namespace GameElements
 
         public GameState State { get; protected set; }
 
-        private readonly GenericDictionary serviceMap;
-
         private readonly GameElementContext elementContext;
 
+        private readonly ServiceContext serviceContext;
+        
         public GameSystem()
         {
             this.State = GameState.NOT_INITITALIZED;
             this.elementContext = new GameElementContext(this);
-            this.serviceMap = new GenericDictionary();
+            this.serviceContext = new ServiceContext();
         }
 
         public void InitGame()
@@ -141,24 +141,24 @@ namespace GameElements
             this.elementContext.RemoveElement(element);
         }
 
-        public bool RegisterService(object service)
+        public void AddService(object service)
         {
-            return this.serviceMap.Add(service);
+            this.serviceContext.AddService(service);
         }
 
-        public bool UnregisterService(object service)
+        public void RemoveService(object service)
         {
-            return this.serviceMap.Remove(service);
+            this.serviceContext.RemoveService(service);
         }
 
         public T GetService<T>()
         {
-            return this.serviceMap.Get<T>();
+            return this.serviceContext.GetService<T>();
         }
 
         public bool TryGetService<T>(out T service)
         {
-            return this.serviceMap.TryGet(out service);
+            return this.serviceContext.TryGetService(out service);
         }
     }
 }

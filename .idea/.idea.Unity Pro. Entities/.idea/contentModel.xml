@@ -78,19 +78,34 @@
               </e>
             </e>
           </e>
-          <e p="Domain" t="Include">
+          <e p="GameDomain" t="Include">
             <e p="Castle" t="Include">
               <e p="Scripts" t="Include">
-                <e p="ICastle.cs" t="Include" />
-                <e p="ICastleManager.cs" t="Include" />
+                <e p="Abstractions" t="Include">
+                  <e p="ICastle.cs" t="Include" />
+                  <e p="ICastlesManager.cs" t="Include" />
+                </e>
+                <e p="Implementations" t="Include">
+                  <e p="Castle.cs" t="Include" />
+                  <e p="CastlesManager.cs" t="Include" />
+                </e>
               </e>
             </e>
             <e p="Character" t="Include">
               <e p="Scripts" t="Include">
-                <e p="ICharacter.cs" t="Include" />
-                <e p="ICharactersManager.cs" t="Include" />
-                <e p="ICharacterUpgrade.cs" t="Include" />
-                <e p="IPlayerCharacterService.cs" t="Include" />
+                <e p="Abstractions" t="Include">
+                  <e p="ICharacter.cs" t="Include" />
+                  <e p="ICharactersManager.cs" t="Include" />
+                  <e p="ICharacterUpgrade.cs" t="Include" />
+                  <e p="IPlayerCharacterService.cs" t="Include" />
+                </e>
+                <e p="Implementations" t="Include">
+                  <e p="Character.cs" t="Include" />
+                  <e p="CharacterDamageUpgrade.cs" t="Include" />
+                  <e p="CharacterHitPointsUpgrade.cs" t="Include" />
+                  <e p="CharactersManager.cs" t="Include" />
+                  <e p="PlayerCharacterService.cs" t="Include" />
+                </e>
               </e>
             </e>
             <e p="Reward" t="Include">
@@ -106,6 +121,12 @@
               </e>
               <e p="HitPoints" t="Include">
                 <e p="HitPointsComponent.cs" t="Include" />
+              </e>
+              <e p="Income" t="Include">
+                <e p="IncomeComponent.cs" t="Include" />
+              </e>
+              <e p="Level" t="Include">
+                <e p="LevelComponent.cs" t="Include" />
               </e>
               <e p="Move" t="Include">
                 <e p="MoveComponent.cs" t="Include" />
@@ -153,7 +174,6 @@
             </e>
             <e p="Player" t="Include">
               <e p="Scripts" t="Include">
-                <e p="PlayerCharacterService.cs" t="Include" />
                 <e p="PlayerEntityService.cs" t="Include" />
                 <e p="PlayerInputController.cs" t="Include" />
               </e>
@@ -175,15 +195,6 @@
               </e>
             </e>
             <e p="Units" t="Include">
-              <e p="Character" t="Include">
-                <e p="Character.cs" t="Include" />
-                <e p="CharacterDamageUpgrade.cs" t="Include" />
-                <e p="CharacterHitPointsUpgrade.cs" t="Include" />
-                <e p="CharactersManager.cs" t="Include" />
-              </e>
-              <e p="Controllers" t="Include">
-                <e p="CharacterCastleVisitController.cs" t="Include" />
-              </e>
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
                   <e p="MapUnitComponent.cs" t="Include" />
@@ -192,6 +203,9 @@
                 <e p="Configs" t="Include">
                   <e p="UnitInfo.cs" t="Include" />
                   <e p="UnitType.cs" t="Include" />
+                </e>
+                <e p="Controllers" t="Include">
+                  <e p="CharacterCastleVisitController.cs" t="Include" />
                 </e>
               </e>
             </e>
@@ -205,6 +219,7 @@
           <e p="GameInteface" t="Include">
             <e p="Controllers" t="Include">
               <e p="Scripts" t="Include">
+                <e p="CastleCardController.cs" t="Include" />
                 <e p="CharacterCardController.cs" t="Include" />
                 <e p="CharacterUpgradeDamageController.cs" t="Include" />
                 <e p="CharacterUpgradeHitPointsController.cs" t="Include" />

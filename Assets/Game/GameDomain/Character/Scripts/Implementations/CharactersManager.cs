@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class CharactersManager : MonoBehaviour, ICharactersManager, IGameInitElement
+    public sealed class CharactersManager : MonoBehaviour, ICharactersManager, 
+        IGameInitElement
     {
         private IEntitiesManager entitiesManager;
 

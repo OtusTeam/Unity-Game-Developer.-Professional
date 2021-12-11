@@ -3,14 +3,15 @@ using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class CharacterCardController : MonoBehaviour, IGameInitElement
+    public sealed class CharacterCardController : MonoBehaviour, 
+        IGameInitElement
     {
         [SerializeField]
         private Card card;
 
-        private ICharacter targetCharacter;
-
         private ICharactersManager charactersManager;
+
+        private ICharacter targetCharacter;
         
         public void Show(UIArguments args)
         {

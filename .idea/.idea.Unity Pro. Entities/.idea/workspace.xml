@@ -10,18 +10,64 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Сделал контроллер апгрейдов">
+    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Сделал апгрейды для перса">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Abstractions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Abstractions/ICastle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Abstractions/ICastlesManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Implementations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Implementations/Castle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Implementations/Castle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Implementations/CastlesManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Implementations/CastlesManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Income.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Income/IncomeComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Income/IncomeComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Level.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Level/LevelComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Level/LevelComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CastleCardController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CastleCardController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Content/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterUpgradeHitPointsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterUpgradeHitPointsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Resources/PopupHome.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Popups/Resources/PopupHome.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameElementGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameElementGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameServiceGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameServiceGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Utils/MonoValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Utils/GameElementsEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Utils/MonoValidator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Utils/GameElementsEditor.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Castle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Abstractions/ICastle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastleManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastleManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Abstractions/ICastlesManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions/ICharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions/ICharacter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacterUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions/ICharacterUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacterUpgrade.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions/ICharacterUpgrade.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharactersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions/ICharactersManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharactersManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions/ICharactersManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/IPlayerCharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions/IPlayerCharacterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/IPlayerCharacterService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Abstractions/IPlayerCharacterService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Reward.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Reward.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Reward/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Reward/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Reward/Scripts/IReward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Reward/Scripts/IReward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Domain/Reward/Scripts/IReward.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Reward/Scripts/IReward.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/EntitySystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/EntitySystem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Player/Scripts/PlayerCharacterService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/PlayerCharacterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Player/Scripts/PlayerCharacterService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/PlayerCharacterService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/Character.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/Character.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharacterDamageUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/CharacterDamageUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharacterDamageUpgrade.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/CharacterDamageUpgrade.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharacterHitPointsUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/CharacterHitPointsUpgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharacterHitPointsUpgrade.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/CharacterHitPointsUpgrade.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharactersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/CharactersManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharactersManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameDomain/Character/Scripts/Implementations/CharactersManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Controllers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Controllers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Controllers/CharacterCastleVisitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Controllers/CharacterCastleVisitController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Controllers/CharacterCastleVisitController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Controllers/CharacterCastleVisitController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterCardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterCardController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,19 +122,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Component/EntityComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Components/MoneyResourceComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/IEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/Entity/Entity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Player/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Player/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Widgets/Scripts/WidgetMoney.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Money/Scripts/Components/MoneyStorageComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Elements/Scripts/ButtonPrice.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Elements/Scripts/CardItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterCardItemController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Common/UI/Elements/Scripts/Card.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterCardController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/System/Scripts/GameInjector.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Scripts/Configs/UnitType.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Player/Scripts/PlayerCastleVisitController.cs" />
@@ -106,10 +141,8 @@
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharacterDamageUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharactersManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Entities/Scripts/System/IEntitiesManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharactersManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterButtonUpgradeHitPointsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterUpgradeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterUpgradeDamageController.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/ICharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Player/Scripts/PlayerService.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Domain/Character/Scripts/IPlayerCharacterService.cs" />
@@ -127,6 +160,19 @@
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Unity/MonoGameElementGroup.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Utils/GameElementsEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterUpgradeHitPointsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterUpgradeDamageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastleыManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastlesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Domain/Castle/Scripts/ICastle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Character/CharactersManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Castle/CastlesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Income/IncomeComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Components/Level/LevelComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameEngine/Units/Castle/Castle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Implementations/Castle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameDomain/Castle/Scripts/Implementations/CastlesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterCardController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CastleCardController.cs" />
       </list>
     </option>
   </component>
@@ -188,14 +234,7 @@
       <workItem from="1638966903042" duration="379000" />
       <workItem from="1639047405014" duration="7389000" />
       <workItem from="1639128622967" duration="12748000" />
-      <workItem from="1639193105578" duration="7904000" />
-    </task>
-    <task id="LOCAL-00003" summary="Подготовил Game Context (не брать)">
-      <created>1638443290652</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1638443290652</updated>
+      <workItem from="1639193105578" duration="9338000" />
     </task>
     <task id="LOCAL-00004" summary="Подготовил Game Context (не брать)">
       <created>1638449778820</created>
@@ -533,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639206309784</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Сделал апгрейды для перса">
+      <created>1639207798448</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1639207798449</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +601,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Написал рендеринг миникарты" />
     <MESSAGE value="Написал код для урока. Осталось продебажить" />
     <MESSAGE value="Дебажим" />
     <MESSAGE value="Запустилось" />
@@ -580,7 +625,8 @@
     <MESSAGE value="Добавил виджет денежек" />
     <MESSAGE value="Осталось чуть-чуть" />
     <MESSAGE value="Сделал контроллер апгрейдов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал контроллер апгрейдов" />
+    <MESSAGE value="Сделал апгрейды для перса" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал апгрейды для перса" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1638707005590">
@@ -667,22 +713,22 @@
     </state>
     <state width="1440" height="339" key="GridCell.Tab.3.right/0.0.1440.900@0.0.1440.900" timestamp="1638554069373" />
     <state width="1440" height="339" key="GridCell.Tab.3.right/0.25.1440.790@0.25.1440.790" timestamp="1638565917330" />
-    <state x="517" y="154" key="RiderGenerateDialog" timestamp="1639205435828">
+    <state x="517" y="154" key="RiderGenerateDialog" timestamp="1639208072530">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1639205435828" />
+    <state x="517" y="154" key="RiderGenerateDialog/0.0.1440.900@0.0.1440.900" timestamp="1639208072530" />
     <state x="391" y="163" key="RollbackChangesDialog" timestamp="1639204973183">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="391" y="163" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1639204973183" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1639206409536">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1639209058361">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1639206409536" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1639206310821">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1639209058361" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1639207800263">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1639206310821" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1639207800263" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638680847639">
       <screen x="0" y="0" width="1440" height="900" />
@@ -692,9 +738,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1639145054135" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1639206342295">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1639209056455">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1639206342295" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1639209056455" />
   </component>
 </project>

@@ -16,6 +16,11 @@ namespace Prototype.GameEngine
 
         private int idCounter;
 
+        public IEntity GetEntity(int id)
+        {
+            return this.entityMap[id];
+        }
+
         public IEnumerable<IEntity> GetEntities()
         {
             foreach (var pair in this.entityMap)

@@ -5,13 +5,9 @@ namespace Prototype
 {
     public interface ICharacter
     {
-        event Action<float> OnSpeedChanged;
-
         event Action<int> OnHitPointsChanged;
 
         event Action<int> OnDamageChanged;
-
-        float Speed { get; }
         
         int HitPoints { get; }
         

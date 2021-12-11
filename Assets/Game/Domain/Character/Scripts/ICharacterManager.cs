@@ -2,18 +2,10 @@ namespace Prototype
 {
     public interface ICharacterManager
     {
-        ICharacter GetCharacter(int id);
+        ICharacter GetCharacter(int characterId);
 
-        bool CanUpgradeHitPoints(ICharacter character);
+        ICharacterUpgrade GetHitPointsUpgrade(int characterId);
 
-        void UpgradeHitPoints(ICharacter character);
-
-        bool CanUpgradeDamage(ICharacter character);
-
-        void UpgradeDamage(ICharacter character);
-
-        bool CanUpgradeSpeed(ICharacter character);
-        
-        void UpgradeSpeed(ICharacter character);
+        ICharacterUpgrade GetDamageUpgrade(int characterId);
     }
 }

@@ -21,10 +21,10 @@ namespace Prototype.GameEngine
 
         void IGameStartElement.StartGame(IGameSystem system)
         {
-            var entity = this.parameters.collector;
-            this.storageComponent = entity.GetEntityComponent<MoneyStorageComponent>();
+            var collectorEntity = this.parameters.collector;
+            this.storageComponent = collectorEntity.GetEntityComponent<MoneyStorageComponent>();
 
-            this.triggerComponent = entity.GetEntityComponent<TriggerComponent>();
+            this.triggerComponent = collectorEntity.GetEntityComponent<TriggerComponent>();
             this.triggerComponent.OnTriggerEntered += this.OnTriggerEntered;
 
             this.entityManager = system.GetService<IEntityManager>();

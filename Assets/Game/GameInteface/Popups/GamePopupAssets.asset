@@ -18,3 +18,7 @@ MonoBehaviour:
     initialized: 1
     popupPrefab: {fileID: 0}
     prefabId: PopupReward
+  - popupName: 1
+    initialized: 1
+    popupPrefab: {fileID: 0}
+    prefabId: PopupHome

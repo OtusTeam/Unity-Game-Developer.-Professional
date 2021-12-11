@@ -13,6 +13,8 @@ namespace Prototype.GameEngine
 
         void RemoveEntity(IEntity entity);
 
+        IEntity GetEntity(int id);
+        
         IEnumerable<IEntity> GetEntities();
     }
 }

@@ -45,6 +45,12 @@
                 <e p="UIArgumentName.cs" t="Include" />
                 <e p="UIArguments.cs" t="Include" />
               </e>
+              <e p="Elements" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="ButtonPrice.cs" t="Include" />
+                  <e p="Card.cs" t="Include" />
+                </e>
+              </e>
               <e p="Popup" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="Lib" t="Include">
@@ -83,6 +89,7 @@
               <e p="Scripts" t="Include">
                 <e p="ICharacter.cs" t="Include" />
                 <e p="ICharacterManager.cs" t="Include" />
+                <e p="ICharacterUpgrade.cs" t="Include" />
               </e>
             </e>
             <e p="Reward" t="Include">
@@ -168,7 +175,12 @@
             <e p="Units" t="Include">
               <e p="Character" t="Include">
                 <e p="Character.cs" t="Include" />
+                <e p="CharacterDamageUpgrade.cs" t="Include" />
+                <e p="CharacterHitPointsUpgrade.cs" t="Include" />
                 <e p="CharacterManager.cs" t="Include" />
+              </e>
+              <e p="Controllers" t="Include">
+                <e p="CharacterCastleVisitController.cs" t="Include" />
               </e>
               <e p="Scripts" t="Include">
                 <e p="Components" t="Include">
@@ -177,6 +189,7 @@
                 </e>
                 <e p="Configs" t="Include">
                   <e p="UnitInfo.cs" t="Include" />
+                  <e p="UnitType.cs" t="Include" />
                 </e>
               </e>
             </e>
@@ -188,6 +201,11 @@
             </e>
           </e>
           <e p="GameInteface" t="Include">
+            <e p="Controllers" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="CharacterCardController.cs" t="Include" />
+              </e>
+            </e>
             <e p="Maps" t="Include">
               <e p="Minimap" t="Include">
                 <e p="Scripts" t="Include">

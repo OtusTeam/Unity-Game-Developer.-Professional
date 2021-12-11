@@ -166,8 +166,8 @@ namespace GameElements.Unity
 
         protected virtual void OnValidate()
         {
-            this.gameElements = MonoValidator.ValidateGameElements(this.gameElements);
-            this.gameServices = MonoValidator.ValidateServices(this.gameServices);
+            this.gameElements = GameElementsEditor.ValidateGameElements(this.gameElements);
+            this.gameServices = GameElementsEditor.ValidateServices(this.gameServices);
         }
 #endif
     }

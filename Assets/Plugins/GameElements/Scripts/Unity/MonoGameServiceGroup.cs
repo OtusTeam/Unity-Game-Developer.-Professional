@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,5 +16,12 @@ namespace GameElements.Unity
                 yield return this.gameServices[i];
             }
         }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            this.gameServices = GameElementsEditor.ValidateServices(this.gameServices);
+        }
+#endif
     }
 }

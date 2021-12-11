@@ -29,5 +29,12 @@ namespace GameElements.Unity
                 this.elements.Add((IGameElement) monoElement);
             }
         }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            this.gameElements = GameElementsEditor.ValidateGameElements(this.gameElements);
+        }
+#endif
     }
 }

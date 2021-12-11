@@ -290,8 +290,8 @@
                 <e p="MonoGameSystem.cs" t="Include" />
               </e>
               <e p="Utils" t="Include">
+                <e p="GameElementsEditor.cs" t="Include" />
                 <e p="GenericDictionary.cs" t="Include" />
-                <e p="MonoValidator.cs" t="Include" />
               </e>
             </e>
           </e>

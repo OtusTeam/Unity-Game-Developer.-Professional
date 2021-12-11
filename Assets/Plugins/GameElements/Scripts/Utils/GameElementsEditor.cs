@@ -4,12 +4,16 @@ using UnityEngine;
 
 namespace GameElements
 {
-    internal static class MonoValidator
+    internal static class GameElementsEditor
     {
         internal static MonoBehaviour[] ValidateServices(MonoBehaviour[] array)
         {
             var result = new List<MonoBehaviour>();
-            
+            if (array == null)
+            {
+                return result.ToArray();
+            }
+
             for (int i = 0, count = array.Length; i < count; i++)
             {
                 var monoBehaviour = array[i];
@@ -25,6 +29,10 @@ namespace GameElements
         internal static MonoBehaviour[] ValidateGameElements(MonoBehaviour[] array)
         {
             var result = new List<MonoBehaviour>();
+            if (array == null)
+            {
+                return result.ToArray();
+            }
             
             for (int i = 0, count = array.Length; i < count; i++)
             {

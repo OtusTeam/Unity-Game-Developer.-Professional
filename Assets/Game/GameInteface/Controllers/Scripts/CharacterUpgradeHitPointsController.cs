@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class CharacterUpgradeHitPointsController : MonoBehaviour, IGameInitElement
+    public sealed class CharacterUpgradeHitPointsController : MonoBehaviour,
+        IGameInitElement
     {
         [SerializeField]
         private ButtonPrice button;
@@ -37,7 +38,7 @@ namespace Prototype.GameInterface
         {
             this.targetUpgrade = null;
 
-            this.targetCharacter.OnMoneyChanged += this.OnMoneyChanged;
+            this.targetCharacter.OnMoneyChanged -= this.OnMoneyChanged;
             this.targetCharacter = null;
 
             this.button.OnClicked -= this.OnButtonClicked;

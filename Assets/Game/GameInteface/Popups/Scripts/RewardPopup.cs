@@ -1,27 +1,24 @@
 using Prototype.Unity;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Prototype.GameInterface
 {
     public sealed class RewardPopup : Popup
     {
+        [FormerlySerializedAs("valueText")]
+        [SerializeField]
+        private Text rewardText;
+        
         [SerializeField]
         private Image iconImage;
 
-        [SerializeField]
-        private Text valueText;
-
         protected override void OnShow(UIArguments args)
         {
-            var gameResource = args.Get<IReward>(UIArgumentName.REWARD);
-            this.Setup(gameResource);
-        }
-        
-        private void Setup(IReward reward)
-        {
+            var reward = args.Get<IReward>(UIArgumentName.REWARD);
+            this.rewardText.text = reward.Text.ToUpper();
             this.iconImage.sprite = reward.Icon;
-            this.valueText.text = reward.Text.ToUpper();
         }
     }
 }

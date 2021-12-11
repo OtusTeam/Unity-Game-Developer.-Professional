@@ -49,6 +49,7 @@ namespace Prototype.GameEngine
             this.ShowRewardPopup(moneyReward);
         }
 
+        //Показ попапа награды!!!
         private void ShowRewardPopup(int money)
         {
             var resourceInfo = this.parameters.info;

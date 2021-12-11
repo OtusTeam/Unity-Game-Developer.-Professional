@@ -1,4 +1,5 @@
 using GameElements;
+using Prototype.ViewModel;
 using UnityEngine;
 
 namespace Prototype.GameInterface

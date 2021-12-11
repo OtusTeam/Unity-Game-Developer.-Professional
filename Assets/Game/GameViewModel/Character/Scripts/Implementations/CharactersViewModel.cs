@@ -1,9 +1,10 @@
 using GameElements;
+using Prototype.GameEngine;
 using UnityEngine;
 
-namespace Prototype.GameEngine
+namespace Prototype.ViewModel
 {
-    public sealed class CharactersManager : MonoBehaviour, ICharactersManager, 
+    public sealed class CharactersViewModel : MonoBehaviour, ICharactersManager, 
         IGameInitElement
     {
         private IEntitiesManager entitiesManager;

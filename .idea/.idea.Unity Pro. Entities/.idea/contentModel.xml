@@ -78,42 +78,6 @@
               </e>
             </e>
           </e>
-          <e p="GameDomain" t="Include">
-            <e p="Castle" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="Abstractions" t="Include">
-                  <e p="ICastle.cs" t="Include" />
-                  <e p="ICastlesManager.cs" t="Include" />
-                </e>
-                <e p="Implementations" t="Include">
-                  <e p="Castle.cs" t="Include" />
-                  <e p="CastlesManager.cs" t="Include" />
-                </e>
-              </e>
-            </e>
-            <e p="Character" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="Abstractions" t="Include">
-                  <e p="ICharacter.cs" t="Include" />
-                  <e p="ICharactersManager.cs" t="Include" />
-                  <e p="ICharacterUpgrade.cs" t="Include" />
-                  <e p="IPlayerCharacterService.cs" t="Include" />
-                </e>
-                <e p="Implementations" t="Include">
-                  <e p="Character.cs" t="Include" />
-                  <e p="CharacterDamageUpgrade.cs" t="Include" />
-                  <e p="CharacterHitPointsUpgrade.cs" t="Include" />
-                  <e p="CharactersManager.cs" t="Include" />
-                  <e p="PlayerCharacterService.cs" t="Include" />
-                </e>
-              </e>
-            </e>
-            <e p="Reward" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="IReward.cs" t="Include" />
-              </e>
-            </e>
-          </e>
           <e p="GameEngine" t="Include">
             <e p="Components" t="Include">
               <e p="Damage" t="Include">
@@ -175,7 +139,6 @@
             <e p="Player" t="Include">
               <e p="Scripts" t="Include">
                 <e p="PlayerEntityService.cs" t="Include" />
-                <e p="PlayerInputController.cs" t="Include" />
               </e>
             </e>
             <e p="System" t="Include">
@@ -214,6 +177,11 @@
                 <e p="WorldArea.cs" t="Include" />
                 <e p="WorldVector.cs" t="Include" />
               </e>
+            </e>
+          </e>
+          <e p="GameInput" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="PlayerMoveInputController.cs" t="Include" />
             </e>
           </e>
           <e p="GameInteface" t="Include">
@@ -281,6 +249,50 @@
             <e p="Widgets" t="Include">
               <e p="Scripts" t="Include">
                 <e p="MoneyWidget.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="GameViewModel" t="Include">
+            <e p="Castle" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Abstractions" t="Include">
+                  <e p="ICastle.cs" t="Include" />
+                  <e p="ICastlesManager.cs" t="Include" />
+                </e>
+                <e p="Implementations" t="Include">
+                  <e p="Castle.cs" t="Include" />
+                  <e p="CastlesViewModel.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Character" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Abstractions" t="Include">
+                  <e p="ICharacter.cs" t="Include" />
+                  <e p="ICharactersManager.cs" t="Include" />
+                  <e p="ICharacterUpgrade.cs" t="Include" />
+                </e>
+                <e p="Implementations" t="Include">
+                  <e p="Character.cs" t="Include" />
+                  <e p="CharacterDamageUpgrade.cs" t="Include" />
+                  <e p="CharacterHitPointsUpgrade.cs" t="Include" />
+                  <e p="CharactersViewModel.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Player" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Abstractions" t="Include">
+                  <e p="IPlayerManager.cs" t="Include" />
+                </e>
+                <e p="Implementations" t="Include">
+                  <e p="PlayerViewModel.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Reward" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="IReward.cs" t="Include" />
               </e>
             </e>
           </e>

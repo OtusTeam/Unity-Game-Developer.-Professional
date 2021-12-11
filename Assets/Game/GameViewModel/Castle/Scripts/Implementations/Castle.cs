@@ -1,6 +1,7 @@
+using Prototype.GameEngine;
 using UnityEngine;
 
-namespace Prototype.GameEngine
+namespace Prototype.ViewModel
 {
     public sealed class Castle : ICastle
     {

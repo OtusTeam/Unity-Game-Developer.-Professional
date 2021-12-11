@@ -1,9 +1,10 @@
 using GameElements;
+using Prototype.GameEngine;
 using UnityEngine;
 
-namespace Prototype.GameEngine
+namespace Prototype.ViewModel
 {
-    public sealed class CastlesManager : MonoBehaviour, ICastlesManager,
+    public sealed class CastlesViewModel : MonoBehaviour, ICastlesManager,
         IGameInitElement
     {
         private IEntitiesManager entitiesManager;

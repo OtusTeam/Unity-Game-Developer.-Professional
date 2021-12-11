@@ -1,4 +1,5 @@
 using GameElements;
+using Prototype.ViewModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +17,8 @@ namespace Prototype.GameInterface
 
         void IGameReadyElement.ReadyGame(IGameSystem system)
         {
-            var playerService = system.GetService<IPlayerCharacterService>();
-            this.player = playerService.GetPlayerCharacter();
+            var playerService = system.GetService<IPlayerManager>();
+            this.player = playerService.GetCharacter();
             this.UpdateMoney(this.player.Money);
         }
 

@@ -20,16 +20,14 @@ namespace Prototype.GameEngine
             this.positionComponent = this.GetEntityComponentLazy<PositionComponent>();
         }
 
-        public void Move(WorldVector direction, float deltaTime)
+        public void Move(WorldVector moveVector)
         {
-            var dSpeed = this.speed * deltaTime;
-
             var positionComponent = this.positionComponent.Value;
-
+            
             var previousPosition = positionComponent.GetPosition();
             var nextPosition = new WorldVector(
-                previousPosition.x + dSpeed * direction.x,
-                previousPosition.z + dSpeed * direction.z
+                previousPosition.x + this.speed * moveVector.x,
+                previousPosition.z + this.speed * moveVector.z
             );
 
             positionComponent.SetPosition(nextPosition);

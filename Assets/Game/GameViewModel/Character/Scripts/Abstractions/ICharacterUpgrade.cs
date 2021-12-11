@@ -1,4 +1,4 @@
-namespace Prototype
+namespace Prototype.ViewModel
 {
     public interface ICharacterUpgrade
     {

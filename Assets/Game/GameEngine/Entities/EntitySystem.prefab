@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 6857763635590896949}
   - component: {fileID: 6857763635590896948}
   m_Layer: 0
-  m_Name: ManagerCharacters
+  m_Name: ViewModelCharacters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 6857763636258753403}
   - component: {fileID: 1580152192}
   m_Layer: 0
-  m_Name: ManagerCastles
+  m_Name: ViewModelCastles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

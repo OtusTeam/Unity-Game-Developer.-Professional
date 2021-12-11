@@ -1,6 +1,7 @@
 using System;
+using Prototype.GameEngine;
 
-namespace Prototype.GameEngine
+namespace Prototype.ViewModel
 {
     public sealed class CharacterDamageUpgrade : ICharacterUpgrade
     {

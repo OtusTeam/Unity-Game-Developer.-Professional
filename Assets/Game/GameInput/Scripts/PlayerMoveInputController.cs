@@ -1,17 +1,18 @@
 using GameElements;
+using Prototype.ViewModel;
 using UnityEngine;
 
-namespace Prototype.GameEngine
+namespace Prototype.GameInput
 {
-    public sealed class PlayerInputController : MonoBehaviour,
+    public sealed class PlayerMoveInputController : MonoBehaviour,
         IGameStartElement,
         IGameFinishElement
     {
-        private MoveComponent moveComponent;
+        private IPlayerManager playerManager;
 
+        private Vector3 moveVector;
+        
         private bool moveRequired;
-
-        private WorldVector moveDirection;
 
         private float fixedDeltaTime;
 
@@ -25,9 +26,7 @@ namespace Prototype.GameEngine
 
         void IGameStartElement.StartGame(IGameSystem system)
         {
-            var playerService = system.GetService<PlayerEntityService>();
-            var playerEntity = playerService.GetPlayerEntity();
-            this.moveComponent = playerEntity.GetEntityComponent<MoveComponent>();
+            this.playerManager = system.GetService<IPlayerManager>();
             this.enabled = true;
         }
 
@@ -52,22 +51,22 @@ namespace Prototype.GameEngine
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                this.moveDirection = new WorldVector(-1, 0);
+                this.moveVector = Vector3.left;
                 this.moveRequired = true;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                this.moveDirection = new WorldVector(1, 0);
+                this.moveVector = Vector3.right;
                 this.moveRequired = true;
             }
             else if (Input.GetKey(KeyCode.UpArrow))
             {
-                this.moveDirection = new WorldVector(0, 1);
+                this.moveVector = Vector3.forward;
                 this.moveRequired = true;
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                this.moveDirection = new WorldVector(0, -1);
+                this.moveVector = Vector3.back;
                 this.moveRequired = true;
             }
         }
@@ -76,7 +75,7 @@ namespace Prototype.GameEngine
         {
             if (this.moveRequired)
             {
-                this.moveComponent.Move(this.moveDirection, this.fixedDeltaTime);
+                this.playerManager.Move(this.moveVector * this.fixedDeltaTime);
                 this.moveRequired = false;
             }
         }

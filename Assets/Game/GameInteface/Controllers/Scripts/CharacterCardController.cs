@@ -10,12 +10,12 @@ namespace Prototype.GameInterface
 
         private ICharacter targetCharacter;
 
-        private ICharacterManager characterManager;
+        private ICharactersManager charactersManager;
         
         public void Show(UIArguments args)
         {
             var characterId = args.Get<int>(UIArgumentName.CHARACTER_ID);
-            this.targetCharacter = this.characterManager.GetCharacter(characterId);
+            this.targetCharacter = this.charactersManager.GetCharacter(characterId);
             this.targetCharacter.OnDamageChanged += this.OnDamageChanged;
             this.targetCharacter.OnHitPointsChanged += this.OnHitPointsChanged;
 
@@ -36,7 +36,7 @@ namespace Prototype.GameInterface
 
         void IGameInitElement.InitGame(IGameSystem system)
         {
-            this.characterManager = system.GetService<ICharacterManager>();
+            this.charactersManager = system.GetService<ICharactersManager>();
         }
 
         private void OnHitPointsChanged(int hitPoints)

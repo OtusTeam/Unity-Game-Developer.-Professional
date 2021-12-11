@@ -4,37 +4,37 @@ namespace Prototype.GameInterface
 {
     public sealed class MapEntityCullController
     {
-        private readonly IEntityManager entityManager;
+        private readonly IEntitiesManager entitiesManager;
 
         private readonly MapEntityLayerRender render;
 
-        public MapEntityCullController(IEntityManager entityManager, MapEntityLayerRender render)
+        public MapEntityCullController(IEntitiesManager entitiesManager, MapEntityLayerRender render)
         {
-            this.entityManager = entityManager;
+            this.entitiesManager = entitiesManager;
             this.render = render;
         }
 
         public void Start()
         {
-            this.render.AddEntities(this.entityManager.GetEntities());
-            this.entityManager.OnEntityAdded += this.OnEntityAdded;
-            this.entityManager.OnEntityRemoved += this.OnEntityRemoved;
+            this.render.AddEntities(this.entitiesManager.GetEntities());
+            this.entitiesManager.OnEntityAdded += this.OnEntitiesAdded;
+            this.entitiesManager.OnEntityRemoved += this.OnEntitiesRemoved;
         }
 
         public void Finish()
         {
-            this.entityManager.OnEntityAdded -= this.OnEntityAdded;
-            this.entityManager.OnEntityRemoved -= this.OnEntityRemoved;
+            this.entitiesManager.OnEntityAdded -= this.OnEntitiesAdded;
+            this.entitiesManager.OnEntityRemoved -= this.OnEntitiesRemoved;
         }
 
         #region Callbacks
 
-        private void OnEntityAdded(IEntity entity)
+        private void OnEntitiesAdded(IEntity entity)
         {
             this.render.AddEntity(entity);
         }
 
-        private void OnEntityRemoved(IEntity entity)
+        private void OnEntitiesRemoved(IEntity entity)
         {
             this.render.RemoveEntity(entity);
         }

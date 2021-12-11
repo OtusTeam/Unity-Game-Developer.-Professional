@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class EntityManager : MonoBehaviour, IEntityManager
+    public sealed class EntitiesManager : MonoBehaviour, IEntitiesManager
     {
         private const string ENTITY_TAG = "Entity";
 
@@ -53,7 +53,7 @@ namespace Prototype.GameEngine
             }
         }
 
-        public EntityManager()
+        public EntitiesManager()
         {
             this.entityMap = new Dictionary<int, IEntity>();
         }

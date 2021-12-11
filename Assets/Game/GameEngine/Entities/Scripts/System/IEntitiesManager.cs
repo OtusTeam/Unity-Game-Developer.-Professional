@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Prototype.GameEngine
 {
-    public interface IEntityManager
+    public interface IEntitiesManager
     {
         event Action<IEntity> OnEntityAdded;
 

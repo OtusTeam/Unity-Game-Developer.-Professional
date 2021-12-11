@@ -1,6 +1,6 @@
 namespace Prototype
 {
-    public interface ICharacterManager
+    public interface ICharactersManager
     {
         ICharacter GetCharacter(int characterId);
 

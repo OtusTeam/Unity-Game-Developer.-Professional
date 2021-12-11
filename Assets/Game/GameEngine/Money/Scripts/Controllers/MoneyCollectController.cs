@@ -17,7 +17,7 @@ namespace Prototype.GameEngine
 
         private IPopupManager popupManager;
 
-        private IEntityManager entityManager;
+        private IEntitiesManager entitiesManager;
 
         void IGameStartElement.StartGame(IGameSystem system)
         {
@@ -27,7 +27,7 @@ namespace Prototype.GameEngine
             this.triggerComponent = collectorEntity.GetEntityComponent<TriggerComponent>();
             this.triggerComponent.OnTriggerEntered += this.OnTriggerEntered;
 
-            this.entityManager = system.GetService<IEntityManager>();
+            this.entitiesManager = system.GetService<IEntitiesManager>();
             this.popupManager = system.GetService<IPopupManager>();
         }
 
@@ -45,7 +45,7 @@ namespace Prototype.GameEngine
 
             var moneyReward = resourceComponent.Money;
             this.storageComponent.AddMoney(moneyReward);
-            this.entityManager.RemoveEntity(otherEntity);
+            this.entitiesManager.RemoveEntity(otherEntity);
             this.ShowRewardPopup(moneyReward);
         }
 

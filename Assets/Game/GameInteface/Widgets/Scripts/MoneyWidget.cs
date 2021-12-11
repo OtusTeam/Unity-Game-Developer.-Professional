@@ -1,5 +1,4 @@
 using GameElements;
-using Prototype.GameEngine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,25 +6,29 @@ namespace Prototype.GameInterface
 {
     public sealed class MoneyWidget : MonoBehaviour,
         IGameReadyElement,
+        IGameStartElement,
         IGameFinishElement
     {
         [SerializeField]
         private Text moneyText;
 
-        private MoneyStorageComponent moneyStorage;
-        
+        private ICharacter player;
+
         void IGameReadyElement.ReadyGame(IGameSystem system)
         {
-            var player = system.GetService<PlayerService>();
-            this.moneyStorage = player.Character.GetEntityComponent<MoneyStorageComponent>();
-            this.moneyStorage.OnMoneyChanged += this.OnMoneyChanged;
-            
-            this.UpdateMoney(this.moneyStorage.Money);
+            var playerService = system.GetService<IPlayerCharacterService>();
+            this.player = playerService.GetPlayerCharacter();
+            this.UpdateMoney(this.player.Money);
+        }
+
+        void IGameStartElement.StartGame(IGameSystem system)
+        {
+            this.player.OnMoneyChanged += this.OnMoneyChanged;
         }
 
         void IGameFinishElement.FinishGame(IGameSystem system)
         {
-            this.moneyStorage.OnMoneyChanged += this.OnMoneyChanged;
+            this.player.OnMoneyChanged -= this.OnMoneyChanged;
         }
 
         private void OnMoneyChanged(int money)

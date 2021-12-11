@@ -29,7 +29,7 @@ namespace Prototype.GameInterface
         
         void IGameInitElement.InitGame(IGameSystem system)
         {
-            var entityManager = system.GetService<IEntityManager>();
+            var entityManager = system.GetService<IEntitiesManager>();
             this.cullController = new MapEntityCullController(entityManager, this.layerRender);
         }
 

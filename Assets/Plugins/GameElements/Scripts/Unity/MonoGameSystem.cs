@@ -161,5 +161,14 @@ namespace GameElements.Unity
                 }
             }
         }
+
+#if UNITY_EDITOR
+
+        protected virtual void OnValidate()
+        {
+            this.gameElements = MonoValidator.ValidateGameElements(this.gameElements);
+            this.gameServices = MonoValidator.ValidateServices(this.gameServices);
+        }
+#endif
     }
 }

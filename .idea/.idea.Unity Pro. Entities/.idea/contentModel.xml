@@ -88,8 +88,9 @@
             <e p="Character" t="Include">
               <e p="Scripts" t="Include">
                 <e p="ICharacter.cs" t="Include" />
-                <e p="ICharacterManager.cs" t="Include" />
+                <e p="ICharactersManager.cs" t="Include" />
                 <e p="ICharacterUpgrade.cs" t="Include" />
+                <e p="IPlayerCharacterService.cs" t="Include" />
               </e>
             </e>
             <e p="Reward" t="Include">
@@ -130,8 +131,8 @@
                   <e p="IEntity.cs" t="Include" />
                 </e>
                 <e p="System" t="Include">
-                  <e p="EntityManager.cs" t="Include" />
-                  <e p="IEntityManager.cs" t="Include" />
+                  <e p="EntitiesManager.cs" t="Include" />
+                  <e p="IEntitiesManager.cs" t="Include" />
                 </e>
               </e>
             </e>
@@ -152,8 +153,9 @@
             </e>
             <e p="Player" t="Include">
               <e p="Scripts" t="Include">
+                <e p="PlayerCharacterService.cs" t="Include" />
+                <e p="PlayerEntityService.cs" t="Include" />
                 <e p="PlayerInputController.cs" t="Include" />
-                <e p="PlayerService.cs" t="Include" />
               </e>
             </e>
             <e p="System" t="Include">
@@ -177,7 +179,7 @@
                 <e p="Character.cs" t="Include" />
                 <e p="CharacterDamageUpgrade.cs" t="Include" />
                 <e p="CharacterHitPointsUpgrade.cs" t="Include" />
-                <e p="CharacterManager.cs" t="Include" />
+                <e p="CharactersManager.cs" t="Include" />
               </e>
               <e p="Controllers" t="Include">
                 <e p="CharacterCastleVisitController.cs" t="Include" />
@@ -204,6 +206,8 @@
             <e p="Controllers" t="Include">
               <e p="Scripts" t="Include">
                 <e p="CharacterCardController.cs" t="Include" />
+                <e p="CharacterUpgradeDamageController.cs" t="Include" />
+                <e p="CharacterUpgradeHitPointsController.cs" t="Include" />
               </e>
             </e>
             <e p="Maps" t="Include">
@@ -287,6 +291,7 @@
               </e>
               <e p="Utils" t="Include">
                 <e p="GenericDictionary.cs" t="Include" />
+                <e p="MonoValidator.cs" t="Include" />
               </e>
             </e>
           </e>

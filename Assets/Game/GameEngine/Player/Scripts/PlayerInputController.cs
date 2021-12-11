@@ -25,8 +25,9 @@ namespace Prototype.GameEngine
 
         void IGameStartElement.StartGame(IGameSystem system)
         {
-            var player = system.GetService<PlayerService>();
-            this.moveComponent = player.Character.GetEntityComponent<MoveComponent>();
+            var playerService = system.GetService<PlayerEntityService>();
+            var playerEntity = playerService.GetPlayerEntity();
+            this.moveComponent = playerEntity.GetEntityComponent<MoveComponent>();
             this.enabled = true;
         }
 

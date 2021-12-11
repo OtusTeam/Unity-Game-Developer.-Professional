@@ -17,6 +17,12 @@ namespace Prototype.GameEngine
             remove { this.damageComponent.OnDamageChanged -= value; }
         }
 
+        public event Action<int> OnMoneyChanged
+        {
+            add { this.moneyComponent.OnMoneyChanged += value; }
+            remove { this.moneyComponent.OnMoneyChanged -= value; }
+        }
+
         public int HitPoints
         {
             get { return this.hitPointsComponent.HitPoints; }
@@ -25,6 +31,11 @@ namespace Prototype.GameEngine
         public int Damage
         {
             get { return this.damageComponent.Damage; }
+        }
+
+        public int Money
+        {
+            get { return this.moneyComponent.Money; }
         }
 
         public Sprite Icon
@@ -43,11 +54,14 @@ namespace Prototype.GameEngine
 
         private readonly UnitInfoComponent unitInfoComponent;
 
+        private readonly MoneyStorageComponent moneyComponent;
+
         public Character(IEntity entity)
         {
             this.hitPointsComponent = entity.GetEntityComponent<HitPointsComponent>();
             this.damageComponent = entity.GetEntityComponent<DamageComponent>();
             this.unitInfoComponent = entity.GetEntityComponent<UnitInfoComponent>();
+            this.moneyComponent = entity.GetEntityComponent<MoneyStorageComponent>();
         }
     }
 }

@@ -26,10 +26,7 @@ namespace GameElements.Unity
             for (int i = 0, count = this.gameElements.Length; i < count; i++)
             {
                 var monoElement = this.gameElements[i];
-                if (monoElement is IGameElement gameElement)
-                {
-                    this.elements.Add(gameElement);
-                }
+                this.elements.Add((IGameElement) monoElement);
             }
         }
     }

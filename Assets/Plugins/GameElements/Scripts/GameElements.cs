@@ -6,7 +6,7 @@ namespace GameElements
     {
     }
 
-    public interface IGameContextElement : IGameElement
+    public interface IGameReferenceElement : IGameElement
     {
         IGameSystem GameSystem { set; }
     }

@@ -153,7 +153,7 @@ namespace GameElements
         
         private void ActivateElement(IGameElement element)
         {
-            if (element is IGameContextElement contextElement)
+            if (element is IGameReferenceElement contextElement)
             {
                 contextElement.GameSystem = this.gameSystem;
             }

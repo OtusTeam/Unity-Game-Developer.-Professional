@@ -27,6 +27,7 @@ namespace Prototype.UI
         
         #region Events
         
+        //Можно переименовывать!!!
         public void Show()
         {
             if (this.isEnable)

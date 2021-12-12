@@ -1947,7 +1947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1506383984}
   m_Layer: 0
-  m_Name: ViewModel
+  m_Name: Adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2383,7 +2383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1853153897}
   m_Layer: 0
-  m_Name: ViewModel
+  m_Name: Adapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

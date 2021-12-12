@@ -8,7 +8,7 @@ namespace Prototype.GameInput
         IGameStartElement,
         IGameFinishElement
     {
-        private IPlayerManager playerManager;
+        private MoveComponent moveComponent;
 
         private Vector3 moveVector;
         
@@ -26,7 +26,10 @@ namespace Prototype.GameInput
 
         void IGameStartElement.StartGame(IGameSystem system)
         {
-            this.playerManager = system.GetService<IPlayerManager>();
+            this.moveComponent = system
+                .GetService<PlayerEntityService>()
+                .GetPlayerEntity()
+                .GetEntityComponent<MoveComponent>();
             this.enabled = true;
         }
 
@@ -73,11 +76,15 @@ namespace Prototype.GameInput
         
         private void ProcessMove()
         {
-            if (this.moveRequired)
+            if (!this.moveRequired)
             {
-                this.playerManager.Move(this.moveVector * this.fixedDeltaTime);
-                this.moveRequired = false;
+                return;
             }
+
+            var vector = this.moveVector * this.fixedDeltaTime;
+            var moveVector = new WorldVector(vector.x, vector.z);
+            this.moveComponent.Move(moveVector);
+            this.moveRequired = false;
         }
     }
 }

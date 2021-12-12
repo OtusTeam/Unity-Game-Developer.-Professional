@@ -10,36 +10,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Перепаковал ассеты">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameInterface.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameInterface.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity Pro. Entities/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/UI/Elements/Scripts/ButtonPrice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Elements/Scripts/ButtonPrice.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Common/UI/Elements/Scripts/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Common/UI/Elements/Scripts/Card.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter/Castle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine/Castle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter/Castle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine/Castle.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter/CastlesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine/CastlesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter/CastlesManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine/CastlesManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharacterCastleVisitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharacterVisitCastleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharacterCastleVisitController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharacterVisitCastleController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharacterDamageUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharacterDamageUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharacterHitPointsUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharacterHitPointsUpgrade.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharactersManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharactersManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngineAdapters/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngineAdapters/PlayerManager.cs" afterDir="false" />
+    <list default="true" id="60a8ba31-2ba0-4184-aa88-50c65ce045de" name="Default Changelist" comment="Подправил код">
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter/Castle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter/CastlesManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/Character.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharacterDamageUpgrade.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharacterHitPointsUpgrade.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapter/CharactersManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/Character.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharacterDamageUpgrade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharacterHitPointsUpgrade.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharactersManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/Abstractions/IPlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/Abstractions/IPlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngineAdapters.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngineAdapters/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngine/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngineAdapters/PlayerManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngine/PlayerManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameInput/PlayerMoveInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameInput/PlayerMoveInputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CastleCardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameInterface/CastleCardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CastleCardController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameInterface/CastleCardController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterCardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameInterface/CharacterCardController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterCardController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameInterface/CharacterCardController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterUpgradeDamageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameInterface/CharacterUpgradeDamageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterUpgradeDamageController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameInterface/CharacterUpgradeDamageController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterUpgradeHitPointsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameInterface/CharacterUpgradeHitPointsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Controllers/Scripts/CharacterUpgradeHitPointsController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameInterface/CharacterUpgradeHitPointsController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Widgets/Scripts/MoneyWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Widgets/Scripts/MoneyWidget.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +50,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/7c/3312ff07/ICustomAdapter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/igor_gulkin/Projects/Unity Pro. Entities/Assets/Game/GameInteface/Popups/Resources/PopupHome.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9899A8D2-2191-452E-AE04-267D607416B2/8e/b332a8ce/RectTransform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Projects/Unity Pro. Entities/Assets/Game/UI/Widgets/Scripts/MoneyWidget.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/c2/34a49784/IList`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine/Castle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/8c/bf409131/Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9899A8D2-2191-452E-AE04-267D607416B2/a8/86295a85/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine/CastlesManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9899A8D2-2191-452E-AE04-267D607416B2/b5/941d98b7/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/igor_gulkin/Projects/Unity Pro. Entities/Assets/Game/Common/UI/Popup/Scripts/Unity/Utils/PopupAnimator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/db/2351aa48/UnityGameElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/cd/3ebd7ea9/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/igor_gulkin/Projects/Unity Pro. Entities/Assets/Game/Features/Player/Scripts/GameEngineAdapters/PlayerManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/aa/fb78068d/UnityGameElementSet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1C8E10F8-BE1E-4CED-B5EE-B01FFBAEDFE5/46/d7d0570c/LinqExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/f3/e1869843/SortedList`2.cs" root0="SKIP_HIGHLIGHTING" />
@@ -77,14 +70,14 @@
     <setting file="mock:///Users/igor_gulkin/Projects/Unity Pro. Entities/Assets/Game/GameInteface/Popups/Resources/PopupReward.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E6556CD3-E9D7-4114-9F33-236C16F72FF6/5e/3b569e17/UnityGameSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/Utils/GameElementsEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/Character.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharactersManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngine/CharacterDamageUpgrade.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/ce/31fda0fe/Lazy`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Controllers/Scripts/CharacterUpgradeHitPointsController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameInteface/Widgets/Scripts/MoneyWidget.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/GameViewModel/Castle/Scripts/Implementations/CastlesManagerViewModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameViewModel/Castle/Scripts/Implementations/CastlesViewModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameViewModel/Character/Scripts/Implementations/CharactersViewModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/GameViewModel/Character/Scripts/Implementations/PlayerCharacterViewModel.cs" />
@@ -118,7 +111,6 @@
         <option value="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/Abstractions/ICharactersManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/Abstractions/ICharacterUpgrade.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Features/Characters/Scripts/GameEngineAdapters/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/Abstractions/IPlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/Implementations/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/GameElements/Scripts/GameElements.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Features/Money/Scripts/GameEngine/Controllers/MoneyCollectController.cs" />
@@ -133,6 +125,10 @@
         <option value="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngineAdapter/CastlesManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine/Castle.cs" />
         <option value="$PROJECT_DIR$/Assets/Game/Features/Castles/Scripts/GameEngine/CastlesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngineAdapters/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/Abstractions/IPlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameEngine/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game/Features/Player/Scripts/GameInput/PlayerMoveInputController.cs" />
       </list>
     </option>
   </component>
@@ -195,14 +191,7 @@
       <workItem from="1639047405014" duration="7389000" />
       <workItem from="1639128622967" duration="12748000" />
       <workItem from="1639193105578" duration="9338000" />
-      <workItem from="1639215110769" duration="12195000" />
-    </task>
-    <task id="LOCAL-00007" summary="Написал рендер для Юнита">
-      <created>1638471038946</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1638471038946</updated>
+      <workItem from="1639215110769" duration="12659000" />
     </task>
     <task id="LOCAL-00008" summary="Написал рендер для Юнита">
       <created>1638472297590</created>
@@ -540,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639290386197</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Подправил код">
+      <created>1639295977288</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1639295977290</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Сделал миникарту" />
     <MESSAGE value="Подкрутил код!" />
     <MESSAGE value="Готово!" />
     <MESSAGE value="Пилим" />
@@ -587,7 +582,8 @@
     <MESSAGE value="Подкрутил арку" />
     <MESSAGE value="Подправил" />
     <MESSAGE value="Перепаковал ассеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Перепаковал ассеты" />
+    <MESSAGE value="Подправил код" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подправил код" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1638707005590">
@@ -682,14 +678,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="391" y="163" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1639235777244" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1639293355276">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1639296231636">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1639293355276" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1639290387534">
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1639296231636" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1639295978629">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1639290387534" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1639295978629" />
     <state x="320" y="189" key="Vcs.Push.Dialog.v2/0.25.1440.790@0.25.1440.790" timestamp="1638457508047" />
     <state x="290" y="205" width="860" height="490" key="find.popup" timestamp="1638680847639">
       <screen x="0" y="0" width="1440" height="900" />
@@ -699,9 +695,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1639145054135" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1639295346509">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1639295946940">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1639295346509" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1639295946940" />
   </component>
 </project>

@@ -1,4 +1,3 @@
-using Prototype.GameEngine;
 using UnityEngine;
 
 namespace Prototype.GameEngine

@@ -85,9 +85,12 @@
                   <e p="ICastle.cs" t="Include" />
                   <e p="ICastlesManager.cs" t="Include" />
                 </e>
-                <e p="GameEngineAdapter" t="Include">
+                <e p="GameEngine" t="Include">
                   <e p="Castle.cs" t="Include" />
                   <e p="CastlesManager.cs" t="Include" />
+                </e>
+                <e p="GameInterface" t="Include">
+                  <e p="CastleCardController.cs" t="Include" />
                 </e>
               </e>
             </e>
@@ -99,13 +102,16 @@
                   <e p="ICharacterUpgrade.cs" t="Include" />
                 </e>
                 <e p="GameEngine" t="Include">
-                  <e p="CharacterCastleVisitController.cs" t="Include" />
-                </e>
-                <e p="GameEngineAdapter" t="Include">
                   <e p="Character.cs" t="Include" />
                   <e p="CharacterDamageUpgrade.cs" t="Include" />
                   <e p="CharacterHitPointsUpgrade.cs" t="Include" />
                   <e p="CharactersManager.cs" t="Include" />
+                  <e p="CharacterVisitCastleController.cs" t="Include" />
+                </e>
+                <e p="GameInterface" t="Include">
+                  <e p="CharacterCardController.cs" t="Include" />
+                  <e p="CharacterUpgradeDamageController.cs" t="Include" />
+                  <e p="CharacterUpgradeHitPointsController.cs" t="Include" />
                 </e>
               </e>
             </e>
@@ -229,14 +235,6 @@
             </e>
           </e>
           <e p="UI" t="Include">
-            <e p="Controllers" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="CastleCardController.cs" t="Include" />
-                <e p="CharacterCardController.cs" t="Include" />
-                <e p="CharacterUpgradeDamageController.cs" t="Include" />
-                <e p="CharacterUpgradeHitPointsController.cs" t="Include" />
-              </e>
-            </e>
             <e p="Maps" t="Include">
               <e p="Minimap" t="Include">
                 <e p="Scripts" t="Include">

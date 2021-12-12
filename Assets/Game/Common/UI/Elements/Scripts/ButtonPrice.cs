@@ -7,9 +7,9 @@ namespace Prototype
     public sealed class ButtonPrice : MonoBehaviour
     {
         public event Action OnClicked;
-        
+
         [SerializeField]
-        private State state;
+        private bool isEnabled;
         
         [Header("UI")]
         [SerializeField]
@@ -33,21 +33,16 @@ namespace Prototype
         [SerializeField]
         private Image iconImage;
 
-        public void SetState(State state)
+        public void SetEnable(bool isEnabled)
         {
-            this.state = state;
-            if (state == State.ENABLE)
-            {
-                this.button.interactable = true;
-                this.backgroundImage.sprite = this.backgroundEnabledSprite;
-            }
-            else
-            {
-                this.button.interactable = false;
-                this.backgroundImage.sprite = this.backgroundDisabledSprite;
-            }
-        }
+            this.isEnabled = isEnabled;
 
+            this.button.interactable = isEnabled;
+            this.backgroundImage.sprite = isEnabled
+                ? this.backgroundEnabledSprite
+                : this.backgroundDisabledSprite;
+        }
+        
         public void SetTitle(string title)
         {
             this.titleText.text = title;
@@ -82,18 +77,12 @@ namespace Prototype
 
         #endregion
         
-        public enum State
-        {
-            ENABLE,
-            DISABLE
-        }
-
 #if UNITY_EDITOR
         private void OnValidate()
         {
             try
             {
-                this.SetState(this.state);
+                this.SetEnable(this.isEnabled);
             }
             catch (Exception)
             {

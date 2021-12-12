@@ -1,5 +1,4 @@
 using GameElements;
-using Prototype.GameEngineAdapter;
 using UnityEngine;
 using UnityEngine.UI;
 

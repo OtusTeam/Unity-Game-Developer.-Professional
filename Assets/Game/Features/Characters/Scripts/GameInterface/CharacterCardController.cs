@@ -1,5 +1,5 @@
 using GameElements;
-using Prototype.GameEngineAdapter;
+using Prototype.GameEngine;
 using UnityEngine;
 
 namespace Prototype.GameInterface

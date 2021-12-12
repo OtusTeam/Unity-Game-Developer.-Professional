@@ -1,20 +1,20 @@
 using System;
 using Prototype.GameEngine;
 
-namespace Prototype.GameEngineAdapter
+namespace Prototype.GameEngine
 {
-    public sealed class CharacterDamageUpgrade : ICharacterUpgrade
+    public sealed class CharacterHitPointsUpgrade : ICharacterUpgrade
     {
         public int Price { get; } = 100;
 
         private readonly MoneyStorageComponent moneyStorageComponent;
 
-        private readonly DamageComponent damageComponent;
+        private readonly HitPointsComponent hitPointsComponent;
 
-        public CharacterDamageUpgrade(IEntity entity)
+        public CharacterHitPointsUpgrade(IEntity entity)
         {
             this.moneyStorageComponent = entity.GetEntityComponent<MoneyStorageComponent>();
-            this.damageComponent = entity.GetEntityComponent<DamageComponent>();
+            this.hitPointsComponent = entity.GetEntityComponent<HitPointsComponent>();
         }
 
         public bool CanUpgrade()
@@ -30,7 +30,7 @@ namespace Prototype.GameEngineAdapter
             }
 
             this.moneyStorageComponent.SpendMoney(this.Price);
-            this.damageComponent.IncrementDamage(10);
+            this.hitPointsComponent.IncrementHitPoints(10);
         }
     }
 }

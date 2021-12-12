@@ -2,7 +2,7 @@ using GameElements;
 using Prototype.GameEngine;
 using UnityEngine;
 
-namespace Prototype.GameEngineAdapter
+namespace Prototype.GameEngine
 {
     public sealed class PlayerManager : MonoBehaviour, IPlayerManager,
         IGameInitElement

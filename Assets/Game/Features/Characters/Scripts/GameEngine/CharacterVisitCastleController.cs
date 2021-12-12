@@ -3,23 +3,22 @@ using UnityEngine;
 
 namespace Prototype.GameEngine
 {
-    public sealed class CharacterCastleVisitController : MonoBehaviour,
+    public sealed class CharacterVisitCastleController : MonoBehaviour,
+        IGameReferenceElement,
         IGameStartElement,
         IGameFinishElement
     {
+        public IGameSystem GameSystem { private get; set; }
+        
         [SerializeField]
         private Entity character;
 
         private TriggerComponent triggerComponent;
 
-        private IPopupManager popupManager;
-
         void IGameStartElement.StartGame(IGameSystem system)
         {
             this.triggerComponent = this.character.GetEntityComponent<TriggerComponent>();
             this.triggerComponent.OnTriggerEntered += this.OnCharacterEntered;
-
-            this.popupManager = system.GetService<IPopupManager>();
         }
 
         void IGameFinishElement.FinishGame(IGameSystem system)
@@ -42,7 +41,10 @@ namespace Prototype.GameEngine
                 new UIArgument(UIArgumentName.CHARACTER_ID, this.character.Id),
                 new UIArgument(UIArgumentName.CASTLE_ID, castle.Id)
             );
-            this.popupManager.ShowPopup(PopupName.POPUP_HOME, popupArgs);
+
+            var popupManager = this.GameSystem.GetService<IPopupManager>();
+            popupManager.ShowPopup(PopupName.POPUP_HOME, popupArgs);
         }
+
     }
 }

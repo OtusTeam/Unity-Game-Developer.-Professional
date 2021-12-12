@@ -1,18 +1,12 @@
-using GameElements;
 using Prototype.GameEngine;
 using UnityEngine;
 
-namespace Prototype.GameEngineAdapter
+namespace Prototype.GameEngine
 {
-    public sealed class CharactersManager : MonoBehaviour, ICharactersManager, 
-        IGameInitElement
+    public sealed class CharactersManager : MonoBehaviour, ICharactersManager
     {
-        private IEntitiesManager entitiesManager;
-
-        void IGameInitElement.InitGame(IGameSystem system)
-        {
-            this.entitiesManager = system.GetService<IEntitiesManager>();
-        }
+        [SerializeField]
+        private EntitiesManager entitiesManager;
 
         public ICharacter GetCharacter(int characterId)
         {

@@ -1,10 +1,10 @@
 using GameElements;
-using Prototype.GameEngineAdapter;
+using Prototype.GameEngine;
 using UnityEngine;
 
 namespace Prototype.GameInterface
 {
-    public sealed class CharacterUpgradeHitPointsController : MonoBehaviour,
+    public sealed class CharacterUpgradeDamageController : MonoBehaviour,
         IGameInitElement
     {
         [SerializeField]
@@ -27,7 +27,7 @@ namespace Prototype.GameInterface
             this.targetCharacter = this.charactersManager.GetCharacter(characterId);
             this.targetCharacter.OnMoneyChanged += this.OnMoneyChanged;
 
-            this.targetUpgrade = this.charactersManager.GetHitPointsUpgrade(characterId);
+            this.targetUpgrade = this.charactersManager.GetDamageUpgrade(characterId);
 
             this.button.SetPrice(this.targetUpgrade.Price.ToString());
             this.button.OnClicked += this.OnButtonClicked;
@@ -57,17 +57,8 @@ namespace Prototype.GameInterface
 
         private void UpdateButtonState()
         {
-            ButtonPrice.State buttonState;
-            if (this.targetUpgrade.CanUpgrade())
-            {
-                buttonState = ButtonPrice.State.ENABLE;
-            }
-            else
-            {
-                buttonState = ButtonPrice.State.DISABLE;
-            }
-            
-            this.button.SetState(buttonState);
+            var canUpgrade = this.targetUpgrade.CanUpgrade();
+            this.button.SetEnable(canUpgrade);
         }
     }
 }

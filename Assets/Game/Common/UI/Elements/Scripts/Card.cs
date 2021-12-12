@@ -24,10 +24,10 @@ namespace Prototype
             this.iconImage.sprite = icon;
         }
 
-        public void SetProperty(int index, string value)
+        public void SetProperty(int index, string text)
         {
             var textParameter = this.parameters[index];
-            textParameter.text = value;
+            textParameter.text = text;
         }
     }
 }
